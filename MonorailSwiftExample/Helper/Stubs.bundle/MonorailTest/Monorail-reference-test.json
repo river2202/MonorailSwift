@@ -1,0 +1,35 @@
+{
+  "consumer" : {
+    "fileReference" : "consumer_var.json"
+  },
+  "interactions" : [
+    {
+      "id" : "Interaction_01",
+      "fileReference" : "Interaction-sample.json"
+    },
+    {
+      "id" : "Interaction_02",
+      "idReference": "Interaction_01"
+    },
+    {
+      "id" : "Interaction_03",
+      "request" : {
+        "body" : {
+          "field1" : "field1_value"
+        },
+        "headers" : {
+          "Content-Type" : "application\/json"
+        },
+        "method" : "POST",
+        "path" : "path\/api1"
+      },
+      "response" : {
+        "fileReference" : "subfolder/Interaction-response.json"
+      }
+    },
+    {
+      "id" : "Interaction_04",
+      "idReference": "Interaction_not_exist"
+    }
+   ]
+}

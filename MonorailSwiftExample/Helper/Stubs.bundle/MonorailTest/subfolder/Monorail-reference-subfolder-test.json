@@ -1,0 +1,35 @@
+{
+  "consumer" : {
+    "fileReference" : "../consumer_var.json"
+  },
+  "interactions" : [
+    {
+      "id" : "Interaction_01",
+      "fileReference" : "../Interaction-sample.json"
+    },
+    {
+      "id" : "Interaction_02",
+      "idReference": "Interaction_01"
+    },
+    {
+      "id" : "Interaction_03",
+      "request" : {
+        "body" : {
+          "binding_secret" : "57dc7f1dd7185d64682aabb6c5a9ba3f"
+        },
+        "headers" : {
+          "Content-Type" : "application\/json"
+        },
+        "method" : "POST",
+        "path" : "identity\/devices\/invitation"
+      },
+      "response" : {
+        "fileReference" : "Interaction-response.json"
+      }
+    },
+    {
+      "id" : "Interaction_04",
+      "idReference": "Interaction_not_exist"
+    }
+   ]
+}

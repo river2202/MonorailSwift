@@ -1,0 +1,835 @@
+{
+  "interactions" : [
+    {
+      "request" : {
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/search?order=desc&sort=activity&intitle=swift&site=stackoverflow&filter=!9Z(-wwK4f",
+        "method" : "GET"
+      },
+      "response" : {
+        "body" : {
+          "has_more" : true,
+          "items" : [
+            {
+              "body_markdown" : "I have a DynamicTableView and every Cell has an ImageView. How do I make an Action with knowing the indexPath.row?\r\n\r\n\r\nThe only way I know is to make a TapGestureRecognizer – that works but I then don&#39;t know which row I clicked.\r\n\r\nSo I need something like DidSelectRowAt from the TableView:\r\n\r\n\r\n    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}\r\n\r\nThis Action should only happen when I press the ImageView not the whole Row, therefore I can&#39;t use DidSelectRowAt from the TableView.\r\n\r\nThats what I did right now:\r\n\r\n    class DownloadsViewController: UITableViewController {\r\n\r\n    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {\r\n\r\n\r\n        let tap = UITapGestureRecognizer(target: self, action: #selector(DownloadsViewController.tappedMe))\r\n        \r\n        let cell = tableView.dequeueReusableCell(withIdentifier: &quot;cell&quot;, for: indexPath) as! DownloadsViewCell\r\n\r\n            cell.fileInfo.image = UIImage(named: &quot;detail1&quot;)\r\n            cell.fileInfo.addGestureRecognizer(tap)\r\n            cell.fileInfo.isUserInteractionEnabled = true\r\n\r\n    }\r\n\r\n    func tappedMe(){\r\n        print(arrayDocuments(IndexPath.row))\r\n    }\r\n    }\r\n\r\nMy whole DownloadViewContoller Class Code [is here](http:\/\/swift.sandbox.bluemix.net\/#\/repl\/59cbee58ca424945eb22e72d)\r\n\r\nMy DownloadViewCell Screenshot [is here](https:\/\/imgur.com\/a\/1hiBV)\r\n\r\nDoes anyone have an Idea?\r\n\r\nThank you!",
+              "answer_count" : 5,
+              "last_edit_date" : 1506544521,
+              "owner" : {
+                "user_type" : "does_not_exist",
+                "display_name" : "user8684888"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/46454397\/swift-dynamictableview-trigger-action-with-imageview",
+              "tags" : [
+                "ios",
+                "swift",
+                "xcode",
+                "uitableview"
+              ],
+              "view_count" : 95,
+              "creation_date" : 1506535246,
+              "is_answered" : true,
+              "title" : "Swift | DynamicTableView - Trigger Action with ImageView",
+              "accepted_answer_id" : 46466775,
+              "last_activity_date" : 1538998421,
+              "question_id" : 46454397,
+              "score" : 1
+            },
+            {
+              "body_markdown" : "I have a question about protocols with associated types, that occurred after updating to Xcode 10 and Swift 4.2.\r\n\r\nBefore I had a protocol:\r\n\r\n    protocol ViewModelBased: class {\r\n        associatedtype ViewModel\r\n        var viewModel: ViewModel { get set }\r\n    }\r\n\r\nand a VC implementing it.\r\n\r\n    class MyViewController: UIViewController, ViewModelBased {\r\n        var viewModel: EntitiesViewModel!\r\n    }\r\n\r\nAfter update to Xcode 10 I get and error saying MyViewController doesn&#39;t conform to the protocol and I have to declare the property as:\r\n\r\n    var viewModel: ViewModel! { get set }\r\n\r\nAnyone has any idea why there is difference as I don&#39;t get it?\r\n",
+              "answer_count" : 1,
+              "last_edit_date" : 1538996393,
+              "owner" : {
+                "accept_rate" : 62,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/3527875\/andreas777",
+                "user_id" : 3527875,
+                "display_name" : "Andreas777",
+                "reputation" : 135,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/ef1c928e6426c6904e7f03eaf20073cd?s=128&d=identicon&r=PG&f=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52700433\/protocols-with-associated-types-in-swift-4-2",
+              "tags" : [
+                "swift-protocols",
+                "swift4.2"
+              ],
+              "view_count" : 11,
+              "creation_date" : 1538994984,
+              "is_answered" : true,
+              "title" : "Protocols with associated types in Swift 4.2",
+              "accepted_answer_id" : 52701165,
+              "last_activity_date" : 1538997987,
+              "question_id" : 52700433,
+              "score" : -1
+            },
+            {
+              "body_markdown" : "I&#39;ve found [export [UIImage] as movie][1], but its all in ObjectiveC and I can&#39;t figure it out for Swift.\r\n\r\nI  need to create a video from [UIImage]\r\n\r\nWorking on Zoul&#39;s answer from above link. part 1) Wire the writer\r\n\r\n\r\nSo Far I have: \r\n\r\n    let paths = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)\r\n        let documentsURL = paths[0] as! NSURL\r\n        let videoWriter:AVAssetWriter = AVAssetWriter(URL: documentsURL, fileType: AVFileTypeQuickTimeMovie, error: nil)\r\n        \r\n        var videoSettings: NSDictionary = NSDictionary(\r\n\r\nI can&#39;t figure out the correct Swift version of his \r\n\r\n    NSDictionary *videoSettings = [NSDictionary dictionaryWithObjectsAndKeys:\r\n    AVVideoCodecH264, AVVideoCodecKey,\r\n    [NSNumber numberWithInt:640], AVVideoWidthKey,\r\n    [NSNumber numberWithInt:480], AVVideoHeightKey,\r\n    nil];\r\n\r\r\n---\r\n\r\n  [1]: https:\/\/stackoverflow.com\/questions\/3741323\/how-do-i-export-uiimage-array-as-a-movie\/3742212#3742212",
+              "answer_count" : 2,
+              "last_edit_date" : 1495541882,
+              "owner" : {
+                "accept_rate" : 17,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/2129911\/chameleon",
+                "user_id" : 2129911,
+                "display_name" : "Chameleon",
+                "reputation" : 845,
+                "profile_image" : "https:\/\/i.stack.imgur.com\/5j16F.jpg?s=128&g=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/30470154\/create-movie-from-uiimage-swift",
+              "tags" : [
+                "ios",
+                "swift",
+                "video",
+                "avfoundation"
+              ],
+              "view_count" : 4490,
+              "creation_date" : 1432679921,
+              "is_answered" : true,
+              "title" : "create movie from [UIImage], Swift",
+              "accepted_answer_id" : 30471519,
+              "last_activity_date" : 1538997489,
+              "question_id" : 30470154,
+              "score" : 5
+            },
+            {
+              "body_markdown" : "I am creating Swift framework in which I have to use Objective-C class. So I went through [**this**](https:\/\/stackoverflow.com\/questions\/38800435\/can-i-use-an-objective-c-class-in-my-swift-framework-library) link. This is the public header of my framework :  \r\n  \r\n\r\n    #import &lt;UIKit\/UIKit.h&gt;\r\n    \r\n    \/\/! Project version number for Test.\r\n    FOUNDATION_EXPORT double TestVersionNumber;\r\n    \r\n    \/\/! Project version string for Test.\r\n    FOUNDATION_EXPORT const unsigned char TestVersionString[];\r\n    \r\n    \/\/ In this header, you should import all the public headers of your framework using statements like #import &lt;Test\/PublicHeader.h&gt;\r\n\r\n    #import &lt;arpa\/inet.h&gt;\r\n    #import &lt;ifaddrs.h&gt;\r\n    #import &lt;netdb.h&gt;\r\n    #import &lt;sys\/socket.h&gt;\r\n    #import &lt;MyTest\/MPAppDelegateProxy.h&gt;  \r\n  \r\nNow in class **MPAppDelegateProxy**, I have to use a `Swift` class which I have created. This is :  \r\n  \r\n\r\n    #import &quot;MPAppDelegateProxy.h&quot;\r\n    #import &quot;MyTest.h&quot;\r\n    \r\n    @implementation MPAppDelegateProxy\r\n    \r\n    + (void)proxyAppDelegate {\r\n        [MPGlobal MPLog:@&quot;App delegate not set, unable to perform automatic setup.&quot; file:@&quot;MPAppDelegateProxy.m&quot; function:@&quot;proxyAppDelegate&quot; line:32];\r\n    \/\/ rest of code\r\n    }  \r\n  \r\n**MPGlobal** is one of my `Swift` class. But I am getting :  \r\n  \r\n\r\n&gt; Use of undeclared identifier &#39;MPGlobal&#39;  \r\n  \r\n**Note :** I have added `@objC` before **MPGlobal**.\r\n\r\n",
+              "answer_count" : 2,
+              "last_edit_date" : 1538997418,
+              "owner" : {
+                "accept_rate" : 68,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/541786\/nitish",
+                "user_id" : 541786,
+                "display_name" : "Nitish",
+                "reputation" : 6445,
+                "profile_image" : "https:\/\/i.stack.imgur.com\/o4FTo.jpg?s=128&g=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52698951\/swift-framework-use-swift-class-reference-in-objective-c-class",
+              "tags" : [
+                "ios",
+                "objective-c",
+                "swift",
+                "swift-framework"
+              ],
+              "view_count" : 40,
+              "creation_date" : 1538990003,
+              "is_answered" : false,
+              "title" : "Swift framework - Use Swift class reference in Objective-C class",
+              "last_activity_date" : 1538997418,
+              "question_id" : 52698951,
+              "score" : 0
+            },
+            {
+              "body_markdown" : "When I am using alert in swift at the line of present alert I get this error use of unresolved identifier.\r\n\r\nFile name : **CommonFunctions.swift**\r\n\r\nclass name : **class CommonFunctions : NSObject**\r\n\r\nI am using this code\r\n\r\n \tclass func gotoSettingScreen()\r\n    {\r\n        let alertController = UIAlertController (title: &quot;Title&quot;, message: &quot;Go to Settings?&quot;, preferredStyle: .alert)\r\n        \r\n        let settingsAction = UIAlertAction(title: &quot;Settings&quot;, style: .default) { (_) -&gt; Void in\r\n            guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {\r\n                return\r\n            }\r\n            \r\n            if UIApplication.shared.canOpenURL(settingsUrl) {\r\n                if #available(iOS 10.0, *) {\r\n                    UIApplication.shared.open(settingsUrl, completionHandler: { (success) in\r\n                        print(&quot;Settings opened: \\(success)&quot;) \/\/ Prints true\r\n                    })\r\n                } else {\r\n                    \/\/ Fallback on earlier versions\r\n                }\r\n            }\r\n        }\r\n        alertController.addAction(settingsAction)\r\n        let cancelAction = UIAlertAction(title: &quot;Cancel&quot;, style: .default, handler: nil)\r\n        alertController.addAction(cancelAction)\r\n\r\n        \r\n        present(alertController, animated: true, completion: nil)\r\n    }\r\n\r\nLine Error Come :` present(alertController, animated: true, completion: nil)`\r\n\r\nError is : [![enter image description here][1]][1]\r\n\r\n\r\n  [1]: https:\/\/i.stack.imgur.com\/iMsZr.png\r\n\r\nThanks for your help ! and Appreciation ! ",
+              "answer_count" : 3,
+              "last_edit_date" : 1538985424,
+              "owner" : {
+                "accept_rate" : 80,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/6842225\/bhaumik-joshi",
+                "user_id" : 6842225,
+                "display_name" : "Bhaumik Joshi",
+                "reputation" : 118,
+                "profile_image" : "https:\/\/lh6.googleusercontent.com\/-ueh94A-DfnE\/AAAAAAAAAAI\/AAAAAAAADto\/N0zWsi15Kik\/photo.jpg?sz=128"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/47467537\/which-identifier-is-use-in-place-of-present-in-alert-in-swift",
+              "tags" : [
+                "ios",
+                "swift",
+                "uialertview",
+                "presentviewcontroller"
+              ],
+              "view_count" : 295,
+              "creation_date" : 1511505092,
+              "is_answered" : true,
+              "title" : "which identifier is use in place of &quot;present&quot; in alert in swift",
+              "last_activity_date" : 1538997274,
+              "question_id" : 47467537,
+              "score" : 1
+            },
+            {
+              "body_markdown" : "Here is what I am trying to do:[1],the screenshot is taken from an earlier version of iOS Device[2],image Set From Main StoryBorad:[3] why show the center button background clear. how to show center button with background color. thanks \r\n \r\n\r\n\r\n\r\n[1]: https:\/\/i.stack.imgur.com\/wSyHg.png\r\n[2]: https:\/\/i.stack.imgur.com\/FEzL2.png\r\n[3]: https:\/\/i.stack.imgur.com\/QFV1O.png",
+              "answer_count" : 1,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/10249172\/rahul-kaura",
+                "profile_image" : "https:\/\/lh3.googleusercontent.com\/-6BdmhwUgLOM\/AAAAAAAAAAI\/AAAAAAAAAAA\/AAnnY7o_f2FsA90ck8v9PSd4w03lK3ou3A\/mo\/photo.jpg?sz=128",
+                "user_id" : 10249172,
+                "display_name" : "Rahul Kaura",
+                "reputation" : 3,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52700628\/make-custom-button-on-tab-bar-swift",
+              "tags" : [
+                "iphone",
+                "swift",
+                "uitabbarcontroller"
+              ],
+              "view_count" : 10,
+              "creation_date" : 1538995687,
+              "is_answered" : false,
+              "title" : "Make custom button on Tab Bar Swift",
+              "last_activity_date" : 1538996722,
+              "question_id" : 52700628,
+              "score" : 0
+            },
+            {
+              "body_markdown" : "i am getting a complex json response from webApi, its an array of payments which every object in the payments array have is own charges array\r\n\r\n    {\r\n    &quot;payments&quot;: [\r\n        {\r\n            &quot;paymentId&quot;: &quot;pid_2pqsz9el55&quot;,\r\n            &quot;paymentAmount&quot;: &quot;38500&quot;,\r\n            &quot;paymentDate&quot;: &quot;10\/8\/2018&quot;\r\n            &quot;charges&quot;: [\r\n                {\r\n                    &quot;status&quot;: &quot;paid&quot;,\r\n                    &quot;currentBalance&quot;: &quot;120.00&quot;\r\n                },\r\n                {\r\n                    &quot;status&quot;: &quot;paid&quot;,\r\n                    &quot;currentBalance&quot;: &quot;265.00&quot;\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            &quot;paymentId&quot;: &quot;pid_kdn5dxjeyd&quot;,\r\n            &quot;paymentAmount&quot;: &quot;38500&quot;,\r\n            &quot;paymentDate&quot;: &quot;10\/8\/2018&quot;,\r\n            &quot;charges&quot;: [\r\n                {\r\n                    &quot;status&quot;: &quot;paid&quot;,\r\n                    &quot;currentBalance&quot;: &quot;120.00&quot;\r\n                },\r\n                {\r\n                    &quot;status&quot;: &quot;paid&quot;,\r\n                    &quot;currentBalance&quot;: &quot;265.00&quot;\r\n                }\r\n                ]\r\n            }\r\n        ]\r\n    }\r\n\r\n\r\n\r\nI am using this swift code to decode the json without any success so far. When i am using the same logic to decode json with arrays (with no nested array) the code is working fine. any idea will help (I am getting the error print(&quot;Error: Couldn&#39;t decode data&quot;))\r\n\r\n    struct Payment: Decodable {\r\n    \r\n    let payments: [PaymentItem]\r\n    enum CodingKeys : String, CodingKey {\r\n            case payments = &quot;payments&quot;\r\n        }\r\n    }\r\n    struct PaymentItem: Decodable {\r\n        let paymentId : String\r\n        let paymentAmount : String\r\n        let paymentDate : String\r\n        let charges : [ChargeItem]\r\n            enum CodingKeys : String, CodingKey {\r\n            case paymentId\r\n            case paymentAmount\r\n            case paymentDate\r\n            case charges = &quot;charges&quot;\r\n            }\r\n        }\r\n    struct ChargeItem: Decodable {\r\n        let status : String\r\n        let currentBalance : String\r\n    }\r\n\r\n    class ViewController: UIViewController {\r\n    override func viewDidLoad() {\r\n        super.viewDidLoad()\r\n        LoadBalance()   \r\n    }\r\n    func LoadBalance()  \r\n    {\r\n        var request = URLRequest(url:URL(string:”RequestUrlAddress”)!)\r\n        request.addValue(&quot;Bearer bearer code”, forHTTPHeaderField: &quot;Authorization&quot;)\r\n        request.httpMethod = &quot;GET&quot;\r\n        \r\n        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in\r\n            guard let dataResponse = data,\r\n                error == nil else {\r\n                    print(error?.localizedDescription ?? &quot;Response Error&quot;)\r\n                    return\r\n            }\r\n            do{\r\n                guard let model = try? JSONDecoder().decode(Payment.self, from: dataResponse)else {\r\n                    print(&quot;Error: Couldn&#39;t decode data&quot;) \/\/THIS IS STOP HERE\r\n                    return\r\n                }\r\n\r\n                print(“payments:”)\r\n                for payment in model.payments {\r\n                    print(payment.paymentId + &quot; - $&quot; + payment.paymentAmount + &quot;, &quot; + payment. paymentDate)\r\n                    }\r\n                }\r\n            }\r\n            task.resume()\r\n        }\r\n    }",
+              "closed_reason" : "duplicate",
+              "answer_count" : 0,
+              "owner" : {
+                "accept_rate" : 58,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/1685663\/elidotnet",
+                "user_id" : 1685663,
+                "display_name" : "Elidotnet",
+                "reputation" : 104,
+                "profile_image" : "https:\/\/i.stack.imgur.com\/L8k9y.jpg?s=128&g=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52700696\/how-to-parse-json-nested-arrays-inside-arrays-to-struct-using-swift-4",
+              "tags" : [
+                "json",
+                "swift"
+              ],
+              "view_count" : 26,
+              "creation_date" : 1538995945,
+              "is_answered" : false,
+              "title" : "How to parse json nested arrays inside arrays to struct using swift 4",
+              "last_activity_date" : 1538996430,
+              "question_id" : 52700696,
+              "score" : 0,
+              "closed_date" : 1538997611
+            },
+            {
+              "body_markdown" : "I&#39;ve got following code\r\n\r\n    protocol NamedOption {\r\n        var optionTitle: String { get }\r\n    }\r\n    \r\n    struct DebugOption: NamedOption {\r\n        let optionTitle: String\r\n        let debugViewControllerType = UIViewController.self\r\n    }\r\n    \r\n    \r\n    func testFunk&lt;T: Sequence&gt;(d: Observable&lt;T&gt;) where T.Element == NamedOption {\r\n        \r\n    }\r\n    \r\n    func bindFullResultsRx() {\r\n        let dd: Observable&lt;[DebugOption]&gt; = self.dataModel.debugOptions \/\/ this is defined and properly assigned earlier\r\n        testFunk(d: dd)\r\n    }\r\n\r\nand at the line where I call `testFunk` Xcode gives me following error:\r\n\r\n&gt; Expression type &#39;()&#39; is ambiguous without more context\r\n\r\nI have no idea why this is happening :( So far I was able to make it working by changing constraints on `testFunk` into this:\r\n\r\n    func funk&lt;T: NamedOption&gt;(d: Observable&lt;[T]&gt;) {\r\n            \r\n    }\r\n\r\nwhich seems to me more restrictive then version at the top. Does any one knows how to make it working with `T: Sequence` ?\r\n\r\nXcode version is 9.4, Swift version is 4.1.",
+              "answer_count" : 2,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/6775034\/maqszur",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/a2c08a046c900a9487bbf5791249dd25?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 6775034,
+                "display_name" : "maqszur",
+                "reputation" : 26,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52674427\/swift-generic-sequence-observable-ambiguity",
+              "tags" : [
+                "swift",
+                "generics",
+                "rx-swift"
+              ],
+              "view_count" : 40,
+              "creation_date" : 1538782488,
+              "is_answered" : true,
+              "title" : "Swift generic sequence observable ambiguity",
+              "accepted_answer_id" : 52700480,
+              "last_activity_date" : 1538995154,
+              "question_id" : 52674427,
+              "score" : 3
+            },
+            {
+              "body_markdown" : "Can anyone suggest me how to make a rest api call for Mac OS Application using Swift 4 And Cocoa. I tried lots of ways but unable to make the api call.\r\n\r\nHere is the code:\r\n\r\n    func callAPI(){\r\n        \r\n        let AuthorizationToken = &quot;Basic mykey=&quot;\r\n        var request = URLRequest(url: URL(string: &quot;http:\/\/myipaddress\/api\/Batch&quot;)!)\r\n        request.httpMethod = &quot;GET&quot;\r\n        request.addValue(&quot;application\/json&quot;, forHTTPHeaderField: &quot;Content-Type&quot;)\r\n        request.setValue(AuthorizationToken, forHTTPHeaderField: &quot;Authorization&quot;)\r\n        let session = URLSession.shared\r\n        let task = session.dataTask(with: request, completionHandler: { data, response, error -&gt; Void in\r\n            \/\/print(response!)\r\n            do {\r\n                let json = try JSONSerialization.jsonObject(with: data!)\r\n                print(json)\r\n                self.ApiValue.stringValue = &quot;Success&quot;\r\n            } catch {\r\n                print(&quot;error&quot;)\r\n                self.ApiValue.stringValue = &quot;Error&quot;\r\n            }\r\n        })\r\n        \r\n        task.resume()\r\n        \r\n    }\r\n\r\n[See the info.plist][1]\r\n\r\n\r\n  [1]: https:\/\/i.stack.imgur.com\/p1xvr.png",
+              "answer_count" : 2,
+              "last_edit_date" : 1538995072,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/10271954\/bishnu-das",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/7a21575eaca4077d60f55b88d1b9a513?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 10271954,
+                "display_name" : "Bishnu Das",
+                "reputation" : 1,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52626598\/cocoa-and-swift-i-want-to-make-a-simple-rest-api-call-using-swift-4-and-cocoa",
+              "tags" : [
+                "cocoa",
+                "swift4"
+              ],
+              "view_count" : 54,
+              "creation_date" : 1538568040,
+              "is_answered" : false,
+              "title" : "Cocoa And Swift - I want to make a simple rest API call using Swift 4 and Cocoa for Mac OS Application",
+              "last_activity_date" : 1538995072,
+              "question_id" : 52626598,
+              "score" : 0
+            },
+            {
+              "body_markdown" : "    private let tableView: UITableView = UITableView().then { (table) in\r\n        table.delegate = self\r\n    }\r\n\r\nwhen I write like this  error occurs anyone can help resolve?",
+              "closed_reason" : "off-topic",
+              "answer_count" : 0,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/2786235\/shenghai",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/834a0243f581ebcbb5f7e7cfd50ecc0e?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 2786235,
+                "display_name" : "shenghai",
+                "reputation" : 1,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52700295\/swift-then-using-self",
+              "tags" : [
+                "ios",
+                "swift"
+              ],
+              "view_count" : 41,
+              "creation_date" : 1538994505,
+              "is_answered" : false,
+              "title" : "swift Then using self",
+              "last_activity_date" : 1538994909,
+              "question_id" : 52700295,
+              "score" : -4,
+              "closed_date" : 1538994885
+            },
+            {
+              "body_markdown" : "When use closure we can avoid **strong reference cycle** by using `weak` or `unowned` for capture list.\r\n\r\nI know that the function is also a named closure. So I guess function also capture values from the context.\r\n\r\nHow can I avoid **strong reference cycle** for function?\r\n\r\n## Codes below\r\n\r\n\r\n    class Person {\r\n        var name: String?\r\n\r\n        func printInfo() {\r\n            print(self.name ?? &quot;nil&quot;)\r\n        }\r\n    \r\n        deinit {\r\n             print(&quot;\\(self.name ?? &quot;&quot;) is deinitialized.&quot;)\r\n        }\r\n    }\r\n\r\n    var p1: Person? = Person()\r\n    p1?.name = &quot;Person1&quot;\r\n\r\n    var printFunction = p1?.printInfo\r\n    p1 = nil\r\n\r\nNot print any message\r\n\r\n    ...\r\n    p1 = nil\r\n    printFunction = nil\r\n\r\nprint `Person1 is deinitialized.`\r\n\r\n\r\nDoes anyone have a solution to this case? In **closure** case we have `weak`, `unowned` capture list.",
+              "answer_count" : 0,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/8813422\/won",
+                "profile_image" : "https:\/\/i.stack.imgur.com\/w8M4H.png?s=128&g=1",
+                "user_id" : 8813422,
+                "display_name" : "Won",
+                "reputation" : 34,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52700069\/capture-list-for-function-in-swift",
+              "tags" : [
+                "swift",
+                "function",
+                "closures",
+                "automatic-ref-counting"
+              ],
+              "view_count" : 20,
+              "creation_date" : 1538993774,
+              "is_answered" : false,
+              "title" : "capture list for function in swift",
+              "last_activity_date" : 1538993774,
+              "question_id" : 52700069,
+              "score" : 0
+            },
+            {
+              "body_markdown" : "I would like to add a boolean toggle to know whether the button has been pressed (will save this value to core data (also would like to save cell data to core data if true and delete from core data if false)) I am not sure how to do this. any help would be greatly appreciated. if all the code from the view controller is required leave a comment and I will do so (I have setup xcdatamodel already).\r\n\r\n\r\n      @IBAction func buttonTapped(_ sender:UIButton) {\r\n        var superView = sender.superview\r\n        while !(superView is UITableViewCell) {\r\n            superView = superView?.superview\r\n        }\r\n        let cell = superView as! UITableViewCell\r\n        if let indexpath = tableView.indexPath(for: cell){\r\n            \r\n            print(indexpath)\r\n        }\r\n    }",
+              "answer_count" : 3,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/10210831\/omar-al-eisa",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/764c40947be40063c436e4499fac27f5?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 10210831,
+                "display_name" : "Omar Al-Eisa",
+                "reputation" : 15,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52686867\/toggle-button-with-boolean-in-uitableview-swift",
+              "tags" : [
+                "swift",
+                "core-data",
+                "tableview",
+                "toggle"
+              ],
+              "view_count" : 32,
+              "creation_date" : 1538901880,
+              "is_answered" : false,
+              "title" : "toggle button with boolean in UITableView Swift",
+              "last_activity_date" : 1538993323,
+              "question_id" : 52686867,
+              "score" : 0
+            },
+            {
+              "body_markdown" : "I am writing an app with the &quot;App Groups&quot; capability enabled. The Action Extension in this app is open to PDF files and is available when a web page loaded in Safari is opened in reader mode and then converted to PDF.\r\n\r\nIn short, the app can take in the Webpage converted to PDF file from Safari. It was working alright before upgrading to Swift 4.2. Ever since downloading Xcode 10, it has stopped working with the following error:\r\n\r\n    (Error Domain=NSItemProviderErrorDomain Code=-1000 &quot;Cannot load \r\n    representation of type com.adobe.pdf&quot;  UserInfo   \r\n    {NSLocalizedDescription=Cannot load representation of type \r\n    com.adobe.pdf, NSUnderlyingError=0x600002dd9a70 {Error\r\n    Domain=NSPOSIXErrorDomain Code=22 &quot;Invalid argument&quot; UserInfo=    \r\n    {NSLocalizedDescription=Cannot issue a sandbox extension for file  \r\n    &quot;\/Users\/xxx\/Library\/Developer\/CoreSimulator\/Devices\/FE5463C2-FAA3-\r\n    41A9938B-C1C234EA966A\/data&quot;\/Containers\/Data\/Application\/B6FB42C6-B4E3-\r\n    46D8-B9F95856FF88F0B6\/tmp\/\/Safari - Sep 22, 2018 at 10:00 PM.pdf&quot;: \r\n    Invalid argument}}})`\r\n\r\nCan anyone throw some light on what is happening? Both the app and its action extension belong to the same App Group. The Action Extension has the following entries in the info.plist:\r\n\r\n    &lt;dict&gt;\r\n      &lt;key&gt;NSExtensionAttributes&lt;\/key&gt;\r\n      &lt;dict&gt;\r\n      &lt;key&gt;NSExtensionActivationRule&lt;\/key&gt;\r\n      &lt;string&gt;\r\n                    SUBQUERY (\r\n                    extensionItems,\r\n                    $extensionItem,\r\n                    SUBQUERY (\r\n                    $extensionItem.attachments,\r\n                    $attachment,\r\n                    ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;com.adobe.pdf&quot; ||\r\n                    ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;public.file-url&quot;\r\n                    ).@count == $extensionItem.attachments.@count\r\n                    ).@count == 1\r\n                &lt;\/string&gt;\r\n      &lt;\/dict&gt;\r\n      &lt;key&gt;NSExtensionMainStoryboard&lt;\/key&gt;\r\n      &lt;string&gt;MainInterface&lt;\/string&gt;\r\n      &lt;key&gt;NSExtensionPointIdentifier&lt;\/key&gt;\r\n      &lt;string&gt;com.apple.ui-services&lt;\/string&gt;\r\n      &lt;\/dict&gt;",
+              "answer_count" : 2,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/2520281\/mihir",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/fa1f2a19bd347a6de5ec7c257c709b5c?s=128&d=identicon&r=PG",
+                "user_id" : 2520281,
+                "display_name" : "Mihir",
+                "reputation" : 47,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52462456\/sharing-pdf-file-from-safari-with-action-extension-failing-in-swift-4-2-xcode-10",
+              "tags" : [
+                "xcode",
+                "pdf",
+                "safari",
+                "appgroups"
+              ],
+              "view_count" : 70,
+              "creation_date" : 1537669564,
+              "is_answered" : false,
+              "title" : "Sharing PDF file from Safari with Action Extension failing in Swift 4.2 Xcode 10",
+              "last_activity_date" : 1538992748,
+              "question_id" : 52462456,
+              "score" : 2
+            },
+            {
+              "body_markdown" : "When I add this equation \r\n\r\n    colViewHeight = (colItemSize * CGFloat(Counts)) + (colLineSpace * \r\n    CGFloat(Counts)) + (colViewTopSpace+colViewBottomSpace) as CGFloat\r\n\r\nI get the below mentioned error. \r\n\r\n&gt; The compiler is unable to type-check this expression in reasonable\r\n&gt; time; try breaking up the expression into distinct sub-expressions\r\n\r\nHow to solve this issue? I am using xcode 10.01 version\r\n",
+              "answer_count" : 2,
+              "last_edit_date" : 1538990328,
+              "owner" : {
+                "accept_rate" : 60,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/3775102\/sharon",
+                "user_id" : 3775102,
+                "display_name" : "sharon",
+                "reputation" : 684,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/3c76df4c37ad5f7bd0ca7fd93777efac?s=128&d=identicon&r=PG&f=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52696948\/swift-compiler-error-expression-too-complex-on-a-mathematical-equation",
+              "tags" : [
+                "swift"
+              ],
+              "view_count" : 36,
+              "creation_date" : 1538981935,
+              "is_answered" : true,
+              "title" : "Swift Compiler Error: “Expression too complex” on a mathematical equation",
+              "accepted_answer_id" : 52696991,
+              "last_activity_date" : 1538990328,
+              "question_id" : 52696948,
+              "score" : -2
+            },
+            {
+              "body_markdown" : "I want to save the JSON Result from web service to Core data, following is the code for JSON parsing.\r\n    \r\n    if let jsonResult = try JSONSerialization.jsonObject(with: JSONData!, options: [.mutableContainers]) as? [String: AnyObject]\r\nIf i prints jsonResult, following is the output\r\n\r\n    [&quot;Code&quot;: 00, &quot;Desc&quot;: success, &quot;iinData&quot;: &lt;__NSArrayM 0x1c02531a0&gt;\r\n    {\r\n      name = “AAA”;\r\n      iin = 123456;\r\n      isOn = 0;\r\n    },\r\n    {\r\n      name = &quot;Allahabad Bank&quot;;\r\n      iin = 608112;\r\n      isOn = 0;\r\n    },\r\n    )\r\n\r\n   I can able to insert **Code, Desc** into Entity1, but how to insert innData into Entity2 . \r\n\r\n[Entity1 Structure][1] [Entity2 Structure][2]\r\n\r\n\r\n  [1]: https:\/\/i.stack.imgur.com\/vbWyy.png\r\n  [2]: https:\/\/i.stack.imgur.com\/FUW1b.png\r\n\r\nFollowing is the code for inserting JSON result into core data\r\n\r\n    func createEntity1From(dictionary: [String: AnyObject]) -&gt; NSManagedObject? {\r\n        let context = CoreDataStack.sharedInstance.persistentContainer.viewContext\r\n        if let Entity1 = NSEntityDescription.insertNewObject(forEntityName: “ParamDownload”, into: context) as? ParamDownload {\r\n            Entity1.Code= dictionary[“name”] as? String\r\n            Entity1.desc = dictionary[“desc”] as? String\r\n            return Entity1\r\n        }\r\n    }\r\n",
+              "answer_count" : 1,
+              "last_edit_date" : 1538986423,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/7413163\/user7413163",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/edba89a8f8ac28089a4d357a6b9ba690?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 7413163,
+                "display_name" : "user7413163",
+                "reputation" : 5,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52555913\/save-complex-json-to-core-data-in-swift",
+              "tags" : [
+                "ios",
+                "json",
+                "swift",
+                "core-data"
+              ],
+              "view_count" : 42,
+              "creation_date" : 1538139561,
+              "is_answered" : false,
+              "title" : "Save complex JSON to Core Data in Swift",
+              "last_activity_date" : 1538989868,
+              "question_id" : 52555913,
+              "score" : -1
+            },
+            {
+              "body_markdown" : "I have a number, I want to insert a column &quot;:&quot; between each two consecutive digits inside that number, and get a String as a result\r\n\r\nFor example: \r\n\r\n    let number: Int = 34567  \r\n    let result: String = &quot;3:4:5:6:7&quot;\r\n\r\nThanks for any help, ",
+              "answer_count" : 2,
+              "last_edit_date" : 1538987668,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/4258895\/fausto-checa",
+                "profile_image" : "https:\/\/graph.facebook.com\/1143936846\/picture?type=large",
+                "user_id" : 4258895,
+                "display_name" : "Fausto Checa",
+                "reputation" : 16,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52698237\/insert-a-character-inside-an-int-swift",
+              "tags" : [
+                "ios",
+                "swift"
+              ],
+              "view_count" : 67,
+              "creation_date" : 1538987327,
+              "is_answered" : true,
+              "title" : "insert a character inside an Int Swift",
+              "last_activity_date" : 1538988291,
+              "question_id" : 52698237,
+              "score" : -1
+            },
+            {
+              "body_markdown" : "I would like to incorporate the document classifier made with sklearn into swift with `coreML`.\r\n\r\nCurrently, I have imported classifiers for document classification created by Python.sklearn with `coreML` using swift.\r\n\r\nBut the Type that can be input to the classifier is &quot;MultiArray (Double 6974)&quot; as shown below.\r\n\r\n![enter image description here][1]\r\n\r\n\r\nWith that, it means that I have to vectorize sentences in Swift and put it in the model.\r\n\r\nHow can I make a sentence Becker on the swift side?\r\n\r\n\r\nAlso, depending on the way sklearn is configured, can I type a String like a figure below?\r\n\r\n![enter image description here][2]\r\n\r\nPlease tell me how I can do it.\r\n\r\n\r\n  [1]: https:\/\/i.stack.imgur.com\/5ebsT.png\r\n  [2]: https:\/\/i.stack.imgur.com\/B5cfZ.png",
+              "answer_count" : 0,
+              "last_edit_date" : 1538987948,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/10464392\/hello-world",
+                "profile_image" : "https:\/\/lh4.googleusercontent.com\/-sanyL0LT_dw\/AAAAAAAAAAI\/AAAAAAAAAAA\/AAN31DXfjzJl0HJszrGyZpAMfNyo3A1cWQ\/mo\/photo.jpg?sz=128",
+                "user_id" : 10464392,
+                "display_name" : "hello world",
+                "reputation" : 1,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52675454\/swift-sklearnmachine-learning-coreml-incorporation",
+              "tags" : [
+                "python",
+                "swift",
+                "scikit-learn",
+                "coreml"
+              ],
+              "view_count" : 24,
+              "creation_date" : 1538796399,
+              "is_answered" : false,
+              "title" : "swift sklearn(machine learning) coreML incorporation",
+              "last_activity_date" : 1538987948,
+              "question_id" : 52675454,
+              "score" : 0
+            },
+            {
+              "body_markdown" : "I am trying to get the value out of an [String : AnyObject] and have not yet found the answer on a web-reference  \r\n\r\nOne of the parameters in a method call is:\r\n  \r\n`advertisementData: [String : AnyObject]`\r\n\r\nAnd, when I run the code, a debug line `print(&quot;\\(advertisementData)&quot;)` shows one of its values as:  \r\n\r\n&gt; [&quot;kCBAdvDataIsConnectable&quot;: 1, &quot;kCBAdvDataServiceUUIDs&quot;: &lt;__NSArrayM 0x13cd812e0&gt;(\r\nC9CAB9B8-3ABF-4043-A5AF-9AD00C6074D5]\r\n\r\nOn each pass, I am trying to identify the value of the key:  \r\n `kCBAdvDataServiceUUIDs`  --  it often changes on each pass through the code  \r\n\r\nI am looking to see if the value contains:  `C9CAB9B8-3ABF-4043-A5AF-9AD00C6074D5`  (as this example does) - many times it does not.  \r\nIf so I will do something. If not do nothing.  \r\n\r\nI have tried:  \r\n\r\n    let value = advertisementData[&quot;kCBAdvDataServiceUUIDs&quot;]  \r\n\r\nbut it did not work and the error message was not clear (at least for this newbie it wasn&#39;t clear)  \r\n\r\nHow can I get this value into a variable so that I can compare it to another `String` value?\r\n",
+              "answer_count" : 3,
+              "last_edit_date" : 1468515039,
+              "owner" : {
+                "accept_rate" : 33,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/4496400\/dhugalmac",
+                "user_id" : 4496400,
+                "display_name" : "Dhugalmac",
+                "reputation" : 463,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/4a175174a040deffafc699fe4d970dce?s=128&d=identicon&r=PG&f=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/38379643\/ios-swift-value-from-string-anyobject",
+              "tags" : [
+                "ios",
+                "swift"
+              ],
+              "view_count" : 535,
+              "creation_date" : 1468514117,
+              "is_answered" : true,
+              "title" : "iOS Swift Value from [String : AnyObject]",
+              "last_activity_date" : 1538987676,
+              "question_id" : 38379643,
+              "score" : 0
+            },
+            {
+              "body_markdown" : "I import a swift framework to a swift project, but when I call the class in this framework, Xcode  throw a compile error &quot;Use of undeclared type &#39;xxxx(class name)&#39; &quot;.\r\n\r\nI feel Xcode have found the framework, otherwise it will complaint &quot;can&#39;t find xxx(framework name)&quot;.\r\n\r\nBut why Xcode can&#39;t find the class of this framework.\r\n\r\nI have tried remove and re-add framework, and delete DeivedData files, but all of them not work. I haven&#39;t use CocoaPods to import framework.\r\n\r\nAny idea?\r\n\r\n",
+              "answer_count" : 3,
+              "owner" : {
+                "accept_rate" : 83,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/5479283\/cindy",
+                "user_id" : 5479283,
+                "display_name" : "Cindy",
+                "reputation" : 76,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/c7c034022c907b54d4f92c86c1d402b5?s=128&d=identicon&r=PG&f=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/44939490\/swift-import-framework-but-cant-find-class-in-it",
+              "tags" : [
+                "ios",
+                "swift",
+                "xcode"
+              ],
+              "view_count" : 1223,
+              "creation_date" : 1499313001,
+              "is_answered" : true,
+              "title" : "Swift: import framework but can&#39;t find class in it",
+              "last_activity_date" : 1538986380,
+              "question_id" : 44939490,
+              "score" : 2
+            },
+            {
+              "body_markdown" : "I&#39;m writing `DateFormatter`&#39;s `dateFormat` to convert JSON from server to local swift object.\r\nServer would return following.\r\n\r\n - 2018-10-07T15:26:33.236Z\r\n - 2018-10-07T15:26:33Z\r\n - 2018-10-07T15:26:33.26Z\r\n\r\nFollowing is my code, but I&#39;m not sure if I can write just one line instead of switch-case conditions (from SWITCH-CASE START to END).\r\n\r\nJust one `dateFormat` is ideal regardless of whether returned time has milliseconds or not.\r\nAny advice appreciated.\r\n\r\n        let decoder = JSONDecoder()\r\n        decoder.dateDecodingStrategy = .custom{\r\n            let container = try $0.singleValueContainer()\r\n            let dateStr = try container.decode(String.self)\r\n            let formatter = DateFormatter()\r\n            formatter.calendar = Calendar(identifier: .gregorian)\r\n            formatter.locale = .current\r\n            \/\/ *** SWITCH-CASE: START ***\r\n            switch dateStr.utf8.count {\r\n            case 20:\r\n                        formatter.dateFormat = &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ssZ&quot;\r\n            case 22:\r\n                        formatter.dateFormat = &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SZ&quot;\r\n            case 23:\r\n                        formatter.dateFormat = &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSZ&quot;\r\n            case 24:\r\n                        formatter.dateFormat = &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&quot;\r\n            default:\r\n                        formatter.dateFormat = &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&quot;\r\n            }\r\n            \/\/ *** SWITCH-CASE: END ***\r\n            formatter.timeZone = TimeZone(secondsFromGMT: 0)\r\n            return formatter.date(from: dateStr)!\r\n        }\r\n",
+              "answer_count" : 1,
+              "last_edit_date" : 1538983735,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/9202774\/simotunes",
+                "profile_image" : "https:\/\/i.stack.imgur.com\/zbB6V.jpg?s=128&g=1",
+                "user_id" : 9202774,
+                "display_name" : "simotunes",
+                "reputation" : 32,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52696936\/dateformatter-dateformat-milliseconds-swift",
+              "tags" : [
+                "swift",
+                "dateformatter"
+              ],
+              "view_count" : 42,
+              "creation_date" : 1538981890,
+              "is_answered" : true,
+              "title" : "DateFormatter: dateFormat milliseconds Swift",
+              "accepted_answer_id" : 52697434,
+              "last_activity_date" : 1538984718,
+              "question_id" : 52696936,
+              "score" : 0
+            },
+            {
+              "body_markdown" : "I am trying to build AR indoor navigation using MapBox in xcode iOS Swift. Have uploaded my floor plan through mapbox studio. And previewed floor map through MapBox studio preview iOS app and it showing. Now dont know where to start and end to develop the application. \r\n\r\nIs it possible to create AR Indoor navigation using MapBox in xcode iOS Swift?\r\n\r\nAny help much appreciated pls..",
+              "answer_count" : 0,
+              "last_edit_date" : 1538984561,
+              "owner" : {
+                "accept_rate" : 60,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/9120924\/pvdev",
+                "user_id" : 9120924,
+                "display_name" : "PvDev",
+                "reputation" : 53,
+                "profile_image" : "https:\/\/i.stack.imgur.com\/eo6Wb.jpg?s=128&g=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52696720\/is-it-possible-to-create-ar-indoor-navigation-using-mapbox-in-xcode-ios-swift",
+              "tags" : [
+                "ios",
+                "swift",
+                "navigation",
+                "maps",
+                "mapbox"
+              ],
+              "view_count" : 17,
+              "creation_date" : 1538980935,
+              "is_answered" : false,
+              "title" : "Is it possible to create AR Indoor navigation using MapBox in xcode iOS Swift?",
+              "last_activity_date" : 1538984561,
+              "question_id" : 52696720,
+              "score" : -1
+            },
+            {
+              "body_markdown" : "I am using firebase in an iOS-Swift project in which I have to enable offline support for uploading posts, in the post there is a picture and caption just like Instagram, so what I want is when user is offline and he\/she wants to upload a post, his\/her picture get saved in cache and when user comes online that photo get uploaded and give back a download url that we can use for saving posts-details it in database.\r\n\r\nsample code is:\r\n\r\n                    let photoIDString = UUID().uuidString\r\n                    let storageRef = Storage.storage().reference(forURL: &quot;storage ref URL&quot;).child(&quot;posts&quot;).child(photoIDString)\r\n                \r\n                    storageRef.putData(imageData, metadata: nil, completion: { (metadata, error) in\r\n                    \r\n                    guard let metadata = metadata else {\r\n                        return\r\n                    }\r\n                    if error != nil {\r\n                        return\r\n                    }\r\n                    storageRef.downloadURL(completion: { ( url, error ) in\r\n                        guard let downloadURL = url else {\r\n                            return\r\n                        }\r\n                        let photoUrl = downloadURL.absoluteString\r\n                        self.sendDataToDatabase(photoUrl: photoUrl)\r\n                        })\r\n                    }\r\n                    )\r\n",
+              "answer_count" : 0,
+              "last_edit_date" : 1538983951,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/9208338\/uttam-pandey",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/7f2a78c7f9710ac6223af5907b3570b1?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 9208338,
+                "display_name" : "Uttam Pandey",
+                "reputation" : 1,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52697027\/firebase-upload-posts-with-image-while-offline-and-sync-when-user-comes-online",
+              "tags" : [
+                "swift",
+                "firebase",
+                "firebase-realtime-database",
+                "firebase-storage",
+                "offline-caching"
+              ],
+              "view_count" : 8,
+              "creation_date" : 1538982286,
+              "is_answered" : false,
+              "title" : "Firebase: upload posts with image while offline and sync when user comes online in iOS Swift app",
+              "last_activity_date" : 1538983951,
+              "question_id" : 52697027,
+              "score" : 0
+            },
+            {
+              "body_markdown" : "so here is the link that guided me how to play video with url in table view cell \r\nhttps:\/\/www.johnxiong.com\/2017\/03\/14\/quick-swift-play-video-in-uitableviewcell\/\r\n\r\nbut the problem is that I can&#39;t play that video and just receiving this in the console \r\n\r\n    performQuery - Error copying matching creds.  Error=-25300, query={ \r\n    class = inet; \r\n    &quot;m_Limit&quot; = &quot;m_LimitAll&quot;; \r\n    &quot;r_Attributes&quot; = 1; \r\n    sync = syna; \r\n    }\r\n\r\nthe video won&#39;t play and I just see the first frame of that video ",
+              "answer_count" : 0,
+              "last_edit_date" : 1538983735,
+              "owner" : {
+                "accept_rate" : 67,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/7567902\/saeed-rahmatolahi",
+                "user_id" : 7567902,
+                "display_name" : "Saeed Rahmatolahi",
+                "reputation" : 389,
+                "profile_image" : "https:\/\/i.stack.imgur.com\/J3Ep5.png?s=128&g=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52697283\/why-video-will-not-play-in-table-view-cell-in-swift-4",
+              "tags" : [
+                "ios",
+                "uitableview",
+                "video-streaming",
+                "swift4",
+                "avplayer"
+              ],
+              "view_count" : 40,
+              "creation_date" : 1538983341,
+              "is_answered" : false,
+              "title" : "why video will not play in table view cell in swift 4?",
+              "last_activity_date" : 1538983735,
+              "question_id" : 52697283,
+              "score" : -1
+            },
+            {
+              "body_markdown" : "I have a `NSMutableAttributedString` and want to convert it back into a simple `String`.\r\n\r\n    var attributedString = NSMutableAttributedString(string: &quot;hello w0rld&quot;)\r\n\r\nHow can I get just the `String` out of a `NSMutableAttributedString` the easiest?",
+              "answer_count" : 3,
+              "last_edit_date" : 1538983353,
+              "owner" : {
+                "accept_rate" : 84,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/3917662\/ixany",
+                "user_id" : 3917662,
+                "display_name" : "ixany",
+                "reputation" : 874,
+                "profile_image" : "https:\/\/i.stack.imgur.com\/WtJP4.png?s=128&g=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/25493122\/converting-a-nsattributedstring-into-an-nsstring-using-swift",
+              "tags" : [
+                "swift",
+                "string",
+                "nsattributedstring",
+                "nsmutableattributedstring"
+              ],
+              "view_count" : 20150,
+              "creation_date" : 1408995354,
+              "is_answered" : true,
+              "title" : "Converting a NSAttributedString into an NSString using Swift",
+              "accepted_answer_id" : 25493179,
+              "last_activity_date" : 1538983353,
+              "question_id" : 25493122,
+              "score" : 19
+            },
+            {
+              "body_markdown" : "I&#39;m struggling with the following situation:\r\n\r\nI have a huge amount of markers from my local Realm Database and I want to add them 1 by 1 on the map so that it will be a lot more userfriendly. \r\n\r\nBut sadly when I try to do that I&#39;m getting a lot of errors of not using the correct thread.\r\n\r\nHere is my code:\r\n\r\n`guard let selectedSubCategories = PrivateRealmDatabaseManager.shared.getSelectedSubCategories() else {\r\n            return\r\n        }`\r\n\r\n        guard let selectedMarkers = PrivateRealmDatabaseManager.shared.getMarkerModels(fromSubcategories: selectedSubCategories) else {\r\n            return\r\n        }\r\n\r\n        let savedPostsIds = PrivateRealmDatabaseManager.shared.getPostModels()?.compactMap ({ $0.id.value })\r\n        \r\n        markers = selectedMarkers\r\n\r\n        markers.forEach { [weak self] markerModel in\r\n            guard let latitude = markerModel.locationModel?.latitude.value,\r\n                let longitude = markerModel.locationModel?.longitude.value,\r\n                let title = markerModel.postTitle,\r\n                let categoryTitle = markerModel.categoryTitle,\r\n                let subcategoryTitle = markerModel.subcategoryTitle,\r\n                let postId = markerModel.postId.value else {\r\n                return\r\n            }\r\n\r\n            let annotation = VivreAAnnotation(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude),\r\n                                              title: title,\r\n                                              subtitle: String(format: &quot;%@ - %@&quot;, categoryTitle, subcategoryTitle))\r\n            annotation.reuseIdentifier = title\r\n\r\n            guard let image = Request.shared.getImage(with: markerModel.iconURLString),\r\n                let resizedImage = image.resizeImage(width: 35) else {\r\n                return\r\n            }\r\n            annotation.image = resizedImage\r\n\r\n            self?.mapView.addAnnotation(annotation)\r\n        }\r\n\r\nThe array with markers is called `markers`.\r\nI&#39;m getting `Realm accessed from incorrect thread.`",
+              "answer_count" : 0,
+              "last_edit_date" : 1538980251,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/10047192\/mihail-stoica",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/5d00d121202d5110e300c0d317b5b6f4?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 10047192,
+                "display_name" : "Mihail Stoica",
+                "reputation" : 1,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52696480\/mapbox-swift-adding-a-lot-of-markers-with-animation",
+              "tags" : [
+                "ios",
+                "objective-c",
+                "swift",
+                "xcode",
+                "mapbox"
+              ],
+              "view_count" : 23,
+              "creation_date" : 1538979831,
+              "is_answered" : false,
+              "title" : "MapBox Swift: Adding a lot of markers with animation",
+              "last_activity_date" : 1538980251,
+              "question_id" : 52696480,
+              "score" : 0
+            },
+            {
+              "body_markdown" : "I created a CocoaTouch framework in Swift. Added few files. But when I build the project, the header and module folder inside the framework are empty.  \r\n  \r\n[![enter image description here][1]][1]  \r\n  \r\n[![enter image description here][2]][2]  \r\n  \r\nThis is the header section in project settings :  \r\n  \r\n[![enter image description here][3]][3]\r\n\r\n\r\n  [1]: https:\/\/i.stack.imgur.com\/KV5WE.png\r\n  [2]: https:\/\/i.stack.imgur.com\/mk2PY.png\r\n  [3]: https:\/\/i.stack.imgur.com\/486V2.png",
+              "answer_count" : 0,
+              "last_edit_date" : 1538979844,
+              "owner" : {
+                "accept_rate" : 68,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/541786\/nitish",
+                "user_id" : 541786,
+                "display_name" : "Nitish",
+                "reputation" : 6445,
+                "profile_image" : "https:\/\/i.stack.imgur.com\/o4FTo.jpg?s=128&g=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52696019\/swift-framework-header-and-module-folder-empty-after-build",
+              "tags" : [
+                "ios",
+                "swift",
+                "ios-frameworks"
+              ],
+              "view_count" : 19,
+              "creation_date" : 1538977422,
+              "is_answered" : false,
+              "title" : "Swift framework - Header and Module folder empty after build",
+              "last_activity_date" : 1538979844,
+              "question_id" : 52696019,
+              "score" : 0
+            },
+            {
+              "body_markdown" : "I am on `ChatViewController` and i navigated to some other page and again i visited to `ChatViewController` so how can i check i m on `ChatViewController` page or not when i visit same page.\r\n\r\n    override func viewWillAppear(_ animated: Bool) {\r\n        \r\n        super.viewWillAppear(true)\r\n        \r\n        UserDefaults.standard.value(forKey: &quot;ChatView&quot;)\r\n        \r\n        print(&quot;view will appear called&quot;)\r\n    }\r\n\r\n\r\n    override func viewWillDisappear(_ animated: Bool) {\r\n        super.viewWillDisappear(true)\r\n       \r\n        UserDefaults.standard.object(forKey: &quot;ChatView&quot;)\r\n        print(&quot;view will disappear called&quot;)\r\n    }\r\n\r\n\r\nDo i need to set any `UserDefaults` value or some other thing.Could some one help me in this.Thanks in advance ",
+              "answer_count" : 2,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/10190279\/ashwani5389",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/ca4b9ac8fdb60297b61f05c33a9a1823?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 10190279,
+                "display_name" : "ashwani5389",
+                "reputation" : 35,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52696272\/how-to-check-current-viewcontroller-in-swift-3",
+              "tags" : [
+                "ios",
+                "swift3",
+                "nsuserdefaults"
+              ],
+              "view_count" : 24,
+              "creation_date" : 1538978809,
+              "is_answered" : false,
+              "title" : "How to check Current ViewController in Swift 3?",
+              "last_activity_date" : 1538979834,
+              "question_id" : 52696272,
+              "score" : -2
+            },
+            {
+              "body_markdown" : "So the idea is to make a general purpose alert creator that I can pass a completion handler to....\r\n\r\n     static func makeTextFieldAlert(msg:String, title:String, onOk: @escaping (_ newText:String) -&gt; Void ) -&gt; UIAlertController {\r\n            let alertController = UIAlertController(title: &quot;Add New Name&quot;, message: &quot;&quot;, preferredStyle: UIAlertController.Style.alert)\r\n            \r\n            let saveAction = UIAlertAction(title: &quot;Save&quot;, style: UIAlertAction.Style.default, handler: { alert -&gt; Void in\r\n                let firstTextField = alertController.textFields![0] as UITextField\r\n                onOk(firstTextField.text!)\r\n            })\r\n\r\nHowever.....xcode forces me to put the _ there and it forces me to put @escaping there....\r\n\r\nAnd....when I try to call this whole mess....It won&#39;t even compile:\r\n\r\n    @IBAction func click(_ sender: Any) {\r\n            print(&quot;here&quot;)\r\n            let newThing:UIAlertController = Util.makeTextFieldAlert(msg: &quot;Yes&quot;, title: &quot;Create Thing&quot;, onOk:{_ in\r\n                ThingUtil.createThing(thing: newText)\r\n            } )\r\n\r\nSo I try $0 in place of `newText` and I get \r\n\r\n&gt; &quot;Anonymous closure arguments cannot be used inside a closure that has\r\n&gt; explicit arguments&quot;\r\n\r\nAnd I try what I have above and I get:\r\n\r\n&gt; Use of unresolved identifier &#39;newText&#39;\r\n\r\nI would prefer to just use the variable newText for the sake of clarity....but at this point, I just want it to compile. What am I doing wrong? Thank you!",
+              "answer_count" : 1,
+              "owner" : {
+                "accept_rate" : 90,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/420259\/hunterp",
+                "user_id" : 420259,
+                "display_name" : "hunterp",
+                "reputation" : 8777,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/e8074aafa2a7efee7555abeba1fc3af0?s=128&d=identicon&r=PG"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52696242\/swift-passing-closure-with-arguments-as-an-argument",
+              "tags" : [
+                "ios",
+                "swift",
+                "closures"
+              ],
+              "view_count" : 22,
+              "creation_date" : 1538978597,
+              "is_answered" : true,
+              "title" : "Swift passing closure with arguments AS an argument",
+              "accepted_answer_id" : 52696325,
+              "last_activity_date" : 1538979406,
+              "question_id" : 52696242,
+              "score" : 0
+            },
+            {
+              "body_markdown" : "I am using swift 4 and I have an app where people can upload images . My question is when I open the image gallery and a user selects an image I would like to highlight that image like how facebook does . I know it has to be in this function since every time someone selects an image this function is called ... I have actually been trying to figure this out but nothing has worked .\r\n\r\n    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])\r\n    {\r\n    \r\n    \r\n     }",
+              "answer_count" : 1,
+              "owner" : {
+                "accept_rate" : 70,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/1591668\/user1591668",
+                "user_id" : 1591668,
+                "display_name" : "user1591668",
+                "reputation" : 775,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/cb658beece55f9525bd4cbb682fadc44?s=128&d=identicon&r=PG"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52695578\/ios-swift-how-can-i-highlight-a-selected-images",
+              "tags" : [
+                "ios",
+                "swift",
+                "swift4",
+                "uiimagepickercontroller"
+              ],
+              "view_count" : 57,
+              "creation_date" : 1538974415,
+              "is_answered" : false,
+              "title" : "IOS Swift how can I highlight a selected images",
+              "last_activity_date" : 1538978378,
+              "question_id" : 52695578,
+              "score" : 0
+            },
+            {
+              "body_markdown" : "I&#39;m facing a problem with formatting a double variable in iOS Swift\r\n\r\nThe variables that I have are like for instance `0.7, -4.56, 34.6` but they should be in the format `00.70, -04.56, 34.60`\r\n\r\nWhat&#39;s the best way to approach that?",
+              "closed_reason" : "duplicate",
+              "answer_count" : 4,
+              "last_edit_date" : 1538063076,
+              "owner" : {
+                "accept_rate" : 85,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/4427884\/satnam-sync",
+                "user_id" : 4427884,
+                "display_name" : "Satnam Sync",
+                "reputation" : 1180,
+                "profile_image" : "https:\/\/lh4.googleusercontent.com\/-yJJLRXaRQuw\/AAAAAAAAAAI\/AAAAAAAAAcw\/hg-e4RrzL_w\/photo.jpg?sz=128"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52535919\/formatting-a-double-variable-swift",
+              "tags" : [
+                "ios",
+                "swift"
+              ],
+              "view_count" : 68,
+              "creation_date" : 1538047633,
+              "is_answered" : true,
+              "title" : "Formatting a double variable - Swift",
+              "accepted_answer_id" : 52536058,
+              "last_activity_date" : 1538977168,
+              "question_id" : 52535919,
+              "score" : -4,
+              "closed_date" : 1538049811
+            }
+          ],
+          "quota_max" : 300,
+          "quota_remaining" : 293
+        },
+        "headers" : {
+          "Access-Control-Allow-Credentials" : "false",
+          "Date" : "Mon, 08 Oct 2018 11:36:03 GMT",
+          "Cache-Control" : "private",
+          "Access-Control-Allow-Origin" : "*",
+          "Content-Encoding" : "gzip",
+          "X-Content-Type-Options" : "nosniff",
+          "Content-Type" : "application\/json; charset=utf-8",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "Content-Length" : "15823"
+        },
+        "status" : 200
+      }
+    }
+  ]
+}
