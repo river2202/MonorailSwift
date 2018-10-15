@@ -9,7 +9,7 @@ public extension MonorailHelper {
         case menu(subtitle: () -> String?, openMenu: (UIViewController) -> Void)
         case info
         
-        var tableViewCellAccessoryType: UITableViewCell.AccessoryType {
+        var tableViewCellAccessoryType: UITableViewCellAccessoryType {
             switch self {
             case let .toggle(isOn, _):
                 return isOn() ? .checkmark : .none

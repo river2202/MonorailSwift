@@ -208,13 +208,6 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		913193822158AE0000958083 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		91C4C9CF2156632A001F6B7C = {
 			isa = PBXGroup;
 			children = (
@@ -243,7 +236,6 @@
 		91C4C9DA2156632A001F6B7C /* MonorailSwiftExample */ = {
 			isa = PBXGroup;
 			children = (
-				913193822158AE0000958083 /* Network */,
 				9131937D2158ADC600958083 /* Helper */,
 				91165E7A2156680D00546246 /* Model */,
 				91C4C9DB2156632A001F6B7C /* AppDelegate.swift */,
@@ -538,13 +530,9 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 			);
 			name = "Copy Stubs Bundle to non-release package";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -959,7 +947,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = MonorailSwiftTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -987,7 +975,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = MonorailSwiftTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -3,7 +3,7 @@ import MonorailSwift
 
 #if DEBUG
 extension UIWindow {
-    open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+    open override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             MonorailHelper.presentActionMenu()
         }
