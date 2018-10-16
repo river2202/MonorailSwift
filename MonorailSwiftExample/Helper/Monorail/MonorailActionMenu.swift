@@ -59,7 +59,7 @@ open class MonorailHelper {
                     print("Stop writer")
                 } else {
                     let fileUrl = Monorail.writeLog()
-                    print("Begin writ to file: \(fileUrl?.absoluteString ?? "nil")")
+                    print("Begin writing to file: \(fileUrl?.absoluteString ?? "nil")")
                 }
             })),
             
