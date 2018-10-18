@@ -1,8 +1,12 @@
 # Monorail
 
 [![Version](https://img.shields.io/cocoapods/v/https://cocoapods.org/pods/MonorailSwift.svg?style=flat)](https://cocoapods.org/pods/MonorailSwift)
-[![License](https://img.shields.io/cocoapods/l/MonorailSwift.svg?style=flat)](https://cocoapods.org/pods/MonorailSwift)
-[![Platform](https://img.shields.io/cocoapods/p/MonorailSwift.svg?style=flat)](https://cocoapods.org/pods/MonorailSwift)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://cocoapods.org/pods/MonorailSwift)
+![Xcode 9.0+](https://img.shields.io/badge/Xcode-9.0%2B-blue.svg)
+![iOS 8.0+](https://img.shields.io/badge/iOS-8.0%2B-blue.svg)
+![Swift 4.0+](https://img.shields.io/badge/Swift-4.0%2B-orange.svg)
+
 
 ## Introduction
 
@@ -27,6 +31,16 @@ Inspired by pact.io but the Monorail can be use not only for unit test but also 
     3. Easely switch between local stub and real backend
 
 ## How to use
+
+### CocoaPods
+
+pod 'MonorailSwift', '~> 1.0'
+
+### Carthage
+
+github "river2202/MonorailSwift" ~> 1.0.0
+
+### Code example
 
 ```Monorail.enableLogger()```
 
