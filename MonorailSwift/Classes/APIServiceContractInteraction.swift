@@ -14,6 +14,8 @@ open class APIServiceContractInteraction {
     private let responseStatusKey = "status"
     private let idKey = "id"
     static let idRefKey = "idReference"
+    private let timeStampKey = "timeStamp"
+    private let timeStampFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
     
     private(set) var request: [String: Any] = [:]
     private(set) var response: [String: Any] = [:]
@@ -27,6 +29,8 @@ open class APIServiceContractInteraction {
     
     private(set) var consumerVariables: [String: Any] = [:]
     private(set) var providerVariables: [String: Any] = [:]
+    
+    private(set) var timeStamp: Date?
     
     // temp variables
     var consumed = false
@@ -57,6 +61,7 @@ open class APIServiceContractInteraction {
         self.id = template.id
         self.consumerVariables = template.consumerVariables
         self.providerVariables = template.providerVariables
+        self.timeStamp = template.timeStamp
     }
     
     init(json: [String: Any], baseUrl: String? = nil, fileName: String? = nil, externalFileRootPath: String? = nil) {
@@ -87,19 +92,24 @@ open class APIServiceContractInteraction {
         if let idString = json[idKey] as? String {
             self.id = idString
         }
+        
+        if let timeStamp = (json[timeStampKey] as? String)?.date(timeStampFormat) {
+            self.timeStamp = timeStamp
+        }
     }
     
-    init(request: URLRequest?, uploadData: Data? = nil, response: URLResponse?, data: Data? = nil, baseUrl: String? = nil) {
+    init(request: URLRequest?, uploadData: Data? = nil, response: URLResponse?, data: Data? = nil, baseUrl: String? = nil, timeStamp: Date? = nil) {
         self.baseUrl = baseUrl
-        guard let request = request, let url = request.url?.absoluteString, let response = response as? HTTPURLResponse else {
-            return
+        self.timeStamp = timeStamp
+        if let request = request, let url = request.url?.absoluteString {
+            setRequest(method: request.httpMethod ?? "GET", path: url, headers: request.allHTTPHeaderFields, body: request.httpBody, uploadData: uploadData)
         }
         
-        setRequest(method: request.httpMethod ?? "GET", path: url, headers: request.allHTTPHeaderFields, body: request.httpBody, uploadData: uploadData)
-        
-        setRespondWith(status: response.statusCode, headers: response.allHeaderFields as? [String: Any], body: data)
+        if let response = response as? HTTPURLResponse {
+            setRespondWith(status: response.statusCode, headers: response.allHeaderFields as? [String: Any], body: data)
+        }
     }
-
+    
     var requestHeader: [String: Any]? {
         return request[headersKey] as? [String: Any]
     }
@@ -114,7 +124,7 @@ open class APIServiceContractInteraction {
     var responseHeader: [String: Any]? {
         return response[headersKey] as? [String: Any]
     }
-
+    
     private func loadRequestJson(_ json: [String: Any]?) {
         if let request = json {
             self.request.deepMerge(request)
@@ -136,7 +146,7 @@ open class APIServiceContractInteraction {
             let externalJson = loadJsonFromFile(externalFilePath, externalFileRootPath: externalFileRootPath) {
             response.deepMerge(externalJson)
         }
-            
+        
         response.deepMerge(json)
     }
     
@@ -240,6 +250,10 @@ open class APIServiceContractInteraction {
             payload[apiServiceProviderKey] = providerVariables
         }
         
+        if let timeStamp = timeStamp {
+            payload[timeStampKey] = timeStamp.asString(format: timeStampFormat)
+        }
+        
         return payload
     }
 }
@@ -293,5 +307,27 @@ extension String {
             .replacingOccurrences(of: "_", with: "/", options: NSString.CompareOptions(rawValue: 0), range: nil) + ending
         
         return Data(base64Encoded: base64, options: NSData.Base64DecodingOptions(rawValue: 0))
+    }
+
+    func date(_ format: String, altFormat: String? = "") -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        dateFormatter.locale = Locale.current
+        dateFormatter.timeZone = TimeZone.current
+        if let date = dateFormatter.date(from: self) {
+            return date
+        } else {
+            dateFormatter.dateFormat = altFormat
+            return dateFormatter.date(from: self)
+        }
+    }
+}
+
+
+extension Date {
+    func asString(format: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
     }
 }

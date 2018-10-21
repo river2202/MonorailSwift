@@ -37,7 +37,7 @@ open class APIServiceWriter: APIServiceReader {
             return
         }
         
-        let interaction = APIServiceContractInteraction(request: request, uploadData: uploadData, response: response, data: data, baseUrl: consumerVariables[apiServiceBaseUrlKey] as? String)
+        let interaction = APIServiceContractInteraction(request: request, uploadData: uploadData, response: response, data: data, baseUrl: consumerVariables[apiServiceBaseUrlKey] as? String, timeStamp: Date())
         
         delegate?.savingCosumerVariables(interaction, writer: self)
         interactions.append(interaction)
