@@ -35,6 +35,8 @@
 		91CF89182172F342003A351C /* ApiServiceFileListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4CA0D2156641A001F6B7C /* ApiServiceFileListTableViewController.swift */; };
 		91CF89192172F347003A351C /* MonorailMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CF891221715009003A351C /* MonorailMenuTableViewController.swift */; };
 		91CF891A2172F347003A351C /* MonorailActionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CF89152171E47C003A351C /* MonorailActionMenu.swift */; };
+		91E57882217DE47900FA1411 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E57881217DE47900FA1411 /* QuestionViewController.swift */; };
+		91E57884217DE4D500FA1411 /* QuestionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E57883217DE4D500FA1411 /* QuestionView.storyboard */; };
 		91E61C1A215DC17A004F0B17 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E61C18215DC179004F0B17 /* Quick.framework */; };
 		91E61C1B215DC17A004F0B17 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E61C19215DC17A004F0B17 /* Nimble.framework */; };
 		91E61C1C215DC184004F0B17 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 91E61C19215DC17A004F0B17 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -136,6 +138,8 @@
 		91CF89152171E47C003A351C /* MonorailActionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonorailActionMenu.swift; sourceTree = "<group>"; };
 		91DE3D6E21663006002639E1 /* APIServiceInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceInterceptor.swift; sourceTree = "<group>"; };
 		91DE3D702166306E002639E1 /* Monorail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monorail.swift; sourceTree = "<group>"; };
+		91E57881217DE47900FA1411 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		91E57883217DE4D500FA1411 /* QuestionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuestionView.storyboard; sourceTree = "<group>"; };
 		91E61C06215D0D3C004F0B17 /* StubManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubManager.swift; sourceTree = "<group>"; };
 		91E61C09215D8B1C004F0B17 /* Stubs.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Stubs.bundle; sourceTree = "<group>"; };
 		91E61C18215DC179004F0B17 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
@@ -238,6 +242,7 @@
 			children = (
 				9131937D2158ADC600958083 /* Helper */,
 				91165E7A2156680D00546246 /* Model */,
+				91E57880217DE43800FA1411 /* Views */,
 				91C4C9DB2156632A001F6B7C /* AppDelegate.swift */,
 				91C4C9DD2156632A001F6B7C /* ViewController.swift */,
 				91C4C9E22156632B001F6B7C /* Assets.xcassets */,
@@ -313,6 +318,15 @@
 				91CF89152171E47C003A351C /* MonorailActionMenu.swift */,
 			);
 			path = Monorail;
+			sourceTree = "<group>";
+		};
+		91E57880217DE43800FA1411 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91E57881217DE47900FA1411 /* QuestionViewController.swift */,
+				91E57883217DE4D500FA1411 /* QuestionView.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		91E61C17215DC167004F0B17 /* Frameworks */ = {
@@ -489,6 +503,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91E57884217DE4D500FA1411 /* QuestionView.storyboard in Resources */,
 				91C4C9E62156632B001F6B7C /* LaunchScreen.storyboard in Resources */,
 				91C4C9E32156632B001F6B7C /* Assets.xcassets in Resources */,
 			);
@@ -556,6 +571,7 @@
 				91165E7E2156680D00546246 /* Answer.swift in Sources */,
 				91C4C9DC2156632A001F6B7C /* AppDelegate.swift in Sources */,
 				91CF891A2172F347003A351C /* MonorailActionMenu.swift in Sources */,
+				91E57882217DE47900FA1411 /* QuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

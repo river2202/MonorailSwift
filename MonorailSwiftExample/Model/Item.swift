@@ -15,7 +15,8 @@ struct Item: Decodable {
     let creationDate, questionID: Int?
     let link, title: String?
     let acceptedAnswerID, lastEditDate: Int?
-    let bodyMarkdown: String?
+    let body: String?
+    let favorited: Bool?
     
     enum CodingKeys: String, CodingKey {
         case tags, owner
@@ -29,7 +30,8 @@ struct Item: Decodable {
         case link, title
         case acceptedAnswerID = "accepted_answer_id"
         case lastEditDate = "last_edit_date"
-        case bodyMarkdown = "body_markdown"
+        case body
+        case favorited
     }
 }
 

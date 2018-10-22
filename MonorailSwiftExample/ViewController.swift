@@ -3,18 +3,18 @@ import MonorailSwift
 
 class ViewController: UITableViewController {
 
-    let questionListApi = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=swift&site=stackoverflow&filter=!9Z(-wwK4f"
-    var questionTask: URLSessionDataTask!
-    var questionResponse: QuestionResponse? = nil
+    private let questionListApi = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=swift&site=stackoverflow"
+    private var questionTask: URLSessionDataTask!
+    private var questionResponse: QuestionResponse? = nil
     
-    var pageIndex: UInt = 0
-    let pageSize: UInt = 20
+    private var pageIndex: UInt = 0
+    private let pageSize: UInt = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "StackOverflow"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(didTapRefresh))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(didTapRefresh))
         
         loadQuestions(pageIndex: pageIndex, pageSize: pageSize)
     }
@@ -40,12 +40,17 @@ class ViewController: UITableViewController {
         return questionResponse?.items.count ?? 0
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
         cell.textLabel?.text = questionResponse?.items[indexPath.row].title
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let questionVc = QuestionViewController.create(questionResponse?.items[indexPath.row].questionID)
+        
+        navigationController?.pushViewController(questionVc, animated: true)
     }
     
     @objc func didTapRefresh(sender: AnyObject) {
