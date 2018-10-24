@@ -17,31 +17,34 @@ class QuestionViewController: UIViewController {
     private var questionId: Int?
     private var questionTask: URLSessionDataTask!
 
-    
-    private var questionDetailApi: URL? {
-        if let questionId = questionId {
-            return URL(string:"https://api.stackexchange.com/2.2/questions/\(questionId)?order=desc&sort=activity&site=stackoverflow&filter=!9Z(-wwYGT")
-        }
-        return nil
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let resource = Resource<QuestionResponse>(url: questionDetailApi!)
+        let resource = Resource<QuestionResponse>(url: AppConfig.shared.soApi.questionDetailApi(questionId: questionId)!)
         questionTask = URLSession.shared.load(resource, completion: { result in
             if case .success(let questionResponse) = result {
-                self.updateQuestion(questionResponse.items.first)
+                self.updateQuestion(questionResponse.items?.first)
             }
         })
     }
     
-    private func updateQuestion(_ question: Item?) {
+    private func updateQuestion(_ question: Question?) {
         qTitle.text = question?.title
         qFavorite.backgroundColor = (question?.favorited ?? false) ? UIColor.yellow : UIColor.gray
         
         qBody.attributedText = question?.body?.htmlToAttributedString
     }
+    
+    @IBAction func onFavoriteTapped(_ sender: Any) {
+        
+        let resource = Resource<QuestionResponse>(url: AppConfig.shared.soApi.questionDetailApi(questionId: questionId)!)
+        questionTask = URLSession.shared.load(resource, completion: { result in
+            if case .success(let questionResponse) = result {
+                self.updateQuestion(questionResponse.items?.first)
+            }
+        })
+    }
+    
 }
 
 extension String {

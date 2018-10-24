@@ -2,10 +2,15 @@
 
 import Foundation
 
+enum ContentType: String {
+    case formUrlEncoded = "application/x-www-form-urlencoded"
+}
+
 struct Resource<A: Decodable> {
 	var method: String = "GET"
 	var body: Data? = nil
 	let url: URL
+    let contentType: ContentType?
 	
 	let parseResult: (Data) -> Result<A>
 }
@@ -26,6 +31,8 @@ extension Resource {
 		self.parseResult = { data in
 			return Result(data.decode(A.self), or: ParseError())
 		}
+        
+        self.contentType = nil
 	}
     
     init(url: URL) {
@@ -33,6 +40,18 @@ extension Resource {
         self.parseResult = { data in
             return Result(data.decode(A.self), or: ParseError())
         }
+        self.contentType = nil
+    }
+    
+    init(url: URL, formParameters: String) {
+        self.url = url
+        self.method = "POST"
+        self.parseResult = { data in
+            return Result(data.decode(A.self), or: ParseError())
+        }
+        self.body = formParameters.data(using: .utf8)
+        self.contentType = .formUrlEncoded
+        print("formParameters=\(formParameters)")
     }
 }
 
@@ -43,6 +62,10 @@ extension Resource {
 		if method == "POST" {
 			result.httpBody = body
 		}
+        
+        if let contentType = contentType {
+            result.setValue(contentType.rawValue, forHTTPHeaderField: "Content-Type")
+        }
 		return result
 	}
 }

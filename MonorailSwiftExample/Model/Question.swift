@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Item: Decodable {
+struct Question: Decodable {
     let tags: [String]?
     let owner: Owner?
     let isAnswered: Bool?
@@ -59,10 +59,4 @@ enum UserType: String, Decodable {
     case registered = "registered"
 }
 
-struct QuestionResponse: Decodable {
-    let items: [Item]
-    
-    enum CodingKeys: String, CodingKey {
-        case items
-    }
-}
+typealias QuestionResponse = StackOverflowResponse<Question>

@@ -1,5 +1,4 @@
 import UIKit
-import MonorailSwift
 
 class ViewController: UITableViewController {
 
@@ -10,11 +9,16 @@ class ViewController: UITableViewController {
     private var pageIndex: UInt = 0
     private let pageSize: UInt = 20
     
+    private var token: String?
+    private var userName: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "StackOverflow"
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(didTapRefresh))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Login", style: .plain, target: self, action: #selector(didTapLogin))
         
         loadQuestions(pageIndex: pageIndex, pageSize: pageSize)
     }
@@ -37,18 +41,18 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questionResponse?.items.count ?? 0
+        return questionResponse?.items?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
-        cell.textLabel?.text = questionResponse?.items[indexPath.row].title
+        cell.textLabel?.text = questionResponse?.items?[indexPath.row].title
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let questionVc = QuestionViewController.create(questionResponse?.items[indexPath.row].questionID)
+        let questionVc = QuestionViewController.create(questionResponse?.items?[indexPath.row].questionID)
         
         navigationController?.pushViewController(questionVc, animated: true)
     }
@@ -57,5 +61,31 @@ class ViewController: UITableViewController {
         pageIndex = 0
         loadQuestions(pageIndex: pageIndex, pageSize: pageSize)
     }
+    
+    @objc func didTapLogin(sender: AnyObject) {
+        AppConfig.shared.soApi.login { err, accessToken in
+            guard err == nil, let accessToken = accessToken else {
+                return self.showAlert("\(err!)")
+            }
+            
+            AppConfig.shared.soApi.loadUsername(accessToken: accessToken) { err, userName in
+            
+                guard err == nil, let userName = userName else {
+                    return self.showAlert("\(err!)")
+                }
+                
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: userName, style: .plain, target: self, action: nil)
+            }
+        }
+    }
+    
+    fileprivate func showAlert(_ message: String) {
+        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            print("Handle Ok logic here")
+        }))
+        present(alert, animated: true, completion: nil)
+    }
 }
+
 

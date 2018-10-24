@@ -1,0 +1,7 @@
+{
+    "OAuthClientId": "Stack App Client ID",
+    "OAuthRedirectUri": "Stack App OAuth redirectUri",
+    "OAuthState": "Stack App OAuth state",
+    "OAuthClientSecret": "Stack App Client Secret",
+    "OAuthClientKey": "Stack App Client Key"
+}
