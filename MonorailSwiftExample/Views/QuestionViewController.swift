@@ -13,9 +13,11 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var qTitle: UILabel!
     @IBOutlet weak var qFavorite: UIButton!
     @IBOutlet weak var qBody: UILabel!
+    @IBOutlet weak var qFavoriteBtnContainer: UIView!
     
     private var questionId: Int?
     private var questionTask: URLSessionDataTask!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,8 @@ class QuestionViewController: UIViewController {
     }
     
     private func updateQuestion(_ question: Question?) {
+        
+        qFavoriteBtnContainer.isHidden = !AppConfig.shared.soApi.isUserLogined
         qTitle.text = question?.title
         qFavorite.backgroundColor = (question?.favorited ?? false) ? UIColor.yellow : UIColor.gray
         
@@ -37,12 +41,9 @@ class QuestionViewController: UIViewController {
     
     @IBAction func onFavoriteTapped(_ sender: Any) {
         
-        let resource = Resource<QuestionResponse>(url: AppConfig.shared.soApi.questionDetailApi(questionId: questionId)!)
-        questionTask = URLSession.shared.load(resource, completion: { result in
-            if case .success(let questionResponse) = result {
-                self.updateQuestion(questionResponse.items?.first)
-            }
-        })
+        AppConfig.shared.soApi.favorite(questionId) { err, question in
+            self.updateQuestion(question)
+        }
     }
     
 }

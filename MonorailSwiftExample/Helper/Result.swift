@@ -8,4 +8,11 @@ enum Result<A> {
 		if let x = value { self = .success(x) }
 		else { self = .error(or()) }
 	}
+    
+    var error: Error? {
+        if case .error(let e) = self {
+            return e
+        }
+        return nil
+    }
 }

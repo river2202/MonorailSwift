@@ -7,6 +7,7 @@ enum StackOverflowApiError: String, Error {
     case missingClientAppInfo
     case oauthError
     case accessTokenError
+    case missingParameter
     case apiReponseError
 }
 
@@ -24,6 +25,8 @@ class StackOverflowApi {
     let redirectUri: String?
     let state: String?
     
+    let baseUrl = "https://api.stackexchange.com/2.2/"
+    
     var accessToken: AccessToken?
     var authSession: SFAuthenticationSession?
 
@@ -40,11 +43,22 @@ class StackOverflowApi {
             if let accessToken = accessToken?.accessToken, let key = key {
                 let urlString = "https://api.stackexchange.com/2.2/questions/\(questionId)?order=desc&sort=activity&site=stackoverflow&key=\(key)&access_token=\(accessToken)&filter=!-*jbN)fQB4uP"
                 
-                print("urlString=\(urlString)")
                 return URL(string: urlString)
             } else {
                 return URL(string:"https://api.stackexchange.com/2.2/questions/\(questionId)?order=desc&sort=activity&site=stackoverflow&filter=!9Z(-wwYGT&")
             }
+        }
+        return nil
+    }
+    
+    
+    func favoriteQuestionApi(questionId: Int?) -> (URL, String)? {
+        if let questionId = questionId, let accessToken = accessToken?.accessToken, let key = key {
+            
+            let urlString = baseUrl + "questions/\(questionId)/favorite"
+            let queryString = "key=\(key)&access_token=\(accessToken)&site=stackoverflow&filter=!-*jbN)fQB4uP"
+            
+            return (URL(string: urlString)!, queryString)
         }
         return nil
     }
@@ -106,6 +120,22 @@ extension StackOverflowApi {
                 return completion(nil, userName)
             } else {
                 completion(StackOverflowApiError.apiReponseError, nil)
+            }
+        })
+    }
+    
+    func favorite(_ questionId: Int?, completion: @escaping (Error?, Question?) -> Void) {
+        
+        guard let questionId = questionId, let (url, queryString) = favoriteQuestionApi(questionId: questionId) else {
+            return completion(StackOverflowApiError.missingParameter, nil)
+        }
+     
+        let resource = Resource<QuestionResponse>(url:url, formParameters: queryString)
+        URLSession.shared.load(resource, completion: { result in
+            if case .success(let questionResponse) = result {
+                completion(nil, questionResponse.items?.first)
+            } else {
+                completion(result.error, nil)
             }
         })
     }
