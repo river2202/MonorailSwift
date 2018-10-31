@@ -15,6 +15,7 @@
 		91263CA9218481A7007935A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CA8218481A7007935A8 /* User.swift */; };
 		91263CB921856705007935A8 /* StackOverflowApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CB821856705007935A8 /* StackOverflowApi.swift */; };
 		91263CBB2185D66D007935A8 /* AppConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CBA2185D66D007935A8 /* AppConfigTests.swift */; };
+		91263CBD2189C9C5007935A8 /* MyFavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CBC2189C9C5007935A8 /* MyFavoritesTableViewController.swift */; };
 		913193802158ADD900958083 /* TinyNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131937E2158ADD900958083 /* TinyNetworking.swift */; };
 		913193812158ADD900958083 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131937F2158ADD900958083 /* Result.swift */; };
 		91C4C9DC2156632A001F6B7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9DB2156632A001F6B7C /* AppDelegate.swift */; };
@@ -119,6 +120,7 @@
 		91263CA8218481A7007935A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		91263CB821856705007935A8 /* StackOverflowApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowApi.swift; sourceTree = "<group>"; };
 		91263CBA2185D66D007935A8 /* AppConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigTests.swift; sourceTree = "<group>"; };
+		91263CBC2189C9C5007935A8 /* MyFavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesTableViewController.swift; sourceTree = "<group>"; };
 		9131937E2158ADD900958083 /* TinyNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyNetworking.swift; sourceTree = "<group>"; };
 		9131937F2158ADD900958083 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		91C4C9D82156632A001F6B7C /* MonorailSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonorailSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -343,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				91E57881217DE47900FA1411 /* QuestionViewController.swift */,
+				91263CBC2189C9C5007935A8 /* MyFavoritesTableViewController.swift */,
 				91E57883217DE4D500FA1411 /* QuestionView.storyboard */,
 			);
 			path = Views;
@@ -601,6 +604,7 @@
 				91E578892183101C00FA1411 /* AppConfig.swift in Sources */,
 				91E5788B218332FD00FA1411 /* AccessToken.swift in Sources */,
 				91E5788621830E2000FA1411 /* UserManager.swift in Sources */,
+				91263CBD2189C9C5007935A8 /* MyFavoritesTableViewController.swift in Sources */,
 				91E5788D2183CCB900FA1411 /* StackOverflowResponse.swift in Sources */,
 				91CF89192172F347003A351C /* MonorailMenuTableViewController.swift in Sources */,
 				91165E7E2156680D00546246 /* Answer.swift in Sources */,

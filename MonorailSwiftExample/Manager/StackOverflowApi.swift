@@ -51,11 +51,10 @@ class StackOverflowApi {
         return nil
     }
     
-    
-    func favoriteQuestionApi(questionId: Int?) -> (URL, String)? {
+    func favoriteApi(_ questionId: Int?, _ undo: Bool = false) -> (URL, String)? {
         if let questionId = questionId, let accessToken = accessToken?.accessToken, let key = key {
             
-            let urlString = baseUrl + "questions/\(questionId)/favorite"
+            let urlString = baseUrl + "questions/\(questionId)/favorite" + (undo ? "/undo" : "")
             let queryString = "key=\(key)&access_token=\(accessToken)&site=stackoverflow&filter=!-*jbN)fQB4uP"
             
             return (URL(string: urlString)!, queryString)
@@ -124,18 +123,18 @@ extension StackOverflowApi {
         })
     }
     
-    func favorite(_ questionId: Int?, completion: @escaping (Error?, Question?) -> Void) {
+    func favorite(_ questionId: Int?, undo: Bool = false, completion: @escaping (Result<Question>) -> Void) {
         
-        guard let questionId = questionId, let (url, queryString) = favoriteQuestionApi(questionId: questionId) else {
-            return completion(StackOverflowApiError.missingParameter, nil)
+        guard let questionId = questionId, let (url, queryString) = favoriteApi(questionId, undo) else {
+            return completion(Result.error(StackOverflowApiError.missingParameter))
         }
      
         let resource = Resource<QuestionResponse>(url:url, formParameters: queryString)
         URLSession.shared.load(resource, completion: { result in
-            if case .success(let questionResponse) = result {
-                completion(nil, questionResponse.items?.first)
+            if case .success(let questionResponse) = result, let question = questionResponse.items?.first {
+                completion(Result.success(question))
             } else {
-                completion(result.error, nil)
+                completion(Result.error(result.error ?? StackOverflowApiError.apiReponseError))
             }
         })
     }

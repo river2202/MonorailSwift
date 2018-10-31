@@ -1,5 +1,9 @@
 import UIKit
 
+
+enum CommonError: Error {
+    case unknown
+}
 class QuestionViewController: UIViewController {
     
     static func create(_ questionId: Int?) -> QuestionViewController {
@@ -17,6 +21,7 @@ class QuestionViewController: UIViewController {
     
     private var questionId: Int?
     private var questionTask: URLSessionDataTask!
+    private var question: Question?
     
 
     override func viewDidLoad() {
@@ -37,12 +42,18 @@ class QuestionViewController: UIViewController {
         qFavorite.backgroundColor = (question?.favorited ?? false) ? UIColor.yellow : UIColor.gray
         
         qBody.attributedText = question?.body?.htmlToAttributedString
+        self.question = question
     }
     
     @IBAction func onFavoriteTapped(_ sender: Any) {
         
-        AppConfig.shared.soApi.favorite(questionId) { err, question in
-            self.updateQuestion(question)
+        AppConfig.shared.soApi.favorite(questionId, undo: self.question?.favorited ?? false) { result in
+            
+            if case .success(let question) = result {
+                self.updateQuestion(question)
+            } else {
+                self.showAlert("Error: \(result.error ?? CommonError.unknown)")
+            }
         }
     }
     

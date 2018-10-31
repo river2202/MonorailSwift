@@ -1,7 +1,9 @@
+
 import UIKit
 
-class ViewController: UITableViewController {
-
+class MyFavoritesTableViewController: UITableViewController {
+    
+    
     private let questionListApi = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=swift&site=stackoverflow"
     private var questionTask: URLSessionDataTask!
     private var questionResponse: QuestionResponse? = nil
@@ -14,11 +16,7 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "StackOverflow"
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(didTapRefresh))
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Login", style: .plain, target: self, action: #selector(didTapLogin))
+        title = "My Favorites"
         
         loadQuestions(pageIndex: pageIndex, pageSize: pageSize)
     }
@@ -56,44 +54,4 @@ class ViewController: UITableViewController {
         
         navigationController?.pushViewController(questionVc, animated: true)
     }
-    
-    @objc func didTapRefresh(sender: AnyObject) {
-        pageIndex = 0
-        loadQuestions(pageIndex: pageIndex, pageSize: pageSize)
-    }
-    
-    @objc func didTapLogin(sender: AnyObject) {
-        AppConfig.shared.soApi.login { err, accessToken in
-            guard err == nil, let accessToken = accessToken else {
-                return self.showAlert("\(err!)")
-            }
-            
-            AppConfig.shared.soApi.loadUsername(accessToken: accessToken) { err, userName in
-            
-                guard err == nil, let userName = userName else {
-                    return self.showAlert("\(err!)")
-                }
-                
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: userName, style: .plain, target: self, action: #selector(self.didTapUserName))
-            }
-        }
-    }
-    
-    @objc func didTapUserName(sender: AnyObject) {
-        let questionVc = MyFavoritesTableViewController()
-        navigationController?.pushViewController(questionVc, animated: true)
-    }
-    
 }
-
-extension UIViewController {
-    func showAlert(_ message: String) {
-        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-            print("Handle Ok logic here")
-        }))
-        present(alert, animated: true, completion: nil)
-    }
-}
-
-
