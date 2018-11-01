@@ -12,6 +12,7 @@
 		911094FA21749E52008CAA9C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E61C18215DC179004F0B17 /* Quick.framework */; };
 		91165E7D2156680D00546246 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91165E7B2156680D00546246 /* Question.swift */; };
 		91165E7E2156680D00546246 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91165E7C2156680D00546246 /* Answer.swift */; };
+		91233C3C218B1E7700CBBFD9 /* ExampleConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91233C3B218B1E7700CBBFD9 /* ExampleConsumer.swift */; };
 		91263CA9218481A7007935A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CA8218481A7007935A8 /* User.swift */; };
 		91263CB921856705007935A8 /* StackOverflowApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CB821856705007935A8 /* StackOverflowApi.swift */; };
 		91263CBB2185D66D007935A8 /* AppConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CBA2185D66D007935A8 /* AppConfigTests.swift */; };
@@ -117,6 +118,7 @@
 /* Begin PBXFileReference section */
 		91165E7B2156680D00546246 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		91165E7C2156680D00546246 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		91233C3B218B1E7700CBBFD9 /* ExampleConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleConsumer.swift; sourceTree = "<group>"; };
 		91263CA8218481A7007935A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		91263CB821856705007935A8 /* StackOverflowApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowApi.swift; sourceTree = "<group>"; };
 		91263CBA2185D66D007935A8 /* AppConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigTests.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				91E5788521830E2000FA1411 /* UserManager.swift */,
 				91E578882183101C00FA1411 /* AppConfig.swift */,
 				91263CB821856705007935A8 /* StackOverflowApi.swift */,
+				91233C3B218B1E7700CBBFD9 /* ExampleConsumer.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				91165E7D2156680D00546246 /* Question.swift in Sources */,
 				913193802158ADD900958083 /* TinyNetworking.swift in Sources */,
 				91C4C9DE2156632A001F6B7C /* ViewController.swift in Sources */,
+				91233C3C218B1E7700CBBFD9 /* ExampleConsumer.swift in Sources */,
 				913193812158ADD900958083 /* Result.swift in Sources */,
 				91263CA9218481A7007935A8 /* User.swift in Sources */,
 				91263CB921856705007935A8 /* StackOverflowApi.swift in Sources */,

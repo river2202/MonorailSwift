@@ -104,6 +104,7 @@ public extension MonorailHelper {
             case stubsMonorail
             case documentMonorail
             case uitest
+            case demo
             
             var fileList: [URL] {
                 if let path = path, let urls = try? FileManager.default.contentsOfDirectory(at: path, includingPropertiesForKeys: nil) {
@@ -121,6 +122,8 @@ public extension MonorailHelper {
                     return "Documents - local"
                 case .uitest:
                     return "UITest"
+                case .demo:
+                    return "Demo"
                 }
             }
             
@@ -132,11 +135,13 @@ public extension MonorailHelper {
                     return APIServiceWriter.monorailDocumentDirectory
                 case .uitest:
                     return nil
+                case .demo:
+                    return StubManager.folder("Demo")
                 }
             }
             
             static var allType: [FileType] {
-                return [.stubsMonorail, .documentMonorail, .uitest]
+                return [.stubsMonorail, .documentMonorail, .uitest, .demo]
             }
             
             static func getTypeFrom(url: URL) -> FileType? {

@@ -13,4 +13,12 @@ class StubManager {
             return nil
         }
     }
+    
+    static func folder(_ name: String) -> URL? {
+        if let bundlePath = Bundle.main.path(forResource: "Stubs", ofType: "bundle") {
+            return URL(fileURLWithPath: bundlePath).appendingPathComponent(name)
+        } else {
+            return nil
+        }
+    }
 }

@@ -1,5 +1,6 @@
 import Foundation
 import SafariServices
+import MonorailSwift
 
 typealias SOApi = StackOverflowApi
 
@@ -83,6 +84,11 @@ extension StackOverflowApi {
     }
     
     func login(completion: @escaping (Error?, AccessToken?) -> Void) {
+        
+        if let accessToken = ExampleConsumer.shared.getToken() {
+            return completion(nil, accessToken)
+        }
+        
         guard let clientId = clientId, let secret = secret, let redirectUri = redirectUri else {
             return completion(StackOverflowApiError.missingClientAppInfo, nil)
         }
@@ -103,6 +109,7 @@ extension StackOverflowApi {
                 URLSession.shared.load(resource, completion: { result in
                     if case .success(let accessToken) = result {
                         self.accessToken = accessToken
+                        ExampleConsumer.shared.saveToken(token: accessToken.accessToken)
                         return completion(nil, accessToken)
                     } else {
                         completion(StackOverflowApiError.accessTokenError, nil)

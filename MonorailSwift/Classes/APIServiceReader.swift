@@ -103,11 +103,11 @@ open class APIServiceReader {
         }
     }
     
-    func getProviderVariable(key: String) -> Any? {
+    open func getProviderVariable(key: String) -> Any? {
         return providerVariables[key]
     }
     
-    func getConsumerVariables(key: String) -> Any? {
+    open func getConsumerVariables(key: String) -> Any? {
         return consumerVariables[key]
     }
     

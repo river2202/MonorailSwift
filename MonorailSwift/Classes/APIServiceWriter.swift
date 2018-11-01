@@ -44,19 +44,19 @@ open class APIServiceWriter: APIServiceReader {
         save()
     }
     
-    func saveBaseUrl(_ baseUrl: String) {
+    open func saveBaseUrl(_ baseUrl: String) {
         saveConsumerVariables(key: apiServiceBaseUrlKey, value: baseUrl)
     }
     
-    func saveProviderVariable(key: String, value: Any) {
+    open func saveProviderVariable(key: String, value: Any) {
         providerVariables[key] = value
     }
     
-    func saveConsumerVariables(key: String, value: Any) {
+    open func saveConsumerVariables(key: String, value: Any) {
         consumerVariables[key] = value
     }
     
-    func saveNotification(userInfo: [AnyHashable: Any]) {
+    open func saveNotification(userInfo: [AnyHashable: Any]) {
         guard let notification = userInfo as? [String: AnyObject] else {
             return
         }
