@@ -61,6 +61,15 @@ class StackOverflowApi {
         }
         return nil
     }
+    
+    var myFavoritesApi: URL? {
+        if let accessToken = accessToken?.accessToken, let key = key {
+            let urlString = "https://api.stackexchange.com/2.2/me/favorites?order=desc&sort=activity&site=stackoverflow&key=\(key)&access_token=\(accessToken)&filter=default"
+            return URL(string: urlString)
+        } else {
+            return URL(string:"https://api.stackexchange.com/2.2/me/favorites?order=desc&sort=activity&site=stackoverflow&filter=default")
+        }
+    }
 }
 
 extension StackOverflowApi {
@@ -133,6 +142,22 @@ extension StackOverflowApi {
         URLSession.shared.load(resource, completion: { result in
             if case .success(let questionResponse) = result, let question = questionResponse.items?.first {
                 completion(Result.success(question))
+            } else {
+                completion(Result.error(result.error ?? StackOverflowApiError.apiReponseError))
+            }
+        })
+    }
+    
+    func myFavorites(completion: @escaping (Result<[Question]>) -> Void) {
+        
+        guard let url = myFavoritesApi else {
+            return completion(Result.error(StackOverflowApiError.missingParameter))
+        }
+        
+        let resource = Resource<QuestionResponse>(url:url)
+        URLSession.shared.load(resource, completion: { result in
+            if case .success(let questionResponse) = result, let favorites = questionResponse.items {
+                completion(Result.success(favorites))
             } else {
                 completion(Result.error(result.error ?? StackOverflowApiError.apiReponseError))
             }

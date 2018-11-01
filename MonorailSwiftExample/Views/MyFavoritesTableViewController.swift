@@ -3,10 +3,7 @@ import UIKit
 
 class MyFavoritesTableViewController: UITableViewController {
     
-    
-    private let questionListApi = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=swift&site=stackoverflow"
-    private var questionTask: URLSessionDataTask!
-    private var questionResponse: QuestionResponse? = nil
+    private var questions: [Question] = [Question]()
     
     private var pageIndex: UInt = 0
     private let pageSize: UInt = 20
@@ -18,19 +15,24 @@ class MyFavoritesTableViewController: UITableViewController {
         super.viewDidLoad()
         title = "My Favorites"
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(didTapRefresh))
+        
         loadQuestions(pageIndex: pageIndex, pageSize: pageSize)
     }
     
     private func loadQuestions(pageIndex: UInt, pageSize: UInt) {
-        questionTask?.cancel()
         
-        let resource = Resource<QuestionResponse>(url: URL(string: questionListApi)!)
-        questionTask = URLSession.shared.load(resource, completion: { result in
-            if case .success(let questionResponse) = result {
-                self.questionResponse = questionResponse
+        AppConfig.shared.soApi.myFavorites() { result in
+            
+            if case .success(let questions) = result {
+                self.questions = questions
                 self.tableView.reloadData()
+            } else {
+                self.showAlert("Error: \(result.error ?? CommonError.unknown)")
             }
-        })
+        }
+        
+        
     }
     
     // MARK: - Table view data source
@@ -39,19 +41,24 @@ class MyFavoritesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questionResponse?.items?.count ?? 0
+        return questions.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
-        cell.textLabel?.text = questionResponse?.items?[indexPath.row].title
+        cell.textLabel?.text = questions[indexPath.row].title
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let questionVc = QuestionViewController.create(questionResponse?.items?[indexPath.row].questionID)
+        let questionVc = QuestionViewController.create(questions[indexPath.row].questionID)
         
         navigationController?.pushViewController(questionVc, animated: true)
+    }
+    
+    @objc func didTapRefresh(sender: AnyObject) {
+        pageIndex = 0
+        loadQuestions(pageIndex: pageIndex, pageSize: pageSize)
     }
 }

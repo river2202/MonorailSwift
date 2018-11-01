@@ -2,7 +2,7 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    private let questionListApi = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=swift&site=stackoverflow"
+    private let questionListApi = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&tagged=swift&site=stackoverflow"
     private var questionTask: URLSessionDataTask!
     private var questionResponse: QuestionResponse? = nil
     
