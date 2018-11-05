@@ -86,6 +86,7 @@ extension StackOverflowApi {
     func login(completion: @escaping (Error?, AccessToken?) -> Void) {
         
         if let accessToken = ExampleConsumer.shared.getToken() {
+            self.accessToken = accessToken
             return completion(nil, accessToken)
         }
         

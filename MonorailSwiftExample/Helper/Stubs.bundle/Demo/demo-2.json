@@ -5,23 +5,15 @@
         "path" : "https:\/\/api.stackexchange.com\/2.2\/search?order=desc&sort=activity&tagged=swift&site=stackoverflow",
         "method" : "GET"
       },
+      "id" : "1",
       "response" : {
-        "headers" : {
-          "Access-Control-Allow-Origin" : "*",
-          "Access-Control-Allow-Credentials" : "false",
-          "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:02:32 GMT",
-          "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "5193"
-        },
-        "status" : 200,
         "body" : {
           "has_more" : true,
           "items" : [
             {
+              "closed_reason" : "duplicate",
+              "answer_count" : 0,
+              "last_edit_date" : 1541113730,
               "owner" : {
                 "accept_rate" : 6,
                 "user_type" : "registered",
@@ -31,20 +23,70 @@
                 "reputation" : 101,
                 "profile_image" : "https:\/\/graph.facebook.com\/100000803461711\/picture?type=large"
               },
-              "is_answered" : false,
-              "answer_count" : 0,
-              "score" : 0,
-              "creation_date" : 1541113269,
-              "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
-              "last_activity_date" : 1541113269,
               "link" : "https:\/\/stackoverflow.com\/questions\/53110562\/nsinternalinconsistencyexception-reason-unable-to-dequeue-a-cell-with-ident",
-              "question_id" : 53110562,
               "tags" : [
+                "ios",
                 "swift",
                 "tableview",
                 "custom-cell"
               ],
+              "view_count" : 5,
+              "creation_date" : 1541113269,
+              "is_answered" : false,
+              "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
+              "last_activity_date" : 1541113730,
+              "question_id" : 53110562,
+              "score" : 0,
+              "closed_date" : 1541113395
+            },
+            {
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/10526657\/zach",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/0911b7535d3a20ffb7a2d032486365b8?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 10526657,
+                "display_name" : "Zach",
+                "reputation" : 11,
+                "user_type" : "registered"
+              },
+              "is_answered" : false,
+              "answer_count" : 0,
+              "score" : 0,
+              "creation_date" : 1541113682,
+              "title" : "Firebase saying password is incorrect \/\/ not reading password when correct",
+              "last_activity_date" : 1541113682,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110618\/firebase-saying-password-is-incorrect-not-reading-password-when-correct",
+              "question_id" : 53110618,
+              "tags" : [
+                "swift",
+                "database",
+                "firebase",
+                "firebase-authentication"
+              ],
               "view_count" : 3
+            },
+            {
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/2335363\/adahus",
+                "profile_image" : "https:\/\/i.stack.imgur.com\/11bzw.jpg?s=128&g=1",
+                "user_id" : 2335363,
+                "display_name" : "Adahus",
+                "reputation" : 501,
+                "user_type" : "registered"
+              },
+              "is_answered" : false,
+              "answer_count" : 0,
+              "score" : 0,
+              "creation_date" : 1541113673,
+              "title" : "Swift mutating Function as first class value",
+              "last_activity_date" : 1541113673,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110616\/swift-mutating-function-as-first-class-value",
+              "question_id" : 53110616,
+              "tags" : [
+                "swift",
+                "functional-programming",
+                "mutating-function"
+              ],
+              "view_count" : 5
             },
             {
               "owner" : {
@@ -70,7 +112,7 @@
                 "macos",
                 "cocoa"
               ],
-              "view_count" : 3
+              "view_count" : 5
             },
             {
               "answer_count" : 2,
@@ -122,7 +164,7 @@
                 "swift",
                 "regex"
               ],
-              "view_count" : 7
+              "view_count" : 13
             },
             {
               "answer_count" : 2,
@@ -196,7 +238,7 @@
                 "html-entities"
               ],
               "link" : "https:\/\/stackoverflow.com\/questions\/25607247\/how-do-i-decode-html-entities-in-swift",
-              "view_count" : 44809,
+              "view_count" : 44811,
               "creation_date" : 1409579228,
               "is_answered" : true,
               "title" : "How do I decode HTML entities in swift?",
@@ -222,7 +264,7 @@
                 "swift",
                 "regex"
               ],
-              "view_count" : 12,
+              "view_count" : 14,
               "creation_date" : 1541110916,
               "is_answered" : false,
               "title" : "Swift: How to replace a substring with regular expression",
@@ -309,7 +351,7 @@
                 "uitableview",
                 "uicollectionview"
               ],
-              "view_count" : 11
+              "view_count" : 12
             },
             {
               "answer_count" : 2,
@@ -387,7 +429,7 @@
                 "xcode",
                 "avfoundation"
               ],
-              "view_count" : 12
+              "view_count" : 13
             },
             {
               "owner" : {
@@ -746,93 +788,41 @@
               "last_activity_date" : 1541104592,
               "question_id" : 27652227,
               "score" : 225
-            },
-            {
-              "owner" : {
-                "accept_rate" : 63,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/8648164\/h-epstein",
-                "user_id" : 8648164,
-                "display_name" : "H.Epstein",
-                "reputation" : 161,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/1881f92bd5b569a12918214b6f10b1bb?s=128&d=identicon&r=PG&f=1"
-              },
-              "is_answered" : false,
-              "answer_count" : 0,
-              "score" : -1,
-              "creation_date" : 1541104325,
-              "title" : "locationManager.startUpdatingLocationWithCompletionHandler is not receiving completion",
-              "last_activity_date" : 1541104325,
-              "link" : "https:\/\/stackoverflow.com\/questions\/53108940\/locationmanager-startupdatinglocationwithcompletionhandler-is-not-receiving-comp",
-              "question_id" : 53108940,
-              "tags" : [
-                "swift",
-                "mapkit",
-                "cllocationmanager",
-                "locationmanager"
-              ],
-              "view_count" : 7
-            },
-            {
-              "owner" : {
-                "accept_rate" : 67,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/2588148\/marie-dm",
-                "user_id" : 2588148,
-                "display_name" : "Marie Dm",
-                "reputation" : 1579,
-                "profile_image" : "https:\/\/graph.facebook.com\/651772012\/picture?type=large"
-              },
-              "is_answered" : false,
-              "answer_count" : 0,
-              "score" : 1,
-              "creation_date" : 1541104316,
-              "title" : "Receipt nil since app update and creation of new in app purchase subscriptions",
-              "last_activity_date" : 1541104316,
-              "link" : "https:\/\/stackoverflow.com\/questions\/53108939\/receipt-nil-since-app-update-and-creation-of-new-in-app-purchase-subscriptions",
-              "question_id" : 53108939,
-              "tags" : [
-                "ios",
-                "swift",
-                "in-app-purchase",
-                "app-store",
-                "itunesconnect"
-              ],
-              "view_count" : 9
             }
           ],
           "quota_max" : 300,
-          "quota_remaining" : 281
+          "quota_remaining" : 260
+        },
+        "status" : 200,
+        "headers" : {
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "X-Content-Type-Options" : "nosniff",
+          "Date" : "Thu, 01 Nov 2018 23:13:58 GMT",
+          "Access-Control-Allow-Origin" : "*",
+          "Cache-Control" : "private",
+          "Content-Encoding" : "gzip",
+          "Content-Length" : "5102",
+          "Content-Type" : "application\/json; charset=utf-8"
         }
       },
-      "timeStamp" : "2018-11-02T10:02:33.753+11:00",
-      "id" : "1"
+      "timeStamp" : "2018-11-02T10:13:59.346+11:00"
     },
     {
       "request" : {
         "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110562?order=desc&sort=activity&site=stackoverflow&filter=!9Z(-wwYGT&",
         "method" : "GET"
       },
+      "id" : "2",
       "response" : {
-        "headers" : {
-          "Access-Control-Allow-Origin" : "*",
-          "Access-Control-Allow-Credentials" : "false",
-          "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:03:28 GMT",
-          "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "920"
-        },
-        "status" : 200,
         "body" : {
           "has_more" : false,
           "items" : [
             {
-              "body" : "<p>I'm using a custom cell:<\/p>\n\n<pre><code>class recordedSetUICell: UITableViewCell {\n\n@IBOutlet weak var lblExerciseName: UILabel!\n@IBOutlet weak var lblSetNumber: UILabel!\n@IBOutlet weak var inp_txtReps: UITextField!\n@IBOutlet weak var inp_txtWeight: UITextField! }\n\n\noverride func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; recordedSetUICell {\n    print(indexPath.row)\n    var cell =  tableView.dequeueReusableCell(withIdentifier: \"cell\", for:indexPath) as! recordedSetUICell\n\n    if let dequeuedcell = tableView.dequeueReusableCell(withIdentifier: \"cell\", for: indexPath) as? recordedSetUICell {\n        cell = dequeuedcell\n    } else {\n        cell = recordedSetUICell(style: UITableViewCellStyle.default, reuseIdentifier: \"cell\")\n    }\n<\/code><\/pre>\n\n<p>I've declared the cell identifier in storyboard to 'cell' however i get the following error:<\/p>\n\n<p>'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier cell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'<\/p>\n",
+              "body" : "<p>I'm using a custom cell:<\/p>\n\n<pre><code>class recordedSetUICell: UITableViewCell {\n\n@IBOutlet weak var lblExerciseName: UILabel!\n@IBOutlet weak var lblSetNumber: UILabel!\n@IBOutlet weak var inp_txtReps: UITextField!\n@IBOutlet weak var inp_txtWeight: UITextField! }\n\n\noverride func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; recordedSetUICell {\n    print(indexPath.row)\n    var cell =  tableView.dequeueReusableCell(withIdentifier: \"cell\", for:indexPath) as! recordedSetUICell\n\n    if let dequeuedcell = tableView.dequeueReusableCell(withIdentifier: \"cell\", for: indexPath) as? recordedSetUICell {\n        cell = dequeuedcell\n    } else {\n        cell = recordedSetUICell(style: UITableViewCellStyle.default, reuseIdentifier: \"cell\")\n    }\n<\/code><\/pre>\n\n<p>I've declared the cell identifier in storyboard to 'cell' however i get the following error:<\/p>\n\n<blockquote>\n  <p>'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier cell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'<\/p>\n<\/blockquote>\n",
               "closed_reason" : "duplicate",
               "answer_count" : 0,
+              "last_edit_date" : 1541113730,
               "owner" : {
                 "accept_rate" : 6,
                 "user_type" : "registered",
@@ -844,196 +834,193 @@
               },
               "link" : "https:\/\/stackoverflow.com\/questions\/53110562\/nsinternalinconsistencyexception-reason-unable-to-dequeue-a-cell-with-ident",
               "tags" : [
+                "ios",
                 "swift",
                 "tableview",
                 "custom-cell"
               ],
-              "view_count" : 3,
+              "view_count" : 5,
               "creation_date" : 1541113269,
               "is_answered" : false,
               "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
-              "last_activity_date" : 1541113269,
+              "last_activity_date" : 1541113730,
               "question_id" : 53110562,
               "score" : 0,
               "closed_date" : 1541113395
             }
           ],
           "quota_max" : 300,
-          "quota_remaining" : 280
+          "quota_remaining" : 259
+        },
+        "status" : 200,
+        "headers" : {
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "X-Content-Type-Options" : "nosniff",
+          "Date" : "Thu, 01 Nov 2018 23:14:26 GMT",
+          "Access-Control-Allow-Origin" : "*",
+          "Cache-Control" : "private",
+          "Content-Encoding" : "gzip",
+          "Content-Length" : "944",
+          "Content-Type" : "application\/json; charset=utf-8"
         }
       },
-      "timeStamp" : "2018-11-02T10:03:29.439+11:00",
-      "id" : "2"
+      "timeStamp" : "2018-11-02T10:14:27.579+11:00"
     },
     {
       "request" : {
-        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110550?order=desc&sort=activity&site=stackoverflow&filter=!9Z(-wwYGT&",
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110618?order=desc&sort=activity&site=stackoverflow&filter=!9Z(-wwYGT&",
         "method" : "GET"
       },
+      "id" : "3",
       "response" : {
-        "headers" : {
-          "Access-Control-Allow-Origin" : "*",
-          "Access-Control-Allow-Credentials" : "false",
-          "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:03:32 GMT",
-          "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "1098"
-        },
-        "status" : 200,
         "body" : {
           "has_more" : false,
           "items" : [
             {
-              "body" : "<p>I have a problem with adding multiple CIFilters on image, f.e. when I add brightness filter and then try to add contrast image goes to original (losses brightness filter) and then adds contrast filter.<\/p>\n\n<pre><code>- (IBAction)brightnessSlider:(NSSlider*)sender {\n    ViewController *controller = (ViewController*)[NSApplication sharedApplication].keyWindow.contentViewController;\n    CIFilter *brightness = [CIFilter filterWithName:@\"CIColorControls\" keysAndValues: kCIInputImageKey, originalCIImage, @\"inputBrightness\", [NSNumber numberWithFloat:[sender floatValue]], nil];\n    controller.imageView.image = [self fromCIImageToNSImage:[brightness outputImage]];\n}\n\n- (IBAction)contrastSlider:(id)sender {\n    ViewController *controller = (ViewController*)[NSApplication sharedApplication].keyWindow.contentViewController;\n    CIFilter *contrast = [CIFilter filterWithName:@\"CIColorControls\" keysAndValues: kCIInputImageKey, originalCIImage, @\"inputContrast\", [NSNumber numberWithFloat:[sender floatValue]], nil];\n    controller.imageView.image = [self fromCIImageToNSImage:[contrast outputImage]];\n}\n<\/code><\/pre>\n\n<p>If I use <code>originalCIImage = [CIFilter outputImage];<\/code> (CIFilter = brightness\/contrast) after adding brightness and contrast (applying filters for changed image), then the image goes completely black\/grey\/white.<\/p>\n\n<p><strong>How to prevent image from changing back to original and apply several filters simultaneously?<\/strong><\/p>\n\n<p>I have read this post <a href=\"https:\/\/stackoverflow.com\/questions\/51938562\/how-to-change-brightness-contrast-and-saturation-using-cicolorcontrols-via-uisl\">link of the post<\/a> but applying filters to original image just resets the image as it should..<\/p>\n",
+              "body" : "<p>So I'm having a problem with firebase and its login function.<\/p>\n\n<p>Here's the code for the login in screen :<\/p>\n\n<pre><code>import UIKit\nimport Firebase\nimport FirebaseAuth\n\n\nclass LoginScreenViewController: UIViewController {\n\n@IBOutlet weak var usernameField: UITextField!\n@IBOutlet weak var passwordField: UITextField!\n\n\noverride func viewDidLoad() {\n    super.viewDidLoad()\n\n}\n\noverride func viewWillAppear(_ animated: Bool) {\n    super.viewWillAppear(animated)\n\n    usernameField.text = \"\"\n    passwordField.text = \"\"\n}\n\n\n@IBAction func createAccountButton(_ sender: Any) {\n     self.performSegue(withIdentifier: \"createAccount\", sender: self)\n}\n\n\n@IBAction func loginButtonPressed(_ sender: Any) {\n\n    Auth.auth().signIn(withEmail: usernameField.text!, password: passwordField.text!) { (user, error) in\n        if error != nil {\n            print(error!.localizedDescription)\n        }else if error == nil{\n           self.performSegue(withIdentifier: \"loginToMain\", sender: self)\n        }\n    }\n\n}\n\n@IBAction func unwindFromMainToLogin(segue: UIStoryboardSegue) {\n}\n\n\n}\n<\/code><\/pre>\n\n<p>and here's the code for the create a login screen :<\/p>\n\n<pre><code>import UIKit\nimport Firebase\n\nclass CreateLoginViewController: UIViewController {\n\n@IBOutlet weak var usernameField: UITextField!\n@IBOutlet weak var passwordField: UITextField!\n\n\noverride func viewDidLoad() {\n    super.viewDidLoad()\n}\n\n\n@IBAction func createAccountPressed(_ sender: Any) {\n\n    Auth.auth().createUser(withEmail: usernameField.text!, password: usernameField.text!) { (user, error) in\n\n        if let error = error {\n            print(error.localizedDescription)\n\n            let alert = UIAlertController(title: \"Error\", message: error.localizedDescription, preferredStyle: .alert)\n\n            alert.addAction(UIAlertAction(title: \"Okay\", style: .default, handler: { action in\n\n            }))\n\n            self.present(alert, animated: true, completion: nil)\n        }\n        else if let user = user {\n            print(\"Sign Up Successfully. \\(user.user.uid)\")\n            self.performSegue(withIdentifier: \"unwindFromMainToLogin\", sender: self)\n        }\n\n    }\n\n}\n\n\n\n}\n<\/code><\/pre>\n\n<p>Everything works fine up to the point when I go to login. The console prints \"Sign up Successfully\". But when I go to login on my main screen the console always prints out the localized description and says \"The password is invalid or the user does not have a password\" even when the password is correct. I'm not sure if this a common problem but I've tried and tried to troubleshoot and couldn't found a fix for it.<\/p>\n\n<p>Any help would be appreciated!<\/p>\n",
               "answer_count" : 0,
               "owner" : {
-                "link" : "https:\/\/stackoverflow.com\/users\/10566542\/vidas-katulis",
-                "profile_image" : "https:\/\/lh5.googleusercontent.com\/-27-HhwyNh4Y\/AAAAAAAAAAI\/AAAAAAAAAAA\/ABtNlbBTqm__iUJhki-f5kdiuqW8DNOiPw\/mo\/photo.jpg?sz=128",
-                "user_id" : 10566542,
-                "display_name" : "Vidas Katulis",
-                "reputation" : 14,
+                "link" : "https:\/\/stackoverflow.com\/users\/10526657\/zach",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/0911b7535d3a20ffb7a2d032486365b8?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 10526657,
+                "display_name" : "Zach",
+                "reputation" : 11,
                 "user_type" : "registered"
               },
-              "link" : "https:\/\/stackoverflow.com\/questions\/53110550\/applying-multiple-cifilters-on-image",
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110618\/firebase-saying-password-is-incorrect-not-reading-password-when-correct",
               "tags" : [
-                "objective-c",
                 "swift",
-                "xcode",
-                "macos",
-                "cocoa"
+                "database",
+                "firebase",
+                "firebase-authentication"
               ],
-              "view_count" : 4,
-              "creation_date" : 1541113210,
+              "view_count" : 3,
+              "creation_date" : 1541113682,
               "is_answered" : false,
-              "title" : "Applying multiple CIFilters on image",
-              "last_activity_date" : 1541113210,
-              "question_id" : 53110550,
+              "title" : "Firebase saying password is incorrect \/\/ not reading password when correct",
+              "last_activity_date" : 1541113682,
+              "question_id" : 53110618,
               "score" : 0
             }
           ],
           "quota_max" : 300,
-          "quota_remaining" : 279
+          "quota_remaining" : 258
+        },
+        "status" : 200,
+        "headers" : {
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "X-Content-Type-Options" : "nosniff",
+          "Date" : "Thu, 01 Nov 2018 23:14:31 GMT",
+          "Access-Control-Allow-Origin" : "*",
+          "Cache-Control" : "private",
+          "Content-Encoding" : "gzip",
+          "Content-Length" : "1408",
+          "Content-Type" : "application\/json; charset=utf-8"
         }
       },
-      "timeStamp" : "2018-11-02T10:03:32.975+11:00",
-      "id" : "3"
+      "timeStamp" : "2018-11-02T10:14:32.394+11:00"
     },
     {
       "request" : {
-        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/39044657?order=desc&sort=activity&site=stackoverflow&filter=!9Z(-wwYGT&",
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110616?order=desc&sort=activity&site=stackoverflow&filter=!9Z(-wwYGT&",
         "method" : "GET"
       },
+      "id" : "4",
       "response" : {
-        "headers" : {
-          "Access-Control-Allow-Origin" : "*",
-          "Access-Control-Allow-Credentials" : "false",
-          "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:03:35 GMT",
-          "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "1176"
-        },
-        "status" : 200,
         "body" : {
           "has_more" : false,
           "items" : [
             {
-              "body" : "<p>I want to declare a function which I can only use for a single specific enum case.<\/p>\n\n<p>For example I have CustomTextFieldTypes enum. This has the following cases and functions.<\/p>\n\n<pre><code>enum CustomTextFieldTypes {\n\n    case CardType\n    case CardNumber\n    case CardExpiryDate\n    case CardName\n    case CCVNumber\n\n    func inputCardNumber(cardNumber: String!, cardNumberTextField: XCUIElement?) {        \n       cardNumberTextField?.typeText(cardNumber)\n    }\n\n    func inputCardCCVNumber(cardCCVNumber: String!, cardCCVNumberTextField: XCUIElement?) {        \n       cardCCVNumberTextField?.typeText(cardCCVNumber)\n    }\n}\n<\/code><\/pre>\n\n<p>Now I want to call the <code>inputCardNumber(...)<\/code> function only for the     <code>CustomTextFieldTypes.CardNumber<\/code> case. I can do the following...<\/p>\n\n<pre><code>CustomTextFieldTypes.CardNumber.inputCardNumber(...) \n<\/code><\/pre>\n\n<p>But at the same time I can do this... <\/p>\n\n<pre><code>CustomTextFieldTypes.CardExpiryDate.inputCardNumber(...) or    \nCustomTextFieldTypes.CardNumber.inputCardNumber(...) \n<\/code><\/pre>\n\n<p>I only want to call the <code>inputCardNumber(...)<\/code> function for the <code>CardNumber<\/code> case. Not from another case the enum itself. How do I achieve this?<\/p>\n\n<p>Thanks in advance for any help<\/p>\n\n<p>EDIT- Here's some background on what I'm doing. I was writing a UI test which would input text into text fields. I wanted to keep the input code away from my test file and I started \"<strong>Experimenting<\/strong>\" with enums and enum functions. I was wondering if I could have a function explicitly available for an enum case. Judging from the comments I cannot do this (I checked online but didn't get far). It's not a bad architecture or anything, I was just splitting up test code..<\/p>\n\n<p>Thanks for everyone for replying.<\/p>\n",
-              "answer_count" : 2,
-              "last_edit_date" : 1541113104,
+              "body" : "<p>I can have a function to swap the first two elements of an array:<\/p>\n\n<pre><code>func swapFirstTwo(array: inout [Int]) {\n  if array.count &gt;= 2 {\n    array.swapAt(0, 1)\n  }\n}\n\ntypealias Swapper = (inout [Int]) -&gt; ()\n\n\/\/ And I can have a variable = the function\nlet swapThem: Swapper = swapFirstTwo\n\n\/\/ And it works like this:\nvar array = [1,2,3]\nprint(array)\nswapThem(&amp;array)\nprint(array)\n\n\/\/ But I'm allergic to Global functions!\n\/\/ It would be more swifty to have:\n\nextension Array where Element == Int {\n  mutating func swapFirstTwo2() {\n    if count &gt;= 2 {\n      swapAt(0, 1)\n    }\n  }\n}\n\ntypealias Swapper2 = (inout [Int]) -&gt; () -&gt; ()\n\n\/\/ But when I do this:\nlet swapThemAgain: Swapper2 = Array.swapFirstTwo2\n\/\/ I get the error:\n\/\/ Partial application of 'mutating' method is not allowed; calling the function has undefined behavior and will be an error in future Swift versions\n\nvar array2 = [1,2,3]\nprint(array2)\narray2.swapFirstTwo2()\nprint(array2)\n\/\/ This in fact works but I've tried similar things and sometimes they appear to be unstable.\n\/\/ How can I achieve doing: array2.swapFirstTwo2() without getting the error?\n<\/code><\/pre>\n\n<p>This in fact works but I've tried similar things and sometimes they appear to be unstable.\nAlso the compiler warning needs to be heeded.\nHow can I achieve doing: array2.swapFirstTwo2() without getting the warning\/error?<\/p>\n",
+              "answer_count" : 0,
               "owner" : {
-                "accept_rate" : 17,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/4615581\/harmeet07",
-                "user_id" : 4615581,
-                "display_name" : "harmeet07",
-                "reputation" : 151,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/1dd0a43e99a668b4fc387043b636b51a?s=128&d=identicon&r=PG&f=1"
+                "link" : "https:\/\/stackoverflow.com\/users\/2335363\/adahus",
+                "profile_image" : "https:\/\/i.stack.imgur.com\/11bzw.jpg?s=128&g=1",
+                "user_id" : 2335363,
+                "display_name" : "Adahus",
+                "reputation" : 501,
+                "user_type" : "registered"
               },
-              "link" : "https:\/\/stackoverflow.com\/questions\/39044657\/swift-enum-function-for-only-a-single-case-of-the-enum",
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110616\/swift-mutating-function-as-first-class-value",
               "tags" : [
-                "ios",
                 "swift",
-                "function",
-                "enums"
+                "functional-programming",
+                "mutating-function"
               ],
-              "view_count" : 7551,
-              "creation_date" : 1471627435,
-              "is_answered" : true,
-              "title" : "Swift enum function for only a single case of the enum?",
-              "last_activity_date" : 1541113104,
-              "question_id" : 39044657,
-              "score" : 8
+              "view_count" : 5,
+              "creation_date" : 1541113673,
+              "is_answered" : false,
+              "title" : "Swift mutating Function as first class value",
+              "last_activity_date" : 1541113673,
+              "question_id" : 53110616,
+              "score" : 0
             }
           ],
           "quota_max" : 300,
-          "quota_remaining" : 278
-        }
-      },
-      "timeStamp" : "2018-11-02T10:03:35.992+11:00",
-      "id" : "4"
-    },
-    {
-      "request" : {
-        "path" : "https:\/\/stackoverflow.com\/oauth\/access_token\/json",
-        "method" : "POST",
-        "headers" : {
-          "Content-Length" : "171",
-          "Content-Type" : "application\/x-www-form-urlencoded"
-        }
-      },
-      "response" : {
-        "headers" : {
-          "Content-Type" : "application\/json",
-          "Vary" : "Fastly-SSL",
-          "x-cache" : "MISS",
-          "Via" : "1.1 varnish",
-          "Cache-Control" : "no-cache, no-store, must-revalidate",
-          "x-cache-hits" : "0",
-          "Pragma" : "no-cache",
-          "Strict-Transport-Security" : "max-age=15552000",
-          "x-dns-prefetch-control" : "off",
-          "x-served-by" : "cache-bne7721-BNE",
-          "Date" : "Thu, 01 Nov 2018 23:03:44 GMT",
-          "Accept-Ranges" : "bytes",
-          "x-request-guid" : "436555f8-254b-4881-b4b7-99e7da900b72",
-          "x-frame-options" : "SAMEORIGIN",
-          "x-timer" : "S1541113424.028105,VS0,VE281",
-          "Content-Length" : "59",
-          "content-security-policy" : "upgrade-insecure-requests"
+          "quota_remaining" : 257
         },
         "status" : 200,
-        "body" : {
-          "expires" : 86400,
-          "access_token" : "JOxMrQ0A(a2SqBisygFCUA))"
-        }
-      },
-      "timeStamp" : "2018-11-02T10:03:44.402+11:00",
-      "id" : "5"
-    },
-    {
-      "request" : {
-        "path" : "https:\/\/api.stackexchange.com\/2.2\/me?key=a5rx9FHh4USvbDpX9X1pbQ((&site=stackoverflow&order=desc&sort=reputation&access_token=JOxMrQ0A(a2SqBisygFCUA))&filter=default",
-        "method" : "GET"
-      },
-      "response" : {
         "headers" : {
-          "Access-Control-Allow-Origin" : "*",
           "Access-Control-Allow-Credentials" : "false",
           "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:03:45 GMT",
           "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "386"
+          "Date" : "Thu, 01 Nov 2018 23:14:35 GMT",
+          "Access-Control-Allow-Origin" : "*",
+          "Cache-Control" : "private",
+          "Content-Encoding" : "gzip",
+          "Content-Length" : "985",
+          "Content-Type" : "application\/json; charset=utf-8"
+        }
+      },
+      "timeStamp" : "2018-11-02T10:14:35.453+11:00"
+    },
+    {
+      "request" : {
+        "headers" : {
+          "Content-Type" : "application\/x-www-form-urlencoded",
+          "Content-Length" : "171"
+        },
+        "path" : "https:\/\/stackoverflow.com\/oauth\/access_token\/json",
+        "method" : "POST"
+      },
+      "id" : "5",
+      "response" : {
+        "body" : {
+          "expires" : 86400,
+          "access_token" : "OY2dc(lZ2UUpOzoeVTukEg))"
         },
         "status" : 200,
+        "headers" : {
+          "Content-Length" : "59",
+          "x-frame-options" : "SAMEORIGIN",
+          "x-dns-prefetch-control" : "off",
+          "Strict-Transport-Security" : "max-age=15552000",
+          "x-timer" : "S1541114095.541965,VS0,VE267",
+          "Date" : "Thu, 01 Nov 2018 23:14:54 GMT",
+          "Content-Type" : "application\/json",
+          "x-cache-hits" : "0",
+          "Via" : "1.1 varnish",
+          "x-cache" : "MISS",
+          "Accept-Ranges" : "bytes",
+          "Cache-Control" : "no-cache, no-store, must-revalidate",
+          "x-served-by" : "cache-bne7723-BNE",
+          "Vary" : "Fastly-SSL",
+          "x-request-guid" : "6bea87e4-0767-4e8c-bd40-48a076074669",
+          "Pragma" : "no-cache",
+          "content-security-policy" : "upgrade-insecure-requests"
+        }
+      },
+      "timeStamp" : "2018-11-02T10:14:54.824+11:00"
+    },
+    {
+      "request" : {
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/me?key=a5rx9FHh4USvbDpX9X1pbQ((&site=stackoverflow&order=desc&sort=reputation&access_token=OY2dc(lZ2UUpOzoeVTukEg))&filter=default",
+        "method" : "GET"
+      },
+      "id" : "6",
+      "response" : {
         "body" : {
           "has_more" : false,
           "items" : [
@@ -1064,280 +1051,37 @@
             }
           ],
           "quota_max" : 10000,
-          "quota_remaining" : 9920
+          "quota_remaining" : 9899
+        },
+        "status" : 200,
+        "headers" : {
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "X-Content-Type-Options" : "nosniff",
+          "Date" : "Thu, 01 Nov 2018 23:14:55 GMT",
+          "Access-Control-Allow-Origin" : "*",
+          "Cache-Control" : "private",
+          "Content-Encoding" : "gzip",
+          "Content-Length" : "386",
+          "Content-Type" : "application\/json; charset=utf-8"
         }
       },
-      "timeStamp" : "2018-11-02T10:03:46.028+11:00",
-      "id" : "6"
+      "timeStamp" : "2018-11-02T10:14:56.239+11:00"
     },
     {
       "request" : {
-        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110562?order=desc&sort=activity&site=stackoverflow&key=a5rx9FHh4USvbDpX9X1pbQ((&access_token=JOxMrQ0A(a2SqBisygFCUA))&filter=!-*jbN)fQB4uP",
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/me\/favorites?order=desc&sort=activity&site=stackoverflow&key=a5rx9FHh4USvbDpX9X1pbQ((&access_token=OY2dc(lZ2UUpOzoeVTukEg))&filter=default",
         "method" : "GET"
       },
+      "id" : "7",
       "response" : {
-        "headers" : {
-          "Access-Control-Allow-Origin" : "*",
-          "Access-Control-Allow-Credentials" : "false",
-          "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:03:45 GMT",
-          "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "929"
-        },
-        "status" : 200,
-        "body" : {
-          "has_more" : false,
-          "items" : [
-            {
-              "body" : "<p>I'm using a custom cell:<\/p>\n\n<pre><code>class recordedSetUICell: UITableViewCell {\n\n@IBOutlet weak var lblExerciseName: UILabel!\n@IBOutlet weak var lblSetNumber: UILabel!\n@IBOutlet weak var inp_txtReps: UITextField!\n@IBOutlet weak var inp_txtWeight: UITextField! }\n\n\noverride func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; recordedSetUICell {\n    print(indexPath.row)\n    var cell =  tableView.dequeueReusableCell(withIdentifier: \"cell\", for:indexPath) as! recordedSetUICell\n\n    if let dequeuedcell = tableView.dequeueReusableCell(withIdentifier: \"cell\", for: indexPath) as? recordedSetUICell {\n        cell = dequeuedcell\n    } else {\n        cell = recordedSetUICell(style: UITableViewCellStyle.default, reuseIdentifier: \"cell\")\n    }\n<\/code><\/pre>\n\n<p>I've declared the cell identifier in storyboard to 'cell' however i get the following error:<\/p>\n\n<p>'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier cell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'<\/p>\n",
-              "closed_reason" : "duplicate",
-              "answer_count" : 0,
-              "owner" : {
-                "accept_rate" : 6,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/4174219\/user4174219",
-                "user_id" : 4174219,
-                "display_name" : "user4174219",
-                "reputation" : 101,
-                "profile_image" : "https:\/\/graph.facebook.com\/100000803461711\/picture?type=large"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/53110562\/nsinternalinconsistencyexception-reason-unable-to-dequeue-a-cell-with-ident",
-              "tags" : [
-                "swift",
-                "tableview",
-                "custom-cell"
-              ],
-              "view_count" : 3,
-              "creation_date" : 1541113269,
-              "is_answered" : false,
-              "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
-              "favorited" : false,
-              "last_activity_date" : 1541113269,
-              "question_id" : 53110562,
-              "score" : 0,
-              "closed_date" : 1541113395
-            }
-          ],
-          "quota_max" : 10000,
-          "quota_remaining" : 9919
-        }
-      },
-      "timeStamp" : "2018-11-02T10:03:46.856+11:00",
-      "id" : "7"
-    },
-    {
-      "request" : {
-        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110562\/favorite",
-        "method" : "POST",
-        "headers" : {
-          "Content-Length" : "106",
-          "Content-Type" : "application\/x-www-form-urlencoded"
-        }
-      },
-      "response" : {
-        "headers" : {
-          "Access-Control-Allow-Origin" : "*",
-          "Access-Control-Allow-Credentials" : "false",
-          "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:03:48 GMT",
-          "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "932"
-        },
-        "status" : 200,
-        "body" : {
-          "has_more" : false,
-          "items" : [
-            {
-              "body" : "<p>I'm using a custom cell:<\/p>\n\n<pre><code>class recordedSetUICell: UITableViewCell {\n\n@IBOutlet weak var lblExerciseName: UILabel!\n@IBOutlet weak var lblSetNumber: UILabel!\n@IBOutlet weak var inp_txtReps: UITextField!\n@IBOutlet weak var inp_txtWeight: UITextField! }\n\n\noverride func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; recordedSetUICell {\n    print(indexPath.row)\n    var cell =  tableView.dequeueReusableCell(withIdentifier: \"cell\", for:indexPath) as! recordedSetUICell\n\n    if let dequeuedcell = tableView.dequeueReusableCell(withIdentifier: \"cell\", for: indexPath) as? recordedSetUICell {\n        cell = dequeuedcell\n    } else {\n        cell = recordedSetUICell(style: UITableViewCellStyle.default, reuseIdentifier: \"cell\")\n    }\n<\/code><\/pre>\n\n<p>I've declared the cell identifier in storyboard to 'cell' however i get the following error:<\/p>\n\n<p>'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier cell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'<\/p>\n",
-              "closed_reason" : "duplicate",
-              "answer_count" : 0,
-              "owner" : {
-                "accept_rate" : 6,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/4174219\/user4174219",
-                "user_id" : 4174219,
-                "display_name" : "user4174219",
-                "reputation" : 101,
-                "profile_image" : "https:\/\/graph.facebook.com\/100000803461711\/picture?type=large"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/53110562\/nsinternalinconsistencyexception-reason-unable-to-dequeue-a-cell-with-ident",
-              "tags" : [
-                "swift",
-                "tableview",
-                "custom-cell"
-              ],
-              "view_count" : 3,
-              "creation_date" : 1541113269,
-              "is_answered" : false,
-              "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
-              "favorited" : true,
-              "last_activity_date" : 1541113269,
-              "question_id" : 53110562,
-              "score" : 0,
-              "closed_date" : 1541113395
-            }
-          ],
-          "quota_max" : 10000,
-          "quota_remaining" : 9918
-        }
-      },
-      "timeStamp" : "2018-11-02T10:03:49.825+11:00",
-      "id" : "8"
-    },
-    {
-      "request" : {
-        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110562\/favorite\/undo",
-        "method" : "POST",
-        "headers" : {
-          "Content-Length" : "106",
-          "Content-Type" : "application\/x-www-form-urlencoded"
-        }
-      },
-      "response" : {
-        "headers" : {
-          "Access-Control-Allow-Origin" : "*",
-          "Access-Control-Allow-Credentials" : "false",
-          "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:03:52 GMT",
-          "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "929"
-        },
-        "status" : 200,
-        "body" : {
-          "has_more" : false,
-          "items" : [
-            {
-              "body" : "<p>I'm using a custom cell:<\/p>\n\n<pre><code>class recordedSetUICell: UITableViewCell {\n\n@IBOutlet weak var lblExerciseName: UILabel!\n@IBOutlet weak var lblSetNumber: UILabel!\n@IBOutlet weak var inp_txtReps: UITextField!\n@IBOutlet weak var inp_txtWeight: UITextField! }\n\n\noverride func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; recordedSetUICell {\n    print(indexPath.row)\n    var cell =  tableView.dequeueReusableCell(withIdentifier: \"cell\", for:indexPath) as! recordedSetUICell\n\n    if let dequeuedcell = tableView.dequeueReusableCell(withIdentifier: \"cell\", for: indexPath) as? recordedSetUICell {\n        cell = dequeuedcell\n    } else {\n        cell = recordedSetUICell(style: UITableViewCellStyle.default, reuseIdentifier: \"cell\")\n    }\n<\/code><\/pre>\n\n<p>I've declared the cell identifier in storyboard to 'cell' however i get the following error:<\/p>\n\n<p>'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier cell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'<\/p>\n",
-              "closed_reason" : "duplicate",
-              "answer_count" : 0,
-              "owner" : {
-                "accept_rate" : 6,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/4174219\/user4174219",
-                "user_id" : 4174219,
-                "display_name" : "user4174219",
-                "reputation" : 101,
-                "profile_image" : "https:\/\/graph.facebook.com\/100000803461711\/picture?type=large"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/53110562\/nsinternalinconsistencyexception-reason-unable-to-dequeue-a-cell-with-ident",
-              "tags" : [
-                "swift",
-                "tableview",
-                "custom-cell"
-              ],
-              "view_count" : 3,
-              "creation_date" : 1541113269,
-              "is_answered" : false,
-              "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
-              "favorited" : false,
-              "last_activity_date" : 1541113269,
-              "question_id" : 53110562,
-              "score" : 0,
-              "closed_date" : 1541113395
-            }
-          ],
-          "quota_max" : 10000,
-          "quota_remaining" : 9917
-        }
-      },
-      "timeStamp" : "2018-11-02T10:03:52.493+11:00",
-      "id" : "9"
-    },
-    {
-      "request" : {
-        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110562\/favorite",
-        "method" : "POST",
-        "headers" : {
-          "Content-Length" : "106",
-          "Content-Type" : "application\/x-www-form-urlencoded"
-        }
-      },
-      "response" : {
-        "headers" : {
-          "Access-Control-Allow-Origin" : "*",
-          "Access-Control-Allow-Credentials" : "false",
-          "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:03:53 GMT",
-          "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "931"
-        },
-        "status" : 200,
-        "body" : {
-          "has_more" : false,
-          "items" : [
-            {
-              "body" : "<p>I'm using a custom cell:<\/p>\n\n<pre><code>class recordedSetUICell: UITableViewCell {\n\n@IBOutlet weak var lblExerciseName: UILabel!\n@IBOutlet weak var lblSetNumber: UILabel!\n@IBOutlet weak var inp_txtReps: UITextField!\n@IBOutlet weak var inp_txtWeight: UITextField! }\n\n\noverride func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; recordedSetUICell {\n    print(indexPath.row)\n    var cell =  tableView.dequeueReusableCell(withIdentifier: \"cell\", for:indexPath) as! recordedSetUICell\n\n    if let dequeuedcell = tableView.dequeueReusableCell(withIdentifier: \"cell\", for: indexPath) as? recordedSetUICell {\n        cell = dequeuedcell\n    } else {\n        cell = recordedSetUICell(style: UITableViewCellStyle.default, reuseIdentifier: \"cell\")\n    }\n<\/code><\/pre>\n\n<p>I've declared the cell identifier in storyboard to 'cell' however i get the following error:<\/p>\n\n<p>'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier cell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'<\/p>\n",
-              "closed_reason" : "duplicate",
-              "answer_count" : 0,
-              "owner" : {
-                "accept_rate" : 6,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/4174219\/user4174219",
-                "user_id" : 4174219,
-                "display_name" : "user4174219",
-                "reputation" : 101,
-                "profile_image" : "https:\/\/graph.facebook.com\/100000803461711\/picture?type=large"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/53110562\/nsinternalinconsistencyexception-reason-unable-to-dequeue-a-cell-with-ident",
-              "tags" : [
-                "swift",
-                "tableview",
-                "custom-cell"
-              ],
-              "view_count" : 3,
-              "creation_date" : 1541113269,
-              "is_answered" : false,
-              "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
-              "favorited" : true,
-              "last_activity_date" : 1541113269,
-              "question_id" : 53110562,
-              "score" : 0,
-              "closed_date" : 1541113395
-            }
-          ],
-          "quota_max" : 10000,
-          "quota_remaining" : 9916
-        }
-      },
-      "timeStamp" : "2018-11-02T10:03:54.848+11:00",
-      "id" : "10"
-    },
-    {
-      "request" : {
-        "path" : "https:\/\/api.stackexchange.com\/2.2\/me\/favorites?order=desc&sort=activity&site=stackoverflow&key=a5rx9FHh4USvbDpX9X1pbQ((&access_token=JOxMrQ0A(a2SqBisygFCUA))&filter=default",
-        "method" : "GET"
-      },
-      "response" : {
-        "headers" : {
-          "Access-Control-Allow-Origin" : "*",
-          "Access-Control-Allow-Credentials" : "false",
-          "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:03:57 GMT",
-          "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "5634"
-        },
-        "status" : 200,
         "body" : {
           "has_more" : true,
           "items" : [
             {
               "closed_reason" : "duplicate",
               "answer_count" : 0,
+              "last_edit_date" : 1541113730,
               "owner" : {
                 "accept_rate" : 6,
                 "user_type" : "registered",
@@ -1349,972 +1093,19 @@
               },
               "link" : "https:\/\/stackoverflow.com\/questions\/53110562\/nsinternalinconsistencyexception-reason-unable-to-dequeue-a-cell-with-ident",
               "tags" : [
+                "ios",
                 "swift",
                 "tableview",
                 "custom-cell"
               ],
-              "view_count" : 3,
+              "view_count" : 5,
               "creation_date" : 1541113269,
               "is_answered" : false,
               "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
-              "last_activity_date" : 1541113269,
+              "last_activity_date" : 1541113730,
               "question_id" : 53110562,
               "score" : 0,
               "closed_date" : 1541113395
-            },
-            {
-              "answer_count" : 2,
-              "owner" : {
-                "accept_rate" : 100,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/6886817\/jesper-johansson",
-                "user_id" : 6886817,
-                "display_name" : "Jesper Johansson",
-                "reputation" : 140,
-                "profile_image" : "https:\/\/i.stack.imgur.com\/2Nkw7.jpg?s=128&g=1"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/40969101\/ios10-userdefaults-file-location-path",
-              "tags" : [
-                "swift",
-                "swift3",
-                "nsuserdefaults",
-                "xcode8"
-              ],
-              "view_count" : 1031,
-              "creation_date" : 1480922594,
-              "is_answered" : true,
-              "title" : "iOS10 UserDefaults file location\/path?",
-              "accepted_answer_id" : 40969190,
-              "last_activity_date" : 1541081587,
-              "question_id" : 40969101,
-              "score" : 2
-            },
-            {
-              "owner" : {
-                "accept_rate" : 77,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/2817697\/rkh",
-                "user_id" : 2817697,
-                "display_name" : "rkh",
-                "reputation" : 546,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/8608402fb9f35fb3d5264035be13d955?s=128&d=identicon&r=PG&f=1"
-              },
-              "is_answered" : true,
-              "answer_count" : 2,
-              "score" : 1,
-              "creation_date" : 1457313185,
-              "title" : "didUpdateHeading not called in swift",
-              "last_activity_date" : 1540901146,
-              "link" : "https:\/\/stackoverflow.com\/questions\/35834700\/didupdateheading-not-called-in-swift",
-              "question_id" : 35834700,
-              "tags" : [
-                "swift",
-                "ios9",
-                "cllocationmanager"
-              ],
-              "view_count" : 1534
-            },
-            {
-              "answer_count" : 3,
-              "last_edit_date" : 1517405998,
-              "owner" : {
-                "accept_rate" : 84,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/1044591\/titouan-de-bailleul",
-                "user_id" : 1044591,
-                "display_name" : "Titouan de Bailleul",
-                "reputation" : 10787,
-                "profile_image" : "https:\/\/i.stack.imgur.com\/YWxPF.jpg?s=128&g=1"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/45228343\/adduiinterruptionmonitorwithdescriptionhandler-not-working-on-ios-10-or-9",
-              "tags" : [
-                "ios",
-                "swift",
-                "xctest",
-                "xcode-ui-testing"
-              ],
-              "view_count" : 1332,
-              "creation_date" : 1500606528,
-              "is_answered" : true,
-              "title" : "addUIInterruptionMonitor(withDescription:handler:) not working on iOS 10 or 9",
-              "last_activity_date" : 1539977873,
-              "question_id" : 45228343,
-              "score" : 9
-            },
-            {
-              "answer_count" : 0,
-              "last_edit_date" : 1539001571,
-              "owner" : {
-                "accept_rate" : 98,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/7219266\/balanced",
-                "user_id" : 7219266,
-                "display_name" : "Balanced",
-                "reputation" : 670,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/4997bb06d37b260dc1ed8afeabd1e820?s=128&d=identicon&r=PG&f=1"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/52665680\/ios-detect-pangesture-on-edge-of-screen-to-open-side-menu-uicollectionview-w",
-              "tags" : [
-                "ios",
-                "swift",
-                "uipangesturerecognizer",
-                "swrevealviewcontroller",
-                "side-menu"
-              ],
-              "view_count" : 53,
-              "creation_date" : 1538742593,
-              "is_answered" : false,
-              "title" : "iOS - Detect panGesture on edge of screen to open side menu + UICollectionView with horizontal scrolling",
-              "last_activity_date" : 1539001571,
-              "question_id" : 52665680,
-              "score" : 3
-            },
-            {
-              "owner" : {
-                "accept_rate" : 54,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/839657\/ekl",
-                "user_id" : 839657,
-                "display_name" : "ekl",
-                "reputation" : 452,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/5e7b95500f546b877e93aff385b24430?s=128&d=identicon&r=PG"
-              },
-              "is_answered" : true,
-              "answer_count" : 2,
-              "score" : 2,
-              "creation_date" : 1374608305,
-              "title" : "Mac OS X -- receive notification when frontmost window changes",
-              "last_activity_date" : 1535881024,
-              "link" : "https:\/\/stackoverflow.com\/questions\/17819529\/mac-os-x-receive-notification-when-frontmost-window-changes",
-              "question_id" : 17819529,
-              "tags" : [
-                "objective-c",
-                "macos",
-                "events",
-                "notifications",
-                "applescript"
-              ],
-              "view_count" : 815
-            },
-            {
-              "closed_reason" : "off-topic",
-              "answer_count" : 0,
-              "owner" : {
-                "accept_rate" : 82,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/1107173\/user1107173",
-                "user_id" : 1107173,
-                "display_name" : "user1107173",
-                "reputation" : 3171,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/0930090dd79534d825896c741d2cf749?s=128&d=identicon&r=PG"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/33727929\/ios-restkit-alternative-for-swift",
-              "tags" : [
-                "ios",
-                "core-data",
-                "ios9",
-                "xcode7",
-                "nsmanagedobject"
-              ],
-              "view_count" : 1297,
-              "creation_date" : 1447643368,
-              "is_answered" : false,
-              "title" : "iOS: RestKit Alternative for Swift",
-              "last_activity_date" : 1530789303,
-              "question_id" : 33727929,
-              "score" : 3,
-              "closed_date" : 1530834639
-            },
-            {
-              "answer_count" : 1,
-              "last_edit_date" : 1527686441,
-              "owner" : {
-                "accept_rate" : 62,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/234\/orion-edwards",
-                "user_id" : 234,
-                "display_name" : "Orion Edwards",
-                "reputation" : 83877,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/3a9ff49a9e689dcbfc8242f05180cc31?s=128&d=identicon&r=PG"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/32542846\/reactivecocoa-vs-rxswift-pros-and-cons",
-              "tags" : [
-                "swift",
-                "reactive-programming",
-                "rx-swift",
-                "reactive-cocoa-3"
-              ],
-              "view_count" : 25491,
-              "creation_date" : 1442086181,
-              "is_answered" : true,
-              "title" : "ReactiveCocoa vs RxSwift - pros and cons?",
-              "accepted_answer_id" : 32581824,
-              "last_activity_date" : 1527686441,
-              "question_id" : 32542846,
-              "score" : 235
-            },
-            {
-              "answer_count" : 3,
-              "last_edit_date" : 1495540810,
-              "owner" : {
-                "link" : "https:\/\/stackoverflow.com\/users\/3602469\/mahmoud-ibrahim",
-                "profile_image" : "https:\/\/i.stack.imgur.com\/nOvJd.jpg?s=128&g=1",
-                "user_id" : 3602469,
-                "display_name" : "Mahmoud Ibrahim",
-                "reputation" : 44,
-                "user_type" : "registered"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/23497553\/how-can-i-implement-ios-with-rtl-for-arabic-hebrew",
-              "tags" : [
-                "ios",
-                "arabic",
-                "right-to-left",
-                "hebrew"
-              ],
-              "view_count" : 10160,
-              "creation_date" : 1399386482,
-              "is_answered" : true,
-              "title" : "How can I implement iOS with RTL for Arabic Hebrew?",
-              "last_activity_date" : 1525749135,
-              "question_id" : 23497553,
-              "score" : 7
-            },
-            {
-              "answer_count" : 3,
-              "last_edit_date" : 1495535288,
-              "owner" : {
-                "accept_rate" : 26,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/1116465\/rodrigo-ruiz",
-                "user_id" : 1116465,
-                "display_name" : "Rodrigo Ruiz",
-                "reputation" : 1531,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/b5d919b9dcff45f8ff58cd127f517d6b?s=128&d=identicon&r=PG"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/32929981\/how-to-deep-merge-2-swift-dictionaries",
-              "tags" : [
-                "swift",
-                "dictionary"
-              ],
-              "view_count" : 547,
-              "creation_date" : 1443932264,
-              "is_answered" : true,
-              "title" : "How to deep merge 2 Swift dictionaries",
-              "last_activity_date" : 1520851135,
-              "question_id" : 32929981,
-              "score" : 2
-            },
-            {
-              "owner" : {
-                "accept_rate" : 50,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/3489438\/steve",
-                "user_id" : 3489438,
-                "display_name" : "Steve",
-                "reputation" : 13,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/eed10a347dc9c062acadcbb77bedcbb5?s=128&d=identicon&r=PG&f=1"
-              },
-              "is_answered" : false,
-              "answer_count" : 2,
-              "score" : 1,
-              "creation_date" : 1426774566,
-              "title" : "C++ ExportAsFixedFormat to save as PDF",
-              "last_activity_date" : 1516704747,
-              "link" : "https:\/\/stackoverflow.com\/questions\/29146952\/c-exportasfixedformat-to-save-as-pdf",
-              "question_id" : 29146952,
-              "tags" : [
-                "c++",
-                "excel",
-                "pdf",
-                "automation",
-                "export"
-              ],
-              "view_count" : 829
-            },
-            {
-              "answer_count" : 0,
-              "last_edit_date" : 1502860295,
-              "owner" : {
-                "accept_rate" : 67,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/5896260\/tnguyen",
-                "user_id" : 5896260,
-                "display_name" : "TNguyen",
-                "reputation" : 551,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/2fa3613cffecccc0bc3985523bf7a50e?s=128&d=identicon&r=PG&f=1"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/45705094\/applicationprotecteddatadidbecomeavailable-does-not-get-called-after-locking-dev",
-              "tags" : [
-                "ios",
-                "objective-c",
-                "swift",
-                "appdelegate",
-                "data-protection"
-              ],
-              "view_count" : 319,
-              "creation_date" : 1502857423,
-              "is_answered" : false,
-              "title" : "applicationProtectedDataDidBecomeAvailable does not get called after locking device for over 2 minutes",
-              "last_activity_date" : 1502860295,
-              "question_id" : 45705094,
-              "score" : 1
-            },
-            {
-              "answer_count" : 4,
-              "last_edit_date" : 1485127065,
-              "owner" : {
-                "link" : "https:\/\/stackoverflow.com\/users\/3046269\/mp3821",
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/6c77a52c0f33ea2e265ad9e4b19b8db2?s=128&d=identicon&r=PG&f=1",
-                "user_id" : 3046269,
-                "display_name" : "mp3821",
-                "reputation" : 451,
-                "user_type" : "registered"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/20269116\/nsuserdefaults-losing-its-keys-values-when-phone-is-rebooted-but-not-unlocked",
-              "tags" : [
-                "ios",
-                "background",
-                "nsuserdefaults",
-                "core-location",
-                "reboot"
-              ],
-              "view_count" : 9905,
-              "creation_date" : 1385650383,
-              "is_answered" : true,
-              "title" : "NSUserDefaults losing its keys &amp; values when phone is rebooted but not unlocked",
-              "accepted_answer_id" : 20840053,
-              "last_activity_date" : 1494576588,
-              "question_id" : 20269116,
-              "score" : 38
-            },
-            {
-              "answer_count" : 2,
-              "last_edit_date" : 1481122823,
-              "owner" : {
-                "link" : "https:\/\/stackoverflow.com\/users\/4988632\/kevin-zhu",
-                "profile_image" : "https:\/\/graph.facebook.com\/1401645060165482\/picture?type=large",
-                "user_id" : 4988632,
-                "display_name" : "Kevin Zhu",
-                "reputation" : 10,
-                "user_type" : "registered"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/40967892\/centos-qt-creator-when-executing-step-qmake",
-              "tags" : [
-                "qt",
-                "qt-creator",
-                "centos7"
-              ],
-              "view_count" : 581,
-              "creation_date" : 1480917211,
-              "is_answered" : true,
-              "title" : "CentOS qt-creator when executing step qmake",
-              "accepted_answer_id" : 40982941,
-              "last_activity_date" : 1492106892,
-              "question_id" : 40967892,
-              "score" : 1
-            },
-            {
-              "owner" : {
-                "accept_rate" : 60,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/264410\/michael",
-                "user_id" : 264410,
-                "display_name" : "michael",
-                "reputation" : 1259,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/98a0fcc9a9390a0863a901945c45212c?s=128&d=identicon&r=PG"
-              },
-              "is_answered" : true,
-              "answer_count" : 2,
-              "score" : 7,
-              "creation_date" : 1441950248,
-              "title" : "Is there an API call to get a list of saved places in Google Maps?",
-              "last_activity_date" : 1491702820,
-              "link" : "https:\/\/stackoverflow.com\/questions\/32516268\/is-there-an-api-call-to-get-a-list-of-saved-places-in-google-maps",
-              "question_id" : 32516268,
-              "tags" : [
-                "google-maps-api-3"
-              ],
-              "view_count" : 1377
-            },
-            {
-              "answer_count" : 3,
-              "last_edit_date" : 1402911436,
-              "owner" : {
-                "accept_rate" : 75,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/1722214\/tim",
-                "user_id" : 1722214,
-                "display_name" : "Tim",
-                "reputation" : 1293,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/0e75f741d8efc2766ad896b3b5612975?s=128&d=identicon&r=PG"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/24156885\/using-app-links-hosting-api-for-link-shared-on-facebook-from-ios-app",
-              "tags" : [
-                "ios",
-                "facebook",
-                "opengraph",
-                "applinks"
-              ],
-              "view_count" : 5344,
-              "creation_date" : 1402471141,
-              "is_answered" : true,
-              "title" : "Using App Links Hosting API for link shared on Facebook from iOS app",
-              "accepted_answer_id" : 26725550,
-              "last_activity_date" : 1489957852,
-              "question_id" : 24156885,
-              "score" : 8
-            },
-            {
-              "answer_count" : 2,
-              "last_edit_date" : 1495541427,
-              "owner" : {
-                "accept_rate" : 75,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/569546\/darkshore-grouper",
-                "user_id" : 569546,
-                "display_name" : "Darkshore Grouper",
-                "reputation" : 428,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/0535cab5ebf4fe655af9ee330777c79e?s=128&d=identicon&r=PG"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/27685775\/ios-7-force-view-layout-flip-to-rtl-without-language-change",
-              "tags" : [
-                "ios",
-                "xcode"
-              ],
-              "view_count" : 3648,
-              "creation_date" : 1419842543,
-              "is_answered" : true,
-              "title" : "ios 7 - Force view layout flip to RTL without language change",
-              "last_activity_date" : 1487907114,
-              "question_id" : 27685775,
-              "score" : 8
-            },
-            {
-              "answer_count" : 4,
-              "last_edit_date" : 1384739389,
-              "owner" : {
-                "link" : "https:\/\/stackoverflow.com\/users\/2898568\/koosc2",
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/c5829178d7904f98459fb78409d70e06?s=128&d=identicon&r=PG&f=1",
-                "user_id" : 2898568,
-                "display_name" : "Koosc2",
-                "reputation" : 35,
-                "user_type" : "registered"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/20038177\/error-inflating-class-fragment-for-supportmapfragment",
-              "tags" : [
-                "android",
-                "google-maps"
-              ],
-              "view_count" : 8103,
-              "creation_date" : 1384735315,
-              "is_answered" : true,
-              "title" : "Error inflating class fragment for SupportMapFragment",
-              "accepted_answer_id" : 35757155,
-              "last_activity_date" : 1484030093,
-              "question_id" : 20038177,
-              "score" : 5
-            },
-            {
-              "answer_count" : 3,
-              "owner" : {
-                "link" : "https:\/\/stackoverflow.com\/users\/2798503\/misha-svyatoshenko",
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/ceea5f49370de1a42b69521cbe72eedc?s=128&d=identicon&r=PG&f=1",
-                "user_id" : 2798503,
-                "display_name" : "Misha Svyatoshenko",
-                "reputation" : 307,
-                "user_type" : "registered"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/37847018\/how-can-i-use-swift-2-3-in-xcode-8-playgrounds",
-              "tags" : [
-                "swift",
-                "swift-playground",
-                "xcode8"
-              ],
-              "view_count" : 8223,
-              "creation_date" : 1466030472,
-              "is_answered" : true,
-              "title" : "How can I use Swift 2.3 in XCode 8 Playgrounds?",
-              "accepted_answer_id" : 38326852,
-              "last_activity_date" : 1478525862,
-              "question_id" : 37847018,
-              "score" : 33
-            },
-            {
-              "answer_count" : 1,
-              "last_edit_date" : 1475137349,
-              "owner" : {
-                "accept_rate" : 29,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/1495463\/hardik-shah",
-                "user_id" : 1495463,
-                "display_name" : "Hardik Shah",
-                "reputation" : 63,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/a0011f0c3927a02a031e70d30fee283d?s=128&d=identicon&r=PG"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/17884197\/multi-language-design-support-in-ios",
-              "tags" : [
-                "ios",
-                "design",
-                "multilingual",
-                "multilanguage"
-              ],
-              "view_count" : 677,
-              "creation_date" : 1374849336,
-              "is_answered" : true,
-              "title" : "Multi Language Design support in IOS",
-              "last_activity_date" : 1475137349,
-              "question_id" : 17884197,
-              "score" : 1
-            },
-            {
-              "owner" : {
-                "link" : "https:\/\/stackoverflow.com\/users\/3842629\/friedpotato",
-                "profile_image" : "https:\/\/i.stack.imgur.com\/3vwUF.jpg?s=128&g=1",
-                "user_id" : 3842629,
-                "display_name" : "FriedPotato",
-                "reputation" : 84,
-                "user_type" : "registered"
-              },
-              "is_answered" : true,
-              "answer_count" : 2,
-              "score" : 9,
-              "creation_date" : 1413018984,
-              "title" : "iOS 8: Admob banner ad implementation in &quot;universal storyboard&quot; (iPhone + iPhone 6 + iPad)",
-              "last_activity_date" : 1466794005,
-              "link" : "https:\/\/stackoverflow.com\/questions\/26313051\/ios-8-admob-banner-ad-implementation-in-universal-storyboard-iphone-iphone",
-              "question_id" : 26313051,
-              "tags" : [
-                "objective-c",
-                "storyboard",
-                "ios8",
-                "admob",
-                "xcode6"
-              ],
-              "view_count" : 5060
-            },
-            {
-              "answer_count" : 1,
-              "last_edit_date" : 1380894688,
-              "owner" : {
-                "accept_rate" : 0,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/2596319\/sr-farzad",
-                "user_id" : 2596319,
-                "display_name" : "sr.farzad",
-                "reputation" : 345,
-                "profile_image" : "https:\/\/i.stack.imgur.com\/Esuhp.jpg?s=128&g=1"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/18192601\/how-to-search-in-google-map-api-v2-android",
-              "tags" : [
-                "android",
-                "google-maps",
-                "geolocation",
-                "google-maps-markers",
-                "google-maps-api-2"
-              ],
-              "view_count" : 33172,
-              "creation_date" : 1376326767,
-              "is_answered" : true,
-              "title" : "How to Search in Google Map Api V2 Android?",
-              "last_activity_date" : 1457346949,
-              "question_id" : 18192601,
-              "score" : 14
-            },
-            {
-              "owner" : {
-                "accept_rate" : 42,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/1318432\/anthoprotic",
-                "user_id" : 1318432,
-                "display_name" : "anthoprotic",
-                "reputation" : 474,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/1508967846d705c18690bf93790f3da0?s=128&d=identicon&r=PG"
-              },
-              "is_answered" : true,
-              "answer_count" : 5,
-              "score" : 34,
-              "creation_date" : 1350695655,
-              "title" : "UIActivityViewController - Email and Twitter sharing",
-              "last_activity_date" : 1455527929,
-              "link" : "https:\/\/stackoverflow.com\/questions\/12984403\/uiactivityviewcontroller-email-and-twitter-sharing",
-              "question_id" : 12984403,
-              "tags" : [
-                "ios",
-                "email",
-                "nsmutablearray",
-                "ios6",
-                "uiactivity"
-              ],
-              "view_count" : 39873
-            },
-            {
-              "answer_count" : 1,
-              "last_edit_date" : 1446773176,
-              "owner" : {
-                "accept_rate" : 67,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/3782629\/joshua-hart",
-                "user_id" : 3782629,
-                "display_name" : "Joshua Hart",
-                "reputation" : 370,
-                "profile_image" : "https:\/\/i.stack.imgur.com\/jIWwp.jpg?s=128&g=1"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/33557458\/xcode-7-1-errors-uiaccessibility-errors",
-              "tags" : [
-                "ios",
-                "parse.com",
-                "uiaccessibility"
-              ],
-              "view_count" : 3236,
-              "creation_date" : 1446770094,
-              "is_answered" : true,
-              "title" : "Xcode 7.1 Errors UIAccessibility Errors",
-              "last_activity_date" : 1455468418,
-              "question_id" : 33557458,
-              "score" : 11
-            },
-            {
-              "closed_reason" : "off-topic",
-              "answer_count" : 0,
-              "owner" : {
-                "accept_rate" : 45,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/3990005\/jonaszmclaren",
-                "user_id" : 3990005,
-                "display_name" : "jonaszmclaren",
-                "reputation" : 1587,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/bcb731bedd60fd251dcbf1b77b1ca97d?s=128&d=identicon&r=PG&f=1"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/35384466\/swift-replacement-for-restkit",
-              "tags" : [
-                "ios",
-                "json",
-                "swift",
-                "rest",
-                "restkit"
-              ],
-              "view_count" : 361,
-              "creation_date" : 1455392200,
-              "is_answered" : false,
-              "title" : "Swift replacement for RestKit",
-              "last_activity_date" : 1455392200,
-              "question_id" : 35384466,
-              "score" : 5,
-              "closed_date" : 1455548827
-            },
-            {
-              "answer_count" : 4,
-              "last_edit_date" : 1440010578,
-              "owner" : {
-                "accept_rate" : 62,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/388588\/chris-ladd",
-                "user_id" : 388588,
-                "display_name" : "Chris Ladd",
-                "reputation" : 2055,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/972578c2826f2b9492748f8f3d895f38?s=128&d=identicon&r=PG"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/4752427\/osx-detect-system-wide-keydown-events",
-              "tags" : [
-                "macos",
-                "keyboard",
-                "keydown",
-                "nsnotificationcenter"
-              ],
-              "view_count" : 21970,
-              "creation_date" : 1295556608,
-              "is_answered" : true,
-              "title" : "OSX: Detect system-wide keyDown events?",
-              "accepted_answer_id" : 4754241,
-              "last_activity_date" : 1452347025,
-              "question_id" : 4752427,
-              "score" : 56
-            },
-            {
-              "answer_count" : 1,
-              "last_edit_date" : 1449032743,
-              "owner" : {
-                "accept_rate" : 80,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/4003420\/chetan-koli",
-                "user_id" : 4003420,
-                "display_name" : "Chetan Koli",
-                "reputation" : 108,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/33cf912d3a43ce13d574130f8fbd6358?s=128&d=identicon&r=PG&f=1"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/34035198\/pass-data-from-app-to-safari-web-page-back-using-universal-links-in-ios",
-              "tags" : [
-                "ios",
-                "objective-c",
-                "mobile-safari",
-                "ios-universal-links"
-              ],
-              "view_count" : 456,
-              "creation_date" : 1449032030,
-              "is_answered" : false,
-              "title" : "Pass data from App to Safari Web page back using Universal Links in iOS",
-              "last_activity_date" : 1449060386,
-              "question_id" : 34035198,
-              "score" : 3
-            },
-            {
-              "answer_count" : 2,
-              "last_edit_date" : 1392450537,
-              "owner" : {
-                "accept_rate" : 100,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/1445441\/tyler-cloutier",
-                "user_id" : 1445441,
-                "display_name" : "Tyler Cloutier",
-                "reputation" : 1696,
-                "profile_image" : "https:\/\/i.stack.imgur.com\/FmRiY.jpg?s=128&g=1"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/21794778\/prevent-uiscrollviews-uipangesturerecognizer-from-blocking-uiscreenedgepangestu",
-              "tags" : [
-                "ios",
-                "iphone",
-                "uiscrollview",
-                "uigesturerecognizer",
-                "uipangesturerecognizer"
-              ],
-              "view_count" : 8576,
-              "creation_date" : 1392449836,
-              "is_answered" : true,
-              "title" : "Prevent UIScrollView&#39;s UIPanGestureRecognizer from blocking UIScreenEdgePanGestureRecognizer",
-              "accepted_answer_id" : 21795765,
-              "last_activity_date" : 1445271684,
-              "question_id" : 21794778,
-              "score" : 13
-            },
-            {
-              "answer_count" : 1,
-              "last_edit_date" : 1445063446,
-              "owner" : {
-                "accept_rate" : 8,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/3213794\/vivek-shah",
-                "user_id" : 3213794,
-                "display_name" : "Vivek Shah",
-                "reputation" : 255,
-                "profile_image" : "https:\/\/i.stack.imgur.com\/s4DcF.jpg?s=128&g=1"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/33183533\/want-to-build-ios-app-with-right-to-left-and-left-to-right-languages-and-ui-acco",
-              "tags" : [
-                "ios",
-                "objective-c",
-                "localization",
-                "internationalization",
-                "right-to-left"
-              ],
-              "view_count" : 657,
-              "creation_date" : 1445063023,
-              "is_answered" : false,
-              "title" : "Want to build iOS app with Right to left and left to right languages and UI according to that",
-              "last_activity_date" : 1445063446,
-              "question_id" : 33183533,
-              "score" : 0
-            },
-            {
-              "owner" : {
-                "accept_rate" : 80,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/664067\/devang",
-                "user_id" : 664067,
-                "display_name" : "Devang",
-                "reputation" : 6849,
-                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/b638ff455d1708cc37bc9e3de8748e5c?s=128&d=identicon&r=PG&f=1"
-              },
-              "is_answered" : true,
-              "answer_count" : 1,
-              "score" : 3,
-              "creation_date" : 1420881680,
-              "title" : "MAC app : Unable to import Mac Distribution Profile in Organization",
-              "last_activity_date" : 1441372939,
-              "link" : "https:\/\/stackoverflow.com\/questions\/27874660\/mac-app-unable-to-import-mac-distribution-profile-in-organization",
-              "question_id" : 27874660,
-              "tags" : [
-                "xcode",
-                "macos",
-                "cocoa",
-                "mac-app-store"
-              ],
-              "view_count" : 559
-            }
-          ],
-          "quota_max" : 10000,
-          "quota_remaining" : 9915
-        }
-      },
-      "timeStamp" : "2018-11-02T10:03:57.872+11:00",
-      "id" : "11"
-    },
-    {
-      "request" : {
-        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110562?order=desc&sort=activity&site=stackoverflow&key=a5rx9FHh4USvbDpX9X1pbQ((&access_token=JOxMrQ0A(a2SqBisygFCUA))&filter=!-*jbN)fQB4uP",
-        "method" : "GET"
-      },
-      "response" : {
-        "headers" : {
-          "Access-Control-Allow-Origin" : "*",
-          "Access-Control-Allow-Credentials" : "false",
-          "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:04:03 GMT",
-          "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "931"
-        },
-        "status" : 200,
-        "body" : {
-          "has_more" : false,
-          "items" : [
-            {
-              "body" : "<p>I'm using a custom cell:<\/p>\n\n<pre><code>class recordedSetUICell: UITableViewCell {\n\n@IBOutlet weak var lblExerciseName: UILabel!\n@IBOutlet weak var lblSetNumber: UILabel!\n@IBOutlet weak var inp_txtReps: UITextField!\n@IBOutlet weak var inp_txtWeight: UITextField! }\n\n\noverride func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; recordedSetUICell {\n    print(indexPath.row)\n    var cell =  tableView.dequeueReusableCell(withIdentifier: \"cell\", for:indexPath) as! recordedSetUICell\n\n    if let dequeuedcell = tableView.dequeueReusableCell(withIdentifier: \"cell\", for: indexPath) as? recordedSetUICell {\n        cell = dequeuedcell\n    } else {\n        cell = recordedSetUICell(style: UITableViewCellStyle.default, reuseIdentifier: \"cell\")\n    }\n<\/code><\/pre>\n\n<p>I've declared the cell identifier in storyboard to 'cell' however i get the following error:<\/p>\n\n<p>'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier cell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'<\/p>\n",
-              "closed_reason" : "duplicate",
-              "answer_count" : 0,
-              "owner" : {
-                "accept_rate" : 6,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/4174219\/user4174219",
-                "user_id" : 4174219,
-                "display_name" : "user4174219",
-                "reputation" : 101,
-                "profile_image" : "https:\/\/graph.facebook.com\/100000803461711\/picture?type=large"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/53110562\/nsinternalinconsistencyexception-reason-unable-to-dequeue-a-cell-with-ident",
-              "tags" : [
-                "swift",
-                "tableview",
-                "custom-cell"
-              ],
-              "view_count" : 3,
-              "creation_date" : 1541113269,
-              "is_answered" : false,
-              "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
-              "favorited" : true,
-              "last_activity_date" : 1541113269,
-              "question_id" : 53110562,
-              "score" : 0,
-              "closed_date" : 1541113395
-            }
-          ],
-          "quota_max" : 10000,
-          "quota_remaining" : 9914
-        }
-      },
-      "timeStamp" : "2018-11-02T10:04:03.650+11:00",
-      "id" : "12"
-    },
-    {
-      "request" : {
-        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110562\/favorite\/undo",
-        "method" : "POST",
-        "headers" : {
-          "Content-Length" : "106",
-          "Content-Type" : "application\/x-www-form-urlencoded"
-        }
-      },
-      "response" : {
-        "headers" : {
-          "Access-Control-Allow-Origin" : "*",
-          "Access-Control-Allow-Credentials" : "false",
-          "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:04:06 GMT",
-          "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "929"
-        },
-        "status" : 200,
-        "body" : {
-          "has_more" : false,
-          "items" : [
-            {
-              "body" : "<p>I'm using a custom cell:<\/p>\n\n<pre><code>class recordedSetUICell: UITableViewCell {\n\n@IBOutlet weak var lblExerciseName: UILabel!\n@IBOutlet weak var lblSetNumber: UILabel!\n@IBOutlet weak var inp_txtReps: UITextField!\n@IBOutlet weak var inp_txtWeight: UITextField! }\n\n\noverride func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; recordedSetUICell {\n    print(indexPath.row)\n    var cell =  tableView.dequeueReusableCell(withIdentifier: \"cell\", for:indexPath) as! recordedSetUICell\n\n    if let dequeuedcell = tableView.dequeueReusableCell(withIdentifier: \"cell\", for: indexPath) as? recordedSetUICell {\n        cell = dequeuedcell\n    } else {\n        cell = recordedSetUICell(style: UITableViewCellStyle.default, reuseIdentifier: \"cell\")\n    }\n<\/code><\/pre>\n\n<p>I've declared the cell identifier in storyboard to 'cell' however i get the following error:<\/p>\n\n<p>'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier cell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'<\/p>\n",
-              "closed_reason" : "duplicate",
-              "answer_count" : 0,
-              "owner" : {
-                "accept_rate" : 6,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/4174219\/user4174219",
-                "user_id" : 4174219,
-                "display_name" : "user4174219",
-                "reputation" : 101,
-                "profile_image" : "https:\/\/graph.facebook.com\/100000803461711\/picture?type=large"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/53110562\/nsinternalinconsistencyexception-reason-unable-to-dequeue-a-cell-with-ident",
-              "tags" : [
-                "swift",
-                "tableview",
-                "custom-cell"
-              ],
-              "view_count" : 3,
-              "creation_date" : 1541113269,
-              "is_answered" : false,
-              "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
-              "favorited" : false,
-              "last_activity_date" : 1541113269,
-              "question_id" : 53110562,
-              "score" : 0,
-              "closed_date" : 1541113395
-            }
-          ],
-          "quota_max" : 10000,
-          "quota_remaining" : 9913
-        }
-      },
-      "timeStamp" : "2018-11-02T10:04:07.131+11:00",
-      "id" : "13"
-    },
-    {
-      "request" : {
-        "path" : "https:\/\/api.stackexchange.com\/2.2\/me\/favorites?order=desc&sort=activity&site=stackoverflow&key=a5rx9FHh4USvbDpX9X1pbQ((&access_token=JOxMrQ0A(a2SqBisygFCUA))&filter=default",
-        "method" : "GET"
-      },
-      "response" : {
-        "headers" : {
-          "Access-Control-Allow-Origin" : "*",
-          "Access-Control-Allow-Credentials" : "false",
-          "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:04:10 GMT",
-          "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "5620"
-        },
-        "status" : 200,
-        "body" : {
-          "has_more" : true,
-          "items" : [
-            {
-              "answer_count" : 2,
-              "owner" : {
-                "accept_rate" : 100,
-                "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/6886817\/jesper-johansson",
-                "user_id" : 6886817,
-                "display_name" : "Jesper Johansson",
-                "reputation" : 140,
-                "profile_image" : "https:\/\/i.stack.imgur.com\/2Nkw7.jpg?s=128&g=1"
-              },
-              "link" : "https:\/\/stackoverflow.com\/questions\/40969101\/ios10-userdefaults-file-location-path",
-              "tags" : [
-                "swift",
-                "swift3",
-                "nsuserdefaults",
-                "xcode8"
-              ],
-              "view_count" : 1031,
-              "creation_date" : 1480922594,
-              "is_answered" : true,
-              "title" : "iOS10 UserDefaults file location\/path?",
-              "accepted_answer_id" : 40969190,
-              "last_activity_date" : 1541081587,
-              "question_id" : 40969101,
-              "score" : 2
             },
             {
               "owner" : {
@@ -3096,151 +1887,282 @@
             }
           ],
           "quota_max" : 10000,
-          "quota_remaining" : 9912
+          "quota_remaining" : 9898
+        },
+        "status" : 200,
+        "headers" : {
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "X-Content-Type-Options" : "nosniff",
+          "Date" : "Thu, 01 Nov 2018 23:15:04 GMT",
+          "Access-Control-Allow-Origin" : "*",
+          "Cache-Control" : "private",
+          "Content-Encoding" : "gzip",
+          "Content-Length" : "5696",
+          "Content-Type" : "application\/json; charset=utf-8"
         }
       },
-      "timeStamp" : "2018-11-02T10:04:11.285+11:00",
-      "id" : "14"
+      "timeStamp" : "2018-11-02T10:15:05.787+11:00"
     },
     {
       "request" : {
-        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/40969101?order=desc&sort=activity&site=stackoverflow&key=a5rx9FHh4USvbDpX9X1pbQ((&access_token=JOxMrQ0A(a2SqBisygFCUA))&filter=!-*jbN)fQB4uP",
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110562?order=desc&sort=activity&site=stackoverflow&key=a5rx9FHh4USvbDpX9X1pbQ((&access_token=OY2dc(lZ2UUpOzoeVTukEg))&filter=!-*jbN)fQB4uP",
         "method" : "GET"
       },
+      "id" : "8",
       "response" : {
-        "headers" : {
-          "Access-Control-Allow-Origin" : "*",
-          "Access-Control-Allow-Credentials" : "false",
-          "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:04:15 GMT",
-          "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "611"
-        },
-        "status" : 200,
         "body" : {
           "has_more" : false,
           "items" : [
             {
-              "body" : "<p>I'm trying to view the stored keys and values that I save to User Defaults with this code:<\/p>\n\n<pre><code>UserDefaults.standard.setValue(myStringVar, forKey: \"my_key\")\n<\/code><\/pre>\n\n<p>But I can't find the location of the file containing this data in iPhone simulator?<\/p>\n",
-              "answer_count" : 2,
+              "body" : "<p>I'm using a custom cell:<\/p>\n\n<pre><code>class recordedSetUICell: UITableViewCell {\n\n@IBOutlet weak var lblExerciseName: UILabel!\n@IBOutlet weak var lblSetNumber: UILabel!\n@IBOutlet weak var inp_txtReps: UITextField!\n@IBOutlet weak var inp_txtWeight: UITextField! }\n\n\noverride func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; recordedSetUICell {\n    print(indexPath.row)\n    var cell =  tableView.dequeueReusableCell(withIdentifier: \"cell\", for:indexPath) as! recordedSetUICell\n\n    if let dequeuedcell = tableView.dequeueReusableCell(withIdentifier: \"cell\", for: indexPath) as? recordedSetUICell {\n        cell = dequeuedcell\n    } else {\n        cell = recordedSetUICell(style: UITableViewCellStyle.default, reuseIdentifier: \"cell\")\n    }\n<\/code><\/pre>\n\n<p>I've declared the cell identifier in storyboard to 'cell' however i get the following error:<\/p>\n\n<blockquote>\n  <p>'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier cell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'<\/p>\n<\/blockquote>\n",
+              "closed_reason" : "duplicate",
+              "answer_count" : 0,
+              "last_edit_date" : 1541113730,
               "owner" : {
-                "accept_rate" : 100,
+                "accept_rate" : 6,
                 "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/6886817\/jesper-johansson",
-                "user_id" : 6886817,
-                "display_name" : "Jesper Johansson",
-                "reputation" : 140,
-                "profile_image" : "https:\/\/i.stack.imgur.com\/2Nkw7.jpg?s=128&g=1"
+                "link" : "https:\/\/stackoverflow.com\/users\/4174219\/user4174219",
+                "user_id" : 4174219,
+                "display_name" : "user4174219",
+                "reputation" : 101,
+                "profile_image" : "https:\/\/graph.facebook.com\/100000803461711\/picture?type=large"
               },
-              "link" : "https:\/\/stackoverflow.com\/questions\/40969101\/ios10-userdefaults-file-location-path",
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110562\/nsinternalinconsistencyexception-reason-unable-to-dequeue-a-cell-with-ident",
               "tags" : [
+                "ios",
                 "swift",
-                "swift3",
-                "nsuserdefaults",
-                "xcode8"
+                "tableview",
+                "custom-cell"
               ],
-              "view_count" : 1031,
-              "creation_date" : 1480922594,
-              "is_answered" : true,
-              "title" : "iOS10 UserDefaults file location\/path?",
+              "view_count" : 5,
+              "creation_date" : 1541113269,
+              "is_answered" : false,
+              "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
               "favorited" : true,
-              "accepted_answer_id" : 40969190,
-              "last_activity_date" : 1541081587,
-              "question_id" : 40969101,
-              "score" : 2
+              "last_activity_date" : 1541113730,
+              "question_id" : 53110562,
+              "score" : 0,
+              "closed_date" : 1541113395
             }
           ],
           "quota_max" : 10000,
-          "quota_remaining" : 9911
+          "quota_remaining" : 9897
+        },
+        "status" : 200,
+        "headers" : {
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "X-Content-Type-Options" : "nosniff",
+          "Date" : "Thu, 01 Nov 2018 23:15:12 GMT",
+          "Access-Control-Allow-Origin" : "*",
+          "Cache-Control" : "private",
+          "Content-Encoding" : "gzip",
+          "Content-Length" : "955",
+          "Content-Type" : "application\/json; charset=utf-8"
         }
       },
-      "timeStamp" : "2018-11-02T10:04:16.582+11:00",
-      "id" : "15"
+      "timeStamp" : "2018-11-02T10:15:13.133+11:00"
     },
     {
       "request" : {
-        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/40969101\/favorite\/undo",
-        "method" : "POST",
         "headers" : {
-          "Content-Length" : "106",
-          "Content-Type" : "application\/x-www-form-urlencoded"
-        }
-      },
-      "response" : {
-        "headers" : {
-          "Access-Control-Allow-Origin" : "*",
-          "Access-Control-Allow-Credentials" : "false",
-          "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:04:17 GMT",
-          "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "613"
+          "Content-Type" : "application\/x-www-form-urlencoded",
+          "Content-Length" : "106"
         },
-        "status" : 200,
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110562\/favorite\/undo",
+        "method" : "POST"
+      },
+      "id" : "9",
+      "response" : {
         "body" : {
           "has_more" : false,
           "items" : [
             {
-              "body" : "<p>I'm trying to view the stored keys and values that I save to User Defaults with this code:<\/p>\n\n<pre><code>UserDefaults.standard.setValue(myStringVar, forKey: \"my_key\")\n<\/code><\/pre>\n\n<p>But I can't find the location of the file containing this data in iPhone simulator?<\/p>\n",
-              "answer_count" : 2,
+              "body" : "<p>I'm using a custom cell:<\/p>\n\n<pre><code>class recordedSetUICell: UITableViewCell {\n\n@IBOutlet weak var lblExerciseName: UILabel!\n@IBOutlet weak var lblSetNumber: UILabel!\n@IBOutlet weak var inp_txtReps: UITextField!\n@IBOutlet weak var inp_txtWeight: UITextField! }\n\n\noverride func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; recordedSetUICell {\n    print(indexPath.row)\n    var cell =  tableView.dequeueReusableCell(withIdentifier: \"cell\", for:indexPath) as! recordedSetUICell\n\n    if let dequeuedcell = tableView.dequeueReusableCell(withIdentifier: \"cell\", for: indexPath) as? recordedSetUICell {\n        cell = dequeuedcell\n    } else {\n        cell = recordedSetUICell(style: UITableViewCellStyle.default, reuseIdentifier: \"cell\")\n    }\n<\/code><\/pre>\n\n<p>I've declared the cell identifier in storyboard to 'cell' however i get the following error:<\/p>\n\n<blockquote>\n  <p>'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier cell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'<\/p>\n<\/blockquote>\n",
+              "closed_reason" : "duplicate",
+              "answer_count" : 0,
+              "last_edit_date" : 1541113730,
               "owner" : {
-                "accept_rate" : 100,
+                "accept_rate" : 6,
                 "user_type" : "registered",
-                "link" : "https:\/\/stackoverflow.com\/users\/6886817\/jesper-johansson",
-                "user_id" : 6886817,
-                "display_name" : "Jesper Johansson",
-                "reputation" : 140,
-                "profile_image" : "https:\/\/i.stack.imgur.com\/2Nkw7.jpg?s=128&g=1"
+                "link" : "https:\/\/stackoverflow.com\/users\/4174219\/user4174219",
+                "user_id" : 4174219,
+                "display_name" : "user4174219",
+                "reputation" : 101,
+                "profile_image" : "https:\/\/graph.facebook.com\/100000803461711\/picture?type=large"
               },
-              "link" : "https:\/\/stackoverflow.com\/questions\/40969101\/ios10-userdefaults-file-location-path",
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110562\/nsinternalinconsistencyexception-reason-unable-to-dequeue-a-cell-with-ident",
               "tags" : [
+                "ios",
                 "swift",
-                "swift3",
-                "nsuserdefaults",
-                "xcode8"
+                "tableview",
+                "custom-cell"
               ],
-              "view_count" : 1031,
-              "creation_date" : 1480922594,
-              "is_answered" : true,
-              "title" : "iOS10 UserDefaults file location\/path?",
+              "view_count" : 5,
+              "creation_date" : 1541113269,
+              "is_answered" : false,
+              "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
               "favorited" : false,
-              "accepted_answer_id" : 40969190,
-              "last_activity_date" : 1541081587,
-              "question_id" : 40969101,
-              "score" : 2
+              "last_activity_date" : 1541113730,
+              "question_id" : 53110562,
+              "score" : 0,
+              "closed_date" : 1541113395
             }
           ],
           "quota_max" : 10000,
-          "quota_remaining" : 9910
+          "quota_remaining" : 9896
+        },
+        "status" : 200,
+        "headers" : {
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "X-Content-Type-Options" : "nosniff",
+          "Date" : "Thu, 01 Nov 2018 23:15:15 GMT",
+          "Access-Control-Allow-Origin" : "*",
+          "Cache-Control" : "private",
+          "Content-Encoding" : "gzip",
+          "Content-Length" : "952",
+          "Content-Type" : "application\/json; charset=utf-8"
         }
       },
-      "timeStamp" : "2018-11-02T10:04:19.007+11:00",
-      "id" : "16"
+      "timeStamp" : "2018-11-02T10:15:15.821+11:00"
     },
     {
       "request" : {
-        "path" : "https:\/\/api.stackexchange.com\/2.2\/me\/favorites?order=desc&sort=activity&site=stackoverflow&key=a5rx9FHh4USvbDpX9X1pbQ((&access_token=JOxMrQ0A(a2SqBisygFCUA))&filter=default",
-        "method" : "GET"
-      },
-      "timeStamp" : "2018-11-02T10:04:22.454+11:00",
-      "response" : {
         "headers" : {
-          "Access-Control-Allow-Origin" : "*",
-          "Access-Control-Allow-Credentials" : "false",
-          "Access-Control-Allow-Methods" : "GET, POST",
-          "Content-Encoding" : "gzip",
-          "Cache-Control" : "private",
-          "Content-Type" : "application\/json; charset=utf-8",
-          "Date" : "Thu, 01 Nov 2018 23:04:21 GMT",
-          "X-Content-Type-Options" : "nosniff",
-          "Content-Length" : "5646"
+          "Content-Type" : "application\/x-www-form-urlencoded",
+          "Content-Length" : "106"
+        },
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110562\/favorite",
+        "method" : "POST"
+      },
+      "id" : "10",
+      "response" : {
+        "body" : {
+          "has_more" : false,
+          "items" : [
+            {
+              "body" : "<p>I'm using a custom cell:<\/p>\n\n<pre><code>class recordedSetUICell: UITableViewCell {\n\n@IBOutlet weak var lblExerciseName: UILabel!\n@IBOutlet weak var lblSetNumber: UILabel!\n@IBOutlet weak var inp_txtReps: UITextField!\n@IBOutlet weak var inp_txtWeight: UITextField! }\n\n\noverride func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; recordedSetUICell {\n    print(indexPath.row)\n    var cell =  tableView.dequeueReusableCell(withIdentifier: \"cell\", for:indexPath) as! recordedSetUICell\n\n    if let dequeuedcell = tableView.dequeueReusableCell(withIdentifier: \"cell\", for: indexPath) as? recordedSetUICell {\n        cell = dequeuedcell\n    } else {\n        cell = recordedSetUICell(style: UITableViewCellStyle.default, reuseIdentifier: \"cell\")\n    }\n<\/code><\/pre>\n\n<p>I've declared the cell identifier in storyboard to 'cell' however i get the following error:<\/p>\n\n<blockquote>\n  <p>'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier cell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'<\/p>\n<\/blockquote>\n",
+              "closed_reason" : "duplicate",
+              "answer_count" : 0,
+              "last_edit_date" : 1541113730,
+              "owner" : {
+                "accept_rate" : 6,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/4174219\/user4174219",
+                "user_id" : 4174219,
+                "display_name" : "user4174219",
+                "reputation" : 101,
+                "profile_image" : "https:\/\/graph.facebook.com\/100000803461711\/picture?type=large"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110562\/nsinternalinconsistencyexception-reason-unable-to-dequeue-a-cell-with-ident",
+              "tags" : [
+                "ios",
+                "swift",
+                "tableview",
+                "custom-cell"
+              ],
+              "view_count" : 5,
+              "creation_date" : 1541113269,
+              "is_answered" : false,
+              "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
+              "favorited" : true,
+              "last_activity_date" : 1541113730,
+              "question_id" : 53110562,
+              "score" : 0,
+              "closed_date" : 1541113395
+            }
+          ],
+          "quota_max" : 10000,
+          "quota_remaining" : 9895
         },
         "status" : 200,
+        "headers" : {
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "X-Content-Type-Options" : "nosniff",
+          "Date" : "Thu, 01 Nov 2018 23:15:18 GMT",
+          "Access-Control-Allow-Origin" : "*",
+          "Cache-Control" : "private",
+          "Content-Encoding" : "gzip",
+          "Content-Length" : "955",
+          "Content-Type" : "application\/json; charset=utf-8"
+        }
+      },
+      "timeStamp" : "2018-11-02T10:15:19.591+11:00"
+    },
+    {
+      "request" : {
+        "headers" : {
+          "Content-Type" : "application\/x-www-form-urlencoded",
+          "Content-Length" : "106"
+        },
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110562\/favorite\/undo",
+        "method" : "POST"
+      },
+      "id" : "11",
+      "response" : {
+        "body" : {
+          "has_more" : false,
+          "items" : [
+            {
+              "body" : "<p>I'm using a custom cell:<\/p>\n\n<pre><code>class recordedSetUICell: UITableViewCell {\n\n@IBOutlet weak var lblExerciseName: UILabel!\n@IBOutlet weak var lblSetNumber: UILabel!\n@IBOutlet weak var inp_txtReps: UITextField!\n@IBOutlet weak var inp_txtWeight: UITextField! }\n\n\noverride func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; recordedSetUICell {\n    print(indexPath.row)\n    var cell =  tableView.dequeueReusableCell(withIdentifier: \"cell\", for:indexPath) as! recordedSetUICell\n\n    if let dequeuedcell = tableView.dequeueReusableCell(withIdentifier: \"cell\", for: indexPath) as? recordedSetUICell {\n        cell = dequeuedcell\n    } else {\n        cell = recordedSetUICell(style: UITableViewCellStyle.default, reuseIdentifier: \"cell\")\n    }\n<\/code><\/pre>\n\n<p>I've declared the cell identifier in storyboard to 'cell' however i get the following error:<\/p>\n\n<blockquote>\n  <p>'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier cell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'<\/p>\n<\/blockquote>\n",
+              "closed_reason" : "duplicate",
+              "answer_count" : 0,
+              "last_edit_date" : 1541113730,
+              "owner" : {
+                "accept_rate" : 6,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/4174219\/user4174219",
+                "user_id" : 4174219,
+                "display_name" : "user4174219",
+                "reputation" : 101,
+                "profile_image" : "https:\/\/graph.facebook.com\/100000803461711\/picture?type=large"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110562\/nsinternalinconsistencyexception-reason-unable-to-dequeue-a-cell-with-ident",
+              "tags" : [
+                "ios",
+                "swift",
+                "tableview",
+                "custom-cell"
+              ],
+              "view_count" : 5,
+              "creation_date" : 1541113269,
+              "is_answered" : false,
+              "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
+              "favorited" : false,
+              "last_activity_date" : 1541113730,
+              "question_id" : 53110562,
+              "score" : 0,
+              "closed_date" : 1541113395
+            }
+          ],
+          "quota_max" : 10000,
+          "quota_remaining" : 9894
+        },
+        "status" : 200,
+        "headers" : {
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "X-Content-Type-Options" : "nosniff",
+          "Date" : "Thu, 01 Nov 2018 23:15:22 GMT",
+          "Access-Control-Allow-Origin" : "*",
+          "Cache-Control" : "private",
+          "Content-Encoding" : "gzip",
+          "Content-Length" : "952",
+          "Content-Type" : "application\/json; charset=utf-8"
+        }
+      },
+      "timeStamp" : "2018-11-02T10:15:23.141+11:00"
+    },
+    {
+      "request" : {
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/me\/favorites?order=desc&sort=activity&site=stackoverflow&key=a5rx9FHh4USvbDpX9X1pbQ((&access_token=OY2dc(lZ2UUpOzoeVTukEg))&filter=default",
+        "method" : "GET"
+      },
+      "id" : "12",
+      "response" : {
         "body" : {
           "has_more" : true,
           "items" : [
@@ -4051,12 +2973,972 @@
             }
           ],
           "quota_max" : 10000,
-          "quota_remaining" : 9909
+          "quota_remaining" : 9893
+        },
+        "status" : 200,
+        "headers" : {
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "X-Content-Type-Options" : "nosniff",
+          "Date" : "Thu, 01 Nov 2018 23:15:25 GMT",
+          "Access-Control-Allow-Origin" : "*",
+          "Cache-Control" : "private",
+          "Content-Encoding" : "gzip",
+          "Content-Length" : "5647",
+          "Content-Type" : "application\/json; charset=utf-8"
+        }
+      },
+      "timeStamp" : "2018-11-02T10:15:27.191+11:00"
+    },
+    {
+      "request" : {
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110618?order=desc&sort=activity&site=stackoverflow&key=a5rx9FHh4USvbDpX9X1pbQ((&access_token=OY2dc(lZ2UUpOzoeVTukEg))&filter=!-*jbN)fQB4uP",
+        "method" : "GET"
+      },
+      "id" : "13",
+      "response" : {
+        "body" : {
+          "has_more" : false,
+          "items" : [
+            {
+              "body" : "<p>So I'm having a problem with firebase and its login function.<\/p>\n\n<p>Here's the code for the login in screen :<\/p>\n\n<pre><code>import UIKit\nimport Firebase\nimport FirebaseAuth\n\n\nclass LoginScreenViewController: UIViewController {\n\n@IBOutlet weak var usernameField: UITextField!\n@IBOutlet weak var passwordField: UITextField!\n\n\noverride func viewDidLoad() {\n    super.viewDidLoad()\n\n}\n\noverride func viewWillAppear(_ animated: Bool) {\n    super.viewWillAppear(animated)\n\n    usernameField.text = \"\"\n    passwordField.text = \"\"\n}\n\n\n@IBAction func createAccountButton(_ sender: Any) {\n     self.performSegue(withIdentifier: \"createAccount\", sender: self)\n}\n\n\n@IBAction func loginButtonPressed(_ sender: Any) {\n\n    Auth.auth().signIn(withEmail: usernameField.text!, password: passwordField.text!) { (user, error) in\n        if error != nil {\n            print(error!.localizedDescription)\n        }else if error == nil{\n           self.performSegue(withIdentifier: \"loginToMain\", sender: self)\n        }\n    }\n\n}\n\n@IBAction func unwindFromMainToLogin(segue: UIStoryboardSegue) {\n}\n\n\n}\n<\/code><\/pre>\n\n<p>and here's the code for the create a login screen :<\/p>\n\n<pre><code>import UIKit\nimport Firebase\n\nclass CreateLoginViewController: UIViewController {\n\n@IBOutlet weak var usernameField: UITextField!\n@IBOutlet weak var passwordField: UITextField!\n\n\noverride func viewDidLoad() {\n    super.viewDidLoad()\n}\n\n\n@IBAction func createAccountPressed(_ sender: Any) {\n\n    Auth.auth().createUser(withEmail: usernameField.text!, password: usernameField.text!) { (user, error) in\n\n        if let error = error {\n            print(error.localizedDescription)\n\n            let alert = UIAlertController(title: \"Error\", message: error.localizedDescription, preferredStyle: .alert)\n\n            alert.addAction(UIAlertAction(title: \"Okay\", style: .default, handler: { action in\n\n            }))\n\n            self.present(alert, animated: true, completion: nil)\n        }\n        else if let user = user {\n            print(\"Sign Up Successfully. \\(user.user.uid)\")\n            self.performSegue(withIdentifier: \"unwindFromMainToLogin\", sender: self)\n        }\n\n    }\n\n}\n\n\n\n}\n<\/code><\/pre>\n\n<p>Everything works fine up to the point when I go to login. The console prints \"Sign up Successfully\". But when I go to login on my main screen the console always prints out the localized description and says \"The password is invalid or the user does not have a password\" even when the password is correct. I'm not sure if this a common problem but I've tried and tried to troubleshoot and couldn't found a fix for it.<\/p>\n\n<p>Any help would be appreciated!<\/p>\n",
+              "answer_count" : 0,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/10526657\/zach",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/0911b7535d3a20ffb7a2d032486365b8?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 10526657,
+                "display_name" : "Zach",
+                "reputation" : 11,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110618\/firebase-saying-password-is-incorrect-not-reading-password-when-correct",
+              "tags" : [
+                "swift",
+                "database",
+                "firebase",
+                "firebase-authentication"
+              ],
+              "view_count" : 3,
+              "creation_date" : 1541113682,
+              "is_answered" : false,
+              "title" : "Firebase saying password is incorrect \/\/ not reading password when correct",
+              "favorited" : false,
+              "last_activity_date" : 1541113682,
+              "question_id" : 53110618,
+              "score" : 0
+            }
+          ],
+          "quota_max" : 10000,
+          "quota_remaining" : 9892
+        },
+        "status" : 200,
+        "headers" : {
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "X-Content-Type-Options" : "nosniff",
+          "Date" : "Thu, 01 Nov 2018 23:15:30 GMT",
+          "Access-Control-Allow-Origin" : "*",
+          "Cache-Control" : "private",
+          "Content-Encoding" : "gzip",
+          "Content-Length" : "1417",
+          "Content-Type" : "application\/json; charset=utf-8"
+        }
+      },
+      "timeStamp" : "2018-11-02T10:15:31.303+11:00"
+    },
+    {
+      "request" : {
+        "headers" : {
+          "Content-Type" : "application\/x-www-form-urlencoded",
+          "Content-Length" : "106"
+        },
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/questions\/53110618\/favorite",
+        "method" : "POST"
+      },
+      "id" : "14",
+      "response" : {
+        "body" : {
+          "has_more" : false,
+          "items" : [
+            {
+              "body" : "<p>So I'm having a problem with firebase and its login function.<\/p>\n\n<p>Here's the code for the login in screen :<\/p>\n\n<pre><code>import UIKit\nimport Firebase\nimport FirebaseAuth\n\n\nclass LoginScreenViewController: UIViewController {\n\n@IBOutlet weak var usernameField: UITextField!\n@IBOutlet weak var passwordField: UITextField!\n\n\noverride func viewDidLoad() {\n    super.viewDidLoad()\n\n}\n\noverride func viewWillAppear(_ animated: Bool) {\n    super.viewWillAppear(animated)\n\n    usernameField.text = \"\"\n    passwordField.text = \"\"\n}\n\n\n@IBAction func createAccountButton(_ sender: Any) {\n     self.performSegue(withIdentifier: \"createAccount\", sender: self)\n}\n\n\n@IBAction func loginButtonPressed(_ sender: Any) {\n\n    Auth.auth().signIn(withEmail: usernameField.text!, password: passwordField.text!) { (user, error) in\n        if error != nil {\n            print(error!.localizedDescription)\n        }else if error == nil{\n           self.performSegue(withIdentifier: \"loginToMain\", sender: self)\n        }\n    }\n\n}\n\n@IBAction func unwindFromMainToLogin(segue: UIStoryboardSegue) {\n}\n\n\n}\n<\/code><\/pre>\n\n<p>and here's the code for the create a login screen :<\/p>\n\n<pre><code>import UIKit\nimport Firebase\n\nclass CreateLoginViewController: UIViewController {\n\n@IBOutlet weak var usernameField: UITextField!\n@IBOutlet weak var passwordField: UITextField!\n\n\noverride func viewDidLoad() {\n    super.viewDidLoad()\n}\n\n\n@IBAction func createAccountPressed(_ sender: Any) {\n\n    Auth.auth().createUser(withEmail: usernameField.text!, password: usernameField.text!) { (user, error) in\n\n        if let error = error {\n            print(error.localizedDescription)\n\n            let alert = UIAlertController(title: \"Error\", message: error.localizedDescription, preferredStyle: .alert)\n\n            alert.addAction(UIAlertAction(title: \"Okay\", style: .default, handler: { action in\n\n            }))\n\n            self.present(alert, animated: true, completion: nil)\n        }\n        else if let user = user {\n            print(\"Sign Up Successfully. \\(user.user.uid)\")\n            self.performSegue(withIdentifier: \"unwindFromMainToLogin\", sender: self)\n        }\n\n    }\n\n}\n\n\n\n}\n<\/code><\/pre>\n\n<p>Everything works fine up to the point when I go to login. The console prints \"Sign up Successfully\". But when I go to login on my main screen the console always prints out the localized description and says \"The password is invalid or the user does not have a password\" even when the password is correct. I'm not sure if this a common problem but I've tried and tried to troubleshoot and couldn't found a fix for it.<\/p>\n\n<p>Any help would be appreciated!<\/p>\n",
+              "answer_count" : 0,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/10526657\/zach",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/0911b7535d3a20ffb7a2d032486365b8?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 10526657,
+                "display_name" : "Zach",
+                "reputation" : 11,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110618\/firebase-saying-password-is-incorrect-not-reading-password-when-correct",
+              "tags" : [
+                "swift",
+                "database",
+                "firebase",
+                "firebase-authentication"
+              ],
+              "view_count" : 3,
+              "creation_date" : 1541113682,
+              "is_answered" : false,
+              "title" : "Firebase saying password is incorrect \/\/ not reading password when correct",
+              "favorited" : true,
+              "last_activity_date" : 1541113682,
+              "question_id" : 53110618,
+              "score" : 0
+            }
+          ],
+          "quota_max" : 10000,
+          "quota_remaining" : 9891
+        },
+        "status" : 200,
+        "headers" : {
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "X-Content-Type-Options" : "nosniff",
+          "Date" : "Thu, 01 Nov 2018 23:15:32 GMT",
+          "Access-Control-Allow-Origin" : "*",
+          "Cache-Control" : "private",
+          "Content-Encoding" : "gzip",
+          "Content-Length" : "1418",
+          "Content-Type" : "application\/json; charset=utf-8"
+        }
+      },
+      "timeStamp" : "2018-11-02T10:15:33.543+11:00"
+    },
+    {
+      "request" : {
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/me\/favorites?order=desc&sort=activity&site=stackoverflow&key=a5rx9FHh4USvbDpX9X1pbQ((&access_token=OY2dc(lZ2UUpOzoeVTukEg))&filter=default",
+        "method" : "GET"
+      },
+      "timeStamp" : "2018-11-02T10:15:37.835+11:00",
+      "response" : {
+        "body" : {
+          "has_more" : true,
+          "items" : [
+            {
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/10526657\/zach",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/0911b7535d3a20ffb7a2d032486365b8?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 10526657,
+                "display_name" : "Zach",
+                "reputation" : 11,
+                "user_type" : "registered"
+              },
+              "is_answered" : false,
+              "answer_count" : 0,
+              "score" : 0,
+              "creation_date" : 1541113682,
+              "title" : "Firebase saying password is incorrect \/\/ not reading password when correct",
+              "last_activity_date" : 1541113682,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110618\/firebase-saying-password-is-incorrect-not-reading-password-when-correct",
+              "question_id" : 53110618,
+              "tags" : [
+                "swift",
+                "database",
+                "firebase",
+                "firebase-authentication"
+              ],
+              "view_count" : 3
+            },
+            {
+              "owner" : {
+                "accept_rate" : 77,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/2817697\/rkh",
+                "user_id" : 2817697,
+                "display_name" : "rkh",
+                "reputation" : 546,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/8608402fb9f35fb3d5264035be13d955?s=128&d=identicon&r=PG&f=1"
+              },
+              "is_answered" : true,
+              "answer_count" : 2,
+              "score" : 1,
+              "creation_date" : 1457313185,
+              "title" : "didUpdateHeading not called in swift",
+              "last_activity_date" : 1540901146,
+              "link" : "https:\/\/stackoverflow.com\/questions\/35834700\/didupdateheading-not-called-in-swift",
+              "question_id" : 35834700,
+              "tags" : [
+                "swift",
+                "ios9",
+                "cllocationmanager"
+              ],
+              "view_count" : 1534
+            },
+            {
+              "answer_count" : 3,
+              "last_edit_date" : 1517405998,
+              "owner" : {
+                "accept_rate" : 84,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/1044591\/titouan-de-bailleul",
+                "user_id" : 1044591,
+                "display_name" : "Titouan de Bailleul",
+                "reputation" : 10787,
+                "profile_image" : "https:\/\/i.stack.imgur.com\/YWxPF.jpg?s=128&g=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/45228343\/adduiinterruptionmonitorwithdescriptionhandler-not-working-on-ios-10-or-9",
+              "tags" : [
+                "ios",
+                "swift",
+                "xctest",
+                "xcode-ui-testing"
+              ],
+              "view_count" : 1332,
+              "creation_date" : 1500606528,
+              "is_answered" : true,
+              "title" : "addUIInterruptionMonitor(withDescription:handler:) not working on iOS 10 or 9",
+              "last_activity_date" : 1539977873,
+              "question_id" : 45228343,
+              "score" : 9
+            },
+            {
+              "answer_count" : 0,
+              "last_edit_date" : 1539001571,
+              "owner" : {
+                "accept_rate" : 98,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/7219266\/balanced",
+                "user_id" : 7219266,
+                "display_name" : "Balanced",
+                "reputation" : 670,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/4997bb06d37b260dc1ed8afeabd1e820?s=128&d=identicon&r=PG&f=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52665680\/ios-detect-pangesture-on-edge-of-screen-to-open-side-menu-uicollectionview-w",
+              "tags" : [
+                "ios",
+                "swift",
+                "uipangesturerecognizer",
+                "swrevealviewcontroller",
+                "side-menu"
+              ],
+              "view_count" : 53,
+              "creation_date" : 1538742593,
+              "is_answered" : false,
+              "title" : "iOS - Detect panGesture on edge of screen to open side menu + UICollectionView with horizontal scrolling",
+              "last_activity_date" : 1539001571,
+              "question_id" : 52665680,
+              "score" : 3
+            },
+            {
+              "owner" : {
+                "accept_rate" : 54,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/839657\/ekl",
+                "user_id" : 839657,
+                "display_name" : "ekl",
+                "reputation" : 452,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/5e7b95500f546b877e93aff385b24430?s=128&d=identicon&r=PG"
+              },
+              "is_answered" : true,
+              "answer_count" : 2,
+              "score" : 2,
+              "creation_date" : 1374608305,
+              "title" : "Mac OS X -- receive notification when frontmost window changes",
+              "last_activity_date" : 1535881024,
+              "link" : "https:\/\/stackoverflow.com\/questions\/17819529\/mac-os-x-receive-notification-when-frontmost-window-changes",
+              "question_id" : 17819529,
+              "tags" : [
+                "objective-c",
+                "macos",
+                "events",
+                "notifications",
+                "applescript"
+              ],
+              "view_count" : 815
+            },
+            {
+              "closed_reason" : "off-topic",
+              "answer_count" : 0,
+              "owner" : {
+                "accept_rate" : 82,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/1107173\/user1107173",
+                "user_id" : 1107173,
+                "display_name" : "user1107173",
+                "reputation" : 3171,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/0930090dd79534d825896c741d2cf749?s=128&d=identicon&r=PG"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/33727929\/ios-restkit-alternative-for-swift",
+              "tags" : [
+                "ios",
+                "core-data",
+                "ios9",
+                "xcode7",
+                "nsmanagedobject"
+              ],
+              "view_count" : 1297,
+              "creation_date" : 1447643368,
+              "is_answered" : false,
+              "title" : "iOS: RestKit Alternative for Swift",
+              "last_activity_date" : 1530789303,
+              "question_id" : 33727929,
+              "score" : 3,
+              "closed_date" : 1530834639
+            },
+            {
+              "answer_count" : 1,
+              "last_edit_date" : 1527686441,
+              "owner" : {
+                "accept_rate" : 62,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/234\/orion-edwards",
+                "user_id" : 234,
+                "display_name" : "Orion Edwards",
+                "reputation" : 83877,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/3a9ff49a9e689dcbfc8242f05180cc31?s=128&d=identicon&r=PG"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/32542846\/reactivecocoa-vs-rxswift-pros-and-cons",
+              "tags" : [
+                "swift",
+                "reactive-programming",
+                "rx-swift",
+                "reactive-cocoa-3"
+              ],
+              "view_count" : 25491,
+              "creation_date" : 1442086181,
+              "is_answered" : true,
+              "title" : "ReactiveCocoa vs RxSwift - pros and cons?",
+              "accepted_answer_id" : 32581824,
+              "last_activity_date" : 1527686441,
+              "question_id" : 32542846,
+              "score" : 235
+            },
+            {
+              "answer_count" : 3,
+              "last_edit_date" : 1495540810,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/3602469\/mahmoud-ibrahim",
+                "profile_image" : "https:\/\/i.stack.imgur.com\/nOvJd.jpg?s=128&g=1",
+                "user_id" : 3602469,
+                "display_name" : "Mahmoud Ibrahim",
+                "reputation" : 44,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/23497553\/how-can-i-implement-ios-with-rtl-for-arabic-hebrew",
+              "tags" : [
+                "ios",
+                "arabic",
+                "right-to-left",
+                "hebrew"
+              ],
+              "view_count" : 10160,
+              "creation_date" : 1399386482,
+              "is_answered" : true,
+              "title" : "How can I implement iOS with RTL for Arabic Hebrew?",
+              "last_activity_date" : 1525749135,
+              "question_id" : 23497553,
+              "score" : 7
+            },
+            {
+              "answer_count" : 3,
+              "last_edit_date" : 1495535288,
+              "owner" : {
+                "accept_rate" : 26,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/1116465\/rodrigo-ruiz",
+                "user_id" : 1116465,
+                "display_name" : "Rodrigo Ruiz",
+                "reputation" : 1531,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/b5d919b9dcff45f8ff58cd127f517d6b?s=128&d=identicon&r=PG"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/32929981\/how-to-deep-merge-2-swift-dictionaries",
+              "tags" : [
+                "swift",
+                "dictionary"
+              ],
+              "view_count" : 547,
+              "creation_date" : 1443932264,
+              "is_answered" : true,
+              "title" : "How to deep merge 2 Swift dictionaries",
+              "last_activity_date" : 1520851135,
+              "question_id" : 32929981,
+              "score" : 2
+            },
+            {
+              "owner" : {
+                "accept_rate" : 50,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/3489438\/steve",
+                "user_id" : 3489438,
+                "display_name" : "Steve",
+                "reputation" : 13,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/eed10a347dc9c062acadcbb77bedcbb5?s=128&d=identicon&r=PG&f=1"
+              },
+              "is_answered" : false,
+              "answer_count" : 2,
+              "score" : 1,
+              "creation_date" : 1426774566,
+              "title" : "C++ ExportAsFixedFormat to save as PDF",
+              "last_activity_date" : 1516704747,
+              "link" : "https:\/\/stackoverflow.com\/questions\/29146952\/c-exportasfixedformat-to-save-as-pdf",
+              "question_id" : 29146952,
+              "tags" : [
+                "c++",
+                "excel",
+                "pdf",
+                "automation",
+                "export"
+              ],
+              "view_count" : 829
+            },
+            {
+              "answer_count" : 0,
+              "last_edit_date" : 1502860295,
+              "owner" : {
+                "accept_rate" : 67,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/5896260\/tnguyen",
+                "user_id" : 5896260,
+                "display_name" : "TNguyen",
+                "reputation" : 551,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/2fa3613cffecccc0bc3985523bf7a50e?s=128&d=identicon&r=PG&f=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/45705094\/applicationprotecteddatadidbecomeavailable-does-not-get-called-after-locking-dev",
+              "tags" : [
+                "ios",
+                "objective-c",
+                "swift",
+                "appdelegate",
+                "data-protection"
+              ],
+              "view_count" : 319,
+              "creation_date" : 1502857423,
+              "is_answered" : false,
+              "title" : "applicationProtectedDataDidBecomeAvailable does not get called after locking device for over 2 minutes",
+              "last_activity_date" : 1502860295,
+              "question_id" : 45705094,
+              "score" : 1
+            },
+            {
+              "answer_count" : 4,
+              "last_edit_date" : 1485127065,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/3046269\/mp3821",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/6c77a52c0f33ea2e265ad9e4b19b8db2?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 3046269,
+                "display_name" : "mp3821",
+                "reputation" : 451,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/20269116\/nsuserdefaults-losing-its-keys-values-when-phone-is-rebooted-but-not-unlocked",
+              "tags" : [
+                "ios",
+                "background",
+                "nsuserdefaults",
+                "core-location",
+                "reboot"
+              ],
+              "view_count" : 9905,
+              "creation_date" : 1385650383,
+              "is_answered" : true,
+              "title" : "NSUserDefaults losing its keys &amp; values when phone is rebooted but not unlocked",
+              "accepted_answer_id" : 20840053,
+              "last_activity_date" : 1494576588,
+              "question_id" : 20269116,
+              "score" : 38
+            },
+            {
+              "answer_count" : 2,
+              "last_edit_date" : 1481122823,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/4988632\/kevin-zhu",
+                "profile_image" : "https:\/\/graph.facebook.com\/1401645060165482\/picture?type=large",
+                "user_id" : 4988632,
+                "display_name" : "Kevin Zhu",
+                "reputation" : 10,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/40967892\/centos-qt-creator-when-executing-step-qmake",
+              "tags" : [
+                "qt",
+                "qt-creator",
+                "centos7"
+              ],
+              "view_count" : 581,
+              "creation_date" : 1480917211,
+              "is_answered" : true,
+              "title" : "CentOS qt-creator when executing step qmake",
+              "accepted_answer_id" : 40982941,
+              "last_activity_date" : 1492106892,
+              "question_id" : 40967892,
+              "score" : 1
+            },
+            {
+              "owner" : {
+                "accept_rate" : 60,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/264410\/michael",
+                "user_id" : 264410,
+                "display_name" : "michael",
+                "reputation" : 1259,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/98a0fcc9a9390a0863a901945c45212c?s=128&d=identicon&r=PG"
+              },
+              "is_answered" : true,
+              "answer_count" : 2,
+              "score" : 7,
+              "creation_date" : 1441950248,
+              "title" : "Is there an API call to get a list of saved places in Google Maps?",
+              "last_activity_date" : 1491702820,
+              "link" : "https:\/\/stackoverflow.com\/questions\/32516268\/is-there-an-api-call-to-get-a-list-of-saved-places-in-google-maps",
+              "question_id" : 32516268,
+              "tags" : [
+                "google-maps-api-3"
+              ],
+              "view_count" : 1377
+            },
+            {
+              "answer_count" : 3,
+              "last_edit_date" : 1402911436,
+              "owner" : {
+                "accept_rate" : 75,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/1722214\/tim",
+                "user_id" : 1722214,
+                "display_name" : "Tim",
+                "reputation" : 1293,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/0e75f741d8efc2766ad896b3b5612975?s=128&d=identicon&r=PG"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/24156885\/using-app-links-hosting-api-for-link-shared-on-facebook-from-ios-app",
+              "tags" : [
+                "ios",
+                "facebook",
+                "opengraph",
+                "applinks"
+              ],
+              "view_count" : 5344,
+              "creation_date" : 1402471141,
+              "is_answered" : true,
+              "title" : "Using App Links Hosting API for link shared on Facebook from iOS app",
+              "accepted_answer_id" : 26725550,
+              "last_activity_date" : 1489957852,
+              "question_id" : 24156885,
+              "score" : 8
+            },
+            {
+              "answer_count" : 2,
+              "last_edit_date" : 1495541427,
+              "owner" : {
+                "accept_rate" : 75,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/569546\/darkshore-grouper",
+                "user_id" : 569546,
+                "display_name" : "Darkshore Grouper",
+                "reputation" : 428,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/0535cab5ebf4fe655af9ee330777c79e?s=128&d=identicon&r=PG"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/27685775\/ios-7-force-view-layout-flip-to-rtl-without-language-change",
+              "tags" : [
+                "ios",
+                "xcode"
+              ],
+              "view_count" : 3648,
+              "creation_date" : 1419842543,
+              "is_answered" : true,
+              "title" : "ios 7 - Force view layout flip to RTL without language change",
+              "last_activity_date" : 1487907114,
+              "question_id" : 27685775,
+              "score" : 8
+            },
+            {
+              "answer_count" : 4,
+              "last_edit_date" : 1384739389,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/2898568\/koosc2",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/c5829178d7904f98459fb78409d70e06?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 2898568,
+                "display_name" : "Koosc2",
+                "reputation" : 35,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/20038177\/error-inflating-class-fragment-for-supportmapfragment",
+              "tags" : [
+                "android",
+                "google-maps"
+              ],
+              "view_count" : 8103,
+              "creation_date" : 1384735315,
+              "is_answered" : true,
+              "title" : "Error inflating class fragment for SupportMapFragment",
+              "accepted_answer_id" : 35757155,
+              "last_activity_date" : 1484030093,
+              "question_id" : 20038177,
+              "score" : 5
+            },
+            {
+              "answer_count" : 3,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/2798503\/misha-svyatoshenko",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/ceea5f49370de1a42b69521cbe72eedc?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 2798503,
+                "display_name" : "Misha Svyatoshenko",
+                "reputation" : 307,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/37847018\/how-can-i-use-swift-2-3-in-xcode-8-playgrounds",
+              "tags" : [
+                "swift",
+                "swift-playground",
+                "xcode8"
+              ],
+              "view_count" : 8223,
+              "creation_date" : 1466030472,
+              "is_answered" : true,
+              "title" : "How can I use Swift 2.3 in XCode 8 Playgrounds?",
+              "accepted_answer_id" : 38326852,
+              "last_activity_date" : 1478525862,
+              "question_id" : 37847018,
+              "score" : 33
+            },
+            {
+              "answer_count" : 1,
+              "last_edit_date" : 1475137349,
+              "owner" : {
+                "accept_rate" : 29,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/1495463\/hardik-shah",
+                "user_id" : 1495463,
+                "display_name" : "Hardik Shah",
+                "reputation" : 63,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/a0011f0c3927a02a031e70d30fee283d?s=128&d=identicon&r=PG"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/17884197\/multi-language-design-support-in-ios",
+              "tags" : [
+                "ios",
+                "design",
+                "multilingual",
+                "multilanguage"
+              ],
+              "view_count" : 677,
+              "creation_date" : 1374849336,
+              "is_answered" : true,
+              "title" : "Multi Language Design support in IOS",
+              "last_activity_date" : 1475137349,
+              "question_id" : 17884197,
+              "score" : 1
+            },
+            {
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/3842629\/friedpotato",
+                "profile_image" : "https:\/\/i.stack.imgur.com\/3vwUF.jpg?s=128&g=1",
+                "user_id" : 3842629,
+                "display_name" : "FriedPotato",
+                "reputation" : 84,
+                "user_type" : "registered"
+              },
+              "is_answered" : true,
+              "answer_count" : 2,
+              "score" : 9,
+              "creation_date" : 1413018984,
+              "title" : "iOS 8: Admob banner ad implementation in &quot;universal storyboard&quot; (iPhone + iPhone 6 + iPad)",
+              "last_activity_date" : 1466794005,
+              "link" : "https:\/\/stackoverflow.com\/questions\/26313051\/ios-8-admob-banner-ad-implementation-in-universal-storyboard-iphone-iphone",
+              "question_id" : 26313051,
+              "tags" : [
+                "objective-c",
+                "storyboard",
+                "ios8",
+                "admob",
+                "xcode6"
+              ],
+              "view_count" : 5060
+            },
+            {
+              "answer_count" : 1,
+              "last_edit_date" : 1380894688,
+              "owner" : {
+                "accept_rate" : 0,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/2596319\/sr-farzad",
+                "user_id" : 2596319,
+                "display_name" : "sr.farzad",
+                "reputation" : 345,
+                "profile_image" : "https:\/\/i.stack.imgur.com\/Esuhp.jpg?s=128&g=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/18192601\/how-to-search-in-google-map-api-v2-android",
+              "tags" : [
+                "android",
+                "google-maps",
+                "geolocation",
+                "google-maps-markers",
+                "google-maps-api-2"
+              ],
+              "view_count" : 33172,
+              "creation_date" : 1376326767,
+              "is_answered" : true,
+              "title" : "How to Search in Google Map Api V2 Android?",
+              "last_activity_date" : 1457346949,
+              "question_id" : 18192601,
+              "score" : 14
+            },
+            {
+              "owner" : {
+                "accept_rate" : 42,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/1318432\/anthoprotic",
+                "user_id" : 1318432,
+                "display_name" : "anthoprotic",
+                "reputation" : 474,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/1508967846d705c18690bf93790f3da0?s=128&d=identicon&r=PG"
+              },
+              "is_answered" : true,
+              "answer_count" : 5,
+              "score" : 34,
+              "creation_date" : 1350695655,
+              "title" : "UIActivityViewController - Email and Twitter sharing",
+              "last_activity_date" : 1455527929,
+              "link" : "https:\/\/stackoverflow.com\/questions\/12984403\/uiactivityviewcontroller-email-and-twitter-sharing",
+              "question_id" : 12984403,
+              "tags" : [
+                "ios",
+                "email",
+                "nsmutablearray",
+                "ios6",
+                "uiactivity"
+              ],
+              "view_count" : 39873
+            },
+            {
+              "answer_count" : 1,
+              "last_edit_date" : 1446773176,
+              "owner" : {
+                "accept_rate" : 67,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/3782629\/joshua-hart",
+                "user_id" : 3782629,
+                "display_name" : "Joshua Hart",
+                "reputation" : 370,
+                "profile_image" : "https:\/\/i.stack.imgur.com\/jIWwp.jpg?s=128&g=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/33557458\/xcode-7-1-errors-uiaccessibility-errors",
+              "tags" : [
+                "ios",
+                "parse.com",
+                "uiaccessibility"
+              ],
+              "view_count" : 3236,
+              "creation_date" : 1446770094,
+              "is_answered" : true,
+              "title" : "Xcode 7.1 Errors UIAccessibility Errors",
+              "last_activity_date" : 1455468418,
+              "question_id" : 33557458,
+              "score" : 11
+            },
+            {
+              "closed_reason" : "off-topic",
+              "answer_count" : 0,
+              "owner" : {
+                "accept_rate" : 45,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/3990005\/jonaszmclaren",
+                "user_id" : 3990005,
+                "display_name" : "jonaszmclaren",
+                "reputation" : 1587,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/bcb731bedd60fd251dcbf1b77b1ca97d?s=128&d=identicon&r=PG&f=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/35384466\/swift-replacement-for-restkit",
+              "tags" : [
+                "ios",
+                "json",
+                "swift",
+                "rest",
+                "restkit"
+              ],
+              "view_count" : 361,
+              "creation_date" : 1455392200,
+              "is_answered" : false,
+              "title" : "Swift replacement for RestKit",
+              "last_activity_date" : 1455392200,
+              "question_id" : 35384466,
+              "score" : 5,
+              "closed_date" : 1455548827
+            },
+            {
+              "answer_count" : 4,
+              "last_edit_date" : 1440010578,
+              "owner" : {
+                "accept_rate" : 62,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/388588\/chris-ladd",
+                "user_id" : 388588,
+                "display_name" : "Chris Ladd",
+                "reputation" : 2055,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/972578c2826f2b9492748f8f3d895f38?s=128&d=identicon&r=PG"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/4752427\/osx-detect-system-wide-keydown-events",
+              "tags" : [
+                "macos",
+                "keyboard",
+                "keydown",
+                "nsnotificationcenter"
+              ],
+              "view_count" : 21970,
+              "creation_date" : 1295556608,
+              "is_answered" : true,
+              "title" : "OSX: Detect system-wide keyDown events?",
+              "accepted_answer_id" : 4754241,
+              "last_activity_date" : 1452347025,
+              "question_id" : 4752427,
+              "score" : 56
+            },
+            {
+              "answer_count" : 1,
+              "last_edit_date" : 1449032743,
+              "owner" : {
+                "accept_rate" : 80,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/4003420\/chetan-koli",
+                "user_id" : 4003420,
+                "display_name" : "Chetan Koli",
+                "reputation" : 108,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/33cf912d3a43ce13d574130f8fbd6358?s=128&d=identicon&r=PG&f=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/34035198\/pass-data-from-app-to-safari-web-page-back-using-universal-links-in-ios",
+              "tags" : [
+                "ios",
+                "objective-c",
+                "mobile-safari",
+                "ios-universal-links"
+              ],
+              "view_count" : 456,
+              "creation_date" : 1449032030,
+              "is_answered" : false,
+              "title" : "Pass data from App to Safari Web page back using Universal Links in iOS",
+              "last_activity_date" : 1449060386,
+              "question_id" : 34035198,
+              "score" : 3
+            },
+            {
+              "answer_count" : 2,
+              "last_edit_date" : 1392450537,
+              "owner" : {
+                "accept_rate" : 100,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/1445441\/tyler-cloutier",
+                "user_id" : 1445441,
+                "display_name" : "Tyler Cloutier",
+                "reputation" : 1696,
+                "profile_image" : "https:\/\/i.stack.imgur.com\/FmRiY.jpg?s=128&g=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/21794778\/prevent-uiscrollviews-uipangesturerecognizer-from-blocking-uiscreenedgepangestu",
+              "tags" : [
+                "ios",
+                "iphone",
+                "uiscrollview",
+                "uigesturerecognizer",
+                "uipangesturerecognizer"
+              ],
+              "view_count" : 8576,
+              "creation_date" : 1392449836,
+              "is_answered" : true,
+              "title" : "Prevent UIScrollView&#39;s UIPanGestureRecognizer from blocking UIScreenEdgePanGestureRecognizer",
+              "accepted_answer_id" : 21795765,
+              "last_activity_date" : 1445271684,
+              "question_id" : 21794778,
+              "score" : 13
+            },
+            {
+              "answer_count" : 1,
+              "last_edit_date" : 1445063446,
+              "owner" : {
+                "accept_rate" : 8,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/3213794\/vivek-shah",
+                "user_id" : 3213794,
+                "display_name" : "Vivek Shah",
+                "reputation" : 255,
+                "profile_image" : "https:\/\/i.stack.imgur.com\/s4DcF.jpg?s=128&g=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/33183533\/want-to-build-ios-app-with-right-to-left-and-left-to-right-languages-and-ui-acco",
+              "tags" : [
+                "ios",
+                "objective-c",
+                "localization",
+                "internationalization",
+                "right-to-left"
+              ],
+              "view_count" : 657,
+              "creation_date" : 1445063023,
+              "is_answered" : false,
+              "title" : "Want to build iOS app with Right to left and left to right languages and UI according to that",
+              "last_activity_date" : 1445063446,
+              "question_id" : 33183533,
+              "score" : 0
+            },
+            {
+              "owner" : {
+                "accept_rate" : 80,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/664067\/devang",
+                "user_id" : 664067,
+                "display_name" : "Devang",
+                "reputation" : 6849,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/b638ff455d1708cc37bc9e3de8748e5c?s=128&d=identicon&r=PG&f=1"
+              },
+              "is_answered" : true,
+              "answer_count" : 1,
+              "score" : 3,
+              "creation_date" : 1420881680,
+              "title" : "MAC app : Unable to import Mac Distribution Profile in Organization",
+              "last_activity_date" : 1441372939,
+              "link" : "https:\/\/stackoverflow.com\/questions\/27874660\/mac-app-unable-to-import-mac-distribution-profile-in-organization",
+              "question_id" : 27874660,
+              "tags" : [
+                "xcode",
+                "macos",
+                "cocoa",
+                "mac-app-store"
+              ],
+              "view_count" : 559
+            },
+            {
+              "answer_count" : 3,
+              "last_edit_date" : 1383857858,
+              "owner" : {
+                "accept_rate" : 60,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/2832188\/manicmonkonmac",
+                "user_id" : 2832188,
+                "display_name" : "ManicMonkOnMac",
+                "reputation" : 1366,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/2cf9e3dc154d29e0419270b87937ea57?s=128&d=identicon&r=PG&f=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/19846379\/custom-implementation-of-dslcalendarview-for-expedia-like-calendar",
+              "tags" : [
+                "ios",
+                "objective-c",
+                "calendar",
+                "uitouch"
+              ],
+              "view_count" : 2120,
+              "creation_date" : 1383857290,
+              "is_answered" : true,
+              "title" : "Custom implementation of DSLCalendarView for expedia like calendar",
+              "last_activity_date" : 1441358035,
+              "question_id" : 19846379,
+              "score" : 2
+            }
+          ],
+          "quota_max" : 10000,
+          "quota_remaining" : 9890
+        },
+        "status" : 200,
+        "headers" : {
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "X-Content-Type-Options" : "nosniff",
+          "Date" : "Thu, 01 Nov 2018 23:15:36 GMT",
+          "Access-Control-Allow-Origin" : "*",
+          "Cache-Control" : "private",
+          "Content-Encoding" : "gzip",
+          "Content-Length" : "5652",
+          "Content-Type" : "application\/json; charset=utf-8"
         }
       }
     }
   ],
   "consumer" : {
-    "token" : "JOxMrQ0A(a2SqBisygFCUA))"
+    "token" : "OY2dc(lZ2UUpOzoeVTukEg))"
   }
 }

@@ -23,6 +23,13 @@ class ViewController: UITableViewController {
         loadQuestions(pageIndex: pageIndex, pageSize: pageSize)
     }
     
+    func updateButtons() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(didTapRefresh))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Login", style: .plain, target: self, action: #selector(didTapLogin))
+        loadQuestions(pageIndex: pageIndex, pageSize: pageSize)
+    }
+    
     private func loadQuestions(pageIndex: UInt, pageSize: UInt) {
         questionTask?.cancel()
         

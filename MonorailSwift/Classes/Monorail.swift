@@ -61,6 +61,10 @@ open class Monorail {
         Monorail.shared.reader = nil
     }
     
+    public static func readerReader() {
+        Monorail.shared.reader?.resetInteractionsConsumedFlag()
+    }
+    
     public static let shared = Monorail()
 }
 

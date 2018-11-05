@@ -106,6 +106,33 @@ open class MonorailHelper {
                 
             })),
             
+            MenuItem(name: "Reset Reader sequence", type: .menu(subtitle: {
+                return nil
+            }, openMenu: { vc in
+                if Monorail.shared.reader == nil {
+                    vc.alert(message: "Enable reader first")
+                } else {
+                    Monorail.readerReader()
+                    vc.alert(message: "Reader disabled")
+                }
+                
+            })),
+            
+            MenuItem(name: "Logout", type: .action(action: { vc in
+                AppConfig.shared.soApi.accessToken = nil
+                
+//                vc.dismiss(animated: true, completion: {
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    
+                    let rootVc = appDelegate.window?.rootViewController as! UINavigationController
+                    
+                    let listVC = rootVc.viewControllers.first as! ViewController
+                    
+                    listVC.updateButtons()
+                    
+//                })
+            })),
+            
         ])
     } ()
     
