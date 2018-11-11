@@ -26,7 +26,7 @@ public final class APIServiceLogger {
     }
     
     public func log(_ request: URLRequest, uploadData: Data? = nil) {
-        logRequest(url: request.url, method: request.httpMethod, header: request.allHTTPHeaderFields as [String : AnyObject]?, data: uploadData ?? request.getHttpBodyData())
+        logRequest(url: request.url, method: request.httpMethod, header: request.allHTTPHeaderFields as [String : AnyObject]?, data: uploadData ?? request.httpBody)
     }
     
     public func logRequest(url: URL?, method: String?, header: [String: AnyObject]?, data: Data? ) {
@@ -90,27 +90,30 @@ public final class APIServiceLogger {
     }
 }
 
-extension URLRequest {
-    func getHttpBodyData() -> Data? {
-        if let httpBody = httpBody {
-            return httpBody
-        } else if let httpBodyStream = httpBodyStream {
-            var data = Data()
-            var buffer = [UInt8](repeating: 0, count: 4096)
-            httpBodyStream.open()
-            while httpBodyStream.hasBytesAvailable {
-                let length = httpBodyStream.read(&buffer, maxLength: 4096)
-                if length == 0 {
-                    break
-                } else {
-                    data.append(&buffer, count: length)
-                }
-            }
-            
-            return data
-        } else {
-            return nil
-        }
-    }
-}
+// Don't use this, it will consume the inputStream and request will fail
+//
+//extension URLRequest {
+//    func getHttpBodyData() -> Data? {
+//        if let httpBody = httpBody {
+//            return httpBody
+//        } else if let httpBodyStream = httpBodyStream {
+//            var data = Data()
+//            var buffer = [UInt8](repeating: 0, count: 4096)
+//            httpBodyStream.open()
+//            while httpBodyStream.hasBytesAvailable {
+//                let length = httpBodyStream.read(&buffer, maxLength: 4096)
+//                if length == 0 {
+//                    break
+//                } else {
+//                    data.append(&buffer, count: length)
+//                }
+//            }
+//            httpBodyStream.close()
+//
+//            return data
+//        } else {
+//            return nil
+//        }
+//    }
+//}
 
