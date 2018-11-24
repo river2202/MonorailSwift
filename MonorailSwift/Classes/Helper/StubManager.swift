@@ -1,7 +1,7 @@
 import Foundation
 
-class StubManager {
-    static func load(_ filename: String) -> URL? {
+open class StubManager {
+    open static func load(_ filename: String) -> URL? {
         let filenameWithoutExtension = filename.components(separatedBy: ".").first!
         let fileExtension = filename.components(separatedBy: ".").last!
         
@@ -14,7 +14,7 @@ class StubManager {
         }
     }
     
-    static func folder(_ name: String) -> URL? {
+    open static func folder(_ name: String) -> URL? {
         if let bundlePath = Bundle.main.path(forResource: "Stubs", ofType: "bundle") {
             return URL(fileURLWithPath: bundlePath).appendingPathComponent(name)
         } else {

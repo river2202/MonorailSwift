@@ -1,4 +1,5 @@
 import Foundation
+import MonorailSwift
 
 struct StackAppConfig: Decodable {
     var OAuthClientId: String

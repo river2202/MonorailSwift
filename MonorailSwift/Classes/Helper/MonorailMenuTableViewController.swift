@@ -1,5 +1,4 @@
 import UIKit
-import MonorailSwift
 
 public extension MonorailHelper {
     
@@ -134,7 +133,7 @@ public extension MonorailHelper {
                 case .documentMonorail:
                     return APIServiceWriter.monorailDocumentDirectory
                 case .uitest:
-                    return nil
+                    return StubManager.folder("UITest")
                 case .demo:
                     return StubManager.folder("Demo")
                 }

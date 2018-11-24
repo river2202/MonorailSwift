@@ -1,5 +1,4 @@
 import UIKit
-import MonorailSwift
 
 #if DEBUG
 extension UIWindow {
@@ -116,21 +115,6 @@ open class MonorailHelper {
                     vc.alert(message: "Reader disabled")
                 }
                 
-            })),
-            
-            MenuItem(name: "Logout", type: .action(action: { vc in
-                AppConfig.shared.soApi.accessToken = nil
-                
-//                vc.dismiss(animated: true, completion: {
-                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                    
-                    let rootVc = appDelegate.window?.rootViewController as! UINavigationController
-                    
-                    let listVC = rootVc.viewControllers.first as! ViewController
-                    
-                    listVC.updateButtons()
-                    
-//                })
             })),
             
         ])
