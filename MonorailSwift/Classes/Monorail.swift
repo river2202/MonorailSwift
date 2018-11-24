@@ -50,11 +50,12 @@ open class Monorail {
     }
     
     public static func enableReader(from filePath: URL, externalFileRootPath: String? = nil, delegate: APIServiceReaderDelegate? = nil, output: MonorailDebugOutput = Monorail.shared) {
-        Monorail.shared.reader = APIServiceReader(files: [filePath], delegate: delegate, output: output)
+        enableReader(from: [filePath], externalFileRootPath: externalFileRootPath, delegate: delegate, output: output)
     }
     
     public static func enableReader(from files: [URL], externalFileRootPath: String? = nil, delegate: APIServiceReaderDelegate? = nil, output: MonorailDebugOutput = Monorail.shared) {
         Monorail.shared.reader = APIServiceReader(files: files, delegate: delegate, output: output)
+        TimeMachine.shared.travelTo(Monorail.shared.reader?.startTime)
     }
     
     public static func disableReader() {

@@ -18,8 +18,9 @@ open class APIServiceReader {
         return files.map{ $0.lastPathComponent }.joined(separator: ", ")
     }
     var files: [URL]
-    var interactions = [APIServiceContractInteraction]()
-    var consumerVariables: [String: Any] = [:]
+    open var startTime: Date?
+    open var interactions = [APIServiceContractInteraction]()
+    open var consumerVariables: [String: Any] = [:]
     internal var providerVariables: [String: Any] = [:]
     internal var notifications = [[String: AnyObject]]()
     weak var readDelegate: APIServiceReaderDelegate?
@@ -62,6 +63,10 @@ open class APIServiceReader {
         guard let data = contractJson.data(using: String.Encoding.utf8), let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
             output?.log("Json parsing error, file name:\(fileName ?? "nil")")
             return
+        }
+        
+        if startTime == nil {
+            startTime = (json?[apiServiceStartTimeKey] as? String)?.date(timeStampFormat)
         }
         
         if let newConsumerVariables = json?[apiServiceConsumerKey] as? [String: Any] {

@@ -1,6 +1,7 @@
 import Foundation
 
 private let fileRefKey = "fileReference"
+let timeStampFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
 
 open class APIServiceContractInteraction {
     private let requestKey = "request"
@@ -15,7 +16,6 @@ open class APIServiceContractInteraction {
     private let idKey = "id"
     static let idRefKey = "idReference"
     private let timeStampKey = "timeStamp"
-    private let timeStampFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
     
     private(set) var request: [String: Any] = [:]
     private(set) var response: [String: Any] = [:]

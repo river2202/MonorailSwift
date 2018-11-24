@@ -21,6 +21,7 @@
 		91B3928921A8E02900C71AEB /* MonorailActionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CF89152171E47C003A351C /* MonorailActionMenu.swift */; };
 		91B3928A21A8E02F00C71AEB /* MonorailMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CF891221715009003A351C /* MonorailMenuTableViewController.swift */; };
 		91B3928B21A8E03E00C71AEB /* StubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E61C06215D0D3C004F0B17 /* StubManager.swift */; };
+		91B392C221A9FAFF00C71AEB /* TimeMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B392C121A9FAFF00C71AEB /* TimeMachine.swift */; };
 		91C4C9DC2156632A001F6B7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9DB2156632A001F6B7C /* AppDelegate.swift */; };
 		91C4C9DE2156632A001F6B7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9DD2156632A001F6B7C /* ViewController.swift */; };
 		91C4C9E32156632B001F6B7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C4C9E22156632B001F6B7C /* Assets.xcassets */; };
@@ -124,6 +125,7 @@
 		91263CBC2189C9C5007935A8 /* MyFavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesTableViewController.swift; sourceTree = "<group>"; };
 		9131937E2158ADD900958083 /* TinyNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyNetworking.swift; sourceTree = "<group>"; };
 		9131937F2158ADD900958083 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		91B392C121A9FAFF00C71AEB /* TimeMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeMachine.swift; path = Helper/TimeMachine.swift; sourceTree = "<group>"; };
 		91C4C9D82156632A001F6B7C /* MonorailSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonorailSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C4C9DB2156632A001F6B7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91C4C9DD2156632A001F6B7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				91CF891121714F49003A351C /* Helper */,
 				91C4CA0B2156641A001F6B7C /* APIServiceWriter.swift */,
 				91C4CA0F2156641A001F6B7C /* APIServiceLogger.swift */,
+				91B392C121A9FAFF00C71AEB /* TimeMachine.swift */,
 				91DE3D6E21663006002639E1 /* APIServiceInterceptor.swift */,
 				91DE3D702166306E002639E1 /* Monorail.swift */,
 				91C4CA102156641A001F6B7C /* APIServiceContractInteraction.swift */,
@@ -643,6 +646,7 @@
 				91B3928A21A8E02F00C71AEB /* MonorailMenuTableViewController.swift in Sources */,
 				91CF890C216E9705003A351C /* Monorail.swift in Sources */,
 				91CF8908216E9705003A351C /* APIServiceWriter.swift in Sources */,
+				91B392C221A9FAFF00C71AEB /* TimeMachine.swift in Sources */,
 				91B3928921A8E02900C71AEB /* MonorailActionMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,7 @@ extension APIServiceWriterDelegate {
 
 let apiServiceBaseUrlKey = "baseUrl"
 let apiServiceInteractionsKey = "interactions"
+let apiServiceStartTimeKey = "startTime"
 let apiServiceConsumerKey = "consumer"
 let apiServiceProviderKey = "provider"
 let apiServiceConsumerNotificationsKey = "notifications"
@@ -76,9 +77,11 @@ open class APIServiceWriter: APIServiceReader {
         try? FileManager.default.createDirectory(at: monorailCacheDirectory, withIntermediateDirectories: true, attributes: nil)
         
         logFilePath = monorailCacheDirectory.appendingPathComponent("\(fileName ?? defaultMonorailFileName).json")
+        startTime = Date()
     }
     
     func reset() {
+        startTime = nil
         logFilePath = nil
         interactions.removeAll()
         notifications.removeAll()
@@ -101,6 +104,10 @@ open class APIServiceWriter: APIServiceReader {
         var payload: [String: Any] = [
             apiServiceInteractionsKey: interactions.map { $0.payload() }
         ]
+        
+        if let startTime = startTime {
+            payload[apiServiceStartTimeKey] = startTime.asString(format: timeStampFormat)
+        }
         
         if !notifications.isEmpty {
             consumerVariables[apiServiceConsumerNotificationsKey] = notifications
