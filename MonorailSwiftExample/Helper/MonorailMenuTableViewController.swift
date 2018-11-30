@@ -1,4 +1,5 @@
 import UIKit
+import MonorailSwift
 
 public extension MonorailHelper {
     

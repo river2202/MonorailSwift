@@ -1,4 +1,5 @@
 import UIKit
+import MonorailSwift
 
 #if DEBUG
 extension UIWindow {

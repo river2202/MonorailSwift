@@ -2,7 +2,7 @@
 import Foundation
 
 open class TimeMachine {
-    open static let shared = TimeMachine()
+    public static let shared = TimeMachine()
     
     open var now: Date {
         #if DEBUG || TEST
