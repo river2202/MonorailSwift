@@ -55,6 +55,7 @@ class ViewController: UITableViewController {
         let cell = UITableViewCell()
         
         cell.textLabel?.text = questionResponse?.items?[indexPath.row].title
+        cell.accessibilityIdentifier = "cell_\(indexPath.section)_\(indexPath.row)"
         return cell
     }
     

@@ -1,19 +1,19 @@
 import Foundation
 
 struct User: Decodable {
-    let reputationChangeQuarter, reputationChangeDay: Int
-    let userType: String
-    let lastAccessDate: Int
-    let link: String
-    let badgeCounts: BadgeCounts
-    let userID: Int
-    let websiteURL: String
-    let isEmployee: Bool
-    let reputationChangeWeek, reputation, reputationChangeMonth, creationDate: Int
-    let location: String
-    let profileImage: String
-    let displayName: String
-    let accountID, reputationChangeYear, lastModifiedDate: Int
+    let reputationChangeQuarter, reputationChangeDay: Int?
+    let userType: String?
+    let lastAccessDate: Int?
+    let link: String?
+    let badgeCounts: BadgeCounts?
+    let userID: Int?
+    let websiteURL: String?
+    let isEmployee: Bool?
+    let reputationChangeWeek, reputation, reputationChangeMonth, creationDate: Int?
+    let location: String?
+    let profileImage: String?
+    let displayName: String?
+    let accountID, reputationChangeYear, lastModifiedDate: Int?
     
     enum CodingKeys: String, CodingKey {
         case reputationChangeQuarter = "reputation_change_quarter"
@@ -39,7 +39,7 @@ struct User: Decodable {
 }
 
 struct BadgeCounts: Codable {
-    let bronze, gold, silver: Int
+    let bronze, gold, silver: Int?
 }
 
 typealias UserResponse = StackOverflowResponse<User>

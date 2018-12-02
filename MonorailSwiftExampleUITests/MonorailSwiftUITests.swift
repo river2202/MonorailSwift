@@ -1,36 +1,32 @@
-//
-//  MonorailSwiftUITests.swift
-//  MonorailSwiftUITests
-//
-//  Created by River Huang on 22/9/18.
-//  Copyright © 2018 monitolab. All rights reserved.
-//
-
 import XCTest
 
-class MonorailSwiftUITests: XCTestCase {
-        
-    override func setUp() {
-        super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
+class MonorailSwiftUITests: UITestBase {
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testLoadAllQuestion() {
+        
+        Robot(name: "HomePage", app).with {
+            $0.iSee(.naviBarButton("Login"))
+            $0.iSee(.naviBarButton("Refresh"))
+            
+            if isMockTest {
+                $0.iSee(.tableCell("cell_0_1"), has: "Applying multiple CIFilters on image")
+            }
+            
+            $0.iTap(.tableCell("cell_0_1"))
+            sleep(1)
+            
+            $0.iSee(.label("qTitle"))
+            $0.iSee(.label("qBody"))
+            $0.iSeeNo(.button("qFavorite"))
+            
+            if isMockTest {
+                $0.iSee(.label("qTitle"), has: "Applying multiple CIFilters on image")
+            }
+            
+            $0.iTap(.naviBarButton("StackOverflow"))
+            $0.iSee(.tableCell("cell_0_1"))
+        }
+        
     }
     
 }
