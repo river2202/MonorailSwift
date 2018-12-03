@@ -26,6 +26,10 @@
 		913E98DD21B383F1006569E2 /* UITestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913E98DC21B383F1006569E2 /* UITestConfig.swift */; };
 		913E98DE21B383FF006569E2 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2D21B158330016B7B4 /* AppConfiguration.swift */; };
 		913E98E021B39367006569E2 /* ShowTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913E98DF21B39367006569E2 /* ShowTime.swift */; };
+		913E98E421B39A44006569E2 /* Stubs.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 91E61C09215D8B1C004F0B17 /* Stubs.bundle */; };
+		913E98E721B39AD2006569E2 /* StubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913E98E621B39AD2006569E2 /* StubManager.swift */; };
+		913E98E921B39ED5006569E2 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913E98E821B39ED5006569E2 /* LoggerTests.swift */; };
+		913E98EB21B39F5E006569E2 /* ReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913E98EA21B39F5E006569E2 /* ReaderTests.swift */; };
 		91840B2F21B158330016B7B4 /* IntegrationUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2C21B158330016B7B4 /* IntegrationUITest.swift */; };
 		91840B3021B158330016B7B4 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2D21B158330016B7B4 /* AppConfiguration.swift */; };
 		91840B3121B158330016B7B4 /* UITestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2E21B158330016B7B4 /* UITestBase.swift */; };
@@ -39,7 +43,6 @@
 		91C4C9DE2156632A001F6B7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9DD2156632A001F6B7C /* ViewController.swift */; };
 		91C4C9E32156632B001F6B7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C4C9E22156632B001F6B7C /* Assets.xcassets */; };
 		91C4C9E62156632B001F6B7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91C4C9E42156632B001F6B7C /* LaunchScreen.storyboard */; };
-		91C4C9F12156632B001F6B7C /* MonorailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9F02156632B001F6B7C /* MonorailTests.swift */; };
 		91C4C9FC2156632B001F6B7C /* MonorailSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9FB2156632B001F6B7C /* MonorailSwiftUITests.swift */; };
 		91CF88F3216E9694003A351C /* MonorailSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CF88EA216E9693003A351C /* MonorailSwift.framework */; };
 		91CF88FA216E9694003A351C /* MonorailSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CF88F9216E9694003A351C /* MonorailSwiftTests.swift */; };
@@ -149,6 +152,9 @@
 		913E98D521B382B6006569E2 /* MockUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUITest.swift; sourceTree = "<group>"; };
 		913E98DC21B383F1006569E2 /* UITestConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestConfig.swift; sourceTree = "<group>"; };
 		913E98DF21B39367006569E2 /* ShowTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTime.swift; sourceTree = "<group>"; };
+		913E98E621B39AD2006569E2 /* StubManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubManager.swift; sourceTree = "<group>"; };
+		913E98E821B39ED5006569E2 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
+		913E98EA21B39F5E006569E2 /* ReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTests.swift; sourceTree = "<group>"; };
 		91840B2C21B158330016B7B4 /* IntegrationUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegrationUITest.swift; sourceTree = "<group>"; };
 		91840B2D21B158330016B7B4 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		91840B2E21B158330016B7B4 /* UITestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UITestBase.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -161,7 +167,6 @@
 		91C4C9E52156632B001F6B7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91C4C9E72156632B001F6B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91C4C9EC2156632B001F6B7C /* MonorailSwiftExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonorailSwiftExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		91C4C9F02156632B001F6B7C /* MonorailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonorailTests.swift; sourceTree = "<group>"; };
 		91C4C9F22156632B001F6B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91C4C9F72156632B001F6B7C /* MonorailSwiftExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonorailSwiftExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C4C9FB2156632B001F6B7C /* MonorailSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonorailSwiftUITests.swift; sourceTree = "<group>"; };
@@ -290,6 +295,14 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		913E98E521B39ABB006569E2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				913E98E621B39AD2006569E2 /* StubManager.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		91840B2B21B158330016B7B4 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,7 +363,6 @@
 			isa = PBXGroup;
 			children = (
 				91E61C17215DC167004F0B17 /* Frameworks */,
-				91C4C9F02156632B001F6B7C /* MonorailTests.swift */,
 				91263CBA2185D66D007935A8 /* AppConfigTests.swift */,
 				91C4C9F22156632B001F6B7C /* Info.plist */,
 			);
@@ -401,7 +413,10 @@
 		91CF88F8216E9694003A351C /* MonorailSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				913E98E521B39ABB006569E2 /* Helper */,
 				91CF88F9216E9694003A351C /* MonorailSwiftTests.swift */,
+				913E98EA21B39F5E006569E2 /* ReaderTests.swift */,
+				913E98E821B39ED5006569E2 /* LoggerTests.swift */,
 				91CF88FB216E9694003A351C /* Info.plist */,
 			);
 			path = MonorailSwiftTests;
@@ -593,7 +608,6 @@
 					};
 					91CF88F1216E9694003A351C = {
 						CreatedOnToolsVersion = 10.0;
-						TestTargetID = 91C4C9D72156632A001F6B7C;
 					};
 				};
 			};
@@ -612,10 +626,10 @@
 			targets = (
 				91C4C9D72156632A001F6B7C /* MonorailSwiftExample */,
 				91C4C9EB2156632B001F6B7C /* MonorailSwiftExampleTests */,
+				913E98C921B38193006569E2 /* MonorailSwiftExampleMockUITests */,
 				91C4C9F62156632B001F6B7C /* MonorailSwiftExampleUITests */,
 				91CF88E9216E9693003A351C /* MonorailSwift */,
 				91CF88F1216E9694003A351C /* MonorailSwiftTests */,
-				913E98C921B38193006569E2 /* MonorailSwiftExampleMockUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -663,6 +677,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				913E98E421B39A44006569E2 /* Stubs.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,7 +746,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91C4C9F12156632B001F6B7C /* MonorailTests.swift in Sources */,
 				91263CBB2185D66D007935A8 /* AppConfigTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,6 +780,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				913E98E721B39AD2006569E2 /* StubManager.swift in Sources */,
+				913E98E921B39ED5006569E2 /* LoggerTests.swift in Sources */,
+				913E98EB21B39F5E006569E2 /* ReaderTests.swift in Sources */,
 				91CF88FA216E9694003A351C /* MonorailSwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1183,7 +1200,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonorailSwiftExample.app/MonorailSwiftExample";
 			};
 			name = Debug;
 		};
@@ -1210,7 +1226,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonorailSwiftExample.app/MonorailSwiftExample";
 			};
 			name = Release;
 		};

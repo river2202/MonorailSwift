@@ -53,6 +53,10 @@ open class APIServiceReader {
         }
     }
     
+    public convenience init(file: URL, externalFileRootPath: String? = nil, delegate: APIServiceReaderDelegate? = nil, output: MonorailDebugOutput? = nil) {
+        self.init(files: [file], externalFileRootPath: externalFileRootPath, delegate: delegate, output: output)
+    }
+    
     public init(contractJson: String, externalFileRootPath: String? = nil, output: MonorailDebugOutput? = nil) {
         self.output = output
         files = []

@@ -1,13 +1,22 @@
+
 import Quick
 import Nimble
-@testable import MonorailSwiftExample
 @testable import MonorailSwift
 
-class Monorail_Tests: QuickSpec {
+class ReaderTests: QuickSpec {
     
     override func spec() {
+        
         describe("Reader") {
-            it("should support file and id reference") {
+            it("read interactions, start time, and user variables from file") {
+                let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderTests.json")!)
+                
+                expect(reader.interactions.count).to(equal(4), description: "should read correct interaction number")
+                expect(reader.getConsumerVariables(key: "token") as? String).to(equal("JOxMrQ0A(a2SqBisygFCUA))"), description: "expect to read consumer variable correctly")
+                expect(reader.startTime).to(equal("2018-11-25T08:58:37.354+11:00".date(timeStampFormat)), description: "expect to read start time correctly to use when set time travel to this time when log file recorded")
+            }
+            
+            it("support file and id reference") {
                 
                 let testData = [
                     StubManager.load("MonorailTest/Monorail-reference-test.json"),
@@ -39,7 +48,16 @@ class Monorail_Tests: QuickSpec {
                     expect(reader.consumerVariables["value2"] as? String) == "value2"
                 }
             }
+            
+            it("support external file reference based on some other folder") {
+                
+            }
+            
+            it("delegate works correctly") {
+                
+            }
+            
         }
-
+        
     }
 }
