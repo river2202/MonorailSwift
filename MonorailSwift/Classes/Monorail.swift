@@ -22,6 +22,7 @@ open class Monorail {
     open private(set) var logger: APIServiceLogger?
     open private(set) var writer: APIServiceWriter?
     open private(set) var reader: APIServiceReader?
+    open var bypassSslCheck: Bool = true
     
     init() {
         URLInterceptor.enable(interceptor: self)

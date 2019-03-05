@@ -10,6 +10,7 @@ protocol APIServiceInterceptor {
     
     var delay: TimeInterval { get }
     var cacheStoragePolicy: URLCache.StoragePolicy { get }
+    var bypassSslCheck: Bool { get }
 }
 
 extension APIServiceInterceptor {
@@ -23,6 +24,8 @@ extension APIServiceInterceptor {
     func log(_ response: URLResponse, data: Data?, request: URLRequest) {}
     var delay: TimeInterval { return 0 }
     var cacheStoragePolicy: URLCache.StoragePolicy { return .allowed }
+    
+    var bypassSslCheck: Bool { return true }
 }
 
 class URLInterceptor: URLProtocol, URLSessionDelegate {
@@ -82,9 +85,13 @@ class URLInterceptor: URLProtocol, URLSessionDelegate {
             URLProtocol.setProperty(Date(), forKey: URLInterceptor.requestTimeKey, in: newRequest!)
             
             let session = Foundation.URLSession(configuration: URLSessionConfiguration.defaultSessionConf(), delegate: self, delegateQueue: nil)
+            
+//            session.
             session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
                 if let error = error {
                     self.client?.urlProtocol(self, didFailWithError: error)
+                    print("----error---")
+//                    interceptor.log(self.request)
                     interceptor.log(error, request: self.request)
                     return
                 }
@@ -111,6 +118,16 @@ class URLInterceptor: URLProtocol, URLSessionDelegate {
         completionHandler: (URLRequest?) -> Void) {
         
         self.client?.urlProtocol(self, wasRedirectedTo: request, redirectResponse: response)
+    }
+    
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        
+        if let interceptor = URLInterceptor.interceptor, interceptor.bypassSslCheck {
+            completionHandler(.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
+        }
+        else {
+            completionHandler(.performDefaultHandling, URLCredential(trust: challenge.protectionSpace.serverTrust!))
+        }
     }
 }
 
