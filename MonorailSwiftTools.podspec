@@ -7,9 +7,9 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'MonorailSwift'
+  s.name             = 'MonorailSwiftTools'
   s.version          = '1.0.2'
-  s.summary          = 'MonorailSwift is a test tool to log/write/replay network interactions.'
+  s.summary          = 'MonorailSwiftTools is a test tool to log/write/replay network interactions.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -31,7 +31,7 @@ Works out of box with iOS build in api and most of 3rd SDK to print the network 
   s.ios.deployment_target = '9.0'
   s.swift_version = '4.2'
 
-  s.source_files = 'MonorailSwift/Classes/**/*'
+  s.source_files = 'MonorailSwift/Helper/**/*'
   
   # s.resource_bundles = {
   #   'MonorailSwift' => ['MonorailSwift/Assets/*.png']
@@ -39,5 +39,5 @@ Works out of box with iOS build in api and most of 3rd SDK to print the network 
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'MonorailSwift', '~> 1.0.0'
 end

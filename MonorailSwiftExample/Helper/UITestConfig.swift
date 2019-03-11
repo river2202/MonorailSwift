@@ -1,6 +1,7 @@
 
 import Foundation
 import MonorailSwift
+import MonorailSwiftTools
 
 extension AppDelegate: AppConfiguration {
   func setEnvValue(key: String, value: String?) { }

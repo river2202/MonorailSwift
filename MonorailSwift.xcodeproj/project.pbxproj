@@ -23,7 +23,6 @@
 		913E98D921B382C7006569E2 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2D21B158330016B7B4 /* AppConfiguration.swift */; };
 		913E98DA21B382C7006569E2 /* UITestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2E21B158330016B7B4 /* UITestBase.swift */; };
 		913E98DB21B382F3006569E2 /* MonorailSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9FB2156632B001F6B7C /* MonorailSwiftUITests.swift */; };
-		913E98DD21B383F1006569E2 /* UITestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913E98DC21B383F1006569E2 /* UITestConfig.swift */; };
 		913E98DE21B383FF006569E2 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2D21B158330016B7B4 /* AppConfiguration.swift */; };
 		913E98E021B39367006569E2 /* ShowTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913E98DF21B39367006569E2 /* ShowTime.swift */; };
 		913E98E421B39A44006569E2 /* Stubs.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 91E61C09215D8B1C004F0B17 /* Stubs.bundle */; };
@@ -34,10 +33,6 @@
 		91840B3021B158330016B7B4 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2D21B158330016B7B4 /* AppConfiguration.swift */; };
 		91840B3121B158330016B7B4 /* UITestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2E21B158330016B7B4 /* UITestBase.swift */; };
 		91840B3521B15DDF0016B7B4 /* Springboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B3421B15DDF0016B7B4 /* Springboard.swift */; };
-		91B08DC321B1432300054892 /* MonorailActionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CF89152171E47C003A351C /* MonorailActionMenu.swift */; };
-		91B08DC421B1432300054892 /* MonorailMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CF891221715009003A351C /* MonorailMenuTableViewController.swift */; };
-		91B08DC521B1432300054892 /* StubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E61C06215D0D3C004F0B17 /* StubManager.swift */; };
-		91B08DC621B1432300054892 /* ApiServiceFileListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4CA0D2156641A001F6B7C /* ApiServiceFileListTableViewController.swift */; };
 		91B392C221A9FAFF00C71AEB /* TimeMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B392C121A9FAFF00C71AEB /* TimeMachine.swift */; };
 		91C4C9DC2156632A001F6B7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9DB2156632A001F6B7C /* AppDelegate.swift */; };
 		91C4C9DE2156632A001F6B7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9DD2156632A001F6B7C /* ViewController.swift */; };
@@ -65,6 +60,15 @@
 		91E61C1B215DC17A004F0B17 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E61C19215DC17A004F0B17 /* Nimble.framework */; };
 		91E61C1C215DC184004F0B17 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 91E61C19215DC17A004F0B17 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		91E61C1D215DC184004F0B17 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 91E61C18215DC179004F0B17 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F8B8B7EC223722C600FA8F9D /* MonorailSwiftTools.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B8B7EA223722C600FA8F9D /* MonorailSwiftTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8B8B7EF223722C600FA8F9D /* MonorailSwiftTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B8B7E8223722C600FA8F9D /* MonorailSwiftTools.framework */; };
+		F8B8B7F0223722C600FA8F9D /* MonorailSwiftTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8B8B7E8223722C600FA8F9D /* MonorailSwiftTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F8B8B7FA223722EC00FA8F9D /* StubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8B7F5223722EC00FA8F9D /* StubManager.swift */; };
+		F8B8B7FB223722EC00FA8F9D /* ApiServiceFileListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8B7F6223722EC00FA8F9D /* ApiServiceFileListTableViewController.swift */; };
+		F8B8B7FC223722EC00FA8F9D /* MonorailActionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8B7F7223722EC00FA8F9D /* MonorailActionMenu.swift */; };
+		F8B8B7FD223722EC00FA8F9D /* UITestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8B7F8223722EC00FA8F9D /* UITestConfig.swift */; };
+		F8B8B7FE223722EC00FA8F9D /* MonorailMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8B7F9223722EC00FA8F9D /* MonorailMenuTableViewController.swift */; };
+		F8B8B8002237240800FA8F9D /* UITestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8B7FF2237240700FA8F9D /* UITestConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +114,13 @@
 			remoteGlobalIDString = 91CF88E9216E9693003A351C;
 			remoteInfo = MonorailSwiftSDK;
 		};
+		F8B8B7ED223722C600FA8F9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91C4C9D02156632A001F6B7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8B8B7E7223722C600FA8F9D;
+			remoteInfo = MonorailSwiftTools;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -120,6 +131,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				91CF8900216E9694003A351C /* MonorailSwift.framework in Embed Frameworks */,
+				F8B8B7F0223722C600FA8F9D /* MonorailSwiftTools.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,7 +162,6 @@
 		913E98CA21B38193006569E2 /* MonorailSwiftExampleMockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonorailSwiftExampleMockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		913E98CE21B38193006569E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		913E98D521B382B6006569E2 /* MockUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUITest.swift; sourceTree = "<group>"; };
-		913E98DC21B383F1006569E2 /* UITestConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestConfig.swift; sourceTree = "<group>"; };
 		913E98DF21B39367006569E2 /* ShowTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTime.swift; sourceTree = "<group>"; };
 		913E98E621B39AD2006569E2 /* StubManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubManager.swift; sourceTree = "<group>"; };
 		913E98E821B39ED5006569E2 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
@@ -172,7 +183,6 @@
 		91C4C9FB2156632B001F6B7C /* MonorailSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonorailSwiftUITests.swift; sourceTree = "<group>"; };
 		91C4C9FD2156632B001F6B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91C4CA0B2156641A001F6B7C /* APIServiceWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceWriter.swift; sourceTree = "<group>"; };
-		91C4CA0D2156641A001F6B7C /* ApiServiceFileListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceFileListTableViewController.swift; sourceTree = "<group>"; };
 		91C4CA0F2156641A001F6B7C /* APIServiceLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceLogger.swift; sourceTree = "<group>"; };
 		91C4CA102156641A001F6B7C /* APIServiceContractInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceContractInteraction.swift; sourceTree = "<group>"; };
 		91C4CA112156641A001F6B7C /* APIServiceReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceReader.swift; sourceTree = "<group>"; };
@@ -182,8 +192,6 @@
 		91CF88F2216E9694003A351C /* MonorailSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonorailSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CF88F9216E9694003A351C /* MonorailSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonorailSwiftTests.swift; sourceTree = "<group>"; };
 		91CF88FB216E9694003A351C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91CF891221715009003A351C /* MonorailMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonorailMenuTableViewController.swift; sourceTree = "<group>"; };
-		91CF89152171E47C003A351C /* MonorailActionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonorailActionMenu.swift; sourceTree = "<group>"; };
 		91DE3D6E21663006002639E1 /* APIServiceInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceInterceptor.swift; sourceTree = "<group>"; };
 		91DE3D702166306E002639E1 /* Monorail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monorail.swift; sourceTree = "<group>"; };
 		91E57881217DE47900FA1411 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -192,10 +200,18 @@
 		91E578882183101C00FA1411 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		91E5788A218332FD00FA1411 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		91E5788C2183CCB900FA1411 /* StackOverflowResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowResponse.swift; sourceTree = "<group>"; };
-		91E61C06215D0D3C004F0B17 /* StubManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubManager.swift; sourceTree = "<group>"; };
 		91E61C09215D8B1C004F0B17 /* Stubs.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Stubs.bundle; sourceTree = "<group>"; };
 		91E61C18215DC179004F0B17 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
 		91E61C19215DC17A004F0B17 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
+		F8B8B7E8223722C600FA8F9D /* MonorailSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MonorailSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8B8B7EA223722C600FA8F9D /* MonorailSwiftTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonorailSwiftTools.h; sourceTree = "<group>"; };
+		F8B8B7EB223722C600FA8F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8B8B7F5223722EC00FA8F9D /* StubManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubManager.swift; sourceTree = "<group>"; };
+		F8B8B7F6223722EC00FA8F9D /* ApiServiceFileListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceFileListTableViewController.swift; sourceTree = "<group>"; };
+		F8B8B7F7223722EC00FA8F9D /* MonorailActionMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonorailActionMenu.swift; sourceTree = "<group>"; };
+		F8B8B7F8223722EC00FA8F9D /* UITestConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestConfig.swift; sourceTree = "<group>"; };
+		F8B8B7F9223722EC00FA8F9D /* MonorailMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonorailMenuTableViewController.swift; sourceTree = "<group>"; };
+		F8B8B7FF2237240700FA8F9D /* UITestConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91CF88FF216E9694003A351C /* MonorailSwift.framework in Frameworks */,
+				F8B8B7EF223722C600FA8F9D /* MonorailSwiftTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +264,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8B8B7E5223722C600FA8F9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -265,12 +289,8 @@
 		9131937D2158ADC600958083 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				F8B8B7FF2237240700FA8F9D /* UITestConfig.swift */,
 				913E98DF21B39367006569E2 /* ShowTime.swift */,
-				913E98DC21B383F1006569E2 /* UITestConfig.swift */,
-				91E61C06215D0D3C004F0B17 /* StubManager.swift */,
-				91C4CA0D2156641A001F6B7C /* ApiServiceFileListTableViewController.swift */,
-				91CF891221715009003A351C /* MonorailMenuTableViewController.swift */,
-				91CF89152171E47C003A351C /* MonorailActionMenu.swift */,
 				91E61C09215D8B1C004F0B17 /* Stubs.bundle */,
 				9131937F2158ADD900958083 /* Result.swift */,
 				9131937E2158ADD900958083 /* TinyNetworking.swift */,
@@ -324,6 +344,7 @@
 				91C4C9FA2156632B001F6B7C /* MonorailSwiftExampleUITests */,
 				91CF88EB216E9694003A351C /* MonorailSwiftFramework */,
 				91CF88F8216E9694003A351C /* MonorailSwiftTests */,
+				F8B8B7E9223722C600FA8F9D /* MonorailSwiftTools */,
 				91C4C9D92156632A001F6B7C /* Products */,
 			);
 			indentWidth = 4;
@@ -339,6 +360,7 @@
 				91CF88EA216E9693003A351C /* MonorailSwift.framework */,
 				91CF88F2216E9694003A351C /* MonorailSwiftTests.xctest */,
 				913E98CA21B38193006569E2 /* MonorailSwiftExampleMockUITests.xctest */,
+				F8B8B7E8223722C600FA8F9D /* MonorailSwiftTools.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -382,6 +404,7 @@
 		91C4CA092156641A001F6B7C /* MonorailSwift */ = {
 			isa = PBXGroup;
 			children = (
+				F8B8B7F4223722EC00FA8F9D /* Helper */,
 				91C4CA0A2156641A001F6B7C /* Classes */,
 			);
 			path = MonorailSwift;
@@ -452,6 +475,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F8B8B7E9223722C600FA8F9D /* MonorailSwiftTools */ = {
+			isa = PBXGroup;
+			children = (
+				F8B8B7EA223722C600FA8F9D /* MonorailSwiftTools.h */,
+				F8B8B7EB223722C600FA8F9D /* Info.plist */,
+			);
+			path = MonorailSwiftTools;
+			sourceTree = "<group>";
+		};
+		F8B8B7F4223722EC00FA8F9D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F8B8B7F5223722EC00FA8F9D /* StubManager.swift */,
+				F8B8B7F6223722EC00FA8F9D /* ApiServiceFileListTableViewController.swift */,
+				F8B8B7F7223722EC00FA8F9D /* MonorailActionMenu.swift */,
+				F8B8B7F8223722EC00FA8F9D /* UITestConfig.swift */,
+				F8B8B7F9223722EC00FA8F9D /* MonorailMenuTableViewController.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -460,6 +504,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				91CF88FC216E9694003A351C /* MonorailSwiftSDK.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8B8B7E3223722C600FA8F9D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B8B7EC223722C600FA8F9D /* MonorailSwiftTools.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +550,7 @@
 			);
 			dependencies = (
 				91CF88FE216E9694003A351C /* PBXTargetDependency */,
+				F8B8B7EE223722C600FA8F9D /* PBXTargetDependency */,
 			);
 			name = MonorailSwiftExample;
 			productName = MonorailSwift;
@@ -578,6 +631,24 @@
 			productReference = 91CF88F2216E9694003A351C /* MonorailSwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F8B8B7E7223722C600FA8F9D /* MonorailSwiftTools */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8B8B7F3223722C600FA8F9D /* Build configuration list for PBXNativeTarget "MonorailSwiftTools" */;
+			buildPhases = (
+				F8B8B7E3223722C600FA8F9D /* Headers */,
+				F8B8B7E4223722C600FA8F9D /* Sources */,
+				F8B8B7E5223722C600FA8F9D /* Frameworks */,
+				F8B8B7E6223722C600FA8F9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonorailSwiftTools;
+			productName = MonorailSwiftTools;
+			productReference = F8B8B7E8223722C600FA8F9D /* MonorailSwiftTools.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -609,6 +680,9 @@
 					91CF88F1216E9694003A351C = {
 						CreatedOnToolsVersion = 10.0;
 					};
+					F8B8B7E7223722C600FA8F9D = {
+						CreatedOnToolsVersion = 10.1;
+					};
 				};
 			};
 			buildConfigurationList = 91C4C9D32156632A001F6B7C /* Build configuration list for PBXProject "MonorailSwift" */;
@@ -630,6 +704,7 @@
 				91C4C9F62156632B001F6B7C /* MonorailSwiftExampleUITests */,
 				91CF88E9216E9693003A351C /* MonorailSwift */,
 				91CF88F1216E9694003A351C /* MonorailSwiftTests */,
+				F8B8B7E7223722C600FA8F9D /* MonorailSwiftTools */,
 			);
 		};
 /* End PBXProject section */
@@ -681,6 +756,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8B8B7E6223722C600FA8F9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -717,8 +799,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91B08DC421B1432300054892 /* MonorailMenuTableViewController.swift in Sources */,
-				913E98DD21B383F1006569E2 /* UITestConfig.swift in Sources */,
 				91165E7D2156680D00546246 /* Question.swift in Sources */,
 				913193802158ADD900958083 /* TinyNetworking.swift in Sources */,
 				91C4C9DE2156632A001F6B7C /* ViewController.swift in Sources */,
@@ -727,12 +807,10 @@
 				913E98E021B39367006569E2 /* ShowTime.swift in Sources */,
 				91263CA9218481A7007935A8 /* User.swift in Sources */,
 				91263CB921856705007935A8 /* StackOverflowApi.swift in Sources */,
-				91B08DC321B1432300054892 /* MonorailActionMenu.swift in Sources */,
-				91B08DC621B1432300054892 /* ApiServiceFileListTableViewController.swift in Sources */,
-				91B08DC521B1432300054892 /* StubManager.swift in Sources */,
 				913E98DE21B383FF006569E2 /* AppConfiguration.swift in Sources */,
 				91E578892183101C00FA1411 /* AppConfig.swift in Sources */,
 				91E5788B218332FD00FA1411 /* AccessToken.swift in Sources */,
+				F8B8B8002237240800FA8F9D /* UITestConfig.swift in Sources */,
 				91E5788621830E2000FA1411 /* UserManager.swift in Sources */,
 				91263CBD2189C9C5007935A8 /* MyFavoritesTableViewController.swift in Sources */,
 				91E5788D2183CCB900FA1411 /* StackOverflowResponse.swift in Sources */,
@@ -787,6 +865,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8B8B7E4223722C600FA8F9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B8B7FB223722EC00FA8F9D /* ApiServiceFileListTableViewController.swift in Sources */,
+				F8B8B7FE223722EC00FA8F9D /* MonorailMenuTableViewController.swift in Sources */,
+				F8B8B7FD223722EC00FA8F9D /* UITestConfig.swift in Sources */,
+				F8B8B7FC223722EC00FA8F9D /* MonorailActionMenu.swift in Sources */,
+				F8B8B7FA223722EC00FA8F9D /* StubManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -819,6 +909,11 @@
 			isa = PBXTargetDependency;
 			target = 91CF88E9216E9693003A351C /* MonorailSwift */;
 			targetProxy = 91CF88FD216E9694003A351C /* PBXContainerItemProxy */;
+		};
+		F8B8B7EE223722C600FA8F9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8B8B7E7223722C600FA8F9D /* MonorailSwiftTools */;
+			targetProxy = F8B8B7ED223722C600FA8F9D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1005,7 +1100,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.monitolab.MonorailSwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STUBS_BUNDLE = "${PROJECT_DIR}/${PRODUCT_NAME}/Helper/Stubs.bundle";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1024,7 +1119,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.monitolab.MonorailSwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STUBS_BUNDLE = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1229,6 +1324,65 @@
 			};
 			name = Release;
 		};
+		F8B8B7F1223722C600FA8F9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MonorailSwiftTools/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.monitolab.MonorailSwiftSDK.MonorailSwiftTools;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F8B8B7F2223722C600FA8F9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MonorailSwiftTools/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.monitolab.MonorailSwiftSDK.MonorailSwiftTools;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1291,6 +1445,15 @@
 			buildConfigurations = (
 				91CF8903216E9694003A351C /* Debug */,
 				91CF8904216E9694003A351C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8B8B7F3223722C600FA8F9D /* Build configuration list for PBXNativeTarget "MonorailSwiftTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8B8B7F1223722C600FA8F9D /* Debug */,
+				F8B8B7F2223722C600FA8F9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

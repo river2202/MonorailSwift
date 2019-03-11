@@ -1,15 +1,31 @@
 import UIKit
 import MonorailSwift
 
-#if DEBUG
+//#if DEBUG
 extension UIWindow {
-    open override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             MonorailHelper.presentActionMenu()
         }
     }
 }
-#endif
+
+extension UIWindow {
+    
+    open override var layer: CALayer {
+        UIWindow.enableMonorail()
+        return super.layer
+    }
+    
+    private class func enableMonorail() { // `initialize()` removed in Swift 4
+        struct MonorailEnabled { static var once = false } // Workaround for missing dispatch_once in Swift 3
+        guard !MonorailEnabled.once else { return }
+        MonorailEnabled.once = true
+        Monorail.enableLogger()
+        _ = Monorail.writeLog()
+    }
+}
+//#endif
 
 open class MonorailHelper {
     
@@ -17,7 +33,7 @@ open class MonorailHelper {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        window.windowLevel = 999
+        window.windowLevel = UIWindow.Level(rawValue: 999)
         window.rootViewController = UIViewController()
         
         return window
