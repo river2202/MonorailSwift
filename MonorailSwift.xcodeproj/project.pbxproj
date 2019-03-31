@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		911094F921749E52008CAA9C /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E61C19215DC17A004F0B17 /* Nimble.framework */; };
-		911094FA21749E52008CAA9C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E61C18215DC179004F0B17 /* Quick.framework */; };
+		33341EBA2EC9CFB4673A26CB /* libPods-MonorailSwiftExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEC696B9AAC58DF06A00968 /* libPods-MonorailSwiftExampleTests.a */; };
+		7AD67BB061EEDD487043F82B /* libPods-MonorailSwiftTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FBF793E690CCE5D23488E5 /* libPods-MonorailSwiftTests.a */; };
 		91165E7D2156680D00546246 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91165E7B2156680D00546246 /* Question.swift */; };
 		91165E7E2156680D00546246 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91165E7C2156680D00546246 /* Answer.swift */; };
 		91233C3C218B1E7700CBBFD9 /* ExampleConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91233C3B218B1E7700CBBFD9 /* ExampleConsumer.swift */; };
@@ -56,10 +56,6 @@
 		91E578892183101C00FA1411 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E578882183101C00FA1411 /* AppConfig.swift */; };
 		91E5788B218332FD00FA1411 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5788A218332FD00FA1411 /* AccessToken.swift */; };
 		91E5788D2183CCB900FA1411 /* StackOverflowResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5788C2183CCB900FA1411 /* StackOverflowResponse.swift */; };
-		91E61C1A215DC17A004F0B17 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E61C18215DC179004F0B17 /* Quick.framework */; };
-		91E61C1B215DC17A004F0B17 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E61C19215DC17A004F0B17 /* Nimble.framework */; };
-		91E61C1C215DC184004F0B17 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 91E61C19215DC17A004F0B17 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		91E61C1D215DC184004F0B17 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 91E61C18215DC179004F0B17 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F8B8B7EC223722C600FA8F9D /* MonorailSwiftTools.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B8B7EA223722C600FA8F9D /* MonorailSwiftTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8B8B7EF223722C600FA8F9D /* MonorailSwiftTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B8B7E8223722C600FA8F9D /* MonorailSwiftTools.framework */; };
 		F8B8B7F0223722C600FA8F9D /* MonorailSwiftTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8B8B7E8223722C600FA8F9D /* MonorailSwiftTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -78,6 +74,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 91C4C9D72156632A001F6B7C;
 			remoteInfo = MonorailSwiftExample;
+		};
+		9163F03A22506BC700A21BFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91C4C9D02156632A001F6B7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91CF88E9216E9693003A351C;
+			remoteInfo = MonorailSwift;
 		};
 		91C4C9ED2156632B001F6B7C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -142,14 +145,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				91E61C1C215DC184004F0B17 /* Nimble.framework in CopyFiles */,
-				91E61C1D215DC184004F0B17 /* Quick.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		36CFD2926BA88DFFB655D199 /* Pods-MonorailSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonorailSwiftTests.release.xcconfig"; path = "Target Support Files/Pods-MonorailSwiftTests/Pods-MonorailSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		7A66EAA333E637BF68216B84 /* Pods-MonorailSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonorailSwiftTests.debug.xcconfig"; path = "Target Support Files/Pods-MonorailSwiftTests/Pods-MonorailSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		91165E7B2156680D00546246 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		91165E7C2156680D00546246 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		91233C3B218B1E7700CBBFD9 /* ExampleConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleConsumer.swift; sourceTree = "<group>"; };
@@ -201,8 +204,10 @@
 		91E5788A218332FD00FA1411 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		91E5788C2183CCB900FA1411 /* StackOverflowResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowResponse.swift; sourceTree = "<group>"; };
 		91E61C09215D8B1C004F0B17 /* Stubs.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Stubs.bundle; sourceTree = "<group>"; };
-		91E61C18215DC179004F0B17 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
-		91E61C19215DC17A004F0B17 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
+		9EEC696B9AAC58DF06A00968 /* libPods-MonorailSwiftExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MonorailSwiftExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9FBF793E690CCE5D23488E5 /* libPods-MonorailSwiftTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MonorailSwiftTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C054A043AB51C99202B36535 /* Pods-MonorailSwiftExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonorailSwiftExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-MonorailSwiftExampleTests/Pods-MonorailSwiftExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F51EEE8F3CE1649E7389202E /* Pods-MonorailSwiftExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonorailSwiftExampleTests.release.xcconfig"; path = "Target Support Files/Pods-MonorailSwiftExampleTests/Pods-MonorailSwiftExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		F8B8B7E8223722C600FA8F9D /* MonorailSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MonorailSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B8B7EA223722C600FA8F9D /* MonorailSwiftTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonorailSwiftTools.h; sourceTree = "<group>"; };
 		F8B8B7EB223722C600FA8F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -235,8 +240,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91E61C1A215DC17A004F0B17 /* Quick.framework in Frameworks */,
-				91E61C1B215DC17A004F0B17 /* Nimble.framework in Frameworks */,
+				33341EBA2EC9CFB4673A26CB /* libPods-MonorailSwiftExampleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91CF88F3216E9694003A351C /* MonorailSwift.framework in Frameworks */,
-				911094F921749E52008CAA9C /* Nimble.framework in Frameworks */,
-				911094FA21749E52008CAA9C /* Quick.framework in Frameworks */,
+				7AD67BB061EEDD487043F82B /* libPods-MonorailSwiftTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +277,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48116A7E9369381BAD57C00C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9FBF793E690CCE5D23488E5 /* libPods-MonorailSwiftTests.a */,
+				9EEC696B9AAC58DF06A00968 /* libPods-MonorailSwiftExampleTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		91165E7A2156680D00546246 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +358,8 @@
 				91CF88F8216E9694003A351C /* MonorailSwiftTests */,
 				F8B8B7E9223722C600FA8F9D /* MonorailSwiftTools */,
 				91C4C9D92156632A001F6B7C /* Products */,
+				F71B2730D94BA89E59BB830F /* Pods */,
+				48116A7E9369381BAD57C00C /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -384,7 +398,6 @@
 		91C4C9EF2156632B001F6B7C /* MonorailSwiftExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				91E61C17215DC167004F0B17 /* Frameworks */,
 				91263CBA2185D66D007935A8 /* AppConfigTests.swift */,
 				91C4C9F22156632B001F6B7C /* Info.plist */,
 			);
@@ -466,13 +479,15 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		91E61C17215DC167004F0B17 /* Frameworks */ = {
+		F71B2730D94BA89E59BB830F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				91E61C19215DC17A004F0B17 /* Nimble.framework */,
-				91E61C18215DC179004F0B17 /* Quick.framework */,
+				7A66EAA333E637BF68216B84 /* Pods-MonorailSwiftTests.debug.xcconfig */,
+				36CFD2926BA88DFFB655D199 /* Pods-MonorailSwiftTests.release.xcconfig */,
+				C054A043AB51C99202B36535 /* Pods-MonorailSwiftExampleTests.debug.xcconfig */,
+				F51EEE8F3CE1649E7389202E /* Pods-MonorailSwiftExampleTests.release.xcconfig */,
 			);
-			name = Frameworks;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		F8B8B7E9223722C600FA8F9D /* MonorailSwiftTools */ = {
@@ -561,6 +576,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91C4CA032156632B001F6B7C /* Build configuration list for PBXNativeTarget "MonorailSwiftExampleTests" */;
 			buildPhases = (
+				845B561466AFA43926B068FA /* [CP] Check Pods Manifest.lock */,
 				91C4C9E82156632B001F6B7C /* Sources */,
 				91C4C9E92156632B001F6B7C /* Frameworks */,
 				91C4C9EA2156632B001F6B7C /* Resources */,
@@ -616,6 +632,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91CF8907216E9694003A351C /* Build configuration list for PBXNativeTarget "MonorailSwiftTests" */;
 			buildPhases = (
+				FA023D5FCC8F0CF151734AA5 /* [CP] Check Pods Manifest.lock */,
 				91CF88EE216E9694003A351C /* Sources */,
 				91CF88EF216E9694003A351C /* Frameworks */,
 				91CF88F0216E9694003A351C /* Resources */,
@@ -643,6 +660,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9163F03B22506BC700A21BFA /* PBXTargetDependency */,
 			);
 			name = MonorailSwiftTools;
 			productName = MonorailSwiftTools;
@@ -766,6 +784,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		845B561466AFA43926B068FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MonorailSwiftExampleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		91E61C08215D89ED004F0B17 /* Copy Stubs Bundle to non-release package */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -779,6 +819,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ \"$CONFIGURATION\" == \"Debug\" ] || [ \"$CONFIGURATION\" == \"Test\" ]; then\ncp -r \"${STUBS_BUNDLE}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Stubs.bundle\"\nfi\n";
+		};
+		FA023D5FCC8F0CF151734AA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MonorailSwiftTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -884,6 +946,11 @@
 			isa = PBXTargetDependency;
 			target = 91C4C9D72156632A001F6B7C /* MonorailSwiftExample */;
 			targetProxy = 913E98CF21B38193006569E2 /* PBXContainerItemProxy */;
+		};
+		9163F03B22506BC700A21BFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91CF88E9216E9693003A351C /* MonorailSwift */;
+			targetProxy = 9163F03A22506BC700A21BFA /* PBXContainerItemProxy */;
 		};
 		91C4C9EE2156632B001F6B7C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1126,6 +1193,7 @@
 		};
 		91C4CA042156632B001F6B7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C054A043AB51C99202B36535 /* Pods-MonorailSwiftExampleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1142,7 +1210,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.monitolab.MonorailSwiftExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonorailSwiftExample.app/MonorailSwiftExample";
 			};
@@ -1150,6 +1218,7 @@
 		};
 		91C4CA052156632B001F6B7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F51EEE8F3CE1649E7389202E /* Pods-MonorailSwiftExampleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1166,7 +1235,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.monitolab.MonorailSwiftExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonorailSwiftExample.app/MonorailSwiftExample";
 			};
@@ -1186,7 +1255,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.monitolab.MonorailSwiftExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MonorailSwiftExample;
 			};
@@ -1206,7 +1275,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.monitolab.MonorailSwiftExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MonorailSwiftExample;
 			};
@@ -1273,6 +1342,7 @@
 		};
 		91CF8903216E9694003A351C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A66EAA333E637BF68216B84 /* Pods-MonorailSwiftTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1300,6 +1370,7 @@
 		};
 		91CF8904216E9694003A351C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36CFD2926BA88DFFB655D199 /* Pods-MonorailSwiftTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

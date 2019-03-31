@@ -46,7 +46,7 @@ public extension MonorailHelper {
         }
     }
     
-    public class ActionMenuTableViewController: UITableViewController {
+    class ActionMenuTableViewController: UITableViewController {
         typealias TapBtnFunc = () -> Void
         var doneTapped: TapBtnFunc?
         private let actions: [MenuItem]
