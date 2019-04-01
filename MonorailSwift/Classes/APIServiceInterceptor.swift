@@ -86,12 +86,10 @@ class URLInterceptor: URLProtocol, URLSessionDelegate {
             
             let session = Foundation.URLSession(configuration: URLSessionConfiguration.defaultSessionConf(), delegate: self, delegateQueue: nil)
             
-//            session.
             session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
                 if let error = error {
                     self.client?.urlProtocol(self, didFailWithError: error)
                     print("----error---")
-//                    interceptor.log(self.request)
                     interceptor.log(error, request: self.request)
                     return
                 }

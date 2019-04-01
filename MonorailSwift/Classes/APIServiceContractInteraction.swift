@@ -129,9 +129,21 @@ open class APIServiceContractInteraction {
         if let request = json {
             self.request.deepMerge(request)
             path = request[pathKey] as? String
-            if let baseUrl = baseUrl, let path = path, path.hasPrefix(baseUrl) {
-                self.path = String(path[baseUrl.endIndex...])
-                self.request[pathKey] = path
+            if let path = path {
+                if let baseUrl = baseUrl, path.hasPrefix(baseUrl) {
+                    self.path = String(path[baseUrl.endIndex...])
+                    self.request[pathKey] = path
+                } else {
+                    let url = URL(string: path)
+                    if let host = url?.host, let hostRange = path.range(of: host) {
+                        self.baseUrl = String(path[path.startIndex..<hostRange.upperBound])
+                        self.path = String(path[hostRange.upperBound...])
+                        self.request[pathKey] = path
+                    } else {
+                        self.path = path
+                        self.request[pathKey] = path
+                    }
+                }
             }
             method = request[methodKey] as? String
         }

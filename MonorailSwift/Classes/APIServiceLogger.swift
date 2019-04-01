@@ -70,10 +70,10 @@ public final class APIServiceLogger {
                 logString += "JSON: \(string)\n"
             }
         } catch {
-            if let string = String(data: data, encoding: .utf8) {
+            if data.count < 1024, let string = String(data: data, encoding: .utf8) {
                 logString += "UTF8: \(string)\n"
             } else {
-                logString += "Data: \(data.base64EncodedString())\n"
+                logString += "Data: \(data.debugDescription)\n"
             }
         }
         
@@ -89,11 +89,9 @@ public final class APIServiceLogger {
         return logString
     }
 }
-
-// Don't use this, it will consume the inputStream and request will fail
 //
 //extension URLRequest {
-//    func getHttpBodyData() -> Data? {
+//    mutating func getHttpBodyData() -> Data? {
 //        if let httpBody = httpBody {
 //            return httpBody
 //        } else if let httpBodyStream = httpBodyStream {
@@ -109,7 +107,7 @@ public final class APIServiceLogger {
 //                }
 //            }
 //            httpBodyStream.close()
-//
+//            self.httpBodyStream = InputStream(data: data)
 //            return data
 //        } else {
 //            return nil
