@@ -16,6 +16,8 @@ open class APIServiceContractInteraction {
     private let idKey = "id"
     static let idRefKey = "idReference"
     private let timeStampKey = "timeStamp"
+    private let timeElapsedKey = "timeElapsed"
+    private let timeElapsedEnabledKey = "timeElapsedEnabled"
     
     private(set) var request: [String: Any] = [:]
     private(set) var response: [String: Any] = [:]
@@ -31,6 +33,8 @@ open class APIServiceContractInteraction {
     private(set) var providerVariables: [String: Any] = [:]
     
     private(set) var timeStamp: Date?
+    private(set) var timeElapsed: TimeInterval?
+    private(set) var timeElapsedEnabled: Bool = false
     
     // temp variables
     var consumed = false
@@ -62,6 +66,8 @@ open class APIServiceContractInteraction {
         self.consumerVariables = template.consumerVariables
         self.providerVariables = template.providerVariables
         self.timeStamp = template.timeStamp
+        self.timeElapsed = template.timeElapsed
+        self.timeElapsedEnabled = template.timeElapsedEnabled
     }
     
     init(json: [String: Any], baseUrl: String? = nil, fileName: String? = nil, externalFileRootPath: String? = nil) {
@@ -89,18 +95,19 @@ open class APIServiceContractInteraction {
             self.providerVariables.deepMerge(providerVariables)
         }
         
-        if let idString = json[idKey] as? String {
-            self.id = idString
-        }
-        
+        id = json[idKey] as? String
         if let timeStamp = (json[timeStampKey] as? String)?.date(timeStampFormat) {
             self.timeStamp = timeStamp
         }
+        timeElapsed = json[timeElapsedKey] as? TimeInterval
+        timeElapsedEnabled = (json[timeElapsedEnabledKey] as? Bool) ?? timeElapsedEnabled
     }
     
-    init(request: URLRequest?, uploadData: Data? = nil, response: URLResponse?, data: Data? = nil, baseUrl: String? = nil, timeStamp: Date? = nil) {
+    init(request: URLRequest?, uploadData: Data? = nil, response: URLResponse?, data: Data? = nil, baseUrl: String? = nil, timeStamp: Date? = nil, timeElapsed: TimeInterval? = nil, timeElapsedEnabled: Bool = false) {
         self.baseUrl = baseUrl
         self.timeStamp = timeStamp
+        self.timeElapsed = timeElapsed
+        self.timeElapsedEnabled = timeElapsedEnabled
         if let request = request, let url = request.url?.absoluteString {
             setRequest(method: request.httpMethod ?? "GET", path: url, headers: request.allHTTPHeaderFields, body: request.httpBody, uploadData: uploadData)
         }
@@ -264,6 +271,10 @@ open class APIServiceContractInteraction {
         
         if let timeStamp = timeStamp {
             payload[timeStampKey] = timeStamp.asString(format: timeStampFormat)
+        }
+        
+        if let timeElapsed = timeElapsed {
+            payload[timeElapsedKey] = timeElapsed
         }
         
         return payload

@@ -9,7 +9,9 @@
     },
     {
       "id" : "Interaction_02",
-      "idReference": "Interaction_01"
+      "idReference": "Interaction_01",
+      "timeElapsed": 1.0,
+      "timeElapsedEnabled": true
     },
     {
       "id" : "Interaction_03",
@@ -25,11 +27,14 @@
       },
       "response" : {
         "fileReference" : "subfolder/Interaction-response.json"
-      }
+      },
+      "timeElapsed": 2.0
     },
     {
       "id" : "Interaction_04",
-      "idReference": "Interaction_not_exist"
+      "idReference": "Interaction_not_exist",
+      "timeElapsed": 3.0,
+      "timeElapsedEnabled": false
     }
    ]
 }

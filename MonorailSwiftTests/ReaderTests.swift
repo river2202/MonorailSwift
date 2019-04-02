@@ -35,10 +35,15 @@ class ReaderTests: QuickSpec {
                     expect(reader.interactions[1].id) == "Interaction_02"
                     expect(reader.interactions[1].method) == "GET"
                     expect(reader.interactions[1].responseObjects()?.0.statusCode) == 200
+                    expect(reader.interactions[1].timeElapsed) == 1.0
+                    expect(reader.interactions[1].timeElapsedEnabled) == true
                     
                     expect(reader.interactions[2].id) == "Interaction_03"
                     expect(reader.interactions[2].method) == "POST"
                     expect(reader.interactions[2].responseObjects()?.0.statusCode) == 403
+                    
+                    expect(reader.interactions[2].timeElapsed) == 2.0
+                    expect(reader.interactions[2].timeElapsedEnabled) == false
                     
                     expect(reader.interactions[3].id) == "Interaction_04"
                     expect(reader.interactions[3].method == nil) == true
@@ -46,6 +51,9 @@ class ReaderTests: QuickSpec {
                     
                     expect(reader.consumerVariables["value1"] as? String) == "value1"
                     expect(reader.consumerVariables["value2"] as? String) == "value2"
+                    
+                    expect(reader.interactions[3].timeElapsed) == 3.0
+                    expect(reader.interactions[3].timeElapsedEnabled) == false
                 }
             }
             
@@ -53,9 +61,13 @@ class ReaderTests: QuickSpec {
                 
             }
             
-            it("delegate works correctly") {
+            it("delegate works correctly ...") {
                 
             }
+            
+            
+            
+            
             
         }
         
