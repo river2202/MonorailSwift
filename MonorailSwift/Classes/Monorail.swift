@@ -4,6 +4,11 @@ public protocol MonorailDebugOutput: class {
     func log(_ message: String)
 }
 
+public enum MonorailInteractionFilter {
+    case whitelist([String])
+    case blacklist([String])
+}
+
 extension MonorailDebugOutput {
     public func log(_ message: String) { print(message) }
 }
@@ -23,13 +28,15 @@ open class Monorail {
     open private(set) var writer: APIServiceWriter?
     open private(set) var reader: APIServiceReader?
     open var bypassSslCheck: Bool = true
+    var loggerFilter: MonorailInteractionFilter?
     
     init() {
         URLInterceptor.enable(interceptor: self)
     }
     
-    public static func enableLogger(output: MonorailDebugOutput = Monorail.shared) {
+    public static func enableLogger(output: MonorailDebugOutput = Monorail.shared, filter: MonorailInteractionFilter? = nil) {
         Monorail.shared.logger = APIServiceLogger(output: output)
+        Monorail.shared.loggerFilter = filter
     }
     
     public static func disableLogger() {
@@ -90,16 +97,37 @@ extension Monorail: APIServiceInterceptor {
     }
     
     func log(_ error: Error, request: URLRequest) {
-        logger?.log(error)
+        if isNotFiltered(request: request) {
+            logger?.log(error)
+        }
     }
 
     func log(_ request: URLRequest) {
-        logger?.log(request)
+        if isNotFiltered(request: request) {
+            logger?.log(request)
+        }
     }
 
     func log(_ response: URLResponse, data: Data?, request: URLRequest) {
-        logger?.log(response, data: data)
+        if isNotFiltered(request: request) {
+            logger?.log(response, data: data)
+        }
+        
         writer?.log(request: request, response: response, data: data)
+    }
+    
+    private func isNotFiltered(request: URLRequest) -> Bool {
+        guard let urlString = request.url?.absoluteString else {
+            return true
+        }
+        
+        if case let .whitelist(whitelist)? = loggerFilter {
+            return whitelist.first { urlString.hasPrefix($0) } != nil
+        } else if case let .blacklist(blacklist)? = loggerFilter {
+            return blacklist.first { urlString.hasPrefix($0) } == nil
+        } else {
+            return true
+        }
     }
 }
 
