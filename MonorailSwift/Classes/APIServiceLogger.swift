@@ -2,6 +2,7 @@ import Foundation
 
 public final class APIServiceLogger {
     private weak var output: MonorailDebugOutput?
+    var maxPrintoutDataCount = 1024
     
     init(output: MonorailDebugOutput) {
         self.output = output
@@ -26,7 +27,7 @@ public final class APIServiceLogger {
     }
     
     public func log(_ request: URLRequest, uploadData: Data? = nil) {
-        logRequest(url: request.url, method: request.httpMethod, header: request.allHTTPHeaderFields as [String : AnyObject]?, data: uploadData ?? request.httpBody)
+        logRequest(url: request.url, method: request.httpMethod, header: request.allHTTPHeaderFields as [String : AnyObject]?, data: uploadData ?? request.getHttpBodyData())
     }
     
     public func logRequest(url: URL?, method: String?, header: [String: AnyObject]?, data: Data? ) {
@@ -60,7 +61,7 @@ public final class APIServiceLogger {
         var logString = ""
         
         guard let data = data else {
-            return ""
+            return logString
         }
         
         do {
@@ -70,9 +71,9 @@ public final class APIServiceLogger {
                 logString += "JSON: \(string)\n"
             }
         } catch {
-            if data.count < 1024, let string = String(data: data, encoding: .utf8) {
-                logString += "UTF8: \(string)\n"
-            } else {
+            if data.count > 0, data.count < maxPrintoutDataCount, let string = String(data: data, encoding: .utf8), !string.isEmpty {
+                logString += "UTF8: \"\(string)\"\n"
+            } else if data.count > 0 {
                 logString += "Data: \(data.debugDescription)\n"
             }
         }
@@ -89,29 +90,29 @@ public final class APIServiceLogger {
         return logString
     }
 }
-//
-//extension URLRequest {
-//    mutating func getHttpBodyData() -> Data? {
-//        if let httpBody = httpBody {
-//            return httpBody
-//        } else if let httpBodyStream = httpBodyStream {
-//            var data = Data()
-//            var buffer = [UInt8](repeating: 0, count: 4096)
-//            httpBodyStream.open()
-//            while httpBodyStream.hasBytesAvailable {
-//                let length = httpBodyStream.read(&buffer, maxLength: 4096)
-//                if length == 0 {
-//                    break
-//                } else {
-//                    data.append(&buffer, count: length)
-//                }
-//            }
-//            httpBodyStream.close()
-//            self.httpBodyStream = InputStream(data: data)
-//            return data
-//        } else {
-//            return nil
-//        }
-//    }
-//}
+
+extension URLRequest {
+    func getHttpBodyData() -> Data? {
+        if let httpBody = httpBody {
+            return httpBody
+        } else if let req = (self as NSURLRequest).mutableCopy() as? NSMutableURLRequest, let httpBodyStream = req.httpBodyStream {
+            
+            var data = Data()
+            var buffer = [UInt8](repeating: 0, count: 4096)
+            httpBodyStream.open()
+            defer { httpBodyStream.close() }
+            while httpBodyStream.hasBytesAvailable {
+                let length = httpBodyStream.read(&buffer, maxLength: 4096)
+                if length == 0 {
+                    break
+                } else {
+                    data.append(&buffer, count: length)
+                }
+            }
+            return data
+        } else {
+            return nil
+        }
+    }
+}
 

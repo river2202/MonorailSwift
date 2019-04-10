@@ -109,7 +109,7 @@ open class APIServiceContractInteraction {
         self.timeElapsed = timeElapsed
         self.timeElapsedEnabled = timeElapsedEnabled
         if let request = request, let url = request.url?.absoluteString {
-            setRequest(method: request.httpMethod ?? "GET", path: url, headers: request.allHTTPHeaderFields, body: request.httpBody, uploadData: uploadData)
+            setRequest(method: request.httpMethod ?? "GET", path: url, headers: request.allHTTPHeaderFields, body: request.getHttpBodyData(), uploadData: uploadData)
         }
         
         if let response = response as? HTTPURLResponse {
