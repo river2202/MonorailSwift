@@ -1,17 +1,7 @@
-
-import Quick
-import Nimble
+import XCTest
 @testable import MonorailSwift
 
-class MonorailSwiftTests: QuickSpec {
+class MonorailSwiftTests: XCTest {
     
-    override func spec() {
-        
-        describe("Writer") {
-            it("can save network interaction to file and correctly load") {
-                
-            }
-        }
-        
-    }
+    
 }

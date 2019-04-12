@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33341EBA2EC9CFB4673A26CB /* libPods-MonorailSwiftExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEC696B9AAC58DF06A00968 /* libPods-MonorailSwiftExampleTests.a */; };
-		7AD67BB061EEDD487043F82B /* libPods-MonorailSwiftTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FBF793E690CCE5D23488E5 /* libPods-MonorailSwiftTests.a */; };
 		91165E7D2156680D00546246 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91165E7B2156680D00546246 /* Question.swift */; };
 		91165E7E2156680D00546246 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91165E7C2156680D00546246 /* Answer.swift */; };
+		9120490022538551004A5E69 /* MonorailTimeMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912048FF22538551004A5E69 /* MonorailTimeMachineTests.swift */; };
+		912278982261A814008C53C7 /* NSDate+TimeMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 912278962261A814008C53C7 /* NSDate+TimeMachine.m */; };
+		912278992261A814008C53C7 /* NSDate+TimeMachine.h in Headers */ = {isa = PBXBuildFile; fileRef = 912278972261A814008C53C7 /* NSDate+TimeMachine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91233C3C218B1E7700CBBFD9 /* ExampleConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91233C3B218B1E7700CBBFD9 /* ExampleConsumer.swift */; };
 		91263CA9218481A7007935A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CA8218481A7007935A8 /* User.swift */; };
 		91263CB921856705007935A8 /* StackOverflowApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CB821856705007935A8 /* StackOverflowApi.swift */; };
@@ -33,6 +34,7 @@
 		91840B3021B158330016B7B4 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2D21B158330016B7B4 /* AppConfiguration.swift */; };
 		91840B3121B158330016B7B4 /* UITestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2E21B158330016B7B4 /* UITestBase.swift */; };
 		91840B3521B15DDF0016B7B4 /* Springboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B3421B15DDF0016B7B4 /* Springboard.swift */; };
+		9185F3F72261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 9185F3F62261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h */; };
 		91B392C221A9FAFF00C71AEB /* TimeMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B392C121A9FAFF00C71AEB /* TimeMachine.swift */; };
 		91C4C9DC2156632A001F6B7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9DB2156632A001F6B7C /* AppDelegate.swift */; };
 		91C4C9DE2156632A001F6B7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9DD2156632A001F6B7C /* ViewController.swift */; };
@@ -151,10 +153,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		36CFD2926BA88DFFB655D199 /* Pods-MonorailSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonorailSwiftTests.release.xcconfig"; path = "Target Support Files/Pods-MonorailSwiftTests/Pods-MonorailSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
-		7A66EAA333E637BF68216B84 /* Pods-MonorailSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonorailSwiftTests.debug.xcconfig"; path = "Target Support Files/Pods-MonorailSwiftTests/Pods-MonorailSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		91165E7B2156680D00546246 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		91165E7C2156680D00546246 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		912048FF22538551004A5E69 /* MonorailTimeMachineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonorailTimeMachineTests.swift; sourceTree = "<group>"; };
+		912278962261A814008C53C7 /* NSDate+TimeMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeMachine.m"; sourceTree = "<group>"; };
+		912278972261A814008C53C7 /* NSDate+TimeMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeMachine.h"; sourceTree = "<group>"; };
 		91233C3B218B1E7700CBBFD9 /* ExampleConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleConsumer.swift; sourceTree = "<group>"; };
 		91263CA8218481A7007935A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		91263CB821856705007935A8 /* StackOverflowApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowApi.swift; sourceTree = "<group>"; };
@@ -173,6 +176,7 @@
 		91840B2D21B158330016B7B4 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		91840B2E21B158330016B7B4 /* UITestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UITestBase.swift; sourceTree = "<group>"; tabWidth = 2; };
 		91840B3421B15DDF0016B7B4 /* Springboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Springboard.swift; sourceTree = "<group>"; };
+		9185F3F62261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MonorailSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		91B392C121A9FAFF00C71AEB /* TimeMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMachine.swift; sourceTree = "<group>"; };
 		91C4C9D82156632A001F6B7C /* MonorailSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonorailSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C4C9DB2156632A001F6B7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -204,10 +208,6 @@
 		91E5788A218332FD00FA1411 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		91E5788C2183CCB900FA1411 /* StackOverflowResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowResponse.swift; sourceTree = "<group>"; };
 		91E61C09215D8B1C004F0B17 /* Stubs.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Stubs.bundle; sourceTree = "<group>"; };
-		9EEC696B9AAC58DF06A00968 /* libPods-MonorailSwiftExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MonorailSwiftExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9FBF793E690CCE5D23488E5 /* libPods-MonorailSwiftTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MonorailSwiftTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C054A043AB51C99202B36535 /* Pods-MonorailSwiftExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonorailSwiftExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-MonorailSwiftExampleTests/Pods-MonorailSwiftExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F51EEE8F3CE1649E7389202E /* Pods-MonorailSwiftExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonorailSwiftExampleTests.release.xcconfig"; path = "Target Support Files/Pods-MonorailSwiftExampleTests/Pods-MonorailSwiftExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		F8B8B7E8223722C600FA8F9D /* MonorailSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MonorailSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B8B7EA223722C600FA8F9D /* MonorailSwiftTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonorailSwiftTools.h; sourceTree = "<group>"; };
 		F8B8B7EB223722C600FA8F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -240,7 +240,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33341EBA2EC9CFB4673A26CB /* libPods-MonorailSwiftExampleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +262,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				91CF88F3216E9694003A351C /* MonorailSwift.framework in Frameworks */,
-				7AD67BB061EEDD487043F82B /* libPods-MonorailSwiftTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,15 +275,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		48116A7E9369381BAD57C00C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B9FBF793E690CCE5D23488E5 /* libPods-MonorailSwiftTests.a */,
-				9EEC696B9AAC58DF06A00968 /* libPods-MonorailSwiftExampleTests.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		91165E7A2156680D00546246 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,8 +347,6 @@
 				91CF88F8216E9694003A351C /* MonorailSwiftTests */,
 				F8B8B7E9223722C600FA8F9D /* MonorailSwiftTools */,
 				91C4C9D92156632A001F6B7C /* Products */,
-				F71B2730D94BA89E59BB830F /* Pods */,
-				48116A7E9369381BAD57C00C /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -433,6 +420,8 @@
 				91DE3D702166306E002639E1 /* Monorail.swift */,
 				91C4CA102156641A001F6B7C /* APIServiceContractInteraction.swift */,
 				91C4CA112156641A001F6B7C /* APIServiceReader.swift */,
+				912278972261A814008C53C7 /* NSDate+TimeMachine.h */,
+				912278962261A814008C53C7 /* NSDate+TimeMachine.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -442,6 +431,7 @@
 			children = (
 				91CF88EC216E9694003A351C /* MonorailSwiftSDK.h */,
 				91CF88ED216E9694003A351C /* Info.plist */,
+				9185F3F62261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h */,
 			);
 			path = MonorailSwiftFramework;
 			sourceTree = "<group>";
@@ -451,6 +441,7 @@
 			children = (
 				913E98E521B39ABB006569E2 /* Helper */,
 				91CF88F9216E9694003A351C /* MonorailSwiftTests.swift */,
+				912048FF22538551004A5E69 /* MonorailTimeMachineTests.swift */,
 				913E98EA21B39F5E006569E2 /* ReaderTests.swift */,
 				913E98E821B39ED5006569E2 /* LoggerTests.swift */,
 				91CF88FB216E9694003A351C /* Info.plist */,
@@ -477,17 +468,6 @@
 				91233C3B218B1E7700CBBFD9 /* ExampleConsumer.swift */,
 			);
 			path = Manager;
-			sourceTree = "<group>";
-		};
-		F71B2730D94BA89E59BB830F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7A66EAA333E637BF68216B84 /* Pods-MonorailSwiftTests.debug.xcconfig */,
-				36CFD2926BA88DFFB655D199 /* Pods-MonorailSwiftTests.release.xcconfig */,
-				C054A043AB51C99202B36535 /* Pods-MonorailSwiftExampleTests.debug.xcconfig */,
-				F51EEE8F3CE1649E7389202E /* Pods-MonorailSwiftExampleTests.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		F8B8B7E9223722C600FA8F9D /* MonorailSwiftTools */ = {
@@ -519,6 +499,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				91CF88FC216E9694003A351C /* MonorailSwiftSDK.h in Headers */,
+				9185F3F72261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h in Headers */,
+				912278992261A814008C53C7 /* NSDate+TimeMachine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,7 +558,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91C4CA032156632B001F6B7C /* Build configuration list for PBXNativeTarget "MonorailSwiftExampleTests" */;
 			buildPhases = (
-				845B561466AFA43926B068FA /* [CP] Check Pods Manifest.lock */,
 				91C4C9E82156632B001F6B7C /* Sources */,
 				91C4C9E92156632B001F6B7C /* Frameworks */,
 				91C4C9EA2156632B001F6B7C /* Resources */,
@@ -632,7 +613,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91CF8907216E9694003A351C /* Build configuration list for PBXNativeTarget "MonorailSwiftTests" */;
 			buildPhases = (
-				FA023D5FCC8F0CF151734AA5 /* [CP] Check Pods Manifest.lock */,
 				91CF88EE216E9694003A351C /* Sources */,
 				91CF88EF216E9694003A351C /* Frameworks */,
 				91CF88F0216E9694003A351C /* Resources */,
@@ -694,6 +674,7 @@
 					};
 					91CF88E9216E9693003A351C = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
 					};
 					91CF88F1216E9694003A351C = {
 						CreatedOnToolsVersion = 10.0;
@@ -784,28 +765,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		845B561466AFA43926B068FA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MonorailSwiftExampleTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		91E61C08215D89ED004F0B17 /* Copy Stubs Bundle to non-release package */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -819,28 +778,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ \"$CONFIGURATION\" == \"Debug\" ] || [ \"$CONFIGURATION\" == \"Test\" ]; then\ncp -r \"${STUBS_BUNDLE}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Stubs.bundle\"\nfi\n";
-		};
-		FA023D5FCC8F0CF151734AA5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MonorailSwiftTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -912,6 +849,7 @@
 				91CF890E216E9705003A351C /* APIServiceReader.swift in Sources */,
 				91CF890C216E9705003A351C /* Monorail.swift in Sources */,
 				91CF8908216E9705003A351C /* APIServiceWriter.swift in Sources */,
+				912278982261A814008C53C7 /* NSDate+TimeMachine.m in Sources */,
 				91B392C221A9FAFF00C71AEB /* TimeMachine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -923,6 +861,7 @@
 				913E98E721B39AD2006569E2 /* StubManager.swift in Sources */,
 				913E98E921B39ED5006569E2 /* LoggerTests.swift in Sources */,
 				913E98EB21B39F5E006569E2 /* ReaderTests.swift in Sources */,
+				9120490022538551004A5E69 /* MonorailTimeMachineTests.swift in Sources */,
 				91CF88FA216E9694003A351C /* MonorailSwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1193,7 +1132,6 @@
 		};
 		91C4CA042156632B001F6B7C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C054A043AB51C99202B36535 /* Pods-MonorailSwiftExampleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1218,7 +1156,6 @@
 		};
 		91C4CA052156632B001F6B7C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F51EEE8F3CE1649E7389202E /* Pods-MonorailSwiftExampleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1284,6 +1221,7 @@
 		91CF8901216E9694003A351C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1304,6 +1242,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.monitolab.MonorailSwiftSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/MonorailSwiftFramework/MonorailSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1314,6 +1254,7 @@
 		91CF8902216E9694003A351C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1333,6 +1274,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.monitolab.MonorailSwiftSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/MonorailSwiftFramework/MonorailSwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1342,15 +1284,11 @@
 		};
 		91CF8903216E9694003A351C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A66EAA333E637BF68216B84 /* Pods-MonorailSwiftTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 468VBX7W2W;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = MonorailSwiftTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1370,15 +1308,11 @@
 		};
 		91CF8904216E9694003A351C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36CFD2926BA88DFFB655D199 /* Pods-MonorailSwiftTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 468VBX7W2W;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = MonorailSwiftTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

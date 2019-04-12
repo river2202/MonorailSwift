@@ -133,10 +133,7 @@ private let swizzling: (AnyClass, Selector, Selector) -> Bool = { forClass, orig
     guard
         let originalMethod = class_getClassMethod(forClass, originalSelector),
         let swizzledMethod = class_getClassMethod(forClass, swizzledSelector) else { return false }
-    
-    let origImplementation = method_getImplementation(originalMethod)
-    let newImplementation = method_getImplementation(swizzledMethod)
-    
+ 
     method_exchangeImplementations(originalMethod, swizzledMethod)
     
     return true

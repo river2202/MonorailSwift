@@ -1,36 +1,34 @@
 
 import Foundation
 
-open class TimeMachine {
+public final class TimeMachine {
     public static let shared = TimeMachine()
     
-    open var now: Date {
-        #if DEBUG || TEST
-        return nowRelativeToBase
-        #else
-        return Date()
-        #endif
+    public var now: Date {
+        return NSDate() as Date
     }
     
-    private var absoluteStartTime: Date?
-    private var baseTime: Date?
-    
-    private var nowRelativeToBase: Date {
-        guard let baseTime = baseTime, let startTime = absoluteStartTime else {
-            return Date()
-        }
-        
-        return baseTime - startTime.timeIntervalSinceNow
+    var realNow: Date {
+        return NSDate.realNow() as Date
     }
     
-    open func travelTo(_ past: Date?) {
-        guard let past = past else {
-            absoluteStartTime = nil
-            baseTime = nil
-            return
-        }
-        
-        absoluteStartTime = Date()
-        baseTime = past
+    public func travel(to past: Date?) {
+        NSDate.travel(to: past)
     }
 }
+
+public extension Date {
+    init() {
+        self = NSDate() as Date
+    }
+    
+    init(timeIntervalSinceNow: TimeInterval) {
+        self = Date().addingTimeInterval(timeIntervalSinceNow)
+    }
+    
+    var timeIntervalSinceNow: TimeInterval {
+        return timeIntervalSince(Date())
+    }
+}
+
+

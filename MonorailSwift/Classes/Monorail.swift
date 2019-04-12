@@ -63,7 +63,7 @@ open class Monorail {
     
     public static func enableReader(from files: [URL], externalFileRootPath: String? = nil, delegate: APIServiceReaderDelegate? = nil, output: MonorailDebugOutput = Monorail.shared) {
         Monorail.shared.reader = APIServiceReader(files: files, delegate: delegate, output: output)
-        TimeMachine.shared.travelTo(Monorail.shared.reader?.startTime)
+        TimeMachine.shared.travel(to: Monorail.shared.reader?.startTime)
     }
     
     public static func disableReader() {
