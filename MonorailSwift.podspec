@@ -8,7 +8,7 @@
 # https://guides.cocoapods.org/making/making-a-cocoapod.html
 # git tag '0.0.1'
 # git push --tags
-# pod trunk push MonorailSwift.podspec
+# pod trunk push MonorailSwift.podspec --allow-warnings
 
 Pod::Spec.new do |s|
   s.name             = 'MonorailSwift'
