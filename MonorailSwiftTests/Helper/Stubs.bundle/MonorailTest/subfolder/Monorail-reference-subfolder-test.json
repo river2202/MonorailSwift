@@ -1,0 +1,40 @@
+{
+  "consumer" : {
+    "fileReference" : "../consumer_var.json"
+  },
+  "interactions" : [
+    {
+      "id" : "Interaction_01",
+      "fileReference" : "../Interaction-sample.json"
+    },
+    {
+      "id" : "Interaction_02",
+      "idReference": "Interaction_01",
+      "timeElapsed": 1.0,
+      "timeElapsedEnabled": true
+    },
+    {
+      "id" : "Interaction_03",
+      "request" : {
+        "body" : {
+          "field1" : "field1_value"
+        },
+        "headers" : {
+          "Content-Type" : "application\/json"
+        },
+        "method" : "POST",
+        "path" : "path\/api1"
+      },
+      "response" : {
+        "fileReference" : "Interaction-response.json"
+      },
+      "timeElapsed": 2.0
+    },
+    {
+      "id" : "Interaction_04",
+      "idReference": "Interaction_not_exist",
+      "timeElapsed": 3.0,
+      "timeElapsedEnabled": false
+    }
+  ]
+}

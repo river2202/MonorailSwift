@@ -7,6 +7,32 @@ public protocol MonorailDebugOutput: class {
 public enum MonorailInteractionFilter {
     case whitelist([String])
     case blacklist([String])
+    
+    func isFiltered(_ value: String?) -> Bool {
+        guard let value = value else {
+            return false
+        }
+        
+        switch self {
+        case .whitelist(let whitelist):
+            return whitelist.first { value.contains(regexString: $0) } == nil
+        case .blacklist(let blacklist):
+            return blacklist.first { value.contains(regexString: $0) } != nil
+        }
+        
+        
+    }
+}
+
+extension String {
+    func contains(regexString: String) -> Bool {
+        if let _ = self.range(of: regexString,
+            options: .regularExpression) {
+            return true
+        } else {
+            return contains(regexString)
+        }
+    }
 }
 
 extension MonorailDebugOutput {
@@ -97,37 +123,29 @@ extension Monorail: APIServiceInterceptor {
     }
     
     func log(_ error: Error, request: URLRequest) {
-        if isNotFiltered(request: request) {
+        if !request.filtered(by: loggerFilter) {
             logger?.log(error)
         }
     }
 
     func log(_ request: URLRequest) {
-        if isNotFiltered(request: request) {
+        if !request.filtered(by: loggerFilter) {
             logger?.log(request)
         }
     }
 
     func log(_ response: URLResponse, data: Data?, request: URLRequest) {
-        if isNotFiltered(request: request) {
+        if !request.filtered(by: loggerFilter) {
             logger?.log(response, data: data)
         }
         
         writer?.log(request: request, response: response, data: data)
     }
-    
-    private func isNotFiltered(request: URLRequest) -> Bool {
-        guard let urlString = request.url?.absoluteString else {
-            return true
-        }
-        
-        if case let .whitelist(whitelist)? = loggerFilter {
-            return whitelist.first { urlString.hasPrefix($0) } != nil
-        } else if case let .blacklist(blacklist)? = loggerFilter {
-            return blacklist.first { urlString.hasPrefix($0) } == nil
-        } else {
-            return true
-        }
+}
+
+extension URLRequest {
+    func filtered(by filter: MonorailInteractionFilter?) -> Bool {
+        return filter?.isFiltered(url?.absoluteString) ?? false
     }
 }
 

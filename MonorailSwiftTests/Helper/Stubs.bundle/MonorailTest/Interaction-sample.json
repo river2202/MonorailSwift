@@ -1,0 +1,41 @@
+{
+  "id" : "invitation_01",
+  "request" : {
+    "body" : {
+      "binding_secret" : "57dc7f1dd7185d64682aabb6c5a9ba3f"
+    },
+    "headers" : {
+      "Content-Type" : "application\/json"
+    },
+    "method" : "GET",
+    "path" : "identity\/devices\/invitation"
+  },
+  "response" : {
+    "body" : {
+      "nonce" : "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJJREVOVElUWSIsIm5iZiI6MTUxMzU3MDk5MSwiaXNzIjoiSURFTlRJVFkiLCJleHAiOjE1MTM1NzE1OTEsImlhdCI6MTUxMzU3MDk5MSwianRpIjoianRpZDcxU2dIeXZTVkFpYmh3SEFwcU4wNjYifQ.Ccyvs-FzDTnG9EY6nSvL1Iy6jfC93esbVXTWEpiyIao",
+      "object" : "valid_invitation"
+    },
+    "headers" : {
+      "access-control-allow-headers" : "Content-Type,Authorization",
+      "access-control-allow-methods" : "GET,POST,PUT,DELETE,OPTIONS,PATCH",
+      "Access-Control-Allow-Origin" : "https:\/\/digitalid-stest.npe.auspost.zone",
+      "access-control-expose-headers" : "X-JWT-Token",
+      "Cache-Control" : "no-store, no-cache, must-revalidate",
+      "Content-Length" : "267",
+      "content-security-policy" : "default-src 'none'; frame-ancestors 'none'; form-action 'none'",
+      "Content-Type" : "application\/json",
+      "Date" : "Mon, 18 Dec 2017 04:23:11 GMT",
+      "Server" : "nginx",
+      "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+      "Via" : "1.1 a1d4b598e9b20e618023991961a666a6.cloudfront.net (CloudFront)",
+      "x-amz-cf-id" : "1-KoHP-NVmmnzeFc7L3ePziAvojpJVX7noJiKmByFNNbKZage1xtUA==",
+      "x-cache" : "Miss from cloudfront",
+      "x-content-type-options" : "nosniff",
+      "x-digitalid-request-id" : "requ7NRtsB5dzV2nJPgE8KaV4y",
+      "x-digitalid-transaction-id" : "trxn2svWr90Cm4rVpHcPYZq0OM",
+      "x-frame-options" : "DENY",
+      "x-xss-protection" : "1; mode=block"
+    },
+    "status" : 200
+  }
+}

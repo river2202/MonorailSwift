@@ -66,17 +66,19 @@ class URLInterceptor: URLProtocol, URLSessionDelegate {
         if case (true, let response, let data) = interceptor.intercept(request) {
             guard let response = response else {
                 let error = MonorailError.noResponseFound
+                interceptor.log(error, request: self.request)
                 self.client?.urlProtocol(self, didFailWithError: error)
-                return interceptor.log(error, request: self.request)
+                return
             }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + interceptor.delay) {
+            DispatchQueue.global().asyncAfter(deadline: .now() + interceptor.delay) {
                 self.client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: interceptor.cacheStoragePolicy)
                 if let data = data {
                     self.client?.urlProtocol(self, didLoad: data)
                 }
-                self.client?.urlProtocolDidFinishLoading(self)
                 interceptor.log(response, data: data, request: self.request)
+                self.client?.urlProtocolDidFinishLoading(self)
+                return
             }
         } else {
             guard let req = (request as NSURLRequest).mutableCopy() as? NSMutableURLRequest, newRequest == nil else { return }
@@ -88,9 +90,8 @@ class URLInterceptor: URLProtocol, URLSessionDelegate {
             
             session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
                 if let error = error {
-                    self.client?.urlProtocol(self, didFailWithError: error)
-                    print("----error---")
                     interceptor.log(error, request: self.request)
+                    self.client?.urlProtocol(self, didFailWithError: error)
                     return
                 }
                 
@@ -99,8 +100,9 @@ class URLInterceptor: URLProtocol, URLSessionDelegate {
                 if let data = data {
                     self.client?.urlProtocol(self, didLoad: data)
                 }
-                self.client?.urlProtocolDidFinishLoading(self)
+                
                 interceptor.log(response, data: data, request: self.request)
+                self.client?.urlProtocolDidFinishLoading(self)
             }) .resume()
         }
     }
