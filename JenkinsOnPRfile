@@ -4,12 +4,7 @@ pipeline {
         stage('Test') { 
             steps {
                 sh("echo 'JenkinsOnPRfile'") 
-            }
-        }
-
-        stage('Test again') { 
-            steps {
-                sh("echo 'just a test of JenkinsOnPRfile 222s '") 
+                sh("fastlane") 
             }
         }
     }
