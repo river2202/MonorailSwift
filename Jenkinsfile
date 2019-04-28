@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') { 
             steps {
-                sh("fastlane scan") 
+                sh("echo 'Jenkinsfile'") 
             }
         }
     }
