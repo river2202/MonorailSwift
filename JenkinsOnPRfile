@@ -9,7 +9,7 @@ pipeline {
 
         stage('Test again') { 
             steps {
-                sh("echo 'just a test of JenkinsOnPRfile 111 '") 
+                sh("echo 'just a test of JenkinsOnPRfile 222s '") 
             }
         }
     }
