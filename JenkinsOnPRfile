@@ -6,5 +6,11 @@ pipeline {
                 sh("echo 'JenkinsOnPRfile'") 
             }
         }
+
+        stage('Test again') { 
+            steps {
+                sh("echo 'just a test of JenkinsOnPRfile'") 
+            }
+        }
     }
 }
