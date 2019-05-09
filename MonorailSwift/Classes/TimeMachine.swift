@@ -17,6 +17,10 @@ public final class TimeMachine {
     }
 }
 
+/*
+// Add following extension to your app's main module
+// to enble swift Time Machine
+ 
 public extension Date {
     init() {
         self = NSDate() as Date
@@ -30,5 +34,5 @@ public extension Date {
         return timeIntervalSince(Date())
     }
 }
-
+*/
 
