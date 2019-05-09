@@ -66,7 +66,6 @@
 		F8B8B7FA223722EC00FA8F9D /* StubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8B7F5223722EC00FA8F9D /* StubManager.swift */; };
 		F8B8B7FB223722EC00FA8F9D /* ApiServiceFileListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8B7F6223722EC00FA8F9D /* ApiServiceFileListTableViewController.swift */; };
 		F8B8B7FC223722EC00FA8F9D /* MonorailActionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8B7F7223722EC00FA8F9D /* MonorailActionMenu.swift */; };
-		F8B8B7FD223722EC00FA8F9D /* UITestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8B7F8223722EC00FA8F9D /* UITestConfig.swift */; };
 		F8B8B7FE223722EC00FA8F9D /* MonorailMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8B7F9223722EC00FA8F9D /* MonorailMenuTableViewController.swift */; };
 		F8B8B8002237240800FA8F9D /* UITestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8B7FF2237240700FA8F9D /* UITestConfig.swift */; };
 		F8EC9ED3226EB51A00CDC945 /* XCTestCaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC9ED2226EB51A00CDC945 /* XCTestCaseHelper.swift */; };
@@ -211,7 +210,6 @@
 		F8B8B7F5223722EC00FA8F9D /* StubManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubManager.swift; sourceTree = "<group>"; };
 		F8B8B7F6223722EC00FA8F9D /* ApiServiceFileListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceFileListTableViewController.swift; sourceTree = "<group>"; };
 		F8B8B7F7223722EC00FA8F9D /* MonorailActionMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonorailActionMenu.swift; sourceTree = "<group>"; };
-		F8B8B7F8223722EC00FA8F9D /* UITestConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestConfig.swift; sourceTree = "<group>"; };
 		F8B8B7F9223722EC00FA8F9D /* MonorailMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonorailMenuTableViewController.swift; sourceTree = "<group>"; };
 		F8B8B7FF2237240700FA8F9D /* UITestConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestConfig.swift; sourceTree = "<group>"; };
 		F8EC9ED2226EB51A00CDC945 /* XCTestCaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseHelper.swift; sourceTree = "<group>"; };
@@ -485,7 +483,6 @@
 				F8B8B7F5223722EC00FA8F9D /* StubManager.swift */,
 				F8B8B7F6223722EC00FA8F9D /* ApiServiceFileListTableViewController.swift */,
 				F8B8B7F7223722EC00FA8F9D /* MonorailActionMenu.swift */,
-				F8B8B7F8223722EC00FA8F9D /* UITestConfig.swift */,
 				F8B8B7F9223722EC00FA8F9D /* MonorailMenuTableViewController.swift */,
 			);
 			path = Helper;
@@ -876,7 +873,6 @@
 			files = (
 				F8B8B7FB223722EC00FA8F9D /* ApiServiceFileListTableViewController.swift in Sources */,
 				F8B8B7FE223722EC00FA8F9D /* MonorailMenuTableViewController.swift in Sources */,
-				F8B8B7FD223722EC00FA8F9D /* UITestConfig.swift in Sources */,
 				F8B8B7FC223722EC00FA8F9D /* MonorailActionMenu.swift in Sources */,
 				F8B8B7FA223722EC00FA8F9D /* StubManager.swift in Sources */,
 			);
