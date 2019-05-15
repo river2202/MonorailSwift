@@ -22,7 +22,7 @@ extension UIWindow {
         guard !MonorailEnabled.once else { return }
         MonorailEnabled.once = true
         Monorail.enableLogger()
-        _ = Monorail.writeLog()
+        Monorail.writeLog()
     }
 }
 //#endif
@@ -41,22 +41,55 @@ open class MonorailHelper {
     
     private static var naviVc = UINavigationController()
     
+//    public static func getMonorailReaderFileSelectorVc() -> ApiServiceFileListTableViewController {
+//
+//        let sections = MonorailFile.FileType.allType.map { ($0.name, $0.fileList) }
+//
+//        return ApiServiceFileListTableViewController(sections: sections, current: [], onFileSelected: { files, vc in
+//
+//            vc.alert(message: "Reader enabled") {
+//                vc.navigationController?.popViewController(animated: true)
+//                updateMonorailActionVc()
+//            }
+//        })
+//    }
+    
     public static func getMonorailFileSelectorVc() -> ApiServiceFileListTableViewController {
         
         let sections = MonorailFile.FileType.allType.map { ($0.name, $0.fileList) }
         
-        return ApiServiceFileListTableViewController(sections: sections, current: [], onFileSelected: { files, vc in
-            Monorail.enableReader(from: files)
-            vc.alert(message: "Reader enabled") {
-                monorailActionsVc.tableView.reloadData()
-            }
-        })
+        return ApiServiceFileListTableViewController(sections: sections)
     }
     
     public static var monorailActionsVc: ActionMenuTableViewController = {
+        return ActionMenuTableViewController(actions: monorailToolMenuActons)
+    }()
+    
+    static func updateMonorailActionVc() {
+        DispatchQueue.main.async {
+            monorailActionsVc.actions = monorailToolMenuActons
+            monorailActionsVc.tableView.reloadData()
+        }
+    }
+    
+    static var monorailToolMenuActons: [MenuItem] {
+        var menu: [MenuItem] = []
         
-        return ActionMenuTableViewController(actions: [
-            
+        menu.append(contentsOf: [
+            MenuItem(
+                name: "Browser all log files",
+                type: .menu(
+                    subtitle: {
+                        return Monorail.shared.reader?.fileName
+                },
+                    openMenu: { vc in
+                        vc.navigationController?.pushViewController(getMonorailFileSelectorVc(), animated: true)
+                }
+                )
+            ),
+            ])
+        
+        menu.append(contentsOf: [
             MenuItem(name: "Enable Logger", type: .toggle(isOn: { () -> Bool in
                 return Monorail.shared.logger != nil
             }, toggleAction: { _, enabled in
@@ -65,9 +98,11 @@ open class MonorailHelper {
                 } else {
                     Monorail.enableLogger()
                 }
-            })),
-            
-            MenuItem(name: "Enable Writter", type: .toggle(isOn: {
+            }))
+            ])
+        
+        menu.append(contentsOf: [
+            MenuItem(name: Monorail.isWriterEnabled ? "Disable Writter" : "Enable Writter", type: .toggle(isOn: {
                 return Monorail.shared.writer != nil
             }, toggleAction: { _, enabled in
                 if enabled {
@@ -77,15 +112,31 @@ open class MonorailHelper {
                     let fileUrl = Monorail.writeLog()
                     print("Begin writing to file: \(fileUrl?.absoluteString ?? "nil")")
                 }
-            })),
-            
-            MenuItem(name: "Save to Documents/Monorail", type: .action(action: { vc in
+                updateMonorailActionVc()
+            }))
+            ])
+        
+        if Monorail.isWriterEnabled {
+            menu.append(contentsOf: [
+                MenuItem(name: "Show Log File", type: .action(subtitle: {nil}, action: { vc in
+                    
+                    if let logFile = Monorail.getLogFileUrl() {
+                        vc.navigationController?.pushViewController(
+                            MonorailFileViewer.init(logFile),
+                            animated: true
+                        )
+                    } else {
+                        vc.alert(message: "Log file not found")
+                    }
+                })),
                 
-                if let logFile = Monorail.getLogFileUrl() {
-                    vc.showInputDialog(title: "Input file name",
-                                        actionTitle: "Save",
-                                        cancelTitle: "Cancel",
-                                        inputInitText: "") { (input: String?) in
+                MenuItem(name: "Save to Documents/Monorail", type: .action(subtitle: {return nil}, action: { vc in
+                    
+                    if let _ = Monorail.getLogFileUrl() {
+                        vc.showInputDialog(title: "Input file name",
+                                           actionTitle: "Save",
+                                           cancelTitle: "Cancel",
+                                           inputInitText: "") { (input: String?) in
                                             
                                             guard let fileName = input else {
                                                 return
@@ -94,61 +145,71 @@ open class MonorailHelper {
                                             Monorail.shared.writer?.saveToDocumentDirectory(fileName: fileName)
                                             vc.alert(message: "Select it from Reader file list", title: "Saved")
                                             
+                        }
+                    } else {
+                        vc.alert(message: "Log file not found")
                     }
-                } else {
-                    vc.alert(message: "Log file not found")
-                }
-            })),
-            
-            MenuItem(name: "Share Log File", type: .action(action: { vc in
-                if let logFile = Monorail.getLogFileUrl() {
-                    let activityViewController = UIActivityViewController(activityItems: [ logFile ], applicationActivities: nil)
-                    activityViewController.popoverPresentationController?.sourceView = vc.view
-                    vc.present(activityViewController, animated: true, completion: nil)
-                } else {
-                    vc.alert(message: "Log file not found")
-                }
-            })),
-            
-            MenuItem(name: "Enable Reader", type: .menu(subtitle: {
-                return Monorail.shared.reader?.fileName
-            }, openMenu: { vc in
-                if Monorail.shared.reader == nil {
-                    vc.navigationController?.pushViewController(getMonorailFileSelectorVc(), animated: true)
-                } else {
+                })),
+                
+                MenuItem(
+                    name: "Share Log File",
+                    type: .action(
+                        subtitle: {nil},
+                        action: { vc in
+                            if let logFile = Monorail.getLogFileUrl() {
+                                let activityViewController = UIActivityViewController(activityItems: [ logFile ], applicationActivities: nil)
+                                activityViewController.popoverPresentationController?.sourceView = vc.view
+                                vc.present(activityViewController, animated: true, completion: nil)
+                            } else {
+                                vc.alert(message: "Log file not found")
+                            }
+                    }
+                    )
+                    )
+                ]
+            )
+        }
+        
+        if Monorail.isReaderEnabled {
+            menu.append(contentsOf: [
+                MenuItem(name: "Disable Reader", type: .action(subtitle: {
+                    return Monorail.shared.reader?.fileName
+                }, action: { vc in
                     Monorail.disableReader()
-                    vc.alert(message: "Reader disabled")
-                }
-                
-            })),
-            
-            MenuItem(name: "Reset Reader sequence", type: .menu(subtitle: {
-                return nil
-            }, openMenu: { vc in
-                if Monorail.shared.reader == nil {
-                    vc.alert(message: "Enable reader first")
-                } else {
-                    Monorail.readerReader()
-                    vc.alert(message: "Reader disabled")
-                }
-                
-            })),
-            
-        ])
-    } ()
+                    updateMonorailActionVc()
+//                    vc.alert(message: "Reader disabled")
+
+                })),
+                MenuItem(
+                    name: "Reset Reader sequence",
+                    type: .action(subtitle: {nil}) { vc in
+                        Monorail.resetReader()
+                        vc.alert(message: "Reader resetted")
+                    }
+                )
+                ])
+        }
+        
+        return menu
+    }
     
     public static func presentActionMenu() {
-        
-        toolWindowLayer.makeKeyAndVisible()
-        monorailActionsVc.title = "Monorail Tools"
-        monorailActionsVc.doneTapped = {
+        if toolWindowLayer.isHidden {
+            toolWindowLayer.makeKeyAndVisible()
+            monorailActionsVc.title = "Monorail Tools"
+            monorailActionsVc.doneTapped = {
+                toolWindowLayer.rootViewController?.dismiss(animated: true) {
+                    toolWindowLayer.isHidden = true
+                }
+            }
+            
+            naviVc.viewControllers = [monorailActionsVc]
+            toolWindowLayer.rootViewController?.present(naviVc, animated: true, completion: nil)
+        } else {
             toolWindowLayer.rootViewController?.dismiss(animated: true) {
                 toolWindowLayer.isHidden = true
             }
         }
-        
-        naviVc.viewControllers = [monorailActionsVc]
-        toolWindowLayer.rootViewController?.present(naviVc, animated: true, completion: nil)
     }
 }
 

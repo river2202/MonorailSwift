@@ -1,4 +1,5 @@
 import UIKit
+import MonorailSwift
 
 open class ApiServiceFileListTableViewController: UITableViewController {
     
@@ -7,17 +8,14 @@ open class ApiServiceFileListTableViewController: UITableViewController {
     
     private var sections = [FileListSection]()
     private var current = [URL]()
-    private var onFileSelected: OnFileSelectedFunc?
-    private var onEdit: OnFileSelectedFunc?
-    private var editButtonTitle: String?
-    
-    init(sections: [FileListSection], current: [URL], onFileSelected: OnFileSelectedFunc?, editButtonTitle: String? = nil, onEdit: OnFileSelectedFunc? = nil) {
+
+    init(sections: [FileListSection]) {
         super.init(style: .plain)
         self.sections = sections
-        self.current = current
-        self.onFileSelected = onFileSelected
-        self.onEdit = onEdit
-        self.editButtonTitle = editButtonTitle
+//        self.current = current
+//        self.onFileSelected = onFileSelected
+//        self.onEdit = onEdit
+//        self.editButtonTitle = editButtonTitle
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -26,13 +24,6 @@ open class ApiServiceFileListTableViewController: UITableViewController {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-        
-        let shareButton = UIBarButtonItem(title: "Share", style: .plain, target: self, action: #selector(didTapShare))
-        if onEdit != nil {
-            navigationItem.rightBarButtonItems = [UIBarButtonItem(title: editButtonTitle, style: .plain, target: self, action: #selector(didTapEditButton)), shareButton]
-        } else {
-            navigationItem.rightBarButtonItems = [shareButton]
-        }
     }
 
     // MARK: - Table view data source
@@ -52,7 +43,7 @@ open class ApiServiceFileListTableViewController: UITableViewController {
         }
         
         cell.textLabel?.text = "\(fileUrl.lastPathComponent)"
-        cell.accessoryType = fileSelected ? .checkmark : .none
+        cell.accessoryType = fileSelected ? .checkmark : .detailDisclosureButton
         
         return cell
     }
@@ -65,18 +56,45 @@ open class ApiServiceFileListTableViewController: UITableViewController {
     
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let fileUrl = sections[indexPath.section].fileUrls[indexPath.row]
-        current = [fileUrl]
-        tableView.reloadData()
-        onFileSelected?(current, self)
+        onFileSelected(fileUrl: fileUrl)
     }
     
-    @objc func didTapEditButton(sender: AnyObject) {
-        onEdit?(current, self)
+    open override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let fileUrl = sections[indexPath.section].fileUrls[indexPath.row]
+        onFileSelected(fileUrl: fileUrl)
+    }
+   
+    func didTapView(fileUrl: URL) {
+        navigationController?.pushViewController(MonorailFileViewer(fileUrl), animated: true)
     }
     
-    @objc func didTapShare(sender: AnyObject) {
-        let activityViewController = UIActivityViewController(activityItems: current, applicationActivities: nil)
+    @objc func didTapShare(fileUrl: URL) {
+        let activityViewController = UIActivityViewController(activityItems: [fileUrl], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = view
         present(activityViewController, animated: true, completion: nil)
+    }
+    
+    func didTapUse(fileUrl: URL) {
+        Monorail.enableReader(from: [fileUrl])
+        alert(message: "Reader enabled") {
+            self.navigationController?.popViewController(animated: true)
+            MonorailHelper.updateMonorailActionVc()
+        }
+    }
+    
+    func onFileSelected(fileUrl: URL) {
+        let menu = UIAlertController(title: nil, message: fileUrl.absoluteString, preferredStyle: .actionSheet)
+        
+        let viewAction = UIAlertAction(title: "View", style: .default) { _ in self.didTapView(fileUrl: fileUrl) }
+        let shareAction = UIAlertAction(title: "Share", style: .default) { _ in self.didTapShare(fileUrl: fileUrl) }
+        let useAction = UIAlertAction(title: "Use as Mock", style: .default) { _ in self.didTapUse(fileUrl: fileUrl) }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        menu.addAction(viewAction)
+        menu.addAction(shareAction)
+        menu.addAction(useAction)
+        menu.addAction(cancelAction)
+        
+        self.present(menu, animated: true, completion: nil)
     }
 }

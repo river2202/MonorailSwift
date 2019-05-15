@@ -3,7 +3,7 @@ import Foundation
 private let fileRefKey = "fileReference"
 let timeStampFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
 
-open class APIServiceContractInteraction {
+open class Interaction {
     private let requestKey = "request"
     private let responseKey = "response"
     private let headersKey = "headers"
@@ -22,17 +22,17 @@ open class APIServiceContractInteraction {
     private(set) var request: [String: Any] = [:]
     private(set) var response: [String: Any] = [:]
     
-    var baseUrl: String?
-    var path: String?
-    var method: String?
+    public var baseUrl: String?
+    public var path: String?
+    public var method: String?
     
-    var fileName: String?
-    var id: String?
+    public var fileName: String?
+    public var id: String?
     
     private(set) var consumerVariables: [String: Any] = [:]
     private(set) var providerVariables: [String: Any] = [:]
     
-    private(set) var timeStamp: Date?
+    public private(set) var timeStamp: Date?
     private(set) var timeElapsed: TimeInterval?
     private(set) var timeElapsedEnabled: Bool = false
     
@@ -55,7 +55,7 @@ open class APIServiceContractInteraction {
         return consumerVariables[key]
     }
     
-    init(template: APIServiceContractInteraction) {
+    init(template: Interaction) {
         self.request = template.request
         self.response = template.response
         self.baseUrl = template.baseUrl
@@ -185,7 +185,7 @@ open class APIServiceContractInteraction {
         return method == self.method && path.hasSuffix(pactPath)
     }
     
-    func responseObjects() -> (HTTPURLResponse, Data?, Error?)? {
+    public func responseObjects() -> (HTTPURLResponse, Data?, Error?)? {
         guard let path = path, let url = URL(string: path), let statusCode = response[responseStatusKey] as? Int else {
             return nil
         }
@@ -254,7 +254,7 @@ open class APIServiceContractInteraction {
         }
     }
     
-    func payload() -> [String: Any] {
+    public func payload() -> [String: Any] {
         var payload: [String: Any] = [requestKey: request, responseKey: response]
         
         if let id = id {
@@ -345,7 +345,6 @@ extension String {
         }
     }
 }
-
 
 extension Date {
     func asString(format: String) -> String {

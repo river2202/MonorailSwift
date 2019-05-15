@@ -12,7 +12,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MonorailSwift'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'MonorailSwift is a test tool to log/write/replay network interactions.'
   s.description      = <<-DESC
 Works out of box with iOS build in api and most of 3rd SDK to print the network api calls, write them to file and replay the tap with simply setup.

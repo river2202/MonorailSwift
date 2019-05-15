@@ -1,6 +1,5 @@
 import UIKit
 
-
 enum CommonError: Error {
     case unknown
 }

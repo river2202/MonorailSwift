@@ -10,14 +10,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         Monorail.enableLogger()
+        Monorail.writeLog()
         setupUITest()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        
-        let rootVc = UINavigationController()
-        window?.rootViewController = rootVc
+        window?.rootViewController = AppCoordinator().rootViewControler
         window?.makeKeyAndVisible()
-        rootVc.pushViewController(ViewController(), animated: false)
         return true
     }
 }

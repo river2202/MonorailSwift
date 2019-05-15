@@ -1,11 +1,11 @@
 import Foundation
 
 public protocol APIServiceReaderDelegate: class {
-    func matchReqest(_ request: URLRequest?, _ interaction: APIServiceContractInteraction) -> Bool
+    func matchReqest(_ request: URLRequest?, _ interaction: Interaction) -> Bool
 }
 
 extension APIServiceReaderDelegate {
-    func matchReqest(_ request: URLRequest?, _ interaction: APIServiceContractInteraction) -> Bool {
+    func matchReqest(_ request: URLRequest?, _ interaction: Interaction) -> Bool {
         return false
     }
 }
@@ -19,7 +19,7 @@ open class APIServiceReader {
     }
     var files: [URL]
     open var startTime: Date?
-    open var interactions = [APIServiceContractInteraction]()
+    open var interactions = [Interaction]()
     open var consumerVariables: [String: Any] = [:]
     internal var providerVariables: [String: Any] = [:]
     internal var notifications = [[String: AnyObject]]()
@@ -95,17 +95,17 @@ open class APIServiceReader {
         let baseUrl = getConsumerVariables(key: apiServiceBaseUrlKey) as? String
         
         for interactionJosn in interactionsJson {
-            let interaction: APIServiceContractInteraction
-            if let idRef = interactionJosn[APIServiceContractInteraction.idRefKey] as? String {
+            let interaction: Interaction
+            if let idRef = interactionJosn[Interaction.idRefKey] as? String {
                 if let interactionTemplate = interactions.filter({ $0.id == idRef }).first  {
-                    interaction = APIServiceContractInteraction(template: interactionTemplate)
+                    interaction = Interaction(template: interactionTemplate)
                     interaction.loadJson(interactionJosn, externalFileRootPath: externalFileRootPath)
                 } else {
                     output?.log("Invalidate idReference: \(idRef)")
-                    interaction = APIServiceContractInteraction(json: interactionJosn, baseUrl: baseUrl, fileName: fileName, externalFileRootPath: externalFileRootPath)
+                    interaction = Interaction(json: interactionJosn, baseUrl: baseUrl, fileName: fileName, externalFileRootPath: externalFileRootPath)
                 }
             } else {
-                interaction = APIServiceContractInteraction(json: interactionJosn, baseUrl: baseUrl, fileName: fileName, externalFileRootPath: externalFileRootPath)
+                interaction = Interaction(json: interactionJosn, baseUrl: baseUrl, fileName: fileName, externalFileRootPath: externalFileRootPath)
             }
             
             interactions.append(interaction)
@@ -120,7 +120,7 @@ open class APIServiceReader {
         return consumerVariables[key]
     }
     
-    func getResponse(for request: URLRequest?) -> APIServiceContractInteraction? {
+    func getResponse(for request: URLRequest?) -> Interaction? {
         guard let request = request else {
             return nil
         }
@@ -143,7 +143,7 @@ open class APIServiceReader {
         return getResponse(for: request)?.responseObjects()
     }
     
-    func getInteractionBy(id: String) -> APIServiceContractInteraction? {
+    func getInteractionBy(id: String) -> Interaction? {
         return interactions.first(where: { $0.id == id })
     }
     

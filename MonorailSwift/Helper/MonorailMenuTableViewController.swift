@@ -4,7 +4,7 @@ import MonorailSwift
 public extension MonorailHelper {
     
     enum MenuItemType {
-        case action(action: (UIViewController) -> Void)
+        case action(subtitle: () -> String?, action: (UIViewController) -> Void)
         case toggle(isOn: () -> Bool, toggleAction: (UIViewController, Bool) -> Void)
         case menu(subtitle: () -> String?, openMenu: (UIViewController) -> Void)
         case info
@@ -29,7 +29,7 @@ public extension MonorailHelper {
         
         func didSelect(vc: UIViewController) {
             switch type {
-            case let .menu(_, action), let .action(action):
+            case let .menu(_, action), let .action(_, action):
                 action(vc)
             case let .toggle(isOn, toggleAction):
                 toggleAction(vc, isOn())
@@ -39,17 +39,19 @@ public extension MonorailHelper {
         }
         
         var subtitle: String? {
-            if case let .menu(getSubtitle, _) = type {
+            switch type {
+            case let .menu(getSubtitle, _), let .action(getSubtitle, _):
                 return getSubtitle()
+            default:
+                return nil
             }
-            return nil
         }
     }
     
     class ActionMenuTableViewController: UITableViewController {
         typealias TapBtnFunc = () -> Void
         var doneTapped: TapBtnFunc?
-        private let actions: [MenuItem]
+        var actions: [MenuItem]
         
         init(actions: [MenuItem], doneTapped: TapBtnFunc? = nil) {
             self.actions = actions

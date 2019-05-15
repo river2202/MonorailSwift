@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol APIServiceWriterDelegate: class {
-    func savingCosumerVariables(_ interaction: APIServiceContractInteraction, writer: APIServiceWriter)
+    func savingCosumerVariables(_ interaction: Interaction, writer: APIServiceWriter)
     func getInteractionId(path: String?, existingIds: [String]) -> String?
 }
 
@@ -38,7 +38,7 @@ open class APIServiceWriter: APIServiceReader {
             return
         }
         
-        let interaction = APIServiceContractInteraction(request: request, uploadData: uploadData, response: response, data: data, baseUrl: consumerVariables[apiServiceBaseUrlKey] as? String, timeStamp: Date())
+        let interaction = Interaction(request: request, uploadData: uploadData, response: response, data: data, baseUrl: consumerVariables[apiServiceBaseUrlKey] as? String, timeStamp: Date())
         
         delegate?.savingCosumerVariables(interaction, writer: self)
         interactions.append(interaction)

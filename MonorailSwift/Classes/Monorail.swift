@@ -69,6 +69,7 @@ open class Monorail {
         Monorail.shared.logger = nil
     }
     
+    @discardableResult
     public static func writeLog(to fileName: String? = nil, directory: String? = nil, delegate: APIServiceWriterDelegate? = nil) -> URL? {
         Monorail.shared.writer = APIServiceWriter(delegate: delegate)
         Monorail.shared.writer?.startLogging(to: fileName, directory: directory)
@@ -96,7 +97,7 @@ open class Monorail {
         Monorail.shared.reader = nil
     }
     
-    public static func readerReader() {
+    public static func resetReader() {
         Monorail.shared.reader?.resetInteractionsConsumedFlag()
     }
     
@@ -149,4 +150,13 @@ extension URLRequest {
     }
 }
 
+extension Monorail {
+    public static var isReaderEnabled: Bool {
+        return shared.reader != nil
+    }
+    
+    public static var isWriterEnabled: Bool {
+        return shared.writer != nil
+    }
+}
 
