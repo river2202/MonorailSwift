@@ -1,0 +1,69 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :custom_lane do
+    # add actions here: https://docs.fastlane.tools/actions
+  end
+end
+
+def retryBlock(n)
+  if block_given?
+    begin
+      yield(n)
+    rescue => ex
+      if n > 1
+        retryBlock(n-1) do |n|
+          yield(n)
+        end
+      else
+        raise ex
+      end  
+    end
+  end
+end
+
+lane :test do
+  $v=2
+  retryBlock(6) do | n |
+    puts "v=#{$v}"
+    puts "test n=#{n}"
+    sh "./msg1.sh #{n}"
+  end 
+end
+
+# lane :test_retry do |opetion|
+#   $retry = opetion[:retry]
+#   puts "begin test_retry - #{$retry}"
+#   sh "./msg1.sh 0"
+#   def test_fun(n)
+#     puts "test_fun n=#{n}"
+#     sh "./msg1.sh #{$retry}"
+#   end
+#   begin
+#       test_fun($retry)
+#   rescue => ex
+#       $retry -=1
+#       if $retry > 0
+#           test_fun($retry)
+#           test_retry(retry: $retry)
+#       else
+#           raise ex
+#       end
+#   end
+#   puts "end test_retry - #{$retry}"
+# end
