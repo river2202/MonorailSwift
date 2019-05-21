@@ -7,57 +7,35 @@
 
 ## Introduction
 
-Monorail is a testing tool to log, record and replay network interactions when doing manual and automatic testing. 
+MonorailSwift is a troubleshooting/testing tool to log, record and replay network interactions for iOS project.
 
-Inspired by [pact.io](http://pact.io) but the Monorail can be use not only for unit test but also manual test, stub integration testing and offline demo.
+![MonorailSwiftTools screenshot](Screenshot/MonorailSwiftTools.jpg)
+
+
+
+Inspired by [pact.io](http://pact.io) and lots of opensource projects.
 
 ## Requirment
-Swift 4.1, Xcode 9.3, iOS 9.0
+Swift 4.1+, Xcode 9.3+, iOS 9.0+
 
 
 ## Features
 
-0. All features work out of box with minimum impact to product code.
-1. Intercept network call and output to debug terminal. Works out of box with native api and most of 3rd SDKs.
-2. Save network interactions into json file
-3. Playback saved network interactions response. Remove the dependence of backend server when doing development or offline demo. 
-
-## When to use
-1. Troubleshooting, build-in mini network sniffer, print api request and response so developer can see clearly what is sending and receieving.
-2. When manual testing, save and share log to your workstation with shake and click.
-3. Playback the saved log file without backend.
-4. CI
-    1. Use saved or manually created log file as stub, run test without backend.
-    2. Save network interactions to file when running integration tests 
-    3. Easely switch between local stub and real backend
+1. Printout network interactions to debug terminal.
+2. Save network interactions into json file in device/simulator
+3. Share/send/browse log in device/simulator
+4. Playback saved network interactions as response.  
+5. Call out/dismiss MonorailSwiftTools menu by shaking devive or pressing Ctrl+Cmd+z in simulator
 
 ## How to use
 
 ### CocoaPods
 
-pod 'MonorailSwift', '~> 1.0'
+pod 'MonorailSwiftTools', '~> 1.0.4'
 
 ### Carthage
 
-github "river2202/MonorailSwift" ~> 1.0.0
-
-### Code example
-
-```Monorail.enableLogger()```
-
-```Monorail.writeLog()```
-
-```Monorail.enableReader(from: demo1)```
-
-Check MonorailSwift example project for details.
-
-Check [wiki](https://github.com/river2202/MonorailSwift/wiki) for more documents.
-
-## Tools
-
-Tools under ```monorailswift⁩/⁨MonorailSwift⁩Example/Helper⁩/Monorail⁩```
-
-Download example project come with the MonorailSwift repository. Run the app in simulator and press keyboard shortcut Cmd + Ctrl + z
+github "river2202/MonorailSwift" ~> 1.0.4
 
 ## Communication
 - If you need any help, use [Stack Overflow](https://stackoverflow.com/questions/tagged/monorailswift) and tag `monorailswift`.
