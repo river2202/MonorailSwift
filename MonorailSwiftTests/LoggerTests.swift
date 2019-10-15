@@ -127,6 +127,29 @@ class LoggerTests: XCTestCase {
         }
     }
     
+    func testStringContainsWildcard() {
+        
+        let testData = [
+            ("https://api.apple.com/index.html", "apple.com", true),
+            ("https://api.apple.com/index.html", "*apple.com*", true),
+            ("https://apple.com/index.html", "*apple.com*", true),
+            ("https://apple.com.au/index.html", "*apple.com*", true),
+            ("https://login.apple.com/index.html", "*apple.com.au*", false),
+            ("https://login.apple.com.au/index.html", "*apple.com.au*", true),
+            ("https://login.apple.com.au/index.html", "http*://*apple.com.au*", true),
+            ("http://login.apple.com.au/index.html", "http*://*apple.com.au*", true),
+        ]
+        
+        for (value, wildcardString, expectResult) in testData {
+            XCTAssertEqual(value.contains(wildcardString: wildcardString), expectResult, "\(value) should\(expectResult ? "" : "n't") contains \(wildcardString)")
+        }
+        
+        // More information:
+        // https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Predicates/Articles/pSyntax.html?#//apple_ref/doc/uid/TP40001795-215868
+        // LIKE
+        // The left hand expression equals the right-hand expression: ? and * are allowed as wildcard characters, where ? matches 1 character and * matches 0 or more characters.
+    }
+    
     func testMonorailInteractionFilterRegex() {
         let blacklist = MonorailInteractionFilter.blacklist(["https?://.*\\.apple.com.au"])
         XCTAssertFalse(blacklist.isFiltered("https://apple.com/index.html"))

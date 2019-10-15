@@ -15,12 +15,10 @@ public enum MonorailInteractionFilter {
         
         switch self {
         case .whitelist(let whitelist):
-            return whitelist.first { value.contains(regexString: $0) } == nil
+            return whitelist.first { value.contains(wildcardString: $0) } == nil
         case .blacklist(let blacklist):
-            return blacklist.first { value.contains(regexString: $0) } != nil
+            return blacklist.first { value.contains(wildcardString: $0) } != nil
         }
-        
-        
     }
 }
 
@@ -31,6 +29,19 @@ extension String {
             return true
         } else {
             return contains(regexString)
+        }
+    }
+    
+    func wildcard(pattern: String) -> Bool {
+        let pred = NSPredicate(format: "self LIKE %@", pattern)
+        return !NSArray(object: self).filtered(using: pred).isEmpty
+    }
+    
+    func contains(wildcardString: String) -> Bool {
+        if wildcard(pattern: wildcardString) {
+            return true
+        } else {
+            return contains(wildcardString)
         }
     }
 }
