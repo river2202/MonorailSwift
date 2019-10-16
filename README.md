@@ -31,7 +31,7 @@ Swift 4.1+, Xcode 9.3+, iOS 9.0+
 
 ### CocoaPods
 
-pod 'MonorailSwiftTools', '~> 1.0.4'
+pod 'MonorailSwiftTools', :configurations => ['Debug']
 
 ### Carthage
 
