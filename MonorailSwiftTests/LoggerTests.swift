@@ -151,7 +151,7 @@ class LoggerTests: XCTestCase {
     }
     
     func testMonorailInteractionFilterRegex() {
-        let blacklist = MonorailInteractionFilter.blacklist(["https?://.*\\.apple.com.au"])
+        let blacklist = MonorailInteractionFilter.blacklist(["api.apple.com.au"])
         XCTAssertFalse(blacklist.isFiltered("https://apple.com/index.html"))
         XCTAssertFalse(blacklist.isFiltered("https://apple.com.au/index.html"))
         XCTAssertTrue(blacklist.isFiltered("http://api.apple.com.au/A"))

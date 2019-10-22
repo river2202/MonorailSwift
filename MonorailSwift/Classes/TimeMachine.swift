@@ -17,22 +17,3 @@ public final class TimeMachine {
     }
 }
 
-/*
-// Add following extension to your app's main module
-// to enble swift Time Machine
- 
-public extension Date {
-    init() {
-        self = NSDate() as Date
-    }
-    
-    init(timeIntervalSinceNow: TimeInterval) {
-        self = Date().addingTimeInterval(timeIntervalSinceNow)
-    }
-    
-    var timeIntervalSinceNow: TimeInterval {
-        return timeIntervalSince(Date())
-    }
-}
-*/
-

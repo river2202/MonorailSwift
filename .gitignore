@@ -74,3 +74,4 @@ Podfile.lock
 vendor
 Gemfile*
 .bundle
+test_output

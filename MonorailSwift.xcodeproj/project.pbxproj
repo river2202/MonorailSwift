@@ -212,6 +212,7 @@
 		91E5788A218332FD00FA1411 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		91E5788C2183CCB900FA1411 /* StackOverflowResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowResponse.swift; sourceTree = "<group>"; };
 		91E61C09215D8B1C004F0B17 /* Stubs.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Stubs.bundle; sourceTree = "<group>"; };
+		F855ED4A2359114B000A7086 /* Date+TimeMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+TimeMachine.swift"; sourceTree = "<group>"; };
 		F8B8B7E8223722C600FA8F9D /* MonorailSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MonorailSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B8B7EA223722C600FA8F9D /* MonorailSwiftTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonorailSwiftTools.h; sourceTree = "<group>"; };
 		F8B8B7EB223722C600FA8F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -432,6 +433,7 @@
 				91C4CA0B2156641A001F6B7C /* APIServiceWriter.swift */,
 				91C4CA0F2156641A001F6B7C /* APIServiceLogger.swift */,
 				91B392C121A9FAFF00C71AEB /* TimeMachine.swift */,
+				F855ED4A2359114B000A7086 /* Date+TimeMachine.swift */,
 				91DE3D6E21663006002639E1 /* APIServiceInterceptor.swift */,
 				91DE3D702166306E002639E1 /* Monorail.swift */,
 				91C4CA102156641A001F6B7C /* Interaction.swift */,
