@@ -33,7 +33,7 @@ class ViewController: UITableViewController {
     private func loadQuestions(pageIndex: UInt, pageSize: UInt) {
         questionTask?.cancel()
         
-        let resource = Resource<QuestionResponse>(url: URL(string: questionListApi)!)
+        let resource = RestApiResource<QuestionResponse>(url: URL(string: questionListApi)!)
         questionTask = URLSession.shared.load(resource, completion: { result in
             if case .success(let questionResponse) = result {
                 self.questionResponse = questionResponse
@@ -90,6 +90,10 @@ class ViewController: UITableViewController {
     @objc func didTapUserName(sender: AnyObject) {
         let questionVc = MyFavoritesTableViewController()
         navigationController?.pushViewController(questionVc, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
 }

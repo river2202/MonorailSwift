@@ -75,3 +75,4 @@ vendor
 Gemfile*
 .bundle
 test_output
+ui_test_output

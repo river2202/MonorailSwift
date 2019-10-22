@@ -18,7 +18,6 @@
 		91263CBB2185D66D007935A8 /* AppConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CBA2185D66D007935A8 /* AppConfigTests.swift */; };
 		91263CBD2189C9C5007935A8 /* MyFavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CBC2189C9C5007935A8 /* MyFavoritesTableViewController.swift */; };
 		913193802158ADD900958083 /* TinyNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131937E2158ADD900958083 /* TinyNetworking.swift */; };
-		913193812158ADD900958083 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131937F2158ADD900958083 /* Result.swift */; };
 		913E98D621B382B6006569E2 /* MockUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913E98D521B382B6006569E2 /* MockUITest.swift */; };
 		913E98D721B382C7006569E2 /* Springboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B3421B15DDF0016B7B4 /* Springboard.swift */; };
 		913E98D921B382C7006569E2 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2D21B158330016B7B4 /* AppConfiguration.swift */; };
@@ -36,7 +35,6 @@
 		9185F3F9226CB1ED0080D5A9 /* TinyNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131937E2158ADD900958083 /* TinyNetworking.swift */; };
 		9185F3FA226CB2360080D5A9 /* StackOverflowResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5788C2183CCB900FA1411 /* StackOverflowResponse.swift */; };
 		9185F3FB226CB24D0080D5A9 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91165E7B2156680D00546246 /* Question.swift */; };
-		9185F3FC226D333E0080D5A9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131937F2158ADD900958083 /* Result.swift */; };
 		9185F3FE22844A180080D5A9 /* MonorailFileViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185F3FD22844A180080D5A9 /* MonorailFileViewer.swift */; };
 		9185F40722867D2A0080D5A9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185F40622867D2A0080D5A9 /* AppCoordinator.swift */; };
 		9185F40A2287E2320080D5A9 /* UIViewControllerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185F40122865C740080D5A9 /* UIViewControllerCreator.swift */; };
@@ -75,6 +73,8 @@
 		F8EC9ED3226EB51A00CDC945 /* XCTestCaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC9ED2226EB51A00CDC945 /* XCTestCaseHelper.swift */; };
 		F8EC9ED6226EBAE200CDC945 /* StubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8B7F5223722EC00FA8F9D /* StubManager.swift */; };
 		F8EC9ED7226EC3BC00CDC945 /* Stubs.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8EC9ED4226EBA5C00CDC945 /* Stubs.bundle */; };
+		F8FBF2602362B3DC00342F99 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF25E2362B38D00342F99 /* SnapshotHelper.swift */; };
+		F8FBF2612362B44D00342F99 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF25E2362B38D00342F99 /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,7 +165,6 @@
 		91263CBA2185D66D007935A8 /* AppConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigTests.swift; sourceTree = "<group>"; };
 		91263CBC2189C9C5007935A8 /* MyFavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesTableViewController.swift; sourceTree = "<group>"; };
 		9131937E2158ADD900958083 /* TinyNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyNetworking.swift; sourceTree = "<group>"; };
-		9131937F2158ADD900958083 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		913E98CA21B38193006569E2 /* MonorailSwiftExampleMockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonorailSwiftExampleMockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		913E98CE21B38193006569E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		913E98D521B382B6006569E2 /* MockUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUITest.swift; sourceTree = "<group>"; };
@@ -223,6 +222,7 @@
 		F8B8B7FF2237240700FA8F9D /* UITestConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestConfig.swift; sourceTree = "<group>"; };
 		F8EC9ED2226EB51A00CDC945 /* XCTestCaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseHelper.swift; sourceTree = "<group>"; };
 		F8EC9ED4226EBA5C00CDC945 /* Stubs.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Stubs.bundle; sourceTree = "<group>"; };
+		F8FBF25E2362B38D00342F99 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = MonorailSwiftExampleUITests/Helper/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,7 +300,6 @@
 				F8B8B7FF2237240700FA8F9D /* UITestConfig.swift */,
 				913E98DF21B39367006569E2 /* ShowTime.swift */,
 				91E61C09215D8B1C004F0B17 /* Stubs.bundle */,
-				9131937F2158ADD900958083 /* Result.swift */,
 				9131937E2158ADD900958083 /* TinyNetworking.swift */,
 			);
 			path = Helper;
@@ -335,6 +334,7 @@
 		91840B2B21B158330016B7B4 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				F8FBF25E2362B38D00342F99 /* SnapshotHelper.swift */,
 				91840B3421B15DDF0016B7B4 /* Springboard.swift */,
 				91840B2C21B158330016B7B4 /* IntegrationUITest.swift */,
 				91840B2D21B158330016B7B4 /* AppConfiguration.swift */,
@@ -809,6 +809,7 @@
 				913E98D621B382B6006569E2 /* MockUITest.swift in Sources */,
 				913E98DB21B382F3006569E2 /* MonorailSwiftUITests.swift in Sources */,
 				913E98D721B382C7006569E2 /* Springboard.swift in Sources */,
+				F8FBF2612362B44D00342F99 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -820,7 +821,6 @@
 				913193802158ADD900958083 /* TinyNetworking.swift in Sources */,
 				91C4C9DE2156632A001F6B7C /* ViewController.swift in Sources */,
 				91233C3C218B1E7700CBBFD9 /* ExampleConsumer.swift in Sources */,
-				913193812158ADD900958083 /* Result.swift in Sources */,
 				913E98E021B39367006569E2 /* ShowTime.swift in Sources */,
 				91263CA9218481A7007935A8 /* User.swift in Sources */,
 				91263CB921856705007935A8 /* StackOverflowApi.swift in Sources */,
@@ -856,6 +856,7 @@
 				91840B2F21B158330016B7B4 /* IntegrationUITest.swift in Sources */,
 				91C4C9FC2156632B001F6B7C /* MonorailSwiftUITests.swift in Sources */,
 				91840B3521B15DDF0016B7B4 /* Springboard.swift in Sources */,
+				F8FBF2602362B3DC00342F99 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,7 +879,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9185F3FC226D333E0080D5A9 /* Result.swift in Sources */,
 				F8EC9ED3226EB51A00CDC945 /* XCTestCaseHelper.swift in Sources */,
 				9185F3FB226CB24D0080D5A9 /* Question.swift in Sources */,
 				913E98E921B39ED5006569E2 /* LoggerTests.swift in Sources */,

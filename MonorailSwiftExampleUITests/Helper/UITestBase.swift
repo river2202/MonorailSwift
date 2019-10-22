@@ -112,6 +112,7 @@ class UITestBase: XCTestCase {
     }
     
     app.launch()
+    setupSnapshot(app)
   }
   
   var isMockTest: Bool { return uiTestType == .mockUITest }
