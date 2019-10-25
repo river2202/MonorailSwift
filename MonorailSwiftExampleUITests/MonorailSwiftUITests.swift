@@ -12,6 +12,8 @@ class MonorailSwiftUITests: UITestBase {
                 $0.iSee(.tableCell("cell_0_1"), has: "Applying multiple CIFilters on image")
             }
             
+            snapshot("0-list screen")
+            
             $0.iTap(.tableCell("cell_0_1"))
             sleep(1)
             
@@ -22,6 +24,8 @@ class MonorailSwiftUITests: UITestBase {
             if isMockTest {
                 $0.iSee(.label("qTitle"), has: "Applying multiple CIFilters on image")
             }
+            
+            snapshot("0-post screen")
             
             $0.iTap(.naviBarButton("StackOverflow"))
             $0.iSee(.tableCell("cell_0_1"))

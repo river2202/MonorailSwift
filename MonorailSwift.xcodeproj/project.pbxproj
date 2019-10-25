@@ -75,6 +75,8 @@
 		F8EC9ED3226EB51A00CDC945 /* XCTestCaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC9ED2226EB51A00CDC945 /* XCTestCaseHelper.swift */; };
 		F8EC9ED6226EBAE200CDC945 /* StubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8B7F5223722EC00FA8F9D /* StubManager.swift */; };
 		F8EC9ED7226EC3BC00CDC945 /* Stubs.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8EC9ED4226EBA5C00CDC945 /* Stubs.bundle */; };
+		F8FBF2602362B3DC00342F99 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF25E2362B38D00342F99 /* SnapshotHelper.swift */; };
+		F8FBF2612362B44D00342F99 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF25E2362B38D00342F99 /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +225,7 @@
 		F8B8B7FF2237240700FA8F9D /* UITestConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestConfig.swift; sourceTree = "<group>"; };
 		F8EC9ED2226EB51A00CDC945 /* XCTestCaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseHelper.swift; sourceTree = "<group>"; };
 		F8EC9ED4226EBA5C00CDC945 /* Stubs.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Stubs.bundle; sourceTree = "<group>"; };
+		F8FBF25E2362B38D00342F99 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = MonorailSwiftExampleUITests/Helper/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +338,7 @@
 		91840B2B21B158330016B7B4 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				F8FBF25E2362B38D00342F99 /* SnapshotHelper.swift */,
 				91840B3421B15DDF0016B7B4 /* Springboard.swift */,
 				91840B2C21B158330016B7B4 /* IntegrationUITest.swift */,
 				91840B2D21B158330016B7B4 /* AppConfiguration.swift */,
@@ -809,6 +813,7 @@
 				913E98D621B382B6006569E2 /* MockUITest.swift in Sources */,
 				913E98DB21B382F3006569E2 /* MonorailSwiftUITests.swift in Sources */,
 				913E98D721B382C7006569E2 /* Springboard.swift in Sources */,
+				F8FBF2612362B44D00342F99 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -856,6 +861,7 @@
 				91840B2F21B158330016B7B4 /* IntegrationUITest.swift in Sources */,
 				91C4C9FC2156632B001F6B7C /* MonorailSwiftUITests.swift in Sources */,
 				91840B3521B15DDF0016B7B4 /* Springboard.swift in Sources */,
+				F8FBF2602362B3DC00342F99 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
