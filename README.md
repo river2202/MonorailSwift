@@ -35,7 +35,7 @@ pod 'MonorailSwiftTools', :configurations => ['Debug']
 
 ### Carthage
 
-github "river2202/MonorailSwiftTools"
+github "river2202/MonorailSwift"
 
 ## Communication
 - If you need any help, use [Stack Overflow](https://stackoverflow.com/questions/tagged/monorailswift) and tag `monorailswift`.
