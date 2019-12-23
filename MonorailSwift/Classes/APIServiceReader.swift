@@ -70,10 +70,10 @@ open class APIServiceReader {
         }
         
         if startTime == nil {
-            startTime = (json?[apiServiceStartTimeKey] as? String)?.date(timeStampFormat)
+            startTime = (json[apiServiceStartTimeKey] as? String)?.date(timeStampFormat)
         }
         
-        if let newConsumerVariables = json?[apiServiceConsumerKey] as? [String: Any] {
+        if let newConsumerVariables = json[apiServiceConsumerKey] as? [String: Any] {
             
             let newConsumerVariablesUnwrapFileRef = newConsumerVariables.loadFileRef(externalFileRootPath: externalFileRootPath)
             
@@ -84,11 +84,11 @@ open class APIServiceReader {
             }
         }
         
-        if let newProviderVariables = json?[apiServiceProviderKey] as? [String: Any] {
+        if let newProviderVariables = json[apiServiceProviderKey] as? [String: Any] {
             providerVariables.merge(newProviderVariables) { (_, newValue) in newValue }
         }
         
-        guard let interactionsJson = json?[apiServiceInteractionsKey] as? [[String: Any]] else {
+        guard let interactionsJson = json[apiServiceInteractionsKey] as? [[String: Any]] else {
             return
         }
         
