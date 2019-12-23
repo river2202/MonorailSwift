@@ -25,9 +25,9 @@ Works out of box with iOS build in api and most of 3rd SDK to print the network 
   s.source           = { :git => 'https://github.com/river2202/MonorailSwift.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
 
   s.source_files = 'MonorailSwift/Helper/**/*'
   
-  s.dependency 'MonorailSwift', '~> 1.0.4'
+  s.dependency 'MonorailSwift', '~> 1.1.0'
 end
