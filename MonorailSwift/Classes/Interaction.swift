@@ -6,6 +6,7 @@ let timeStampFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
 open class Interaction {
     private let requestKey = "request"
     private let responseKey = "response"
+    private let errorKey = "error"
     private let headersKey = "headers"
     private let bodyKey = "body"
     private let dataKey = "data"
@@ -21,6 +22,7 @@ open class Interaction {
     
     private(set) var request: [String: Any] = [:]
     private(set) var response: [String: Any] = [:]
+    private(set) var error: NSError?
     
     public var baseUrl: String?
     public var path: String?
@@ -58,6 +60,7 @@ open class Interaction {
     init(template: Interaction) {
         self.request = template.request
         self.response = template.response
+        self.error = template.error
         self.baseUrl = template.baseUrl
         self.path = template.path
         self.method = template.method
@@ -86,6 +89,7 @@ open class Interaction {
         
         loadRequestJson(json[requestKey] as? [String: Any])
         loadResponseJson(json[responseKey] as? [String: Any], externalFileRootPath: externalFileRootPath)
+        loadErrorJson(json[errorKey] as? [String: Any])
         
         if let consumerVariables = json[apiServiceConsumerKey] as? [String: Any] {
             self.consumerVariables.deepMerge(consumerVariables)
@@ -103,7 +107,16 @@ open class Interaction {
         timeElapsedEnabled = (json[timeElapsedEnabledKey] as? Bool) ?? timeElapsedEnabled
     }
     
-    init(request: URLRequest?, uploadData: Data? = nil, response: URLResponse?, data: Data? = nil, baseUrl: String? = nil, timeStamp: Date? = nil, timeElapsed: TimeInterval? = nil, timeElapsedEnabled: Bool = false) {
+    init(request: URLRequest?,
+         uploadData: Data? = nil,
+         response: URLResponse? = nil,
+         data: Data? = nil,
+         error: NSError? = nil,
+         baseUrl: String? = nil,
+         timeStamp: Date? = nil,
+         timeElapsed: TimeInterval? = nil,
+         timeElapsedEnabled: Bool = false
+    ) {
         self.baseUrl = baseUrl
         self.timeStamp = timeStamp
         self.timeElapsed = timeElapsed
@@ -115,6 +128,8 @@ open class Interaction {
         if let response = response as? HTTPURLResponse {
             setRespondWith(status: response.statusCode, headers: response.allHeaderFields as? [String: Any], body: data)
         }
+        
+        self.error = error
     }
     
     var requestHeader: [String: Any]? {
@@ -169,6 +184,10 @@ open class Interaction {
         response.deepMerge(json)
     }
     
+    private func loadErrorJson(_ json: [String: Any]?) {
+        self.error = NSError.loadJson(json ?? nil)
+    }
+    
     func matchReqest(_ urlRequest: URLRequest) -> Bool {
         guard let method = method, let path = path, let requestUrl = urlRequest.url?.absoluteString else {
             return false
@@ -185,13 +204,13 @@ open class Interaction {
         return method == self.method && path.hasSuffix(pactPath)
     }
     
-    public func responseObjects() -> (HTTPURLResponse, Data?, Error?)? {
+    public func responseObjects() -> (HTTPURLResponse?, Data?, Error?) {
         guard let path = path, let url = URL(string: path), let statusCode = response[responseStatusKey] as? Int else {
-            return nil
+            return (nil, nil, error)
         }
         
         guard let httpURLResponse = HTTPURLResponse(url: url, statusCode: statusCode, httpVersion: nil, headerFields: response[headersKey] as? [String: String]) else {
-            return nil
+            return (nil, nil, error)
         }
         
         let jsonObject = response[bodyKey] as? [String: Any]
@@ -255,10 +274,20 @@ open class Interaction {
     }
     
     public func payload() -> [String: Any] {
-        var payload: [String: Any] = [requestKey: request, responseKey: response]
+        var payload: [String: Any] = [
+            requestKey: request
+        ]
         
         if let id = id {
             payload[idKey] = id
+        }
+        
+        if !response.isEmpty {
+            payload[responseKey] = response
+        }
+        
+        if let errorPayload = error?.payload() {
+            payload[errorKey] = errorPayload
         }
         
         if !consumerVariables.isEmpty {
@@ -353,3 +382,28 @@ extension Date {
         return dateFormatter.string(from: self)
     }
 }
+
+private let errorCodeKey = "code"
+private let errorDomainKey = "domain"
+private let errorUserInfoKey = "userinfo"
+extension NSError {
+    func payload() -> [String: Any] {
+        return [
+            errorCodeKey: code,
+            errorDomainKey: domain,
+//            errorUserInfoKey: userInfo
+        ]
+    }
+    
+    static func loadJson(_ json: [String: Any]?) -> NSError? {
+        guard let json = json,
+            let code = json[errorCodeKey] as? Int,
+            let domain = json[errorDomainKey] as? String else {
+                return nil
+        }
+        
+        return NSError(domain: domain, code: code, userInfo: json[errorUserInfoKey] as? [String : Any])
+    }
+}
+
+

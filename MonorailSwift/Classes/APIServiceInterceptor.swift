@@ -2,7 +2,7 @@ import Foundation
 
 protocol APIServiceInterceptor {
     func shouldSkip(_ request: URLRequest) -> Bool
-    func intercept(_ request: URLRequest) -> (interceptResponse: Bool, URLResponse?, Data?)
+    func intercept(_ request: URLRequest) -> (interceptResponse: Bool, URLResponse?, Data?, Error?)
     
     func log(_ error: Error, request: URLRequest)
     func log(_ request: URLRequest)
@@ -63,9 +63,9 @@ class URLInterceptor: URLProtocol, URLSessionDelegate {
         guard let interceptor = URLInterceptor.interceptor else { return }
         
         interceptor.log(request)
-        if case (true, let response, let data) = interceptor.intercept(request) {
+        if case (true, let response, let data, let error) = interceptor.intercept(request) {
             guard let response = response else {
-                let error = MonorailError.noResponseFound
+                let error = error ?? MonorailError.noResponseFound
                 interceptor.log(error, request: self.request)
                 self.client?.urlProtocol(self, didFailWithError: error)
                 return

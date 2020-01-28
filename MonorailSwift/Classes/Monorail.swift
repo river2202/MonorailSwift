@@ -122,15 +122,15 @@ extension Monorail: APIServiceInterceptor {
         return false
     }
     
-    func intercept(_ request: URLRequest) -> (interceptResponse: Bool, URLResponse?, Data?) {
+    func intercept(_ request: URLRequest) -> (interceptResponse: Bool, URLResponse?, Data?, Error?) {
         if let reader = reader {
-            if let (response, data, _) = reader.getResponseObject(for: request) {
-                return (true, response, data)
+            if let (response, data, error) = reader.getResponseObject(for: request) {
+                return (true, response, data, error)
             } else {
-                return (true, nil, nil)
+                return (true, nil, nil, nil)
             }
         } else {
-            return (false, nil, nil)
+            return (false, nil, nil, nil)
         }
     }
     
@@ -138,6 +138,8 @@ extension Monorail: APIServiceInterceptor {
         if !request.filtered(by: loggerFilter) {
             logger?.log(error)
         }
+        
+        writer?.log(request: request, error: error as NSError)
     }
 
     func log(_ request: URLRequest) {

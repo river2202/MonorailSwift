@@ -11,7 +11,6 @@
 		91165E7E2156680D00546246 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91165E7C2156680D00546246 /* Answer.swift */; };
 		9120490022538551004A5E69 /* MonorailTimeMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912048FF22538551004A5E69 /* MonorailTimeMachineTests.swift */; };
 		912278982261A814008C53C7 /* NSDate+TimeMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 912278962261A814008C53C7 /* NSDate+TimeMachine.m */; };
-		912278992261A814008C53C7 /* NSDate+TimeMachine.h in Headers */ = {isa = PBXBuildFile; fileRef = 912278972261A814008C53C7 /* NSDate+TimeMachine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91233C3C218B1E7700CBBFD9 /* ExampleConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91233C3B218B1E7700CBBFD9 /* ExampleConsumer.swift */; };
 		91263CA9218481A7007935A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CA8218481A7007935A8 /* User.swift */; };
 		91263CB921856705007935A8 /* StackOverflowApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CB821856705007935A8 /* StackOverflowApi.swift */; };
@@ -32,7 +31,7 @@
 		91840B3021B158330016B7B4 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2D21B158330016B7B4 /* AppConfiguration.swift */; };
 		91840B3121B158330016B7B4 /* UITestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2E21B158330016B7B4 /* UITestBase.swift */; };
 		91840B3521B15DDF0016B7B4 /* Springboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B3421B15DDF0016B7B4 /* Springboard.swift */; };
-		9185F3F72261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 9185F3F62261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h */; };
+		9185F3F72261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 9185F3F62261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9185F3F9226CB1ED0080D5A9 /* TinyNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131937E2158ADD900958083 /* TinyNetworking.swift */; };
 		9185F3FA226CB2360080D5A9 /* StackOverflowResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5788C2183CCB900FA1411 /* StackOverflowResponse.swift */; };
 		9185F3FB226CB24D0080D5A9 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91165E7B2156680D00546246 /* Question.swift */; };
@@ -41,6 +40,7 @@
 		9185F40722867D2A0080D5A9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185F40622867D2A0080D5A9 /* AppCoordinator.swift */; };
 		9185F40A2287E2320080D5A9 /* UIViewControllerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185F40122865C740080D5A9 /* UIViewControllerCreator.swift */; };
 		918E859E228834FE00F5AC05 /* InteractionViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185F4082287C2040080D5A9 /* InteractionViewer.swift */; };
+		9197940E23B1622300B3E36A /* NSDate+TimeMachine.h in Headers */ = {isa = PBXBuildFile; fileRef = 912278972261A814008C53C7 /* NSDate+TimeMachine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91B392C221A9FAFF00C71AEB /* TimeMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B392C121A9FAFF00C71AEB /* TimeMachine.swift */; };
 		91C4C9DC2156632A001F6B7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9DB2156632A001F6B7C /* AppDelegate.swift */; };
 		91C4C9DE2156632A001F6B7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9DD2156632A001F6B7C /* ViewController.swift */; };
@@ -522,8 +522,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				91CF88FC216E9694003A351C /* MonorailSwiftSDK.h in Headers */,
+				9197940E23B1622300B3E36A /* NSDate+TimeMachine.h in Headers */,
 				9185F3F72261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h in Headers */,
-				912278992261A814008C53C7 /* NSDate+TimeMachine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -45,6 +45,18 @@ open class APIServiceWriter: APIServiceReader {
         save()
     }
     
+    func log(request: URLRequest?, uploadData: Data? = nil, error: NSError?) {
+        guard let request = request, logFilePath != nil else {
+            return
+        }
+        
+        let interaction = Interaction(request: request, uploadData: uploadData, error: error, baseUrl: consumerVariables[apiServiceBaseUrlKey] as? String, timeStamp: Date())
+        
+        delegate?.savingCosumerVariables(interaction, writer: self)
+        interactions.append(interaction)
+        save()
+    }
+    
     open func saveBaseUrl(_ baseUrl: String) {
         saveConsumerVariables(key: apiServiceBaseUrlKey, value: baseUrl)
     }
