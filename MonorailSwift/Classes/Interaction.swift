@@ -139,8 +139,8 @@ open class Interaction {
     var requestBody: [String: Any]? {
         return request[bodyKey] as? [String: Any]
     }
-    var responseBody: [String: Any]? {
-        return response[bodyKey] as? [String: Any]
+    var responseBody: Any? {
+        return response[bodyKey]
     }
     
     var responseHeader: [String: Any]? {
@@ -213,14 +213,11 @@ open class Interaction {
             return (nil, nil, error)
         }
         
-        let jsonObject = response[bodyKey] as? [String: Any]
+        let jsonObject = response[bodyKey]
         var data: Data? = nil
-        do {
-            if let jsonObject = jsonObject {
-                data = try JSONSerialization.data(withJSONObject: jsonObject, options: [])
-            }
-        } catch {
-            data = nil
+        
+        if let jsonObject = jsonObject {
+            data = try? JSONSerialization.data(withJSONObject: jsonObject, options: [])
         }
         
         if data == nil {
@@ -263,12 +260,12 @@ open class Interaction {
             response[headersKey] = headersValue
         }
         
-        if let bodyValue = body {
+        if let body = body {
             do {
-                let json = try JSONSerialization.jsonObject(with: bodyValue, options: .mutableContainers)
+                let json = try JSONSerialization.jsonObject(with: body, options: .mutableContainers)
                 response[bodyKey] = json
             } catch {
-                response[dataKey] = bodyValue.base64EncodedString()
+                response[dataKey] = body.base64EncodedString()
             }
         }
     }

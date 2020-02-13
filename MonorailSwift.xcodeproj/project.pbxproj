@@ -47,7 +47,7 @@
 		91C4C9FC2156632B001F6B7C /* MonorailSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9FB2156632B001F6B7C /* MonorailSwiftUITests.swift */; };
 		91CAEFA223F50A9C00BA9603 /* Monorail_OC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CAEFA023F509DE00BA9603 /* Monorail_OC.swift */; };
 		91CAEFA323F50AA300BA9603 /* Monorail_OC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D6355923E26BAC00DB4AB3 /* Monorail_OC.m */; };
-		91CAEFA423F50AA800BA9603 /* Monorail_OC.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D6355823E26BAC00DB4AB3 /* Monorail_OC.h */; };
+		91CAEFA423F50AA800BA9603 /* Monorail_OC.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D6355823E26BAC00DB4AB3 /* Monorail_OC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91CF88F3216E9694003A351C /* MonorailSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CF88EA216E9693003A351C /* MonorailSwift.framework */; };
 		91CF88FA216E9694003A351C /* MonorailSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CF88F9216E9694003A351C /* MonorailSwiftTests.swift */; };
 		91CF88FC216E9694003A351C /* MonorailSwiftSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 91CF88EC216E9694003A351C /* MonorailSwiftSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };

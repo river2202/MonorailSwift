@@ -117,7 +117,7 @@ open class MonorailFileViewer: UITableViewController, UISearchResultsUpdating {
 
 extension Interaction {
     var details: String {
-        guard let (response, _, _) = responseObjects() else {
+        guard let response = responseObjects().0 else {
             return "-"
         }
         

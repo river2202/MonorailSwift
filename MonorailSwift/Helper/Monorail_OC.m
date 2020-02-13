@@ -1,18 +1,12 @@
-//
-//  Monorail.m
-//  MonorailSwift
-//
-//  Created by River Huang on 30/1/20.
-//  Copyright © 2020 monitolab. All rights reserved.
-//
 
-#import "Monorail.h"
+#import "Monorail_OC.h"
+#import <MonorailSwiftTools/MonorailSwiftTools-Swift.h>
 
 @implementation Monorail_OC
 
 + (void) load {
-//    [Monorail oc_enableLogger];
-//    [Monorail oc_writeLog];
+    [Monorail_OC oc_enableLogger];
+    [Monorail_OC oc_writeLog];
 }
 
 @end

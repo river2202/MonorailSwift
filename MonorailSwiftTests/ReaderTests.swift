@@ -4,7 +4,7 @@ import XCTest
 class ReaderTests: XCTestCase {
     
     func testReader() {
-        let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderTests.json", hostBundle: Bundle(for: Self.self))!)
+        let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderTests.json", hostBundle: Bundle(for: ReaderTests.self))!)
         XCTAssertEqual(reader.interactions.count, 4, "should read correct interaction number")
         XCTAssertEqual(reader.getConsumerVariables(key: "token") as? String, "JOxMrQ0A(a2SqBisygFCUA))", "expect to read consumer variable correctly")
         XCTAssertEqual(reader.startTime, "2018-11-25T08:58:37.354+11:00".date(timeStampFormat), "expect to read start time correctly to use when set time travel to this time when log file recorded")
@@ -12,11 +12,10 @@ class ReaderTests: XCTestCase {
     }
     
     func   testReaderFileAndIDReference() {
-        let hostBundle = Bundle(for: Self.self)
         
         let testData = [
-            StubManager.load("MonorailTest/Monorail-reference-test.json", hostBundle: hostBundle)!,
-            StubManager.load("MonorailTest/subfolder/Monorail-reference-subfolder-test.json", hostBundle: hostBundle)
+            StubManager.load("MonorailTest/Monorail-reference-test.json")!,
+            StubManager.load("MonorailTest/subfolder/Monorail-reference-subfolder-test.json")
         ]
         
         for monorailFile in testData {
@@ -54,10 +53,11 @@ class ReaderTests: XCTestCase {
     }
     
     
-    func   testReadeArrayResponse() {
-        let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderArrayResponseTests.json", hostBundle: Bundle(for: Self.self))!)
+    func testReadeArrayResponse() {
+        let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderArrayResponseTests.json")!)
         
-        XCTAssertEqual(reader.interactions[0].responseObjects().0?.statusCode, 200)
-        XCTAssertEqual(reader.interactions[0].responseObjects().0?.statusCode, 200)
+       let response = reader.interactions[0].responseObjects()
+        XCTAssertEqual(response.0?.statusCode, 200)
+        XCTAssertNotNil(response.1)
     }
 }

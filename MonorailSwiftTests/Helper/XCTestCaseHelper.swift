@@ -45,7 +45,7 @@ extension XCTestCase {
         Monorail.writeLog(to: name)
         
         if isMockTest {
-            guard let stubFile = StubManager.load(name+".json", hostBundle: Bundle(for: Self.self) ) else {
+            guard let stubFile = StubManager.load(name+".json") else {
                 print("No stub file for test \(name).")
                 return
             }
