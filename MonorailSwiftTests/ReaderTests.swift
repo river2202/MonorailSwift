@@ -52,4 +52,12 @@ class ReaderTests: XCTestCase {
             XCTAssertEqual(reader.interactions[3].timeElapsedEnabled, false)
         }
     }
+    
+    
+    func   testReadeArrayResponse() {
+        let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderArrayResponseTests.json", hostBundle: Bundle(for: Self.self))!)
+        
+        XCTAssertEqual(reader.interactions[0].responseObjects().0?.statusCode, 200)
+        XCTAssertEqual(reader.interactions[0].responseObjects().0?.statusCode, 200)
+    }
 }
