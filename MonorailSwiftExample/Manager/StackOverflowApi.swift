@@ -4,19 +4,30 @@ import MonorailSwift
 
 typealias SOApi = StackOverflowApi
 
-enum StackOverflowApiError: String, Error {
+enum StackOverflowApiError: Error {
     case missingClientAppInfo
     case oauthError
     case accessTokenError
     case missingParameter
     case apiReponseError
+    case restApiError
 }
 
 extension StackOverflowApiError : LocalizedError {
     public var errorDescription: String? {
         return "\(self)"
     }
+    
+    func from(_ error: RestApiResourceError?) -> StackOverflowApiError {
+        if error != nil {
+            return .restApiError
+        } else {
+            return .apiReponseError
+        }
+    }
 }
+
+typealias StackOverflowApiResult<A> = Result<A, StackOverflowApiError>
 
 class StackOverflowApi {
     
@@ -106,7 +117,7 @@ extension StackOverflowApi {
             }
             
             if let (callbackState, code) = callBack?.retriveStackOverflowOAuthCode(), callbackState == state, let tokenCode = code {
-                let resource = Resource<AccessToken>(url: URL(string: "https://stackoverflow.com/oauth/access_token/json")!, formParameters: "client_id=\(clientId)&client_secret=\(secret)&code=\(tokenCode)&redirect_uri=\(redirectUri)")
+                let resource = RestApiResource<AccessToken>(url: URL(string: "https://stackoverflow.com/oauth/access_token/json")!, formParameters: "client_id=\(clientId)&client_secret=\(secret)&code=\(tokenCode)&redirect_uri=\(redirectUri)")
                 URLSession.shared.load(resource, completion: { result in
                     if case .success(let accessToken) = result {
                         self.accessToken = accessToken
@@ -130,7 +141,7 @@ extension StackOverflowApi {
             return completion(StackOverflowApiError.missingClientAppInfo, nil)
         }
         
-        let resource = Resource<UserResponse>(url: URL(string: "https://api.stackexchange.com/2.2/me?key=\(key)&site=stackoverflow&order=desc&sort=reputation&access_token=\(accessTokenString)&filter=default")!)
+        let resource = RestApiResource<UserResponse>(url: URL(string: "https://api.stackexchange.com/2.2/me?key=\(key)&site=stackoverflow&order=desc&sort=reputation&access_token=\(accessTokenString)&filter=default")!)
         URLSession.shared.load(resource, completion: { result in
             if case .success(let userResponse) = result, let userName = userResponse.items?.first?.displayName {
                 return completion(nil, userName)
@@ -140,35 +151,36 @@ extension StackOverflowApi {
         })
     }
     
-    func favorite(_ questionId: Int?, undo: Bool = false, completion: @escaping (Result<Question>) -> Void) {
+    func favorite(_ questionId: Int?, undo: Bool = false, completion: @escaping (StackOverflowApiResult<Question>) -> Void) {
         
         guard let questionId = questionId, let (url, queryString) = favoriteApi(questionId, undo) else {
-            return completion(Result.error(StackOverflowApiError.missingParameter))
+            return completion(.failure(StackOverflowApiError.missingParameter))
         }
      
-        let resource = Resource<QuestionResponse>(url:url, formParameters: queryString)
+        let resource = RestApiResource<QuestionResponse>(url:url, formParameters: queryString)
         URLSession.shared.load(resource, completion: { result in
             if case .success(let questionResponse) = result, let question = questionResponse.items?.first {
-                completion(Result.success(question))
+                completion(.success(question))
             } else {
-                completion(Result.error(result.error ?? StackOverflowApiError.apiReponseError))
+                completion(.failure(StackOverflowApiError.apiReponseError))
             }
         })
     }
     
-    func myFavorites(completion: @escaping (Result<[Question]>) -> Void) {
+    func myFavorites(completion: @escaping (StackOverflowApiResult<[Question]>) -> Void) {
         
         guard let url = myFavoritesApi else {
-            return completion(Result.error(StackOverflowApiError.missingParameter))
+            return completion(.failure(StackOverflowApiError.missingParameter))
         }
         
-        let resource = Resource<QuestionResponse>(url:url)
+        let resource = RestApiResource<QuestionResponse>(url:url)
         URLSession.shared.load(resource, completion: { result in
             if case .success(let questionResponse) = result, let favorites = questionResponse.items {
                 completion(Result.success(favorites))
             } else {
-                completion(Result.error(result.error ?? StackOverflowApiError.apiReponseError))
+                completion(.failure(StackOverflowApiError.apiReponseError))
             }
+            
         })
     }
 }

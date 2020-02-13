@@ -1,0 +1,21 @@
+name: TestTesting
+
+on: 
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Test MonorailSwiftExample
+      run: fastlane snapshot
+    - name: Archive ui_test_output
+      uses: actions/upload-artifact@v1
+      with:
+        name: ui_test_output
+        path: ui_test_output
