@@ -1,0 +1,38 @@
+{
+  "startTime" : "2020-02-13T16:01:34.990+11:00",
+  "interactions" : [
+    {
+      "response" : {
+        "headers" : {
+          "Content-Length" : "367",
+          "access-control-allow-credentials" : "true",
+          "Access-Control-Allow-Origin" : "*",
+          "Content-Type" : "application\/json",
+          "Server" : "gunicorn\/19.9.0",
+          "Date" : "Thu, 13 Feb 2020 05:01:35 GMT"
+        },
+        "body" : {
+          "args" : {
+
+          },
+          "headers" : {
+            "User-Agent" : "xctest\/15702 CFNetwork\/1121.2.1 Darwin\/19.3.0",
+            "Accept-Encoding" : "gzip, deflate, br",
+            "Host" : "httpbin.org",
+            "Accept-Language" : "en-us",
+            "X-Amzn-Trace-Id" : "Root=1-5e44d82f-ef271d60c345c890c59242a8",
+            "Accept" : "*\/*"
+          },
+          "origin" : "49.255.37.170",
+          "url" : "https:\/\/httpbin.org\/get"
+        },
+        "status" : 200
+      },
+      "timeStamp" : "2020-02-13T16:01:36.037+11:00",
+      "request" : {
+        "path" : "https:\/\/httpbin.org\/get",
+        "method" : "GET"
+      }
+    }
+  ]
+}
