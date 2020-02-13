@@ -11,14 +11,12 @@
 		91165E7E2156680D00546246 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91165E7C2156680D00546246 /* Answer.swift */; };
 		9120490022538551004A5E69 /* MonorailTimeMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912048FF22538551004A5E69 /* MonorailTimeMachineTests.swift */; };
 		912278982261A814008C53C7 /* NSDate+TimeMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 912278962261A814008C53C7 /* NSDate+TimeMachine.m */; };
-		912278992261A814008C53C7 /* NSDate+TimeMachine.h in Headers */ = {isa = PBXBuildFile; fileRef = 912278972261A814008C53C7 /* NSDate+TimeMachine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91233C3C218B1E7700CBBFD9 /* ExampleConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91233C3B218B1E7700CBBFD9 /* ExampleConsumer.swift */; };
 		91263CA9218481A7007935A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CA8218481A7007935A8 /* User.swift */; };
 		91263CB921856705007935A8 /* StackOverflowApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CB821856705007935A8 /* StackOverflowApi.swift */; };
 		91263CBB2185D66D007935A8 /* AppConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CBA2185D66D007935A8 /* AppConfigTests.swift */; };
 		91263CBD2189C9C5007935A8 /* MyFavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91263CBC2189C9C5007935A8 /* MyFavoritesTableViewController.swift */; };
 		913193802158ADD900958083 /* TinyNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131937E2158ADD900958083 /* TinyNetworking.swift */; };
-		913193812158ADD900958083 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131937F2158ADD900958083 /* Result.swift */; };
 		913E98D621B382B6006569E2 /* MockUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913E98D521B382B6006569E2 /* MockUITest.swift */; };
 		913E98D721B382C7006569E2 /* Springboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B3421B15DDF0016B7B4 /* Springboard.swift */; };
 		913E98D921B382C7006569E2 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2D21B158330016B7B4 /* AppConfiguration.swift */; };
@@ -32,21 +30,24 @@
 		91840B3021B158330016B7B4 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2D21B158330016B7B4 /* AppConfiguration.swift */; };
 		91840B3121B158330016B7B4 /* UITestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2E21B158330016B7B4 /* UITestBase.swift */; };
 		91840B3521B15DDF0016B7B4 /* Springboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B3421B15DDF0016B7B4 /* Springboard.swift */; };
-		9185F3F72261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 9185F3F62261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h */; };
+		9185F3F72261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 9185F3F62261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9185F3F9226CB1ED0080D5A9 /* TinyNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131937E2158ADD900958083 /* TinyNetworking.swift */; };
 		9185F3FA226CB2360080D5A9 /* StackOverflowResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5788C2183CCB900FA1411 /* StackOverflowResponse.swift */; };
 		9185F3FB226CB24D0080D5A9 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91165E7B2156680D00546246 /* Question.swift */; };
-		9185F3FC226D333E0080D5A9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131937F2158ADD900958083 /* Result.swift */; };
 		9185F3FE22844A180080D5A9 /* MonorailFileViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185F3FD22844A180080D5A9 /* MonorailFileViewer.swift */; };
 		9185F40722867D2A0080D5A9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185F40622867D2A0080D5A9 /* AppCoordinator.swift */; };
 		9185F40A2287E2320080D5A9 /* UIViewControllerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185F40122865C740080D5A9 /* UIViewControllerCreator.swift */; };
 		918E859E228834FE00F5AC05 /* InteractionViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185F4082287C2040080D5A9 /* InteractionViewer.swift */; };
+		9197940E23B1622300B3E36A /* NSDate+TimeMachine.h in Headers */ = {isa = PBXBuildFile; fileRef = 912278972261A814008C53C7 /* NSDate+TimeMachine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91B392C221A9FAFF00C71AEB /* TimeMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B392C121A9FAFF00C71AEB /* TimeMachine.swift */; };
 		91C4C9DC2156632A001F6B7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9DB2156632A001F6B7C /* AppDelegate.swift */; };
 		91C4C9DE2156632A001F6B7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9DD2156632A001F6B7C /* ViewController.swift */; };
 		91C4C9E32156632B001F6B7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C4C9E22156632B001F6B7C /* Assets.xcassets */; };
 		91C4C9E62156632B001F6B7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91C4C9E42156632B001F6B7C /* LaunchScreen.storyboard */; };
 		91C4C9FC2156632B001F6B7C /* MonorailSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9FB2156632B001F6B7C /* MonorailSwiftUITests.swift */; };
+		91CAEFA223F50A9C00BA9603 /* Monorail_OC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CAEFA023F509DE00BA9603 /* Monorail_OC.swift */; };
+		91CAEFA323F50AA300BA9603 /* Monorail_OC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D6355923E26BAC00DB4AB3 /* Monorail_OC.m */; };
+		91CAEFA423F50AA800BA9603 /* Monorail_OC.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D6355823E26BAC00DB4AB3 /* Monorail_OC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91CF88F3216E9694003A351C /* MonorailSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CF88EA216E9693003A351C /* MonorailSwift.framework */; };
 		91CF88FA216E9694003A351C /* MonorailSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CF88F9216E9694003A351C /* MonorailSwiftTests.swift */; };
 		91CF88FC216E9694003A351C /* MonorailSwiftSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 91CF88EC216E9694003A351C /* MonorailSwiftSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -167,7 +168,6 @@
 		91263CBA2185D66D007935A8 /* AppConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigTests.swift; sourceTree = "<group>"; };
 		91263CBC2189C9C5007935A8 /* MyFavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesTableViewController.swift; sourceTree = "<group>"; };
 		9131937E2158ADD900958083 /* TinyNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyNetworking.swift; sourceTree = "<group>"; };
-		9131937F2158ADD900958083 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		913E98CA21B38193006569E2 /* MonorailSwiftExampleMockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonorailSwiftExampleMockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		913E98CE21B38193006569E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		913E98D521B382B6006569E2 /* MockUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUITest.swift; sourceTree = "<group>"; };
@@ -199,12 +199,15 @@
 		91C4CA0F2156641A001F6B7C /* APIServiceLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceLogger.swift; sourceTree = "<group>"; };
 		91C4CA102156641A001F6B7C /* Interaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction.swift; sourceTree = "<group>"; };
 		91C4CA112156641A001F6B7C /* APIServiceReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceReader.swift; sourceTree = "<group>"; };
+		91CAEFA023F509DE00BA9603 /* Monorail_OC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monorail_OC.swift; sourceTree = "<group>"; };
 		91CF88EA216E9693003A351C /* MonorailSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MonorailSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CF88EC216E9694003A351C /* MonorailSwiftSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonorailSwiftSDK.h; sourceTree = "<group>"; };
 		91CF88ED216E9694003A351C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91CF88F2216E9694003A351C /* MonorailSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonorailSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CF88F9216E9694003A351C /* MonorailSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonorailSwiftTests.swift; sourceTree = "<group>"; };
 		91CF88FB216E9694003A351C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91D6355823E26BAC00DB4AB3 /* Monorail_OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Monorail_OC.h; sourceTree = "<group>"; };
+		91D6355923E26BAC00DB4AB3 /* Monorail_OC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Monorail_OC.m; sourceTree = "<group>"; };
 		91DE3D6E21663006002639E1 /* APIServiceInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceInterceptor.swift; sourceTree = "<group>"; };
 		91DE3D702166306E002639E1 /* Monorail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monorail.swift; sourceTree = "<group>"; };
 		91E57881217DE47900FA1411 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -303,7 +306,6 @@
 				F8B8B7FF2237240700FA8F9D /* UITestConfig.swift */,
 				913E98DF21B39367006569E2 /* ShowTime.swift */,
 				91E61C09215D8B1C004F0B17 /* Stubs.bundle */,
-				9131937F2158ADD900958083 /* Result.swift */,
 				9131937E2158ADD900958083 /* TinyNetworking.swift */,
 			);
 			path = Helper;
@@ -510,6 +512,9 @@
 				9185F4082287C2040080D5A9 /* InteractionViewer.swift */,
 				F8B8B7F7223722EC00FA8F9D /* MonorailActionMenu.swift */,
 				F8B8B7F9223722EC00FA8F9D /* MonorailMenuTableViewController.swift */,
+				91D6355823E26BAC00DB4AB3 /* Monorail_OC.h */,
+				91D6355923E26BAC00DB4AB3 /* Monorail_OC.m */,
+				91CAEFA023F509DE00BA9603 /* Monorail_OC.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -522,8 +527,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				91CF88FC216E9694003A351C /* MonorailSwiftSDK.h in Headers */,
+				9197940E23B1622300B3E36A /* NSDate+TimeMachine.h in Headers */,
 				9185F3F72261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h in Headers */,
-				912278992261A814008C53C7 /* NSDate+TimeMachine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B8B7EC223722C600FA8F9D /* MonorailSwiftTools.h in Headers */,
+				91CAEFA423F50AA800BA9603 /* Monorail_OC.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -825,7 +831,6 @@
 				913193802158ADD900958083 /* TinyNetworking.swift in Sources */,
 				91C4C9DE2156632A001F6B7C /* ViewController.swift in Sources */,
 				91233C3C218B1E7700CBBFD9 /* ExampleConsumer.swift in Sources */,
-				913193812158ADD900958083 /* Result.swift in Sources */,
 				913E98E021B39367006569E2 /* ShowTime.swift in Sources */,
 				91263CA9218481A7007935A8 /* User.swift in Sources */,
 				91263CB921856705007935A8 /* StackOverflowApi.swift in Sources */,
@@ -884,7 +889,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9185F3FC226D333E0080D5A9 /* Result.swift in Sources */,
 				F8EC9ED3226EB51A00CDC945 /* XCTestCaseHelper.swift in Sources */,
 				9185F3FB226CB24D0080D5A9 /* Question.swift in Sources */,
 				913E98E921B39ED5006569E2 /* LoggerTests.swift in Sources */,
@@ -902,6 +906,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B8B7FB223722EC00FA8F9D /* ApiServiceFileListTableViewController.swift in Sources */,
+				91CAEFA223F50A9C00BA9603 /* Monorail_OC.swift in Sources */,
+				91CAEFA323F50AA300BA9603 /* Monorail_OC.m in Sources */,
 				F8B8B7FE223722EC00FA8F9D /* MonorailMenuTableViewController.swift in Sources */,
 				9185F3FE22844A180080D5A9 /* MonorailFileViewer.swift in Sources */,
 				918E859E228834FE00F5AC05 /* InteractionViewer.swift in Sources */,

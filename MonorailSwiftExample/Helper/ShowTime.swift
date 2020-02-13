@@ -192,6 +192,8 @@ extension UIWindow {
             case .began: touchBegan($0)
             case .moved, .stationary: touchMoved($0)
             case .cancelled, .ended: touchEnded($0)
+            @unknown default:
+                fatalError()
             }
         }
     }

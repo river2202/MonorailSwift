@@ -4,8 +4,10 @@
 devices([
   "iPhone 8",
 #   "iPhone 8 Plus",
-  "iPhone SE",
-  "iPhone X",
+#  "iPhone SE",
+#  "iPhone X",
+#   "iPhone SE",
+  "iPhone 11",
 #   "iPad Pro (12.9-inch)",
 #   "iPad Pro (9.7-inch)",
 #   "Apple TV 1080p"

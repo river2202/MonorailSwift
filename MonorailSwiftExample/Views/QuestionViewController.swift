@@ -26,7 +26,7 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let resource = Resource<QuestionResponse>(url: AppConfig.shared.soApi.questionDetailApi(questionId: questionId)!)
+        let resource = RestApiResource<QuestionResponse>(url: AppConfig.shared.soApi.questionDetailApi(questionId: questionId)!)
         questionTask = URLSession.shared.load(resource, completion: { result in
             if case .success(let questionResponse) = result {
                 self.updateQuestion(questionResponse.items?.first)
@@ -48,10 +48,11 @@ class QuestionViewController: UIViewController {
         
         AppConfig.shared.soApi.favorite(questionId, undo: self.question?.favorited ?? false) { result in
             
-            if case .success(let question) = result {
+            switch result {
+            case .success(let question):
                 self.updateQuestion(question)
-            } else {
-                self.showAlert("Error: \(result.error ?? CommonError.unknown)")
+            case .failure(let error):
+                self.showAlert("Error: \(error)")
             }
         }
     }

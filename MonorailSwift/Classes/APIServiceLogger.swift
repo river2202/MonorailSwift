@@ -15,7 +15,7 @@ public final class APIServiceLogger {
         defer { output?.log(logString) }
         
         let e = error as NSError
-        logString += "Error: \(e.localizedDescription)\n"
+        logString += "Error: \(e.code) \(e.localizedDescription)\n"
         
         if let reason = e.localizedFailureReason {
             logString += "Reason: \(reason)\n"

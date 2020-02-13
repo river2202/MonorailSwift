@@ -24,11 +24,12 @@ class MyFavoritesTableViewController: UITableViewController {
         
         AppConfig.shared.soApi.myFavorites() { result in
             
-            if case .success(let questions) = result {
+            switch result {
+            case .success(let questions):
                 self.questions = questions
                 self.tableView.reloadData()
-            } else {
-                self.showAlert("Error: \(result.error ?? CommonError.unknown)")
+            case .failure(let error):
+                self.showAlert("Error: \(error)")
             }
         }
         

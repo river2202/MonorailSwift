@@ -9,22 +9,6 @@ extension UIWindow {
         }
     }
 }
-
-extension UIWindow {
-    
-    open override var layer: CALayer {
-        UIWindow.enableMonorail()
-        return super.layer
-    }
-    
-    private class func enableMonorail() { // `initialize()` removed in Swift 4
-        struct MonorailEnabled { static var once = false } // Workaround for missing dispatch_once in Swift 3
-        guard !MonorailEnabled.once else { return }
-        MonorailEnabled.once = true
-        Monorail.enableLogger()
-        Monorail.writeLog()
-    }
-}
 //#endif
 
 open class MonorailHelper {
