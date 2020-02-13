@@ -1,0 +1,28 @@
+{
+  "interactions": [
+    {
+      "request": {
+        "path": "https:\/\/api.stackexchange.com\/2.2\/search?order=desc&sort=activity&tagged=swift&site=stackoverflow",
+        "method": "GET"
+      },
+      "response": {
+        "headers": {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": "false",
+          "Access-Control-Allow-Methods": "GET, POST",
+          "Content-Encoding": "gzip",
+          "Cache-Control": "private",
+          "Content-Type": "application\/json; charset=utf-8",
+          "Date": "Thu, 01 Nov 2018 23:02:32 GMT",
+          "X-Content-Type-Options": "nosniff",
+          "Content-Length": "5193"
+        },
+        "status": 200,
+        "data": "StringValue"
+      },
+      "timeStamp": "2018-11-02T10:02:33.753+11:00",
+      "id": "1"
+    }
+  ],
+  "startTime": "2018-11-25T08:58:37.354+11:00"
+}

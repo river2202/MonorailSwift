@@ -136,8 +136,8 @@ open class Interaction {
         return request[headersKey] as? [String: Any]
     }
     
-    var requestBody: [String: Any]? {
-        return request[bodyKey] as? [String: Any]
+    var requestBody: Any? {
+        return request[bodyKey]
     }
     var responseBody: Any? {
         return response[bodyKey]
@@ -213,15 +213,14 @@ open class Interaction {
             return (nil, nil, error)
         }
         
-        let jsonObject = response[bodyKey]
         var data: Data? = nil
         
-        if let jsonObject = jsonObject {
+        if let jsonObject = response[bodyKey] {
             data = try? JSONSerialization.data(withJSONObject: jsonObject, options: [])
         }
         
-        if data == nil {
-            data = (response[dataKey] as? String)?.fromBase64ToData()
+        if data == nil, let stringValue = response[dataKey] as? String {
+            data = stringValue.fromBase64ToData() ?? stringValue.data(using: .utf8)
         }
         
         return (httpURLResponse, data, nil)
@@ -241,7 +240,7 @@ open class Interaction {
                 let json = try JSONSerialization.jsonObject(with: bodyValue, options: .mutableContainers)
                 requestJson[bodyKey] = json
             } catch {
-                requestJson[bodyKey] = bodyValue.base64EncodedString()
+                requestJson[bodyKey] = String(data: bodyValue, encoding: .utf8) ?? bodyValue.base64EncodedString()
             }
         }
         
@@ -262,10 +261,9 @@ open class Interaction {
         
         if let body = body {
             do {
-                let json = try JSONSerialization.jsonObject(with: body, options: .mutableContainers)
-                response[bodyKey] = json
+                response[bodyKey] = try JSONSerialization.jsonObject(with: body, options: .mutableContainers)
             } catch {
-                response[dataKey] = body.base64EncodedString()
+                response[dataKey] = String(data: body, encoding: .utf8) ?? body.base64EncodedString()
             }
         }
     }

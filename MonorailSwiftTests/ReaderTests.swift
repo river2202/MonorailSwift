@@ -52,12 +52,24 @@ class ReaderTests: XCTestCase {
         }
     }
     
-    
     func testReadeArrayResponse() {
         let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderArrayResponseTests.json")!)
         
        let response = reader.interactions[0].responseObjects()
         XCTAssertEqual(response.0?.statusCode, 200)
         XCTAssertNotNil(response.1)
+    }
+    
+    func testReadeStringValueBoday() {
+        let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderStringBodyTests.json")!)
+        
+        let response = reader.interactions[0].responseObjects()
+        XCTAssertEqual(response.0?.statusCode, 200)
+        XCTAssertNotNil(response.1)
+        if let data = response.1 {
+            let str = String(data: data, encoding: .utf8)
+            print(str)
+            XCTAssertEqual(str, "StringValue")
+        }
     }
 }
