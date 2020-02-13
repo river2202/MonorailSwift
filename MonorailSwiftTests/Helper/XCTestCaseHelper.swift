@@ -1,6 +1,12 @@
 import XCTest
 import MonorailSwift
 
+#if MOCK_TEST
+private var mockTest = true
+#else
+private var mockTest = false
+#endif
+
 extension XCTestCase {
     public func waitUntil(message: String? = nil, timeout: TimeInterval = 1, file: StaticString = #file, line: UInt = #line, action: @escaping (@escaping () -> Void) -> Void) {
 
@@ -33,11 +39,21 @@ extension XCTestCase {
     }
     
     var isMockTest: Bool {
-        #if MOCK_TEST
-        return true
-        #else
-        return true
-        #endif
+        return mockTest
+    }
+    
+    @discardableResult
+    func enableMockTest() -> Self {
+        mockTest = true
+        setupMonorail()
+        return self
+    }
+    
+    @discardableResult
+    func disableMockTest() -> Self {
+        mockTest =  false
+        setupMonorail()
+        return self
     }
     
     func setupMonorail() {
@@ -45,16 +61,25 @@ extension XCTestCase {
         Monorail.writeLog(to: name)
         
         if isMockTest {
-            guard let stubFile = StubManager.load(name+".json") else {
+            guard let stubFile = StubManager.load(name+".json", hostBundle: Bundle(for: Self.self)) else {
                 print("No stub file for test \(name).")
+                Monorail.disableReader()
                 return
             }
             
             Monorail.enableReader(from: stubFile)
+        } else {
+            Monorail.disableReader()
         }
     }
     
     override open func setUp() {
+        #if MOCK_TEST
+        mockTest = true
+        #else
+        mockTest = false
+        #endif
+        
         setupMonorail()
     }
 }

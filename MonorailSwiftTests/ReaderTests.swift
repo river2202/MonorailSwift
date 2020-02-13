@@ -13,9 +13,11 @@ class ReaderTests: XCTestCase {
     
     func   testReaderFileAndIDReference() {
         
+        let hostBundle = Bundle(for: Self.self)
+        
         let testData = [
-            StubManager.load("MonorailTest/Monorail-reference-test.json")!,
-            StubManager.load("MonorailTest/subfolder/Monorail-reference-subfolder-test.json")
+            StubManager.load("MonorailTest/Monorail-reference-test.json", hostBundle: hostBundle),
+            StubManager.load("MonorailTest/subfolder/Monorail-reference-subfolder-test.json", hostBundle: hostBundle)
         ]
         
         for monorailFile in testData {
@@ -53,7 +55,7 @@ class ReaderTests: XCTestCase {
     }
     
     func testReadeArrayResponse() {
-        let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderArrayResponseTests.json")!)
+        let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderArrayResponseTests.json", hostBundle: Bundle(for: Self.self))!)
         
        let response = reader.interactions[0].responseObjects()
         XCTAssertEqual(response.0?.statusCode, 200)
@@ -61,7 +63,7 @@ class ReaderTests: XCTestCase {
     }
     
     func testReadeStringValueBoday() {
-        let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderStringBodyTests.json")!)
+        let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderStringBodyTests.json", hostBundle: Bundle(for: Self.self))!)
         
         let response = reader.interactions[0].responseObjects()
         XCTAssertEqual(response.0?.statusCode, 200)

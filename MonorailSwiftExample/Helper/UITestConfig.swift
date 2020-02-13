@@ -19,6 +19,7 @@ extension AppDelegate {
       case .mockUITest:
         if let envMonorailFileName = envMonorailFileName, let logFileUrl = StubManager.load("UITest/\(envMonorailFileName).json") {
           Monorail.enableReader(from: logFileUrl)
+          _ = Monorail.writeLog(to: envUiTestName)
         }
         
       case .integrationUITest:

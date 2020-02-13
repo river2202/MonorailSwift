@@ -235,7 +235,13 @@ open class Interaction {
             requestJson[headersKey] = headersValue
         }
         
-        requestJson[bodyKey] = body
+        if let body = body {
+            if let bodyContent = getBodyContent(body: body) {
+                requestJson[bodyKey] = bodyContent
+            } else {
+                requestJson[dataKey] = body.base64EncodedString()
+            }
+        }
         
         if let uploadData = uploadData {
             requestJson[dataKey] = uploadData.base64EncodedString()
@@ -253,12 +259,16 @@ open class Interaction {
         }
         
         if let body = body {
-            do {
-                response[bodyKey] = try JSONSerialization.jsonObject(with: body, options: .mutableContainers)
-            } catch {
-                response[dataKey] = String(data: body, encoding: .utf8) ?? body.base64EncodedString()
+            if let bodyContent = getBodyContent(body: body) {
+                response[bodyKey] = bodyContent
+            } else {
+                response[dataKey] = body.base64EncodedString()
             }
         }
+    }
+    
+    private func getBodyContent(body: Data) -> Any? {
+        return (try? JSONSerialization.jsonObject(with: body, options: .mutableContainers)) ?? String(data: body, encoding: .utf8)
     }
     
     public func payload() -> [String: Any] {

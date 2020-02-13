@@ -1,7 +1,7 @@
 import Foundation
 
 open class StubManager {
-    public static func load(_ filename: String, bundleName: String? = "Stubs", hostBundle: Bundle? = Bundle(for: StubManager.self)) -> URL? {
+    public static func load(_ filename: String, bundleName: String? = "Stubs", hostBundle: Bundle? = Bundle.main) -> URL? {
         guard let hostBundle = hostBundle  else {
             return nil
         }

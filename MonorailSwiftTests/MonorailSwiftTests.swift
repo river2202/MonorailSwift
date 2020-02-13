@@ -39,5 +39,29 @@ class MonorailSwiftTests: XCTestCase {
     }
     
     
+    func testLogPostRequest() {        
+        let mockLogger = MockOutput()
+        Monorail.enableLogger(output: mockLogger)
+        
+        waitUntil(message: "Call httpbin.org/post", timeout: 3) { done in
+            let url = URL(string: "https://httpbin.org/post")!
+            let body = "10".data(using: .utf8)
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.httpBody = body
+            
+            let dataTask = URLSession.shared.dataTask(with: request) { (data, _, _) in
+                XCTAssertNotNil(data, "No data was downloaded.")
+                XCTAssertEqual(mockLogger.logs.count, 2)
+                XCTAssertTrue(mockLogger.logs.first?.contains("POST https://httpbin.org/post") ?? false)
+                XCTAssertTrue(mockLogger.logs.last?.contains("Status: 200") ?? false)
+                done()
+            }
+            dataTask.resume()
+        }
+    }
+    
+    
     
 }

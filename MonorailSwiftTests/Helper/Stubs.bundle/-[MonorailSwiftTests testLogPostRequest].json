@@ -1,0 +1,52 @@
+{
+  "startTime" : "2020-02-14T10:20:45.785+11:00",
+  "interactions" : [
+    {
+      "timeStamp" : "2020-02-14T10:20:46.826+11:00",
+      "request" : {
+        "method" : "POST",
+        "headers" : {
+          "Content-Length" : "2"
+        },
+        "body" : "10",
+        "path" : "https:\/\/httpbin.org\/post"
+      },
+      "response" : {
+        "body" : {
+          "json" : null,
+          "origin" : "49.255.37.170",
+          "url" : "https:\/\/httpbin.org\/post",
+          "data" : "",
+          "headers" : {
+            "Accept" : "*\/*",
+            "Accept-Encoding" : "gzip, deflate, br",
+            "X-Amzn-Trace-Id" : "Root=1-5e45d9ce-799832e7afc760a84f507fc1",
+            "Content-Type" : "application\/x-www-form-urlencoded",
+            "Host" : "httpbin.org",
+            "Content-Length" : "2",
+            "User-Agent" : "xctest\/15702 CFNetwork\/1121.2.1 Darwin\/19.3.0",
+            "Accept-Language" : "en-us"
+          },
+          "args" : {
+
+          },
+          "files" : {
+
+          },
+          "form" : {
+            "10" : ""
+          }
+        },
+        "headers" : {
+          "Date" : "Thu, 13 Feb 2020 23:20:46 GMT",
+          "Access-Control-Allow-Origin" : "*",
+          "Content-Type" : "application\/json",
+          "Content-Length" : "533",
+          "Server" : "gunicorn\/19.9.0",
+          "access-control-allow-credentials" : "true"
+        },
+        "status" : 200
+      }
+    }
+  ]
+}
