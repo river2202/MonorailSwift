@@ -18,7 +18,7 @@
           "Content-Length": "5193"
         },
         "status": 200,
-        "data": "StringValue"
+        "body": "StringValue"
       },
       "timeStamp": "2018-11-02T10:02:33.753+11:00",
       "id": "1"

@@ -67,9 +67,7 @@ class ReaderTests: XCTestCase {
         XCTAssertEqual(response.0?.statusCode, 200)
         XCTAssertNotNil(response.1)
         if let data = response.1 {
-            let str = String(data: data, encoding: .utf8)
-            print(str)
-            XCTAssertEqual(str, "StringValue")
+            XCTAssertEqual(String(data: data, encoding: .utf8), "StringValue")
         }
     }
 }

@@ -216,12 +216,11 @@ open class Interaction {
         var data: Data? = nil
         
         if let jsonObject = response[bodyKey] {
-            data = try? JSONSerialization.data(withJSONObject: jsonObject, options: [])
+            data = data ?? (jsonObject as? String)?.data(using: .utf8)
+            data = data ?? (try? JSONSerialization.data(withJSONObject: jsonObject, options: []))
         }
         
-        if data == nil, let stringValue = response[dataKey] as? String {
-            data = stringValue.fromBase64ToData() ?? stringValue.data(using: .utf8)
-        }
+        data = data ?? (response[dataKey] as? String)?.fromBase64ToData()
         
         return (httpURLResponse, data, nil)
     }
@@ -235,14 +234,8 @@ open class Interaction {
         if let headersValue = headers, !headersValue.isEmpty {
             requestJson[headersKey] = headersValue
         }
-        if let bodyValue = body {
-            do {
-                let json = try JSONSerialization.jsonObject(with: bodyValue, options: .mutableContainers)
-                requestJson[bodyKey] = json
-            } catch {
-                requestJson[bodyKey] = String(data: bodyValue, encoding: .utf8) ?? bodyValue.base64EncodedString()
-            }
-        }
+        
+        requestJson[bodyKey] = body
         
         if let uploadData = uploadData {
             requestJson[dataKey] = uploadData.base64EncodedString()
