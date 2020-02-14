@@ -2,13 +2,12 @@ import Foundation
 
 protocol APIServiceInterceptor {
     func shouldSkip(_ request: URLRequest) -> Bool
-    func intercept(_ request: URLRequest) -> (interceptResponse: Bool, URLResponse?, Data?, Error?)
+    func intercept(_ request: URLRequest) -> (interceptResponse: Bool, URLResponse?, Data?, Error?, TimeInterval?)
     
     func log(_ error: Error, request: URLRequest)
     func log(_ request: URLRequest)
     func log(_ response: URLResponse, data: Data?, request: URLRequest)
     
-    var delay: TimeInterval { get }
     var cacheStoragePolicy: URLCache.StoragePolicy { get }
     var bypassSslCheck: Bool { get }
 }
@@ -22,7 +21,6 @@ extension APIServiceInterceptor {
     func log(_ error: Error, request: URLRequest) {}
     func log(_ request: URLRequest) {}
     func log(_ response: URLResponse, data: Data?, request: URLRequest) {}
-    var delay: TimeInterval { return 0 }
     var cacheStoragePolicy: URLCache.StoragePolicy { return .allowed }
     
     var bypassSslCheck: Bool { return true }
@@ -63,7 +61,7 @@ class URLInterceptor: URLProtocol, URLSessionDelegate {
         guard let interceptor = URLInterceptor.interceptor else { return }
         
         interceptor.log(request)
-        if case (true, let response, let data, let error) = interceptor.intercept(request) {
+        if case (true, let response, let data, let error, let delay) = interceptor.intercept(request) {
             guard let response = response else {
                 let error = error ?? MonorailError.noResponseFound
                 interceptor.log(error, request: self.request)
@@ -71,7 +69,7 @@ class URLInterceptor: URLProtocol, URLSessionDelegate {
                 return
             }
             
-            DispatchQueue.global().asyncAfter(deadline: .now() + interceptor.delay) {
+            DispatchQueue.global().asyncAfter(deadline: .now() + (delay ?? 0)) {
                 self.client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: interceptor.cacheStoragePolicy)
                 if let data = data {
                     self.client?.urlProtocol(self, didLoad: data)

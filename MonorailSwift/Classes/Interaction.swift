@@ -38,6 +38,10 @@ open class Interaction {
     private(set) var timeElapsed: TimeInterval?
     private(set) var timeElapsedEnabled: Bool = false
     
+    private var delay: TimeInterval? {
+        return timeElapsedEnabled ? timeElapsed : nil
+    }
+    
     // temp variables
     var consumed = false
     
@@ -204,13 +208,13 @@ open class Interaction {
         return method == self.method && path.hasSuffix(pactPath)
     }
     
-    public func responseObjects() -> (HTTPURLResponse?, Data?, Error?) {
+    public func responseObjects() -> (HTTPURLResponse?, Data?, Error?, TimeInterval?) {
         guard let path = path, let url = URL(string: path), let statusCode = response[responseStatusKey] as? Int else {
-            return (nil, nil, error)
+            return (nil, nil, error, nil)
         }
         
         guard let httpURLResponse = HTTPURLResponse(url: url, statusCode: statusCode, httpVersion: nil, headerFields: response[headersKey] as? [String: String]) else {
-            return (nil, nil, error)
+            return (nil, nil, error, delay)
         }
         
         var data: Data? = nil
@@ -222,7 +226,7 @@ open class Interaction {
         
         data = data ?? (response[dataKey] as? String)?.fromBase64ToData()
         
-        return (httpURLResponse, data, nil)
+        return (httpURLResponse, data, nil, delay)
     }
     
     private func setRequest(method: String,

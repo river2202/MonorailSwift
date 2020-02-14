@@ -139,7 +139,7 @@ open class APIServiceReader {
         return bestMatch
     }
     
-    func getResponseObject(for request: URLRequest?) ->  (HTTPURLResponse?, Data?, Error?)? {
+    func getResponseObject(for request: URLRequest?) ->  (HTTPURLResponse?, Data?, Error?, TimeInterval?)? {
         return getResponse(for: request)?.responseObjects()
     }
     
