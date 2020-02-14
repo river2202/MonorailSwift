@@ -26,5 +26,5 @@ Works out of box with iOS build in api and most of 3rd SDK to print the network 
   s.ios.deployment_target = '9.0'
   s.swift_version = '5.0'
 
-  s.source_files = 'MonorailSwift/Classes/**/*'
+  s.source_files = 'MonorailSwift/Classes/**/*', 'MonorailSwiftTools/MonorailSwiftTools.h'
 end

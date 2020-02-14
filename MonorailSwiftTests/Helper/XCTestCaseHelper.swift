@@ -7,6 +7,9 @@ private var mockTest = true
 private var mockTest = false
 #endif
 
+private class BundleLocator {}
+let hostBundle = Bundle(for: BundleLocator.self)
+
 extension XCTestCase {
     public func waitUntil(message: String? = nil, timeout: TimeInterval = 1, file: StaticString = #file, line: UInt = #line, action: @escaping (@escaping () -> Void) -> Void) {
 
@@ -61,7 +64,7 @@ extension XCTestCase {
         Monorail.writeLog(to: name)
         
         if isMockTest {
-            guard let stubFile = StubManager.load(name+".json", hostBundle: Bundle(for: Self.self)) else {
+            guard let stubFile = StubManager.load(name+".json", hostBundle: hostBundle) else {
                 print("No stub file for test \(name).")
                 Monorail.disableReader()
                 return
