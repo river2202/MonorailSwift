@@ -81,8 +81,8 @@ open class Monorail {
     }
     
     @discardableResult
-    public static func writeLog(to fileName: String? = nil, directory: String? = nil, delegate: APIServiceWriterDelegate? = nil) -> URL? {
-        Monorail.shared.writer = APIServiceWriter(delegate: delegate)
+    public static func writeLog(to fileName: String? = nil, directory: String? = nil, delegate: APIServiceWriterDelegate? = nil, secretKeys: [String] = secretsKeys, secretMask: @escaping MaskFunction = {(_, _) in "****"}) -> URL? {
+        Monorail.shared.writer = APIServiceWriter(delegate: delegate, secretKeys: secretKeys, secretMask: secretMask)
         Monorail.shared.writer?.startLogging(to: fileName, directory: directory)
         return Monorail.shared.writer?.logFilePath
     }
@@ -113,6 +113,7 @@ open class Monorail {
     }
     
     public static let shared = Monorail()
+    public static var secretsKeys = ["Authorization"]
 }
 
 extension Monorail: MonorailDebugOutput {}

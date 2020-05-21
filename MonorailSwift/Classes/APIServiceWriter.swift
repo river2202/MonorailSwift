@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol APIServiceWriterDelegate: class {
-    func savingCosumerVariables(_ interaction: Interaction, writer: APIServiceWriter)
+    func beforeWriteToFile(_ interaction: Interaction, writer: APIServiceWriter)
     func getInteractionId(path: String?, existingIds: [String]) -> String?
 }
 
@@ -26,12 +26,15 @@ open class APIServiceWriter: APIServiceReader {
     private(set) var logFilePath: URL?
     private weak var delegate: APIServiceWriterDelegate?
     let defaultMonorailFileName = "Monorail"
+    private let secretKeys: [String]
+    private let secretMask: MaskFunction
     
-    init(delegate: APIServiceWriterDelegate?) {
+    init(delegate: APIServiceWriterDelegate?, secretKeys: [String] = [], secretMask: @escaping MaskFunction) {
+        self.secretKeys = secretKeys
+        self.secretMask = secretMask
         super.init()
         self.delegate = delegate
     }
-    
     
     func log(request: URLRequest?, uploadData: Data? = nil, response: URLResponse?, data: Data? = nil) {
         guard let request = request, logFilePath != nil else {
@@ -40,7 +43,8 @@ open class APIServiceWriter: APIServiceReader {
         
         let interaction = Interaction(request: request, uploadData: uploadData, response: response, data: data, baseUrl: consumerVariables[apiServiceBaseUrlKey] as? String, timeStamp: Date())
         
-        delegate?.savingCosumerVariables(interaction, writer: self)
+        interaction.maskSecrets(secretKeys: secretKeys, mask: secretMask)
+        delegate?.beforeWriteToFile(interaction, writer: self)
         interactions.append(interaction)
         save()
     }
@@ -52,7 +56,8 @@ open class APIServiceWriter: APIServiceReader {
         
         let interaction = Interaction(request: request, uploadData: uploadData, error: error, baseUrl: consumerVariables[apiServiceBaseUrlKey] as? String, timeStamp: Date())
         
-        delegate?.savingCosumerVariables(interaction, writer: self)
+        interaction.maskSecrets(secretKeys: secretKeys, mask: secretMask)
+        delegate?.beforeWriteToFile(interaction, writer: self)
         interactions.append(interaction)
         save()
     }

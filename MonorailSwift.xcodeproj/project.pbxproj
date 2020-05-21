@@ -39,6 +39,7 @@
 		9185F40A2287E2320080D5A9 /* UIViewControllerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185F40122865C740080D5A9 /* UIViewControllerCreator.swift */; };
 		918E859E228834FE00F5AC05 /* InteractionViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185F4082287C2040080D5A9 /* InteractionViewer.swift */; };
 		9197940E23B1622300B3E36A /* NSDate+TimeMachine.h in Headers */ = {isa = PBXBuildFile; fileRef = 912278972261A814008C53C7 /* NSDate+TimeMachine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		919FC837247616FD004CBE4A /* WriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FC836247616FD004CBE4A /* WriterTests.swift */; };
 		91B392C221A9FAFF00C71AEB /* TimeMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B392C121A9FAFF00C71AEB /* TimeMachine.swift */; };
 		91C4C9DC2156632A001F6B7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9DB2156632A001F6B7C /* AppDelegate.swift */; };
 		91C4C9DE2156632A001F6B7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4C9DD2156632A001F6B7C /* ViewController.swift */; };
@@ -183,6 +184,7 @@
 		9185F40122865C740080D5A9 /* UIViewControllerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerCreator.swift; sourceTree = "<group>"; };
 		9185F40622867D2A0080D5A9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9185F4082287C2040080D5A9 /* InteractionViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionViewer.swift; sourceTree = "<group>"; };
+		919FC836247616FD004CBE4A /* WriterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriterTests.swift; sourceTree = "<group>"; };
 		91B392C121A9FAFF00C71AEB /* TimeMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMachine.swift; sourceTree = "<group>"; };
 		91C4C9D82156632A001F6B7C /* MonorailSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonorailSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C4C9DB2156632A001F6B7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 				91CF88F9216E9694003A351C /* MonorailSwiftTests.swift */,
 				912048FF22538551004A5E69 /* MonorailTimeMachineTests.swift */,
 				913E98EA21B39F5E006569E2 /* ReaderTests.swift */,
+				919FC836247616FD004CBE4A /* WriterTests.swift */,
 				913E98E821B39ED5006569E2 /* LoggerTests.swift */,
 				91CF88FB216E9694003A351C /* Info.plist */,
 			);
@@ -895,6 +898,7 @@
 				913E98EB21B39F5E006569E2 /* ReaderTests.swift in Sources */,
 				F8EC9ED6226EBAE200CDC945 /* StubManager.swift in Sources */,
 				9185F3F9226CB1ED0080D5A9 /* TinyNetworking.swift in Sources */,
+				919FC837247616FD004CBE4A /* WriterTests.swift in Sources */,
 				9120490022538551004A5E69 /* MonorailTimeMachineTests.swift in Sources */,
 				91CF88FA216E9694003A351C /* MonorailSwiftTests.swift in Sources */,
 				9185F3FA226CB2360080D5A9 /* StackOverflowResponse.swift in Sources */,

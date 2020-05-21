@@ -2,6 +2,7 @@ import Foundation
 
 private let fileRefKey = "fileReference"
 let timeStampFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+public typealias MaskFunction = (_ key: String, _ value: String) -> String
 
 open class Interaction {
     private let requestKey = "request"
@@ -310,6 +311,11 @@ open class Interaction {
         
         return payload
     }
+    
+    func maskSecrets(secretKeys: [String], mask: MaskFunction) -> Void {
+        request.maskSecrets(keys: secretKeys, mask: mask)
+        response.maskSecrets(keys: secretKeys, mask: mask)
+    }
 }
 
 private func loadJsonFromFile(_ filePath: String?, externalFileRootPath: String? = nil) -> [String: Any]? {
@@ -344,6 +350,17 @@ extension Dictionary where Key == String, Value == Any {
         }
 
         return self
+    }
+    
+    mutating func maskSecrets(keys: [String], mask: MaskFunction) -> Void {
+        for (key, value) in self {
+            if keys.contains(key), let value = value as? String {
+                self[key] = mask(key, value)
+            } else if var value = value as? [String: Any] {
+                value.maskSecrets(keys: keys, mask: mask)
+                self[key] = value
+            }
+        }
     }
 }
 
