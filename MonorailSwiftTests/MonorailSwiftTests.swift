@@ -19,6 +19,25 @@ class MonorailSwiftTests: XCTestCase {
             dataTask.resume()
         }
     }
+    
+    func testLogGetRequest204() {
+        let mockLogger = MockOutput()
+        Monorail.enableLogger(output: mockLogger)
+        
+        waitUntil(message: "Call httpbin.org/status/204", timeout: 3) { done in
+            let url = URL(string: "https://httpbin.org//status/204")!
+            let dataTask = URLSession.shared.dataTask(with: url) { (data, _, _) in
+                XCTAssertEqual(data?.count, 0, "0 byte data for 204.")
+                XCTAssertEqual(mockLogger.logs.count, 2)
+                XCTAssertTrue(mockLogger.logs.first?.contains("GET https://httpbin.org//status/204") ?? false)
+                
+                XCTAssertTrue(mockLogger.logs.last?.contains("Status: 204 - No Content") ?? false)
+                done()
+            }
+            dataTask.resume()
+        }
+    }
+    
 
 
     func testLogGetRequest404() {
@@ -26,12 +45,12 @@ class MonorailSwiftTests: XCTestCase {
         Monorail.enableLogger(output: mockLogger)
         
         waitUntil(message: "Call httpbin.com/get", timeout: 3) { done in
-            let url = URL(string: "https://httpbin.com/get")!
+            let url = URL(string: "https://httpbinsdfasdfasfsf.com/get")!
             let dataTask = URLSession.shared.dataTask(with: url) { (data, _, _) in
                 XCTAssertNil(data, "No data for 404.")
                 XCTAssertEqual(mockLogger.logs.count, 2)
-                XCTAssertTrue(mockLogger.logs.first?.contains("GET https://httpbin.com/get") ?? false)
-                XCTAssertTrue(mockLogger.logs.last?.contains("Error: -1003") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("GET https://httpbinsdfasdfasfsf.com/get") ?? false)
+                XCTAssertTrue(mockLogger.logs.last?.contains("Error: -1003") ?? false, "NSURLErrorCannotFindHost")
                 done()
             }
             dataTask.resume()
