@@ -6,13 +6,13 @@
 # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
 #
 # https://guides.cocoapods.org/making/making-a-cocoapod.html
-# git tag '0.0.1'
+# git tag '1.3.0'
 # git push --tags
 # pod trunk push MonorailSwiftTools.podspec --allow-warnings
 
 Pod::Spec.new do |s|
   s.name             = 'MonorailSwiftTools'
-  s.version          = '1.2.2'
+  s.version          = '1.3.0'
   s.summary          = 'MonorailSwiftTools is a test tool to log/write/replay network interactions.'
 
   s.description      = <<-DESC
@@ -29,5 +29,5 @@ Works out of box with iOS build in api and most of 3rd SDK to print the network 
 
   s.source_files = 'MonorailSwift/Helper/**/*'
   
-  s.dependency 'MonorailSwift', '~> 1.2.2'
+  s.dependency 'MonorailSwift', '~> 1.3.0'
 end
