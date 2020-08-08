@@ -15,8 +15,8 @@ class InteractionViewer: UIViewController {
     
     override func viewDidLoad() {
         let textView = UITextView(frame: view.frame)
-        textView.backgroundColor = UIColor.white
         view.addSubview(textView)
+        textView.isEditable = false
         
         if let pretty = try? JSONSerialization.data(withJSONObject: interaction.payload(), options: [.prettyPrinted]),
             let content = String(data: pretty, encoding: .utf8) {

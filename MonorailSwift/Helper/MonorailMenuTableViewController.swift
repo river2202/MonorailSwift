@@ -3,15 +3,15 @@ import MonorailSwift
 
 public extension MonorailHelper {
     
-    enum MenuItemType {
-        case action(subtitle: () -> String?, action: (UIViewController) -> Void)
-        case toggle(isOn: () -> Bool, toggleAction: (UIViewController, Bool) -> Void)
-        case menu(subtitle: () -> String?, openMenu: (UIViewController) -> Void)
+    public enum MenuItemType {
+        case action(subtitle: () -> String?, action: (ActionMenuTableViewController) -> Void)
+        case toggle(isOn: () -> Bool, subtitle: () -> String?, toggleAction: (ActionMenuTableViewController, Bool) -> Void)
+        case menu(subtitle: () -> String?, openMenu: (ActionMenuTableViewController) -> Void)
         case info
         
         var tableViewCellAccessoryType: UITableViewCell.AccessoryType {
             switch self {
-            case let .toggle(isOn, _):
+            case let .toggle(isOn, _, _):
                 return isOn() ? .checkmark : .none
             case .menu:
                 return .disclosureIndicator
@@ -23,15 +23,20 @@ public extension MonorailHelper {
     }
     
     struct MenuItem {
+        public init(name: String, type: MonorailHelper.MenuItemType) {
+            self.name = name
+            self.type = type
+        }
+        
         let name: String
         let type: MenuItemType
         let accessibilityIdentifer: String? = nil
         
-        func didSelect(vc: UIViewController) {
+        func didSelect(vc: ActionMenuTableViewController) {
             switch type {
             case let .menu(_, action), let .action(_, action):
                 action(vc)
-            case let .toggle(isOn, toggleAction):
+            case let .toggle(isOn, _, toggleAction):
                 toggleAction(vc, isOn())
             default:
                 break
@@ -40,7 +45,7 @@ public extension MonorailHelper {
         
         var subtitle: String? {
             switch type {
-            case let .menu(getSubtitle, _), let .action(getSubtitle, _):
+            case let .menu(getSubtitle, _), let .action(getSubtitle, _), let .toggle(_, getSubtitle, _):
                 return getSubtitle()
             default:
                 return nil
@@ -48,12 +53,12 @@ public extension MonorailHelper {
         }
     }
     
-    class ActionMenuTableViewController: UITableViewController {
-        typealias TapBtnFunc = () -> Void
-        var doneTapped: TapBtnFunc?
+    public class ActionMenuTableViewController: UITableViewController {
+        public typealias TapBtnFunc = () -> Void
+        public var doneTapped: TapBtnFunc?
         var actions: [MenuItem]
         
-        init(actions: [MenuItem], doneTapped: TapBtnFunc? = nil) {
+        public init(actions: [MenuItem], doneTapped: TapBtnFunc? = nil) {
             self.actions = actions
             self.doneTapped = doneTapped
             super.init(style: .plain)
@@ -66,9 +71,10 @@ public extension MonorailHelper {
         override open func viewDidLoad() {
             super.viewDidLoad()
             
-            let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(didTapDone))
-            
-            navigationItem.rightBarButtonItems = [doneButton]
+            if doneTapped != nil {
+                let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(didTapDone))
+                navigationItem.rightBarButtonItems = [doneButton]
+            }
         }
         
         // MARK: - Table view data source
@@ -98,6 +104,13 @@ public extension MonorailHelper {
         
         @objc func didTapDone(sender: AnyObject) {
             doneTapped?()
+        }
+        
+        public func updateMonorailAction(items: [MenuItem]) {
+            DispatchQueue.main.async {
+                self.actions = items
+                self.tableView.reloadData()
+            }
         }
     }
 

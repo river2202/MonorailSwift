@@ -182,4 +182,18 @@ class LoggerTests: XCTestCase {
         dataTask.resume()
         wait()
     }
+    
+    func testGetLog() throws {
+        let data: [(String?, TimeInterval?, String, String)] = [
+            (nil, nil, "", "empty as both nil"),
+            ("a", 10, "ID: a\nTimeElapsed: 10.0s\n", "show both"),
+            (nil, 10, "TimeElapsed: 10.0s\n", "show only time"),
+            ("a", nil, "ID: a\n", "show only id"),
+        ]
+        
+        data.forEach { (id, timeElapsed, expected, message) in
+            XCTAssertEqual(APIServiceLogger.getLog(id: id, timeElapsed: timeElapsed), expected, message)
+        }
+    }
+
 }

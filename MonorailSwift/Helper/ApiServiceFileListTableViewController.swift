@@ -8,14 +8,12 @@ open class ApiServiceFileListTableViewController: UITableViewController {
     
     private var sections = [FileListSection]()
     private var current = [URL]()
+    private var done: () -> Void
 
-    init(sections: [FileListSection]) {
+    init(sections: [FileListSection], done: @escaping () -> Void) {
+        self.done = done
         super.init(style: .plain)
         self.sections = sections
-//        self.current = current
-//        self.onFileSelected = onFileSelected
-//        self.onEdit = onEdit
-//        self.editButtonTitle = editButtonTitle
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -78,7 +76,7 @@ open class ApiServiceFileListTableViewController: UITableViewController {
         Monorail.enableReader(from: [fileUrl])
         alert(message: "Reader enabled") {
             self.navigationController?.popViewController(animated: true)
-            MonorailHelper.updateMonorailActionVc()
+            self.done()
         }
     }
     

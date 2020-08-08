@@ -10,7 +10,7 @@ public final class APIServiceLogger {
     
     private let divider = "---------------------\n"
     
-    public func log(_ error: Error) {
+    public func log(_ error: Error, timeElapsed: TimeInterval? = nil, id: String? = nil) {
         var logString = divider
         defer { output?.log(logString) }
         
@@ -26,11 +26,11 @@ public final class APIServiceLogger {
         }
     }
     
-    public func log(_ request: URLRequest, uploadData: Data? = nil) {
-        logRequest(url: request.url, method: request.httpMethod, header: request.allHTTPHeaderFields as [String : AnyObject]?, data: uploadData ?? request.getHttpBodyData())
+    public func log(_ request: URLRequest, uploadData: Data? = nil, timeElapsed: TimeInterval? = nil, id: String? = nil) {
+        logRequest(url: request.url, method: request.httpMethod, header: request.allHTTPHeaderFields as [String : AnyObject]?, data: uploadData ?? request.getHttpBodyData(), id: id)
     }
     
-    public func logRequest(url: URL?, method: String?, header: [String: AnyObject]?, data: Data? ) {
+    public func logRequest(url: URL?, method: String?, header: [String: AnyObject]?, data: Data?, id: String? = nil) {
         var logString = divider
         defer { output?.log(logString) }
         
@@ -39,11 +39,12 @@ public final class APIServiceLogger {
         logString += getDataString(data)
     }
     
-    public func log(_ response: URLResponse?, data: Data? = nil) {
+    public func log(_ response: URLResponse?, data: Data? = nil, request: URLRequest? = nil, timeElapsed: TimeInterval? = nil, id: String? = nil) {
         var logString = divider
         defer { output?.log(logString) }
 
-        logString += "Response: \(response?.url?.absoluteString ?? "nil")\n"
+        logString += "Response: \(request?.httpMethod ?? "?") \(response?.url?.absoluteString ?? "nil")\n"
+        logString += Self.getLog(id: id, timeElapsed: timeElapsed)
         
         if let httpResponse = response as? HTTPURLResponse {
             let localisedStatus = HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode).capitalized
@@ -55,6 +56,10 @@ public final class APIServiceLogger {
         }
         
         logString += getDataString(data)
+    }
+    
+    static func getLog(id: String?, timeElapsed: TimeInterval?) -> String {
+        return [id?.add(prefix: "ID: ", surfix: "\n"), timeElapsed?.description.add(prefix: "TimeElapsed: ", surfix: "s\n")].compactMap { $0 }.joined(separator: "")
     }
     
     private func getDataString(_ data: Data?) -> String {
@@ -116,3 +121,9 @@ extension URLRequest {
     }
 }
 
+extension String {
+    
+    func add(prefix: String? = nil, surfix: String? = nil) -> String {
+        return [prefix, self, surfix].compactMap { $0 }.joined(separator: "")
+    }
+}

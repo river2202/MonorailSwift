@@ -120,7 +120,8 @@ open class Interaction {
          baseUrl: String? = nil,
          timeStamp: Date? = nil,
          timeElapsed: TimeInterval? = nil,
-         timeElapsedEnabled: Bool = false
+         timeElapsedEnabled: Bool = false,
+         id: String? = nil
     ) {
         self.baseUrl = baseUrl
         self.timeStamp = timeStamp
@@ -135,6 +136,7 @@ open class Interaction {
         }
         
         self.error = error
+        self.id = id
     }
     
     var requestHeader: [String: Any]? {

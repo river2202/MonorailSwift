@@ -67,7 +67,7 @@ open class Monorail {
     open var bypassSslCheck: Bool = true
     var loggerFilter: MonorailInteractionFilter?
     
-    init() {
+    private init() {
         URLInterceptor.enable(interceptor: self)
     }
     
@@ -135,7 +135,7 @@ extension Monorail: APIServiceInterceptor {
         }
     }
     
-    func log(_ error: Error, request: URLRequest) {
+    func log(_ error: Error, request: URLRequest, timeElapsed: TimeInterval? = nil, id: String? = nil) {
         if !request.filtered(by: loggerFilter) {
             logger?.log(error)
         }
@@ -143,18 +143,18 @@ extension Monorail: APIServiceInterceptor {
         writer?.log(request: request, error: error as NSError)
     }
 
-    func log(_ request: URLRequest) {
+    func log(_ request: URLRequest, id: String? = nil) {
         if !request.filtered(by: loggerFilter) {
             logger?.log(request)
         }
     }
 
-    func log(_ response: URLResponse, data: Data?, request: URLRequest) {
+    func log(_ response: URLResponse, data: Data?, request: URLRequest, timeElapsed: TimeInterval? = nil, id: String? = nil) {
         if !request.filtered(by: loggerFilter) {
-            logger?.log(response, data: data)
+            logger?.log(response, data: data, request: request)
         }
         
-        writer?.log(request: request, response: response, data: data)
+        writer?.log(request: request, response: response, data: data,  id: id, timeElapsed: timeElapsed)
     }
     
 }

@@ -25,38 +25,14 @@ open class MonorailHelper {
     
     private static var naviVc = UINavigationController()
     
-//    public static func getMonorailReaderFileSelectorVc() -> ApiServiceFileListTableViewController {
-//
-//        let sections = MonorailFile.FileType.allType.map { ($0.name, $0.fileList) }
-//
-//        return ApiServiceFileListTableViewController(sections: sections, current: [], onFileSelected: { files, vc in
-//
-//            vc.alert(message: "Reader enabled") {
-//                vc.navigationController?.popViewController(animated: true)
-//                updateMonorailActionVc()
-//            }
-//        })
-//    }
-    
-    public static func getMonorailFileSelectorVc() -> ApiServiceFileListTableViewController {
+    public static func getMonorailFileSelectorVc(done: @escaping () -> Void) -> ApiServiceFileListTableViewController {
         
         let sections = MonorailFile.FileType.allType.map { ($0.name, $0.fileList) }
         
-        return ApiServiceFileListTableViewController(sections: sections)
+        return ApiServiceFileListTableViewController(sections: sections, done: done)
     }
     
-    public static var monorailActionsVc: ActionMenuTableViewController = {
-        return ActionMenuTableViewController(actions: monorailToolMenuActons)
-    }()
-    
-    static func updateMonorailActionVc() {
-        DispatchQueue.main.async {
-            monorailActionsVc.actions = monorailToolMenuActons
-            monorailActionsVc.tableView.reloadData()
-        }
-    }
-    
-    static var monorailToolMenuActons: [MenuItem] {
+    public static var monorailToolMenuActons: [MenuItem] {
         var menu: [MenuItem] = []
         
         menu.append(contentsOf: [
@@ -67,7 +43,9 @@ open class MonorailHelper {
                         return Monorail.shared.reader?.fileName
                 },
                     openMenu: { vc in
-                        vc.navigationController?.pushViewController(getMonorailFileSelectorVc(), animated: true)
+                        vc.navigationController?.pushViewController(getMonorailFileSelectorVc(done: {
+                            vc.updateMonorailAction(items: monorailToolMenuActons)
+                        }), animated: true)
                 }
                 )
             ),
@@ -76,7 +54,7 @@ open class MonorailHelper {
         menu.append(contentsOf: [
             MenuItem(name: "Enable Logger", type: .toggle(isOn: { () -> Bool in
                 return Monorail.shared.logger != nil
-            }, toggleAction: { _, enabled in
+            }, subtitle: { nil },  toggleAction: { _, enabled in
                 if enabled {
                     Monorail.disableLogger()
                 } else {
@@ -88,7 +66,7 @@ open class MonorailHelper {
         menu.append(contentsOf: [
             MenuItem(name: Monorail.isWriterEnabled ? "Disable Writter" : "Enable Writter", type: .toggle(isOn: {
                 return Monorail.shared.writer != nil
-            }, toggleAction: { _, enabled in
+            }, subtitle: { nil }, toggleAction: { vc, enabled in
                 if enabled {
                     Monorail.stopWriteLog()
                     print("Stop writer")
@@ -96,7 +74,7 @@ open class MonorailHelper {
                     let fileUrl = Monorail.writeLog()
                     print("Begin writing to file: \(fileUrl?.absoluteString ?? "nil")")
                 }
-                updateMonorailActionVc()
+                vc.updateMonorailAction(items: monorailToolMenuActons)
             }))
             ])
         
@@ -160,9 +138,7 @@ open class MonorailHelper {
                     return Monorail.shared.reader?.fileName
                 }, action: { vc in
                     Monorail.disableReader()
-                    updateMonorailActionVc()
-//                    vc.alert(message: "Reader disabled")
-
+                    vc.updateMonorailAction(items: monorailToolMenuActons)
                 })),
                 MenuItem(
                     name: "Reset Reader sequence",
@@ -178,9 +154,14 @@ open class MonorailHelper {
     }
     
     public static func presentActionMenu() {
+        presentActionMenu(title: "Monorail Tools", items: monorailToolMenuActons)
+    }
+    
+    public static func presentActionMenu(title: String, items: [MonorailHelper.MenuItem]) {
         if toolWindowLayer.isHidden {
+            let monorailActionsVc = ActionMenuTableViewController(actions: items)
             toolWindowLayer.makeKeyAndVisible()
-            monorailActionsVc.title = "Monorail Tools"
+            monorailActionsVc.title = title
             monorailActionsVc.doneTapped = {
                 toolWindowLayer.rootViewController?.dismiss(animated: true) {
                     toolWindowLayer.isHidden = true
@@ -188,7 +169,9 @@ open class MonorailHelper {
             }
             
             naviVc.viewControllers = [monorailActionsVc]
-            toolWindowLayer.rootViewController?.present(naviVc, animated: true, completion: nil)
+            toolWindowLayer.rootViewController?.present(naviVc, animated: true) {
+                naviVc.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
+            }
         } else {
             toolWindowLayer.rootViewController?.dismiss(animated: true) {
                 toolWindowLayer.isHidden = true
@@ -197,7 +180,7 @@ open class MonorailHelper {
     }
 }
 
-extension UIViewController {
+public extension UIViewController {
     func alert(message: String, title: String = "", handler: (() -> Void)? = nil) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

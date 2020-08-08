@@ -36,12 +36,12 @@ open class APIServiceWriter: APIServiceReader {
         self.delegate = delegate
     }
     
-    func log(request: URLRequest?, uploadData: Data? = nil, response: URLResponse?, data: Data? = nil) {
+    func log(request: URLRequest?, uploadData: Data? = nil, response: URLResponse?, data: Data? = nil, id: String? = nil, timeElapsed: TimeInterval? = nil) {
         guard let request = request, logFilePath != nil else {
             return
         }
         
-        let interaction = Interaction(request: request, uploadData: uploadData, response: response, data: data, baseUrl: consumerVariables[apiServiceBaseUrlKey] as? String, timeStamp: Date())
+        let interaction = Interaction(request: request, uploadData: uploadData, response: response, data: data, baseUrl: consumerVariables[apiServiceBaseUrlKey] as? String, timeStamp: Date(), timeElapsed: timeElapsed, id: id)
         
         interaction.maskSecrets(secretKeys: secretKeys, mask: secretMask)
         delegate?.beforeWriteToFile(interaction, writer: self)
@@ -49,12 +49,12 @@ open class APIServiceWriter: APIServiceReader {
         save()
     }
     
-    func log(request: URLRequest?, uploadData: Data? = nil, error: NSError?) {
+    func log(request: URLRequest?, uploadData: Data? = nil, error: NSError?, id: String? = nil, timeElapsed: TimeInterval? = nil) {
         guard let request = request, logFilePath != nil else {
             return
         }
         
-        let interaction = Interaction(request: request, uploadData: uploadData, error: error, baseUrl: consumerVariables[apiServiceBaseUrlKey] as? String, timeStamp: Date())
+        let interaction = Interaction(request: request, uploadData: uploadData, error: error, baseUrl: consumerVariables[apiServiceBaseUrlKey] as? String, timeStamp: Date(), timeElapsed: timeElapsed, id: id)
         
         interaction.maskSecrets(secretKeys: secretKeys, mask: secretMask)
         delegate?.beforeWriteToFile(interaction, writer: self)

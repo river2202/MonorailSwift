@@ -108,4 +108,21 @@ extension UIViewController {
     }
 }
 
-
+//
+//class TimeMeasure {
+//    let timeStampFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+//    var start = Date()
+//    
+//    func tag(_ msg: String? = nil) {
+//        let now = Date()
+//        
+//        print("\(now.asString(timeStampFormat)) - \(msg ?? "") \(now.timeIntervalSince(start)) s")
+//    }
+//    
+//    func reset(msg: String? = nil) {
+//        self.name = name
+//        start = Date()
+//        
+//        print("\(start.asString(timeStampFormat)) - \(msg ?? "")")
+//    }
+//}
