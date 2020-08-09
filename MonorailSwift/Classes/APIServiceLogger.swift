@@ -35,6 +35,7 @@ public final class APIServiceLogger {
         defer { output?.log(logString) }
         
         logString += "Request: \(method ?? "?") \(url?.absoluteString ?? "nil")\n"
+        logString += Self.getLog(id: id)
         logString += getHeadersString(header ?? [:])
         logString += getDataString(data)
     }
@@ -58,8 +59,8 @@ public final class APIServiceLogger {
         logString += getDataString(data)
     }
     
-    static func getLog(id: String?, timeElapsed: TimeInterval?) -> String {
-        return [id?.add(prefix: "ID: ", surfix: "\n"), timeElapsed?.description.add(prefix: "TimeElapsed: ", surfix: "s\n")].compactMap { $0 }.joined(separator: "")
+    static func getLog(id: String? = nil, timeElapsed: TimeInterval? = nil) -> String {
+        return [id?.add(prefix: "SequenceId: ", surfix: "\n"), timeElapsed?.description.add(prefix: "TimeElapsed: ", surfix: "s\n")].compactMap { $0 }.joined(separator: "")
     }
     
     private func getDataString(_ data: Data?) -> String {

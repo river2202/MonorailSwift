@@ -29,6 +29,12 @@ class WriterTests: XCTestCase {
                 
                 XCTAssertNil(reader.interactions[0].requestHeader?["header12"], "Should not save header12")
                 
+                if let timeElapsed = reader.interactions[0].timeElapsed {
+                    print("timeElapsed=\(timeElapsed)")
+                    XCTAssertEqual(timeElapsed, 1, accuracy: 0.1, "timeElapsed about 1s")
+                } else {
+                    XCTFail("Should write")
+                }
                 done()
             }
             dataTask.resume()

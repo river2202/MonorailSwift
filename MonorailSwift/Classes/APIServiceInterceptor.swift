@@ -4,9 +4,9 @@ protocol APIServiceInterceptor {
     func shouldSkip(_ request: URLRequest) -> Bool
     func intercept(_ request: URLRequest) -> (interceptResponse: Bool, URLResponse?, Data?, Error?, TimeInterval?)
     
-    func log(_ error: Error, request: URLRequest)
-    func log(_ request: URLRequest)
-    func log(_ response: URLResponse, data: Data?, request: URLRequest)
+    func log(_ error: Error, request: URLRequest, timeElapsed: TimeInterval?, id: String?)
+    func log(_ request: URLRequest) -> String?
+    func log(_ response: URLResponse, data: Data?, request: URLRequest, timeElapsed: TimeInterval?, id: String?)
     
     var cacheStoragePolicy: URLCache.StoragePolicy { get }
     var bypassSslCheck: Bool { get }
@@ -14,15 +14,7 @@ protocol APIServiceInterceptor {
 
 extension APIServiceInterceptor {
     func shouldSkip(_ request: URLRequest) -> Bool { return false }
-    func intercept(_ request: URLRequest) -> (interceptResponse: Bool, URLResponse?, Data?) {
-        return (false, nil, nil)
-    }
-    
-    func log(_ error: Error, request: URLRequest) {}
-    func log(_ request: URLRequest) {}
-    func log(_ response: URLResponse, data: Data?, request: URLRequest) {}
     var cacheStoragePolicy: URLCache.StoragePolicy { return .allowed }
-    
     var bypassSslCheck: Bool { return true }
 }
 
@@ -60,11 +52,12 @@ class URLInterceptor: URLProtocol, URLSessionDelegate {
     public override func startLoading() {
         guard let interceptor = URLInterceptor.interceptor else { return }
         
-        interceptor.log(request)
+        let id = interceptor.log(request)
+        let startTime = Date()
         if case (true, let response, let data, let error, let delay) = interceptor.intercept(request) {
             guard let response = response else {
                 let error = error ?? MonorailError.noResponseFound
-                interceptor.log(error, request: self.request)
+                interceptor.log(error, request: self.request, timeElapsed: startTime.timeElapsedSinceNow, id: id)
                 self.client?.urlProtocol(self, didFailWithError: error)
                 return
             }
@@ -74,7 +67,7 @@ class URLInterceptor: URLProtocol, URLSessionDelegate {
                 if let data = data {
                     self.client?.urlProtocol(self, didLoad: data)
                 }
-                interceptor.log(response, data: data, request: self.request)
+                interceptor.log(response, data: data, request: self.request, timeElapsed: startTime.timeElapsedSinceNow, id: id)
                 self.client?.urlProtocolDidFinishLoading(self)
                 return
             }
@@ -88,7 +81,7 @@ class URLInterceptor: URLProtocol, URLSessionDelegate {
             
             session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
                 if let error = error {
-                    interceptor.log(error, request: self.request)
+                    interceptor.log(error, request: self.request, timeElapsed: startTime.timeElapsedSinceNow, id: id)
                     self.client?.urlProtocol(self, didFailWithError: error)
                     return
                 }
@@ -99,7 +92,7 @@ class URLInterceptor: URLProtocol, URLSessionDelegate {
                     self.client?.urlProtocol(self, didLoad: data)
                 }
                 
-                interceptor.log(response, data: data, request: self.request)
+                interceptor.log(response, data: data, request: self.request, timeElapsed: startTime.timeElapsedSinceNow, id: id)
                 self.client?.urlProtocolDidFinishLoading(self)
             }) .resume()
         }
@@ -180,4 +173,12 @@ extension URLSessionConfiguration {
     }
 }
 
+extension Date {
+    public var timeElapsedSinceNow: TimeInterval { return -timeIntervalSinceNow.threeDecimal }
+}
 
+extension TimeInterval {
+    var threeDecimal: TimeInterval {
+        return (self*1000).rounded()/1000
+    }
+}

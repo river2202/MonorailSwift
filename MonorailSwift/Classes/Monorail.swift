@@ -66,14 +66,18 @@ open class Monorail {
     open private(set) var reader: APIServiceReader?
     open var bypassSslCheck: Bool = true
     var loggerFilter: MonorailInteractionFilter?
+    var sequence = 0
     
     private init() {
         URLInterceptor.enable(interceptor: self)
     }
     
-    public static func enableLogger(output: MonorailDebugOutput = Monorail.shared, filter: MonorailInteractionFilter? = nil) {
+    public static func enableLogger(output: MonorailDebugOutput = Monorail.shared, filter: MonorailInteractionFilter? = nil, resetSequence: Bool = true) {
         Monorail.shared.logger = APIServiceLogger(output: output)
         Monorail.shared.loggerFilter = filter
+        if resetSequence {
+            Monorail.shared.resetSequenceId()
+        }
     }
     
     public static func disableLogger() {
@@ -112,6 +116,10 @@ open class Monorail {
         Monorail.shared.reader?.resetInteractionsConsumedFlag()
     }
     
+    public func resetSequenceId() {
+        sequence = 0
+    }
+    
     public static let shared = Monorail()
     public static var secretsKeys = ["Authorization"]
 }
@@ -137,21 +145,26 @@ extension Monorail: APIServiceInterceptor {
     
     func log(_ error: Error, request: URLRequest, timeElapsed: TimeInterval? = nil, id: String? = nil) {
         if !request.filtered(by: loggerFilter) {
-            logger?.log(error)
+            logger?.log(error, timeElapsed: timeElapsed, id: id)
         }
         
         writer?.log(request: request, error: error as NSError)
     }
 
-    func log(_ request: URLRequest, id: String? = nil) {
+    func log(_ request: URLRequest) -> String? {
         if !request.filtered(by: loggerFilter) {
-            logger?.log(request)
+            sequence += 1
+            let id = "\(sequence)"
+            logger?.log(request, id: id)
+            return id
         }
+        
+        return nil
     }
 
     func log(_ response: URLResponse, data: Data?, request: URLRequest, timeElapsed: TimeInterval? = nil, id: String? = nil) {
         if !request.filtered(by: loggerFilter) {
-            logger?.log(response, data: data, request: request)
+            logger?.log(response, data: data, request: request, timeElapsed: timeElapsed, id: id)
         }
         
         writer?.log(request: request, response: response, data: data,  id: id, timeElapsed: timeElapsed)

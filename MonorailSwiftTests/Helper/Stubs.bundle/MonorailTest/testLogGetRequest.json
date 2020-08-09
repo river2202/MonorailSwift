@@ -4,6 +4,8 @@
     {
       "id": "1",
       "timeStamp": "2019-04-23T13:11:11.954+10:00",
+      "timeElapsed": 1,
+      "timeElapsedEnabled": true,
       "response": {
         "status": 200,
         "headers": {
@@ -98,6 +100,22 @@
       },
       "request": {
         "path": "https:\/\/login.apple.com.au\/K",
+        "method": "GET"
+      }
+    },
+    {
+      "id": "5",
+      "timeStamp": "2019-04-23T13:11:11.954+10:00",
+      "timeElapsed": 2,
+      "timeElapsed": true,
+      "response": {
+        "status": 200,
+        "body": {
+          "name": "Apple.come"
+        }
+      },
+      "request": {
+        "path": "https:\/\/login.apple.com.au\/delay2s",
         "method": "GET"
       }
     }

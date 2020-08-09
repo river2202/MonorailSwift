@@ -23,8 +23,12 @@ class LoggerTests: XCTestCase {
             let dataTask = URLSession.shared.dataTask(with: url) { (data, _, _) in
                 XCTAssertNotNil(data, "No data was downloaded.")
                 XCTAssertEqual(mockLogger.logs.count, 2)
+                XCTAssertTrue(mockLogger.logs.first?.contains("SequenceId: 1") ?? false)
                 XCTAssertTrue(mockLogger.logs.first?.contains("GET https://apple.com/index.html") ?? false)
                 XCTAssertTrue(mockLogger.logs.last?.contains("Status: 200") ?? false)
+                XCTAssertTrue(mockLogger.logs.last?.contains("SequenceId: 1") ?? false)
+                XCTAssertTrue(mockLogger.logs.last?.contains("TimeElapsed: 1") ?? false)
+                
                 done()
             }
             dataTask.resume()
@@ -38,7 +42,7 @@ class LoggerTests: XCTestCase {
         // no filter
         Monorail.enableLogger(output: mockLogger)
         
-        getUrl(urlString: "https://apple.com/index.html")
+        getUrl(urlString: "https://apple.com/index.html", waitTime: 1)
         getUrl(urlString: "https://apple.com.au/index.html")
         
         XCTAssertEqual(mockLogger.logs.count, 4)
@@ -170,7 +174,7 @@ class LoggerTests: XCTestCase {
         Monorail.enableReader(from: testFileUrl)
     }
     
-    private func getUrl(urlString: String) {
+    private func getUrl(urlString: String, waitTime: TimeInterval = 0.1) {
         guard let url = URL(string: urlString) else {
             return XCTFail("Ilegal urlString: \(urlString)")
         }
@@ -180,20 +184,19 @@ class LoggerTests: XCTestCase {
         }
         
         dataTask.resume()
-        wait()
+        wait(for: waitTime)
     }
     
-    func testGetLog() throws {
+    func testGetIDAndTimeElapsedLog() throws {
         let data: [(String?, TimeInterval?, String, String)] = [
             (nil, nil, "", "empty as both nil"),
-            ("a", 10, "ID: a\nTimeElapsed: 10.0s\n", "show both"),
+            ("a", 10, "SequenceId: a\nTimeElapsed: 10.0s\n", "show both"),
             (nil, 10, "TimeElapsed: 10.0s\n", "show only time"),
-            ("a", nil, "ID: a\n", "show only id"),
+            ("a", nil, "SequenceId: a\n", "show only id"),
         ]
         
         data.forEach { (id, timeElapsed, expected, message) in
             XCTAssertEqual(APIServiceLogger.getLog(id: id, timeElapsed: timeElapsed), expected, message)
         }
     }
-
 }
