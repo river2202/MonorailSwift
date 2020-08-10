@@ -3,6 +3,7 @@ import Foundation
 private let fileRefKey = "fileReference"
 let timeStampFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
 public typealias MaskFunction = (_ key: String, _ value: String) -> String
+public func defaultMaskFunction(_: String, _: String) -> String {"****"}
 
 open class Interaction {
     private let requestKey = "request"
@@ -363,6 +364,12 @@ extension Dictionary where Key == String, Value == Any {
                 self[key] = value
             }
         }
+    }
+    
+    func masked(keys: [String], mask: MaskFunction) -> Dictionary {
+        var maskedDictionary = self
+        maskedDictionary.maskSecrets(keys: keys, mask: mask)
+        return maskedDictionary
     }
 }
 

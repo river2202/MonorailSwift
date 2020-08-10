@@ -3,9 +3,13 @@ import Foundation
 public final class APIServiceLogger {
     private weak var output: MonorailDebugOutput?
     var maxPrintoutDataCount = 1024
-    
-    init(output: MonorailDebugOutput) {
+    private let secretKeys: [String]
+    private let secretMask: MaskFunction
+
+    init(output: MonorailDebugOutput, secretKeys: [String], secretMask: @escaping MaskFunction) {
         self.output = output
+        self.secretKeys = secretKeys
+        self.secretMask = secretMask
     }
     
     private let divider = "---------------------\n"
@@ -30,13 +34,14 @@ public final class APIServiceLogger {
         logRequest(url: request.url, method: request.httpMethod, header: request.allHTTPHeaderFields as [String : AnyObject]?, data: uploadData ?? request.getHttpBodyData(), id: id)
     }
     
-    public func logRequest(url: URL?, method: String?, header: [String: AnyObject]?, data: Data?, id: String? = nil) {
+    public func logRequest(url: URL?, method: String?, header: [String: Any]?, data: Data?, id: String? = nil) {
         var logString = divider
         defer { output?.log(logString) }
         
+        let maskHeader = header?.masked(keys: secretKeys, mask: secretMask) ?? [:]
         logString += "Request: \(method ?? "?") \(url?.absoluteString ?? "nil")\n"
         logString += Self.getLog(id: id)
-        logString += getHeadersString(header ?? [:])
+        logString += getHeadersString(maskHeader)
         logString += getDataString(data)
     }
     
@@ -71,7 +76,12 @@ public final class APIServiceLogger {
         }
         
         do {
-            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+            var json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+            
+            if let jsonDict = json as? [String: Any] {
+                json = jsonDict.masked(keys: secretKeys, mask: secretMask)
+            }
+            
             let pretty = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
             if let string = String(data: pretty, encoding:.utf8) {
                 logString += "JSON: \(string)\n"
@@ -87,7 +97,7 @@ public final class APIServiceLogger {
         return logString
     }
     
-    private func getHeadersString(_ headers: [String: AnyObject]) -> String {
+    private func getHeadersString(_ headers: [String: Any]) -> String {
         var logString = "Headers: [\n"
         for (key, value) in headers {
             logString += "  \(key) : \(value)\n"

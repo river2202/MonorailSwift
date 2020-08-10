@@ -72,8 +72,8 @@ open class Monorail {
         URLInterceptor.enable(interceptor: self)
     }
     
-    public static func enableLogger(output: MonorailDebugOutput = Monorail.shared, filter: MonorailInteractionFilter? = nil, resetSequence: Bool = true) {
-        Monorail.shared.logger = APIServiceLogger(output: output)
+    public static func enableLogger(output: MonorailDebugOutput = Monorail.shared, filter: MonorailInteractionFilter? = nil, resetSequence: Bool = true, secretKeys: [String] = secretsKeys, secretMask: @escaping MaskFunction = defaultMaskFunction) {
+        Monorail.shared.logger = APIServiceLogger(output: output, secretKeys: secretKeys, secretMask: secretMask)
         Monorail.shared.loggerFilter = filter
         if resetSequence {
             Monorail.shared.resetSequenceId()
@@ -85,7 +85,7 @@ open class Monorail {
     }
     
     @discardableResult
-    public static func writeLog(to fileName: String? = nil, directory: String? = nil, delegate: APIServiceWriterDelegate? = nil, secretKeys: [String] = secretsKeys, secretMask: @escaping MaskFunction = {(_, _) in "****"}) -> URL? {
+    public static func writeLog(to fileName: String? = nil, directory: String? = nil, delegate: APIServiceWriterDelegate? = nil, secretKeys: [String] = secretsKeys, secretMask: @escaping MaskFunction = defaultMaskFunction) -> URL? {
         Monorail.shared.writer = APIServiceWriter(delegate: delegate, secretKeys: secretKeys, secretMask: secretMask)
         Monorail.shared.writer?.startLogging(to: fileName, directory: directory)
         return Monorail.shared.writer?.logFilePath

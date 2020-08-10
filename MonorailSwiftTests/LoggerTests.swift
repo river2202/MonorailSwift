@@ -13,6 +13,7 @@ class MockOutput: MonorailDebugOutput {
 }
 
 class LoggerTests: XCTestCase {
+    
     func testLogGetRequest() {
         let mockLogger = MockOutput()
         Monorail.enableLogger(output: mockLogger)
@@ -20,19 +21,122 @@ class LoggerTests: XCTestCase {
         
         waitUntil(message: "Download apple.com home page", timeout: 3) { done in
             let url = URL(string: "https://apple.com/index.html")!
-            let dataTask = URLSession.shared.dataTask(with: url) { (data, _, _) in
+            var request = URLRequest(url: url)
+                       request.addValue("12345678901", forHTTPHeaderField: "header1")
+                       request.addValue("12345678902", forHTTPHeaderField: "Authorization")
+                       request.addValue("12345678903", forHTTPHeaderField: "x-key")
+                       request.addValue("12345678904", forHTTPHeaderField: "token")
+            
+            let dataTask = URLSession.shared.dataTask(with: request) { (data, _, _) in
                 XCTAssertNotNil(data, "No data was downloaded.")
                 XCTAssertEqual(mockLogger.logs.count, 2)
                 XCTAssertTrue(mockLogger.logs.first?.contains("SequenceId: 1") ?? false)
                 XCTAssertTrue(mockLogger.logs.first?.contains("GET https://apple.com/index.html") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("header1 : 12345678901") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("Authorization : ****") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("x-key : 12345678903") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("token : 12345678904") ?? false)
+                
+                print("\(mockLogger.logs.first!)")
+                
                 XCTAssertTrue(mockLogger.logs.last?.contains("Status: 200") ?? false)
                 XCTAssertTrue(mockLogger.logs.last?.contains("SequenceId: 1") ?? false)
                 XCTAssertTrue(mockLogger.logs.last?.contains("TimeElapsed: 1") ?? false)
+                XCTAssertTrue(mockLogger.logs.last?.contains("\"name\" : \"Apple.come\"") ?? false)
+                                
+                print("\(mockLogger.logs.last!)")
                 
                 done()
             }
             dataTask.resume()
         }
+    }
+    
+    func testLoggerMaskSecretsWithDefaultMaskSecretKeys() {
+        let oldKeys = Monorail.secretsKeys
+        Monorail.secretsKeys.append("x-key")
+        Monorail.secretsKeys.append("token")
+
+        let mockLogger = MockOutput()
+        Monorail.enableLogger(output: mockLogger)
+        enableReader()
+        
+        waitUntil(message: "Download apple.com home page", timeout: 3) { done in
+            let url = URL(string: "https://login.apple.com.au/keys")!
+            var request = URLRequest(url: url)
+                       request.addValue("12345678901", forHTTPHeaderField: "header1")
+                       request.addValue("12345678902", forHTTPHeaderField: "Authorization")
+                       request.addValue("12345678903", forHTTPHeaderField: "x-key")
+                       request.addValue("12345678904", forHTTPHeaderField: "token")
+            
+            let dataTask = URLSession.shared.dataTask(with: request) { (data, _, _) in
+                XCTAssertNotNil(data, "No data was downloaded.")
+                XCTAssertEqual(mockLogger.logs.count, 2)
+                XCTAssertTrue(mockLogger.logs.first?.contains("SequenceId: 1") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("Request: GET https://login.apple.com.au/keys") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("header1 : 12345678901") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("Authorization : ****") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("x-key : ****") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("token : ****") ?? false)
+                
+                print("\(mockLogger.logs.first!)")
+                XCTAssertTrue(mockLogger.logs.last?.contains("Response: GET /keys") ?? false)
+                XCTAssertTrue(mockLogger.logs.last?.contains("Status: 200") ?? false)
+                XCTAssertTrue(mockLogger.logs.last?.contains("\"name\" : \"Apple.come\"") ?? false)
+                XCTAssertTrue(mockLogger.logs.last?.contains("\"token\" : \"****\"") ?? false)
+                                
+                print("\(mockLogger.logs.last!)")
+                
+                done()
+            }
+            dataTask.resume()
+        }
+        
+        Monorail.secretsKeys = oldKeys
+    }
+    
+    func testLoggerMaskSecretsWithCustomizedSecretKeys() {
+        let oldKeys = Monorail.secretsKeys
+        Monorail.secretsKeys.append("x-key")
+        Monorail.secretsKeys.append("token")
+
+        let mockLogger = MockOutput()
+        let mask = "123*******mask"
+        Monorail.enableLogger(output: mockLogger, secretKeys: ["x-key", "token"], secretMask: {_, _ in mask})
+        enableReader()
+        
+        waitUntil(message: "Download apple.com home page", timeout: 3) { done in
+            let url = URL(string: "https://login.apple.com.au/keys")!
+            var request = URLRequest(url: url)
+                       request.addValue("12345678901", forHTTPHeaderField: "header1")
+                       request.addValue("12345678902", forHTTPHeaderField: "Authorization")
+                       request.addValue("12345678903", forHTTPHeaderField: "x-key")
+                       request.addValue("12345678904", forHTTPHeaderField: "token")
+            
+            let dataTask = URLSession.shared.dataTask(with: request) { (data, _, _) in
+                XCTAssertNotNil(data, "No data was downloaded.")
+                XCTAssertEqual(mockLogger.logs.count, 2)
+                XCTAssertTrue(mockLogger.logs.first?.contains("SequenceId: 1") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("Request: GET https://login.apple.com.au/keys") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("header1 : 12345678901") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("Authorization : 12345678902") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("x-key : \(mask)") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("token : \(mask)") ?? false)
+                
+                print("\(mockLogger.logs.first!)")
+                XCTAssertTrue(mockLogger.logs.last?.contains("Response: GET /keys") ?? false)
+                XCTAssertTrue(mockLogger.logs.last?.contains("Status: 200") ?? false)
+                XCTAssertTrue(mockLogger.logs.last?.contains("\"name\" : \"Apple.come\"") ?? false)
+                XCTAssertTrue(mockLogger.logs.last?.contains("\"token\" : \"\(mask)\"") ?? false)
+                                
+                print("\(mockLogger.logs.last!)")
+                
+                done()
+            }
+            dataTask.resume()
+        }
+        
+        Monorail.secretsKeys = oldKeys
     }
 
     func testLoggerFilter() {

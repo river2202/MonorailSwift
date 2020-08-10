@@ -106,6 +106,21 @@
     {
       "id": "5",
       "timeStamp": "2019-04-23T13:11:11.954+10:00",
+      "response": {
+        "status": 200,
+        "body": {
+          "name": "Apple.come",
+          "token": "aaabbbccc"
+        }
+      },
+      "request": {
+        "path": "https:\/\/login.apple.com.au\/keys",
+        "method": "GET"
+      }
+    },
+    {
+      "id": "5",
+      "timeStamp": "2019-04-23T13:11:11.954+10:00",
       "timeElapsed": 2,
       "timeElapsed": true,
       "response": {

@@ -29,7 +29,7 @@ open class APIServiceWriter: APIServiceReader {
     private let secretKeys: [String]
     private let secretMask: MaskFunction
     
-    init(delegate: APIServiceWriterDelegate?, secretKeys: [String] = [], secretMask: @escaping MaskFunction) {
+    init(delegate: APIServiceWriterDelegate?, secretKeys: [String] = [], secretMask: @escaping MaskFunction = defaultMaskFunction) {
         self.secretKeys = secretKeys
         self.secretMask = secretMask
         super.init()
