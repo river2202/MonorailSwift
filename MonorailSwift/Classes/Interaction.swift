@@ -337,7 +337,7 @@ extension Dictionary {
         merge(dict) { (current, new) in
             if var currentDict = current as? Dictionary, let newDict = new as? Dictionary {
                 currentDict.deepMerge(newDict)
-                return current
+                return currentDict as! Value
             }
             return new
         }

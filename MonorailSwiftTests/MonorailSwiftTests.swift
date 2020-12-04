@@ -81,6 +81,32 @@ class MonorailSwiftTests: XCTestCase {
         }
     }
     
-    
+    func testMergeDict() {
+        var dict1: [String: Any] = [
+            "a": 1,
+            "b": 2,
+            "c": [
+                "d": 3
+            ],
+            "f": ["g": 2]
+        ]
+
+        let dict2: [String: Any] = [
+            "b": 4,
+            "c": [
+                "e": 5
+            ],
+            "f": ["g": 6]
+        ]
+
+        dict1.deepMerge(dict2)
+        
+        print(dict1)
+
+        XCTAssertEqual((dict1["b"] as? Int), 4)
+        XCTAssertEqual((dict1["c"] as? [String: Any])?["d"] as? Int, 3)
+        XCTAssertEqual((dict1["c"] as? [String: Any])?["e"] as? Int, 5)
+        XCTAssertEqual((dict1["f"] as? [String: Any])?["g"] as? Int, 6)
+    }
     
 }
