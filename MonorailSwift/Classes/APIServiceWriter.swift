@@ -36,7 +36,7 @@ open class APIServiceWriter: APIServiceReader {
         self.delegate = delegate
     }
     
-    func log(request: URLRequest?, uploadData: Data? = nil, response: URLResponse?, data: Data? = nil, id: String? = nil, timeElapsed: TimeInterval? = nil) {
+    open func log(request: URLRequest?, uploadData: Data? = nil, response: URLResponse?, data: Data? = nil, id: String? = nil, timeElapsed: TimeInterval? = nil) {
         guard let request = request, logFilePath != nil else {
             return
         }
@@ -49,7 +49,7 @@ open class APIServiceWriter: APIServiceReader {
         save()
     }
     
-    func log(request: URLRequest?, uploadData: Data? = nil, error: NSError?, id: String? = nil, timeElapsed: TimeInterval? = nil) {
+    open func log(request: URLRequest?, uploadData: Data? = nil, error: NSError?, id: String? = nil, timeElapsed: TimeInterval? = nil) {
         guard let request = request, logFilePath != nil else {
             return
         }

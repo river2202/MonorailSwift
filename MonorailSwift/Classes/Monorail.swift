@@ -127,11 +127,11 @@ open class Monorail {
 extension Monorail: MonorailDebugOutput {}
 
 extension Monorail: APIServiceInterceptor {
-    func shouldSkip(_ request: URLRequest) -> Bool {
+    public func shouldSkip(_ request: URLRequest) -> Bool {
         return false
     }
     
-    func intercept(_ request: URLRequest) -> (interceptResponse: Bool, URLResponse?, Data?, Error?, TimeInterval?) {
+    public func intercept(_ request: URLRequest) -> (interceptResponse: Bool, URLResponse?, Data?, Error?, TimeInterval?) {
         if let reader = reader {
             if let (response, data, error, delay) = reader.getResponseObject(for: request) {
                 return (true, response, data, error, delay)
@@ -143,7 +143,7 @@ extension Monorail: APIServiceInterceptor {
         }
     }
     
-    func log(_ error: Error, request: URLRequest, timeElapsed: TimeInterval? = nil, id: String? = nil) {
+    public func log(_ error: Error, request: URLRequest, timeElapsed: TimeInterval? = nil, id: String? = nil) {
         if !request.filtered(by: loggerFilter) {
             logger?.log(error, timeElapsed: timeElapsed, id: id)
         }
@@ -151,7 +151,7 @@ extension Monorail: APIServiceInterceptor {
         writer?.log(request: request, error: error as NSError)
     }
 
-    func log(_ request: URLRequest) -> String? {
+    public func log(_ request: URLRequest) -> String? {
         if !request.filtered(by: loggerFilter) {
             sequence += 1
             let id = "\(sequence)"
@@ -162,7 +162,7 @@ extension Monorail: APIServiceInterceptor {
         return nil
     }
 
-    func log(_ response: URLResponse, data: Data?, request: URLRequest, timeElapsed: TimeInterval? = nil, id: String? = nil) {
+    public func log(_ response: URLResponse, data: Data?, request: URLRequest, timeElapsed: TimeInterval? = nil, id: String? = nil) {
         if !request.filtered(by: loggerFilter) {
             logger?.log(response, data: data, request: request, timeElapsed: timeElapsed, id: id)
         }

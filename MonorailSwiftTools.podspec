@@ -12,7 +12,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MonorailSwiftTools'
-  s.version          = '1.4.0'
+  s.version          = '1.4.1'
   s.summary          = 'MonorailSwiftTools is a test tool to log/write/replay network interactions.'
 
   s.description      = <<-DESC
@@ -29,5 +29,5 @@ Works out of box with iOS build in api and most of 3rd SDK to print the network 
 
   s.source_files = 'MonorailSwift/Helper/**/*', 'MonorailSwiftTools/MonorailSwiftTools.h'
   
-  s.dependency 'MonorailSwift', '~> 1.4.0'
+  s.dependency 'MonorailSwift', '~> 1.4.1'
 end
