@@ -21,7 +21,8 @@
           "Connection": "keep-alive",
           "Expires": "Tue, 23 Apr 2019 03:15:52 GMT",
           "Content-Type": "text\/html; charset=UTF-8",
-          "Date": "Tue, 23 Apr 2019 03:11:11 GMT"
+          "Date": "Tue, 23 Apr 2019 03:11:11 GMT",
+          "mocked": "true"
         },
         "body": {
           "name": "Apple.come"

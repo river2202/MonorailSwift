@@ -21,7 +21,8 @@ open class Interaction {
     private let timeStampKey = "timeStamp"
     private let timeElapsedKey = "timeElapsed"
     private let timeElapsedEnabledKey = "timeElapsedEnabled"
-    
+    private let mockedKey = "mocked"
+
     private(set) var request: [String: Any] = [:]
     private(set) var response: [String: Any] = [:]
     private(set) var error: NSError?
@@ -38,10 +39,15 @@ open class Interaction {
     
     public private(set) var timeStamp: Date?
     private(set) var timeElapsed: TimeInterval?
-    private(set) var timeElapsedEnabled: Bool = false
-    
+    private(set) var timeElapsedEnabled: Bool?
+    var mocked: Bool {
+        get {
+            return responseHeader?[mockedKey] as? String == "true"
+        }
+    }
+
     private var delay: TimeInterval? {
-        return timeElapsedEnabled ? timeElapsed : nil
+        return (timeElapsedEnabled ?? false) ? timeElapsed : nil
     }
     
     // temp variables
@@ -110,7 +116,7 @@ open class Interaction {
             self.timeStamp = timeStamp
         }
         timeElapsed = json[timeElapsedKey] as? TimeInterval
-        timeElapsedEnabled = (json[timeElapsedEnabledKey] as? Bool) ?? timeElapsedEnabled
+        timeElapsedEnabled = (json[timeElapsedEnabledKey] as? Bool)
     }
     
     init(request: URLRequest?,
@@ -121,7 +127,7 @@ open class Interaction {
          baseUrl: String? = nil,
          timeStamp: Date? = nil,
          timeElapsed: TimeInterval? = nil,
-         timeElapsedEnabled: Bool = false,
+         timeElapsedEnabled: Bool? = nil,
          id: String? = nil
     ) {
         self.baseUrl = baseUrl
@@ -212,13 +218,13 @@ open class Interaction {
         return method == self.method && path.hasSuffix(pactPath)
     }
     
-    public func responseObjects() -> (HTTPURLResponse?, Data?, Error?, TimeInterval?) {
+    public func responseObjects() -> (HTTPURLResponse?, Data?, Error?, TimeInterval?, Bool?) {
         guard let path = path, let url = URL(string: path), let statusCode = response[responseStatusKey] as? Int else {
-            return (nil, nil, error, nil)
+            return (nil, nil, error, nil, false)
         }
         
         guard let httpURLResponse = HTTPURLResponse(url: url, statusCode: statusCode, httpVersion: nil, headerFields: response[headersKey] as? [String: String]) else {
-            return (nil, nil, error, delay)
+            return (nil, nil, error, delay, false)
         }
         
         var data: Data? = nil
@@ -230,7 +236,7 @@ open class Interaction {
         
         data = data ?? (response[dataKey] as? String)?.fromBase64ToData()
         
-        return (httpURLResponse, data, nil, delay)
+        return (httpURLResponse, data, nil, delay, mocked)
     }
     
     private func setRequest(method: String,
@@ -310,6 +316,10 @@ open class Interaction {
         
         if let timeElapsed = timeElapsed {
             payload[timeElapsedKey] = timeElapsed
+        }
+        
+        if let timeElapsedEnabled = timeElapsedEnabled {
+            payload[timeElapsedEnabledKey] = timeElapsedEnabled
         }
         
         return payload

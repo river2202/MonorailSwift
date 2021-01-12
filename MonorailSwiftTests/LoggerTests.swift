@@ -43,7 +43,9 @@ class LoggerTests: XCTestCase {
                 XCTAssertTrue(mockLogger.logs.last?.contains("SequenceId: 1") ?? false)
                 XCTAssertTrue(mockLogger.logs.last?.contains("TimeElapsed: 1") ?? false)
                 XCTAssertTrue(mockLogger.logs.last?.contains("\"name\" : \"Apple.come\"") ?? false)
-                                
+                XCTAssertTrue(mockLogger.logs.last?.contains("Date : Tue, 23 Apr 2019 03:11:11 GMT") ?? false)
+                XCTAssertTrue(mockLogger.logs.last?.contains("mocked : true") ?? false)
+
                 print("\(mockLogger.logs.last!)")
                 
                 done()
@@ -150,6 +152,7 @@ class LoggerTests: XCTestCase {
         getUrl(urlString: "https://apple.com.au/index.html")
         
         XCTAssertEqual(mockLogger.logs.count, 4)
+        print(mockLogger.logs)
         XCTAssertTrue(mockLogger.logs.first?.contains("GET https://apple.com/index.html") ?? false)
         XCTAssertTrue(mockLogger.logs.last?.contains("Status: 200") ?? false)
         

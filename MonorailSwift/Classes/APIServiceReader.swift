@@ -1,16 +1,21 @@
 import Foundation
 
 public protocol APIServiceReaderDelegate: class {
-    func matchReqest(_ request: URLRequest?, _ interaction: Interaction) -> Bool
+    func matchReqest(_ request: URLRequest?, _ interaction: Interaction) -> Bool?
 }
 
 extension APIServiceReaderDelegate {
-    func matchReqest(_ request: URLRequest?, _ interaction: Interaction) -> Bool {
-        return false
+    func matchReqest(_ request: URLRequest?, _ interaction: Interaction) -> Bool? {
+        return nil
     }
 }
 
 open class APIServiceReader {
+    
+    public enum Mode {
+        case all
+        case onlyMocked
+    }
     
     private weak var output: MonorailDebugOutput?
     
@@ -24,16 +29,20 @@ open class APIServiceReader {
     internal var providerVariables: [String: Any] = [:]
     internal var notifications = [[String: AnyObject]]()
     weak var readDelegate: APIServiceReaderDelegate?
+    private let mode: Mode
     
-    public init(readDelegate: APIServiceReaderDelegate? = nil, output: MonorailDebugOutput? = nil) {
+    public init(readDelegate: APIServiceReaderDelegate? = nil, output: MonorailDebugOutput? = nil, mode: Mode = Mode.all) {
         self.output = output
         files = []
         self.readDelegate = readDelegate
+        self.mode = mode
     }
     
-    public init(files: [URL], externalFileRootPath: String? = nil, delegate: APIServiceReaderDelegate? = nil, output: MonorailDebugOutput? = nil) {
+    public init(files: [URL], externalFileRootPath: String? = nil, delegate: APIServiceReaderDelegate? = nil, output: MonorailDebugOutput? = nil, mode: Mode = Mode.all) {
         self.output = output
         self.files = files
+        self.readDelegate = delegate
+        self.mode = mode
         
         guard files.count > 0 else {
             output?.log("Empty file list.")
@@ -53,13 +62,14 @@ open class APIServiceReader {
         }
     }
     
-    public convenience init(file: URL, externalFileRootPath: String? = nil, delegate: APIServiceReaderDelegate? = nil, output: MonorailDebugOutput? = nil) {
-        self.init(files: [file], externalFileRootPath: externalFileRootPath, delegate: delegate, output: output)
+    public convenience init(file: URL, externalFileRootPath: String? = nil, delegate: APIServiceReaderDelegate? = nil, output: MonorailDebugOutput? = nil, mode: Mode = Mode.all) {
+        self.init(files: [file], externalFileRootPath: externalFileRootPath, delegate: delegate, output: output, mode: mode)
     }
     
-    public init(contractJson: String, externalFileRootPath: String? = nil, output: MonorailDebugOutput? = nil) {
+    public init(contractJson: String, externalFileRootPath: String? = nil, output: MonorailDebugOutput? = nil, mode: Mode = Mode.all) {
         self.output = output
         files = []
+        self.mode = mode
         mergeContractJson(contractJson, externalFileRootPath: externalFileRootPath)
     }
     
@@ -132,15 +142,19 @@ open class APIServiceReader {
         bestMatch?.consumed = true
         
         if let bestMatch = bestMatch {
-            output?.log("Found best match id: \(bestMatch.id ?? "nil")")
+            output?.log("Found best match id: \(bestMatch.id ?? "nil"), mode=\(mode), mocked=\(bestMatch.mocked.description)")
         } else {
             output?.log("No matching")
         }
         return bestMatch
     }
     
-    func getResponseObject(for request: URLRequest?) ->  (HTTPURLResponse?, Data?, Error?, TimeInterval?)? {
-        return getResponse(for: request)?.responseObjects()
+    func getResponseObject(for request: URLRequest?) -> (interceptResponse: Bool, HTTPURLResponse?, Data?, Error?, TimeInterval?) {
+        guard let (response, data, error, delay, mocked) = getResponse(for: request)?.responseObjects() else {
+            return (mode == Mode.all, nil, nil, nil, nil)
+        }
+        
+        return (interceptResponse: (mode == Mode.all ? true : (mocked ?? false)), response, data, error, delay)
     }
     
     func getInteractionBy(id: String) -> Interaction? {

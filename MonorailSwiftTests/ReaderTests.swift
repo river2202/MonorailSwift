@@ -9,6 +9,8 @@ class ReaderTests: XCTestCase {
         XCTAssertEqual(reader.getConsumerVariables(key: "token") as? String, "JOxMrQ0A(a2SqBisygFCUA))", "expect to read consumer variable correctly")
         XCTAssertEqual(reader.startTime, "2018-11-25T08:58:37.354+11:00".date(timeStampFormat), "expect to read start time correctly to use when set time travel to this time when log file recorded")
         
+        XCTAssertEqual(reader.interactions.first?.responseHeader?["Date"] as? String, "Thu, 01 Nov 2018 23:02:32 GMT", "should read correct header")
+        XCTAssertEqual(reader.interactions.first?.responseObjects().0?.allHeaderFields["Date"] as? String, "Thu, 01 Nov 2018 23:02:32 GMT", "should read correct header")
     }
     
     func   testReaderFileAndIDReference() {
@@ -38,7 +40,7 @@ class ReaderTests: XCTestCase {
             XCTAssertEqual(reader.interactions[2].responseObjects().0?.statusCode, 403)
             
             XCTAssertEqual(reader.interactions[2].timeElapsed, 2.0)
-            XCTAssertEqual(reader.interactions[2].timeElapsedEnabled, false)
+            XCTAssertNil(reader.interactions[2].timeElapsedEnabled)
             
             XCTAssertEqual(reader.interactions[3].id, "Interaction_04")
             XCTAssertEqual(reader.interactions[3].method == nil, true)
@@ -69,5 +71,27 @@ class ReaderTests: XCTestCase {
         if let data = response.1 {
             XCTAssertEqual(String(data: data, encoding: .utf8), "StringValue")
         }
+    }
+    
+    func testReadeOnlyMockedMode() {
+        let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderStringMockedOnlyModeTests.json", hostBundle: hostBundle)!)
+        
+        XCTAssertEqual(reader.interactions[0].responseObjects().4, true)
+        XCTAssertEqual(reader.interactions[1].responseObjects().4, false)
+        XCTAssertEqual(reader.interactions[2].responseObjects().4, false)
+        
+        [
+            ("api_mocked", APIServiceReader.Mode.all, true),
+            ("api_normal", APIServiceReader.Mode.all, true),
+            ("api_not_mocked", APIServiceReader.Mode.all, true),
+            ("api_mocked", APIServiceReader.Mode.onlyMocked, true),
+            ("api_normal", APIServiceReader.Mode.onlyMocked, false),
+            ("api_not_mocked", APIServiceReader.Mode.onlyMocked, false),
+            ].forEach { (api_end, readerMode, shouldIntercept) in
+                let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderStringMockedOnlyModeTests.json", hostBundle: hostBundle)!, mode: readerMode)
+                let request = URLRequest(url: URL(string: "https://test.com/\(api_end)")!)
+                XCTAssertEqual(reader.getResponseObject(for: request).0, shouldIntercept)
+        }
+        
     }
 }

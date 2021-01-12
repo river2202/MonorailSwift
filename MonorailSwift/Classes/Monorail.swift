@@ -99,12 +99,12 @@ open class Monorail {
         Monorail.shared.writer = nil
     }
     
-    public static func enableReader(from filePath: URL, externalFileRootPath: String? = nil, delegate: APIServiceReaderDelegate? = nil, output: MonorailDebugOutput = Monorail.shared) {
-        enableReader(from: [filePath], externalFileRootPath: externalFileRootPath, delegate: delegate, output: output)
+    public static func enableReader(from filePath: URL, externalFileRootPath: String? = nil, delegate: APIServiceReaderDelegate? = nil, output: MonorailDebugOutput = Monorail.shared, mode: APIServiceReader.Mode = .all) {
+        enableReader(from: [filePath], externalFileRootPath: externalFileRootPath, delegate: delegate, output: output, mode: mode)
     }
     
-    public static func enableReader(from files: [URL], externalFileRootPath: String? = nil, delegate: APIServiceReaderDelegate? = nil, output: MonorailDebugOutput = Monorail.shared) {
-        Monorail.shared.reader = APIServiceReader(files: files, delegate: delegate, output: output)
+    public static func enableReader(from files: [URL], externalFileRootPath: String? = nil, delegate: APIServiceReaderDelegate? = nil, output: MonorailDebugOutput = Monorail.shared, mode: APIServiceReader.Mode = .all) {
+        Monorail.shared.reader = APIServiceReader(files: files, delegate: delegate, output: output, mode: mode)
         TimeMachine.shared.travel(to: Monorail.shared.reader?.startTime)
     }
     
@@ -132,15 +132,7 @@ extension Monorail: APIServiceInterceptor {
     }
     
     public func intercept(_ request: URLRequest) -> (interceptResponse: Bool, URLResponse?, Data?, Error?, TimeInterval?) {
-        if let reader = reader {
-            if let (response, data, error, delay) = reader.getResponseObject(for: request) {
-                return (true, response, data, error, delay)
-            } else {
-                return (true, nil, nil, nil, nil)
-            }
-        } else {
-            return (false, nil, nil, nil, nil)
-        }
+        return reader?.getResponseObject(for: request) ?? (false, nil, nil, nil, nil)
     }
     
     public func log(_ error: Error, request: URLRequest, timeElapsed: TimeInterval? = nil, id: String? = nil) {

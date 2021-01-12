@@ -1,0 +1,49 @@
+{
+  "interactions": [
+    {
+      "request": {
+        "path": "https:\/\/test.com\/api_mocked",
+        "method": "GET"
+      },
+      "response": {
+        "headers": {
+          "mocked": "true"
+        },
+        "status": 200,
+        "body": "StringValue",
+      },
+      "timeStamp": "2018-11-02T10:02:33.753+11:00",
+      "id": "1"
+    },
+    {
+      "request": {
+        "path": "https:\/\/test.com\/api_not_mocked",
+        "method": "GET"
+      },
+      "response": {
+        "headers": {
+          "mocked": "false"
+        },
+        "status": 200,
+        "body": "StringValue"
+      },
+      "timeStamp": "2018-11-02T10:02:33.753+11:00",
+      "id": "2"
+    },
+    {
+      "request": {
+        "path": "https:\/\/test.com\/api_normal",
+        "method": "GET"
+      },
+      "response": {
+        "headers": {
+        },
+        "status": 200,
+        "body": "StringValue"
+      },
+      "timeStamp": "2018-11-02T10:02:33.753+11:00",
+      "id": "3"
+    }
+  ],
+  "startTime": "2018-11-25T08:58:37.354+11:00"
+}
