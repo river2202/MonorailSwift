@@ -4,6 +4,7 @@ import XCTest
 class MockOutput: MonorailDebugOutput {
     var logs = [String]()
     func log(_ message: String) {
+        print(message)
         logs.append(message)
     }
     

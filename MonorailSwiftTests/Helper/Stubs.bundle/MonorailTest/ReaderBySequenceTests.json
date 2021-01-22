@@ -1,0 +1,986 @@
+{
+  "interactions" : [
+    {
+      "request" : {
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/search",
+        "method" : "GET"
+      },
+      "response" : {
+        "headers" : {
+          "Access-Control-Allow-Origin" : "*",
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "Content-Encoding" : "gzip",
+          "Cache-Control" : "private",
+          "Content-Type" : "application\/json; charset=utf-8",
+          "Date" : "Thu, 01 Nov 2018 23:02:32 GMT",
+          "X-Content-Type-Options" : "nosniff",
+          "Content-Length" : "5193"
+        },
+        "status" : 200,
+        "body" : {
+          "has_more" : true,
+          "items" : [
+            {
+              "owner" : {
+                "accept_rate" : 6,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/4174219\/user4174219",
+                "user_id" : 4174219,
+                "display_name" : "user4174219",
+                "reputation" : 101,
+                "profile_image" : "https:\/\/graph.facebook.com\/100000803461711\/picture?type=large"
+              },
+              "is_answered" : false,
+              "answer_count" : 0,
+              "score" : 0,
+              "creation_date" : 1541113269,
+              "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
+              "last_activity_date" : 1541113269,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110562\/nsinternalinconsistencyexception-reason-unable-to-dequeue-a-cell-with-ident",
+              "question_id" : 53110562,
+              "tags" : [
+                "swift",
+                "tableview",
+                "custom-cell"
+              ],
+              "view_count" : 3
+            },
+            {
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/10566542\/vidas-katulis",
+                "profile_image" : "https:\/\/lh5.googleusercontent.com\/-27-HhwyNh4Y\/AAAAAAAAAAI\/AAAAAAAAAAA\/ABtNlbBTqm__iUJhki-f5kdiuqW8DNOiPw\/mo\/photo.jpg?sz=128",
+                "user_id" : 10566542,
+                "display_name" : "Vidas Katulis",
+                "reputation" : 14,
+                "user_type" : "registered"
+              },
+              "is_answered" : false,
+              "answer_count" : 0,
+              "score" : 0,
+              "creation_date" : 1541113210,
+              "title" : "Applying multiple CIFilters on image",
+              "last_activity_date" : 1541113210,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110550\/applying-multiple-cifilters-on-image",
+              "question_id" : 53110550,
+              "tags" : [
+                "objective-c",
+                "swift",
+                "xcode",
+                "macos",
+                "cocoa"
+              ],
+              "view_count" : 3
+            },
+            {
+              "answer_count" : 2,
+              "last_edit_date" : 1541113104,
+              "owner" : {
+                "accept_rate" : 17,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/4615581\/harmeet07",
+                "user_id" : 4615581,
+                "display_name" : "harmeet07",
+                "reputation" : 151,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/1dd0a43e99a668b4fc387043b636b51a?s=128&d=identicon&r=PG&f=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/39044657\/swift-enum-function-for-only-a-single-case-of-the-enum",
+              "tags" : [
+                "ios",
+                "swift",
+                "function",
+                "enums"
+              ],
+              "view_count" : 7551,
+              "creation_date" : 1471627435,
+              "is_answered" : true,
+              "title" : "Swift enum function for only a single case of the enum?",
+              "last_activity_date" : 1541113104,
+              "question_id" : 39044657,
+              "score" : 8
+            },
+            {
+              "owner" : {
+                "accept_rate" : 0,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/3083825\/someguyfortune",
+                "user_id" : 3083825,
+                "display_name" : "SomeGuyFortune",
+                "reputation" : 133,
+                "profile_image" : "https:\/\/graph.facebook.com\/100000241806379\/picture?type=large"
+              },
+              "is_answered" : false,
+              "answer_count" : 0,
+              "score" : 0,
+              "creation_date" : 1541112964,
+              "title" : "Replace matching regex values in string with correct value from dictionary",
+              "last_activity_date" : 1541112964,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110517\/replace-matching-regex-values-in-string-with-correct-value-from-dictionary",
+              "question_id" : 53110517,
+              "tags" : [
+                "ios",
+                "swift",
+                "regex"
+              ],
+              "view_count" : 7
+            },
+            {
+              "answer_count" : 2,
+              "last_edit_date" : 1478589018,
+              "owner" : {
+                "accept_rate" : 58,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/4495374\/vladasha",
+                "user_id" : 4495374,
+                "display_name" : "vladasha",
+                "reputation" : 153,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/f9a93c83620c230d1ac9f74d6e127ef1?s=128&d=identicon&r=PG&f=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/40480590\/swift-imagepickercontroller-didfinishpickingmediawithinfo-not-fired",
+              "tags" : [
+                "swift",
+                "swift3",
+                "uiimagepickercontroller"
+              ],
+              "view_count" : 3742,
+              "creation_date" : 1478587612,
+              "is_answered" : true,
+              "title" : "Swift ImagePickerController didFinishPickingMediaWithInfo not fired",
+              "accepted_answer_id" : 40480876,
+              "last_activity_date" : 1541112451,
+              "question_id" : 40480590,
+              "score" : 6
+            },
+            {
+              "answer_count" : 0,
+              "last_edit_date" : 1541111876,
+              "owner" : {
+                "accept_rate" : 74,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/585495\/jeshua-lacock",
+                "user_id" : 585495,
+                "display_name" : "Jeshua Lacock",
+                "reputation" : 2968,
+                "profile_image" : "https:\/\/i.stack.imgur.com\/EqO8S.jpg?s=128&g=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/53096060\/specifying-input-output-dimensions-for-coreml-2-model-with-flexible-shapes",
+              "tags" : [
+                "ios",
+                "swift",
+                "coreml"
+              ],
+              "view_count" : 25,
+              "creation_date" : 1541052795,
+              "is_answered" : false,
+              "title" : "Specifying Input\/Output dimensions for CoreML 2 model with Flexible Shapes",
+              "last_activity_date" : 1541111876,
+              "question_id" : 53096060,
+              "score" : 1
+            },
+            {
+              "answer_count" : 21,
+              "last_edit_date" : 1409579531,
+              "owner" : {
+                "accept_rate" : 89,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/2367491\/code-cookies",
+                "user_id" : 2367491,
+                "display_name" : "code_cookies",
+                "reputation" : 1127,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/e205282965a415a651bfb1bc1c12f152?s=128&d=identicon&r=PG"
+              },
+              "protected_date" : 1492128720,
+              "tags" : [
+                "json",
+                "swift",
+                "html-entities"
+              ],
+              "link" : "https:\/\/stackoverflow.com\/questions\/25607247\/how-do-i-decode-html-entities-in-swift",
+              "view_count" : 44809,
+              "creation_date" : 1409579228,
+              "is_answered" : true,
+              "title" : "How do I decode HTML entities in swift?",
+              "accepted_answer_id" : 25607542,
+              "last_activity_date" : 1541111861,
+              "question_id" : 25607247,
+              "score" : 89
+            },
+            {
+              "closed_reason" : "duplicate",
+              "answer_count" : 0,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/1410384\/shashidhar-yamsani",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/865de1f800d64c509b680394856c15b1?s=128&d=identicon&r=PG",
+                "user_id" : 1410384,
+                "display_name" : "Shashidhar Yamsani",
+                "reputation" : 48,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110195\/swift-how-to-replace-a-substring-with-regular-expression",
+              "tags" : [
+                "ios",
+                "swift",
+                "regex"
+              ],
+              "view_count" : 12,
+              "creation_date" : 1541110916,
+              "is_answered" : false,
+              "title" : "Swift: How to replace a substring with regular expression",
+              "last_activity_date" : 1541110916,
+              "question_id" : 53110195,
+              "score" : 0,
+              "closed_date" : 1541111122
+            },
+            {
+              "answer_count" : 2,
+              "last_edit_date" : 1495542494,
+              "owner" : {
+                "accept_rate" : 67,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/3594099\/zarghol",
+                "user_id" : 3594099,
+                "display_name" : "zarghol",
+                "reputation" : 187,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/5ff391447de4b4adf9a733174f0498e9?s=128&d=identicon&r=PG&f=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/28589930\/use-vlckit-in-swift",
+              "tags" : [
+                "macos",
+                "swift",
+                "compilation",
+                "libvlc"
+              ],
+              "view_count" : 1285,
+              "creation_date" : 1424280429,
+              "is_answered" : false,
+              "title" : "Use VLCKit in Swift",
+              "last_activity_date" : 1541110416,
+              "question_id" : 28589930,
+              "score" : 2
+            },
+            {
+              "answer_count" : 0,
+              "last_edit_date" : 1541110328,
+              "owner" : {
+                "accept_rate" : 83,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/2415178\/a-o",
+                "user_id" : 2415178,
+                "display_name" : "A O",
+                "reputation" : 3102,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/66338e3a7613d32ccaad01528b4c4c1e?s=128&d=identicon&r=PG"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/53092079\/cocoa-app-how-to-use-segues-to-implement-a-loading-view-that-obscures-a-windo",
+              "tags" : [
+                "swift",
+                "cocoa",
+                "segue",
+                "xcode-storyboard"
+              ],
+              "view_count" : 21,
+              "creation_date" : 1541020660,
+              "is_answered" : false,
+              "title" : "Cocoa app, how to use Segues to implement a &quot;Loading View&quot; that obscures a window until some setup completes",
+              "last_activity_date" : 1541110328,
+              "question_id" : 53092079,
+              "score" : 0
+            },
+            {
+              "owner" : {
+                "accept_rate" : 44,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/3061689\/eddwinpaz",
+                "user_id" : 3061689,
+                "display_name" : "eddwinpaz",
+                "reputation" : 1338,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/38e297fd59ce936989284d3a1d55ea11?s=128&d=identicon&r=PG"
+              },
+              "is_answered" : false,
+              "answer_count" : 1,
+              "score" : 0,
+              "creation_date" : 1541109737,
+              "title" : "Push to new UIViewController from UICollectionView that&#39;s inside a UITableViewCell when tapped",
+              "last_activity_date" : 1541110120,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110001\/push-to-new-uiviewcontroller-from-uicollectionview-thats-inside-a-uitableviewce",
+              "question_id" : 53110001,
+              "tags" : [
+                "ios",
+                "swift",
+                "uitableview",
+                "uicollectionview"
+              ],
+              "view_count" : 11
+            },
+            {
+              "answer_count" : 2,
+              "last_edit_date" : 1531847366,
+              "owner" : {
+                "accept_rate" : 71,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/3939277\/ben-leggiero",
+                "user_id" : 3939277,
+                "display_name" : "Ben Leggiero",
+                "reputation" : 4589,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/2f4691f7a1c9d3192fe843a164a27535?s=128&d=identicon&r=PG"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/51386748\/what-versions-of-swift-are-supported-by-what-versions-of-xcode",
+              "tags" : [
+                "swift",
+                "xcode",
+                "versioning",
+                "choice"
+              ],
+              "view_count" : 655,
+              "creation_date" : 1531846703,
+              "is_answered" : true,
+              "title" : "What versions of Swift are supported by what versions of Xcode?",
+              "accepted_answer_id" : 51388220,
+              "last_activity_date" : 1541109887,
+              "question_id" : 51386748,
+              "score" : 1
+            },
+            {
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/6723193\/amg91",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/e02e224f90b7f3081c1b7c691a3d3480?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 6723193,
+                "display_name" : "Amg91",
+                "reputation" : 149,
+                "user_type" : "registered"
+              },
+              "is_answered" : false,
+              "answer_count" : 0,
+              "score" : 0,
+              "creation_date" : 1541109720,
+              "title" : "UICollectionView autosize and dynamic number of rows",
+              "last_activity_date" : 1541109720,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53109995\/uicollectionview-autosize-and-dynamic-number-of-rows",
+              "question_id" : 53109995,
+              "tags" : [
+                "swift",
+                "uicollectionview",
+                "rows",
+                "screen-rotation",
+                "autosize"
+              ],
+              "view_count" : 5
+            },
+            {
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/3664043\/paulomendes",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/2aec41b6dd465eef7a50ab1a1ceb292d?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 3664043,
+                "display_name" : "PauloMendes",
+                "reputation" : 2,
+                "user_type" : "registered"
+              },
+              "is_answered" : false,
+              "answer_count" : 0,
+              "score" : -2,
+              "creation_date" : 1541108429,
+              "title" : "Swift update broke AVFoundation audioSession",
+              "last_activity_date" : 1541108429,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53109744\/swift-update-broke-avfoundation-audiosession",
+              "question_id" : 53109744,
+              "tags" : [
+                "swift",
+                "xcode",
+                "avfoundation"
+              ],
+              "view_count" : 12
+            },
+            {
+              "owner" : {
+                "accept_rate" : 38,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/3765541\/dgee4",
+                "user_id" : 3765541,
+                "display_name" : "dgee4",
+                "reputation" : 131,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/c8fdd2f59c2e5245590a0c00dbd24d39?s=128&d=identicon&r=PG&f=1"
+              },
+              "is_answered" : false,
+              "answer_count" : 0,
+              "score" : 0,
+              "creation_date" : 1541106786,
+              "title" : "Swift NSCoder Not Working For Double Variable",
+              "last_activity_date" : 1541106786,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53109422\/swift-nscoder-not-working-for-double-variable",
+              "question_id" : 53109422,
+              "tags" : [
+                "ios",
+                "swift",
+                "xcode",
+                "nscoder"
+              ],
+              "view_count" : 18
+            },
+            {
+              "answer_count" : 1,
+              "owner" : {
+                "accept_rate" : 83,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/1368342\/jonesv",
+                "user_id" : 1368342,
+                "display_name" : "JonesV",
+                "reputation" : 4515,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/9cc1a276b74dc94bafbf74d5b8a8cf93?s=128&d=identicon&r=PG"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/53102023\/infinite-blocking-polling-in-observable",
+              "tags" : [
+                "swift",
+                "rx-swift"
+              ],
+              "view_count" : 26,
+              "creation_date" : 1541077961,
+              "is_answered" : true,
+              "title" : "Infinite blocking polling in Observable",
+              "accepted_answer_id" : 53104080,
+              "last_activity_date" : 1541106459,
+              "question_id" : 53102023,
+              "score" : 0
+            },
+            {
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/9779471\/quinn",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/6ecef16123bebd46b2e38dde38418809?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 9779471,
+                "display_name" : "Quinn",
+                "reputation" : 305,
+                "user_type" : "registered"
+              },
+              "is_answered" : false,
+              "answer_count" : 1,
+              "score" : 0,
+              "creation_date" : 1541105926,
+              "title" : "Swift Framework only builds after a clean",
+              "last_activity_date" : 1541106396,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53109268\/swift-framework-only-builds-after-a-clean",
+              "question_id" : 53109268,
+              "tags" : [
+                "ios",
+                "swift",
+                "xcode"
+              ],
+              "view_count" : 21
+            },
+            {
+              "answer_count" : 2,
+              "last_edit_date" : 1541102186,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/7943297\/serj-semenov",
+                "profile_image" : "https:\/\/graph.facebook.com\/1316133811788641\/picture?type=large",
+                "user_id" : 7943297,
+                "display_name" : "Serj Semenov",
+                "reputation" : 33,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/53108462\/swift-non-void-function-should-return-a-value-in-a-guard-let",
+              "tags" : [
+                "ios",
+                "swift"
+              ],
+              "view_count" : 37,
+              "creation_date" : 1541102112,
+              "is_answered" : true,
+              "title" : "swift Non-void function should return a value in a guard let",
+              "last_activity_date" : 1541106032,
+              "question_id" : 53108462,
+              "score" : 0
+            },
+            {
+              "answer_count" : 0,
+              "last_edit_date" : 1541105989,
+              "bounty_amount" : 100,
+              "owner" : {
+                "accept_rate" : 60,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/5353340\/tomasz-pik%c4%87",
+                "user_id" : 5353340,
+                "display_name" : "Tomasz Pikć",
+                "reputation" : 727,
+                "profile_image" : "https:\/\/i.stack.imgur.com\/Kr6FZ.jpg?s=128&g=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/52980114\/multiple-projects-xcconfig-files-cocoapods",
+              "tags" : [
+                "swift",
+                "xcode",
+                "cocoapods",
+                "pod",
+                "xcconfig"
+              ],
+              "view_count" : 88,
+              "creation_date" : 1540431327,
+              "is_answered" : false,
+              "title" : "Multiple projects, xcconfig files, cocoapods",
+              "bounty_closes_date" : 1541343743,
+              "last_activity_date" : 1541105989,
+              "question_id" : 52980114,
+              "score" : 0
+            },
+            {
+              "answer_count" : 1,
+              "last_edit_date" : 1541091859,
+              "owner" : {
+                "accept_rate" : 55,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/556526\/alexberd",
+                "user_id" : 556526,
+                "display_name" : "AlexBerd",
+                "reputation" : 529,
+                "profile_image" : "https:\/\/i.stack.imgur.com\/0ofl5.jpg?s=128&g=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/53102559\/api-async-call-in-uitableview-cellforrowat",
+              "tags" : [
+                "ios",
+                "swift",
+                "uitableview"
+              ],
+              "view_count" : 51,
+              "creation_date" : 1541079836,
+              "is_answered" : false,
+              "title" : "API async call in UITableView cellForRowAt",
+              "last_activity_date" : 1541105679,
+              "question_id" : 53102559,
+              "score" : 1
+            },
+            {
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/1291940\/dante",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/1f4906279209f61e86263e3a1effc1a2?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 1291940,
+                "display_name" : "Dante",
+                "reputation" : 99,
+                "user_type" : "registered"
+              },
+              "is_answered" : false,
+              "answer_count" : 1,
+              "score" : -1,
+              "creation_date" : 1541100877,
+              "title" : "How do you implement skip logic branching efficiently in an iOS app?",
+              "last_activity_date" : 1541105644,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53108211\/how-do-you-implement-skip-logic-branching-efficiently-in-an-ios-app",
+              "question_id" : 53108211,
+              "tags" : [
+                "ios",
+                "swift",
+                "xcode"
+              ],
+              "view_count" : 29
+            },
+            {
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/10305998\/mark-cubn",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/d866dbe03b594cb5cfb77c4e910e2a86?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 10305998,
+                "display_name" : "Mark cubn",
+                "reputation" : 13,
+                "user_type" : "registered"
+              },
+              "is_answered" : false,
+              "answer_count" : 0,
+              "score" : 0,
+              "creation_date" : 1541105463,
+              "title" : "iOS: get downloaded, uploaded and downloaded speed by NetworkExtension framework",
+              "last_activity_date" : 1541105463,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53109166\/ios-get-downloaded-uploaded-and-downloaded-speed-by-networkextension-framework",
+              "question_id" : 53109166,
+              "tags" : [
+                "ios",
+                "swift",
+                "afnetworking",
+                "networkextension"
+              ],
+              "view_count" : 12
+            },
+            {
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/9895022\/easeged",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/e49b40a447da5fd32bbb7ae4b56d2375?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 9895022,
+                "display_name" : "easeged",
+                "reputation" : 3,
+                "user_type" : "registered"
+              },
+              "is_answered" : false,
+              "answer_count" : 0,
+              "score" : 0,
+              "creation_date" : 1541105266,
+              "title" : "parse dashboard changing user&#39;s password",
+              "last_activity_date" : 1541105266,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53109135\/parse-dashboard-changing-users-password",
+              "question_id" : 53109135,
+              "tags" : [
+                "swift",
+                "parsing",
+                "parse-server",
+                "parse-dashboard"
+              ],
+              "view_count" : 11
+            },
+            {
+              "answer_count" : 1,
+              "last_edit_date" : 1541105226,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/10497264\/alexander-ramirez-blonski",
+                "profile_image" : "https:\/\/lh5.googleusercontent.com\/-KPU_Z2qsanU\/AAAAAAAAAAI\/AAAAAAAAAFk\/sE-HiOs7hMA\/photo.jpg?sz=128",
+                "user_id" : 10497264,
+                "display_name" : "Alexander Ramirez Blonski",
+                "reputation" : 29,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/53093924\/images-fetched-from-firebase-are-duplicated-in-the-process-of-adding-them-to-tab",
+              "tags" : [
+                "ios",
+                "swift",
+                "firebase",
+                "firebase-realtime-database"
+              ],
+              "view_count" : 36,
+              "creation_date" : 1541034423,
+              "is_answered" : true,
+              "title" : "Images fetched from firebase are duplicated in the process of adding them to tableViewCells?",
+              "last_activity_date" : 1541105226,
+              "question_id" : 53093924,
+              "score" : 1
+            },
+            {
+              "answer_count" : 2,
+              "last_edit_date" : 1541099492,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/7784385\/nikita-krasnov",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/45e63a7bb45208510256fccbe6516b62?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 7784385,
+                "display_name" : "Nikita Krasnov",
+                "reputation" : 13,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/53107580\/get-the-row-height-in-the-heightforrowat",
+              "tags" : [
+                "ios",
+                "swift",
+                "uitableview"
+              ],
+              "view_count" : 39,
+              "creation_date" : 1541098348,
+              "is_answered" : true,
+              "title" : "Get the row height in the HeightForRowAt",
+              "last_activity_date" : 1541105089,
+              "question_id" : 53107580,
+              "score" : 0
+            },
+            {
+              "answer_count" : 1,
+              "last_edit_date" : 1541100679,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/10586527\/r-m",
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/5b9b8670d8a037dca41f8eac9586455b?s=128&d=identicon&r=PG&f=1",
+                "user_id" : 10586527,
+                "display_name" : "R M",
+                "reputation" : 3,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/53087731\/how-to-curve-a-view-edge-to-looks-like-an-arc",
+              "tags" : [
+                "ios",
+                "swift"
+              ],
+              "view_count" : 55,
+              "creation_date" : 1541002208,
+              "is_answered" : true,
+              "title" : "How to curve a view edge to looks like an arc",
+              "accepted_answer_id" : 53108631,
+              "last_activity_date" : 1541104872,
+              "question_id" : 53087731,
+              "score" : 0
+            },
+            {
+              "owner" : {
+                "accept_rate" : 86,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/542019\/david-delmonte",
+                "user_id" : 542019,
+                "display_name" : "David DelMonte",
+                "reputation" : 3925,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/8d2c2e667fcc653251c6bf6e862575fa?s=128&d=identicon&r=PG"
+              },
+              "is_answered" : false,
+              "answer_count" : 0,
+              "score" : 0,
+              "creation_date" : 1541104825,
+              "title" : "Migrating a specific method from UIWebView to WKWebView",
+              "last_activity_date" : 1541104825,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53109042\/migrating-a-specific-method-from-uiwebview-to-wkwebview",
+              "question_id" : 53109042,
+              "tags" : [
+                "swift",
+                "uiwebview",
+                "wkwebview"
+              ],
+              "view_count" : 12
+            },
+            {
+              "answer_count" : 30,
+              "last_edit_date" : 1482840230,
+              "owner" : {
+                "accept_rate" : 65,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/4392705\/stevenr",
+                "user_id" : 4392705,
+                "display_name" : "StevenR",
+                "reputation" : 1953,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/41d77b2badb67bd99c4b508d6ccffb61?s=128&d=identicon&r=PG&f=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/27652227\/text-view-placeholder-swift",
+              "tags" : [
+                "ios",
+                "swift",
+                "uitextview",
+                "placeholder"
+              ],
+              "view_count" : 148168,
+              "creation_date" : 1419559925,
+              "is_answered" : true,
+              "title" : "Text View Placeholder Swift",
+              "accepted_answer_id" : 27652289,
+              "last_activity_date" : 1541104592,
+              "question_id" : 27652227,
+              "score" : 225
+            },
+            {
+              "owner" : {
+                "accept_rate" : 63,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/8648164\/h-epstein",
+                "user_id" : 8648164,
+                "display_name" : "H.Epstein",
+                "reputation" : 161,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/1881f92bd5b569a12918214b6f10b1bb?s=128&d=identicon&r=PG&f=1"
+              },
+              "is_answered" : false,
+              "answer_count" : 0,
+              "score" : -1,
+              "creation_date" : 1541104325,
+              "title" : "locationManager.startUpdatingLocationWithCompletionHandler is not receiving completion",
+              "last_activity_date" : 1541104325,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53108940\/locationmanager-startupdatinglocationwithcompletionhandler-is-not-receiving-comp",
+              "question_id" : 53108940,
+              "tags" : [
+                "swift",
+                "mapkit",
+                "cllocationmanager",
+                "locationmanager"
+              ],
+              "view_count" : 7
+            },
+            {
+              "owner" : {
+                "accept_rate" : 67,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/2588148\/marie-dm",
+                "user_id" : 2588148,
+                "display_name" : "Marie Dm",
+                "reputation" : 1579,
+                "profile_image" : "https:\/\/graph.facebook.com\/651772012\/picture?type=large"
+              },
+              "is_answered" : false,
+              "answer_count" : 0,
+              "score" : 1,
+              "creation_date" : 1541104316,
+              "title" : "Receipt nil since app update and creation of new in app purchase subscriptions",
+              "last_activity_date" : 1541104316,
+              "link" : "https:\/\/stackoverflow.com\/questions\/53108939\/receipt-nil-since-app-update-and-creation-of-new-in-app-purchase-subscriptions",
+              "question_id" : 53108939,
+              "tags" : [
+                "ios",
+                "swift",
+                "in-app-purchase",
+                "app-store",
+                "itunesconnect"
+              ],
+              "view_count" : 9
+            }
+          ],
+          "quota_max" : 300,
+          "quota_remaining" : 281
+        }
+      },
+      "timeStamp" : "2018-11-02T10:02:33.753+11:00",
+      "id" : "1"
+    },
+    {
+      "request" : {
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/search",
+        "method" : "GET"
+      },
+      "response" : {
+        "headers" : {
+          "Access-Control-Allow-Origin" : "*",
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "Content-Encoding" : "gzip",
+          "Cache-Control" : "private",
+          "Content-Type" : "application\/json; charset=utf-8",
+          "Date" : "Thu, 01 Nov 2018 23:03:28 GMT",
+          "X-Content-Type-Options" : "nosniff",
+          "Content-Length" : "920"
+        },
+        "status" : 200,
+        "body" : {
+          "has_more" : false,
+          "items" : [
+            {
+              "body" : "<p>I'm using a custom cell:<\/p>\n\n<pre><code>class recordedSetUICell: UITableViewCell {\n\n@IBOutlet weak var lblExerciseName: UILabel!\n@IBOutlet weak var lblSetNumber: UILabel!\n@IBOutlet weak var inp_txtReps: UITextField!\n@IBOutlet weak var inp_txtWeight: UITextField! }\n\n\noverride func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; recordedSetUICell {\n    print(indexPath.row)\n    var cell =  tableView.dequeueReusableCell(withIdentifier: \"cell\", for:indexPath) as! recordedSetUICell\n\n    if let dequeuedcell = tableView.dequeueReusableCell(withIdentifier: \"cell\", for: indexPath) as? recordedSetUICell {\n        cell = dequeuedcell\n    } else {\n        cell = recordedSetUICell(style: UITableViewCellStyle.default, reuseIdentifier: \"cell\")\n    }\n<\/code><\/pre>\n\n<p>I've declared the cell identifier in storyboard to 'cell' however i get the following error:<\/p>\n\n<p>'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier cell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'<\/p>\n",
+              "closed_reason" : "duplicate",
+              "answer_count" : 0,
+              "owner" : {
+                "accept_rate" : 6,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/4174219\/user4174219",
+                "user_id" : 4174219,
+                "display_name" : "user4174219",
+                "reputation" : 101,
+                "profile_image" : "https:\/\/graph.facebook.com\/100000803461711\/picture?type=large"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110562\/nsinternalinconsistencyexception-reason-unable-to-dequeue-a-cell-with-ident",
+              "tags" : [
+                "swift",
+                "tableview",
+                "custom-cell"
+              ],
+              "view_count" : 3,
+              "creation_date" : 1541113269,
+              "is_answered" : false,
+              "title" : "&#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier cell",
+              "last_activity_date" : 1541113269,
+              "question_id" : 53110562,
+              "score" : 0,
+              "closed_date" : 1541113395
+            }
+          ],
+          "quota_max" : 300,
+          "quota_remaining" : 280
+        }
+      },
+      "timeStamp" : "2018-11-02T10:03:29.439+11:00",
+      "id" : "2"
+    },
+    {
+      "request" : {
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/search",
+        "method" : "GET"
+      },
+      "response" : {
+        "headers" : {
+          "Access-Control-Allow-Origin" : "*",
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "Content-Encoding" : "gzip",
+          "Cache-Control" : "private",
+          "Content-Type" : "application\/json; charset=utf-8",
+          "Date" : "Thu, 01 Nov 2018 23:03:32 GMT",
+          "X-Content-Type-Options" : "nosniff",
+          "Content-Length" : "1098"
+        },
+        "status" : 200,
+        "body" : {
+          "has_more" : false,
+          "items" : [
+            {
+              "body" : "<p>I have a problem with adding multiple CIFilters on image, f.e. when I add brightness filter and then try to add contrast image goes to original (losses brightness filter) and then adds contrast filter.<\/p>\n\n<pre><code>- (IBAction)brightnessSlider:(NSSlider*)sender {\n    ViewController *controller = (ViewController*)[NSApplication sharedApplication].keyWindow.contentViewController;\n    CIFilter *brightness = [CIFilter filterWithName:@\"CIColorControls\" keysAndValues: kCIInputImageKey, originalCIImage, @\"inputBrightness\", [NSNumber numberWithFloat:[sender floatValue]], nil];\n    controller.imageView.image = [self fromCIImageToNSImage:[brightness outputImage]];\n}\n\n- (IBAction)contrastSlider:(id)sender {\n    ViewController *controller = (ViewController*)[NSApplication sharedApplication].keyWindow.contentViewController;\n    CIFilter *contrast = [CIFilter filterWithName:@\"CIColorControls\" keysAndValues: kCIInputImageKey, originalCIImage, @\"inputContrast\", [NSNumber numberWithFloat:[sender floatValue]], nil];\n    controller.imageView.image = [self fromCIImageToNSImage:[contrast outputImage]];\n}\n<\/code><\/pre>\n\n<p>If I use <code>originalCIImage = [CIFilter outputImage];<\/code> (CIFilter = brightness\/contrast) after adding brightness and contrast (applying filters for changed image), then the image goes completely black\/grey\/white.<\/p>\n\n<p><strong>How to prevent image from changing back to original and apply several filters simultaneously?<\/strong><\/p>\n\n<p>I have read this post <a href=\"https:\/\/stackoverflow.com\/questions\/51938562\/how-to-change-brightness-contrast-and-saturation-using-cicolorcontrols-via-uisl\">link of the post<\/a> but applying filters to original image just resets the image as it should..<\/p>\n",
+              "answer_count" : 0,
+              "owner" : {
+                "link" : "https:\/\/stackoverflow.com\/users\/10566542\/vidas-katulis",
+                "profile_image" : "https:\/\/lh5.googleusercontent.com\/-27-HhwyNh4Y\/AAAAAAAAAAI\/AAAAAAAAAAA\/ABtNlbBTqm__iUJhki-f5kdiuqW8DNOiPw\/mo\/photo.jpg?sz=128",
+                "user_id" : 10566542,
+                "display_name" : "Vidas Katulis",
+                "reputation" : 14,
+                "user_type" : "registered"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/53110550\/applying-multiple-cifilters-on-image",
+              "tags" : [
+                "objective-c",
+                "swift",
+                "xcode",
+                "macos",
+                "cocoa"
+              ],
+              "view_count" : 4,
+              "creation_date" : 1541113210,
+              "is_answered" : false,
+              "title" : "Applying multiple CIFilters on image",
+              "last_activity_date" : 1541113210,
+              "question_id" : 53110550,
+              "score" : 0
+            }
+          ],
+          "quota_max" : 300,
+          "quota_remaining" : 279
+        }
+      },
+      "timeStamp" : "2018-11-02T10:03:32.975+11:00",
+      "id" : "3"
+    },
+    {
+      "request" : {
+        "path" : "https:\/\/api.stackexchange.com\/2.2\/search",
+        "method" : "GET"
+      },
+      "response" : {
+        "headers" : {
+          "Access-Control-Allow-Origin" : "*",
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "Content-Encoding" : "gzip",
+          "Cache-Control" : "private",
+          "Content-Type" : "application\/json; charset=utf-8",
+          "Date" : "Thu, 01 Nov 2018 23:03:35 GMT",
+          "X-Content-Type-Options" : "nosniff",
+          "Content-Length" : "1176"
+        },
+        "status" : 200,
+        "body" : {
+          "has_more" : false,
+          "items" : [
+            {
+              "body" : "<p>I want to declare a function which I can only use for a single specific enum case.<\/p>\n\n<p>For example I have CustomTextFieldTypes enum. This has the following cases and functions.<\/p>\n\n<pre><code>enum CustomTextFieldTypes {\n\n    case CardType\n    case CardNumber\n    case CardExpiryDate\n    case CardName\n    case CCVNumber\n\n    func inputCardNumber(cardNumber: String!, cardNumberTextField: XCUIElement?) {        \n       cardNumberTextField?.typeText(cardNumber)\n    }\n\n    func inputCardCCVNumber(cardCCVNumber: String!, cardCCVNumberTextField: XCUIElement?) {        \n       cardCCVNumberTextField?.typeText(cardCCVNumber)\n    }\n}\n<\/code><\/pre>\n\n<p>Now I want to call the <code>inputCardNumber(...)<\/code> function only for the     <code>CustomTextFieldTypes.CardNumber<\/code> case. I can do the following...<\/p>\n\n<pre><code>CustomTextFieldTypes.CardNumber.inputCardNumber(...) \n<\/code><\/pre>\n\n<p>But at the same time I can do this... <\/p>\n\n<pre><code>CustomTextFieldTypes.CardExpiryDate.inputCardNumber(...) or    \nCustomTextFieldTypes.CardNumber.inputCardNumber(...) \n<\/code><\/pre>\n\n<p>I only want to call the <code>inputCardNumber(...)<\/code> function for the <code>CardNumber<\/code> case. Not from another case the enum itself. How do I achieve this?<\/p>\n\n<p>Thanks in advance for any help<\/p>\n\n<p>EDIT- Here's some background on what I'm doing. I was writing a UI test which would input text into text fields. I wanted to keep the input code away from my test file and I started \"<strong>Experimenting<\/strong>\" with enums and enum functions. I was wondering if I could have a function explicitly available for an enum case. Judging from the comments I cannot do this (I checked online but didn't get far). It's not a bad architecture or anything, I was just splitting up test code..<\/p>\n\n<p>Thanks for everyone for replying.<\/p>\n",
+              "answer_count" : 2,
+              "last_edit_date" : 1541113104,
+              "owner" : {
+                "accept_rate" : 17,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/4615581\/harmeet07",
+                "user_id" : 4615581,
+                "display_name" : "harmeet07",
+                "reputation" : 151,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/1dd0a43e99a668b4fc387043b636b51a?s=128&d=identicon&r=PG&f=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/39044657\/swift-enum-function-for-only-a-single-case-of-the-enum",
+              "tags" : [
+                "ios",
+                "swift",
+                "function",
+                "enums"
+              ],
+              "view_count" : 7551,
+              "creation_date" : 1471627435,
+              "is_answered" : true,
+              "title" : "Swift enum function for only a single case of the enum?",
+              "last_activity_date" : 1541113104,
+              "question_id" : 39044657,
+              "score" : 8
+            }
+          ],
+          "quota_max" : 300,
+          "quota_remaining" : 278
+        }
+      },
+      "timeStamp" : "2018-11-02T10:03:35.992+11:00",
+      "id" : "4"
+    }
+  ],
+  "consumer" : {
+    "token" : "JOxMrQ0A(a2SqBisygFCUA))"
+  },
+  "startTime" : "2018-11-25T08:58:37.354+11:00"
+}

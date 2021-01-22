@@ -94,4 +94,20 @@ class ReaderTests: XCTestCase {
         }
         
     }
+    
+    
+    func testReaderBySequence() {
+        let mockLog = MockOutput()
+        let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderBySequenceTests.json", hostBundle: hostBundle)!, output: mockLog)
+        
+        (0...5).forEach { _ in
+                let request = URLRequest(url: URL(string: "https://api.stackexchange.com/2.2/search")!)
+                XCTAssertNotNil (reader.getResponseObject(for: request).1)
+        }
+        
+        mockLog.logs.filter { (log) -> Bool in
+            log.contains("Found best match id: 4")
+        }
+        
+    }
 }
