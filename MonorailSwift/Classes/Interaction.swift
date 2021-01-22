@@ -30,6 +30,12 @@ open class Interaction {
     public var baseUrl: String?
     public var path: String?
     public var method: String?
+    private var scheme: String?
+    private func updateScheme() {
+        if let baseUrl = baseUrl ?? path, let url = URL(string: baseUrl) {
+            scheme = url.scheme
+        }
+    }
     
     public var fileName: String?
     public var id: String?
@@ -83,6 +89,8 @@ open class Interaction {
         self.timeStamp = template.timeStamp
         self.timeElapsed = template.timeElapsed
         self.timeElapsedEnabled = template.timeElapsedEnabled
+        
+        updateScheme()
     }
     
     init(json: [String: Any], baseUrl: String? = nil, fileName: String? = nil, externalFileRootPath: String? = nil) {
@@ -144,6 +152,8 @@ open class Interaction {
         
         self.error = error
         self.id = id
+        
+        updateScheme()
     }
     
     var requestHeader: [String: Any]? {
@@ -183,6 +193,8 @@ open class Interaction {
             }
             method = request[methodKey] as? String
         }
+        
+        updateScheme()
     }
     
     private func loadResponseJson(_ json: [String: Any]?, externalFileRootPath: String? = nil) {
@@ -203,23 +215,40 @@ open class Interaction {
     }
     
     func matchReqest(_ urlRequest: URLRequest) -> Bool {
-        guard let method = method, let path = path, let requestUrl = urlRequest.url?.absoluteString else {
-            return false
-        }
-        
-        return method == urlRequest.httpMethod && requestUrl.hasSuffix(path)
+        matchReqest(urlRequest.httpMethod, path: urlRequest.url?.path, scheme: urlRequest.url?.scheme)
     }
     
-    func matchReqest(_ method: String?, path: String?) -> Bool {
-        guard let path = path, let pactPath = self.path else {
+    func matchReqest(_ method: String?, path: String?, scheme: String? = nil) -> Bool {
+        guard let requestPath = path, let path = self.path else {
             return false
         }
         
-        return method == self.method && path.hasSuffix(pactPath)
+        guard scheme == self.scheme, method == self.method else {
+            return false
+        }
+        
+        if isRoot(path) && isRoot(requestPath) {
+            return true
+        }
+        
+        return  path == requestPath
+    }
+    
+    private func isRoot(_ path: String?) -> Bool {
+        return path == "" || path == "/" || path == nil
+    }
+    
+    private var urlPath: String? {
+        if path == nil || path == "" {
+            return "/"
+        }
+        
+        return path
     }
     
     public func responseObjects() -> (HTTPURLResponse?, Data?, Error?, TimeInterval?, Bool?) {
-        guard let path = path, let url = URL(string: path), let statusCode = response[responseStatusKey] as? Int else {
+        
+        guard let path = urlPath, let url = URL(string: path), let statusCode = response[responseStatusKey] as? Int else {
             return (nil, nil, error, nil, false)
         }
         

@@ -977,6 +977,63 @@
       },
       "timeStamp" : "2018-11-02T10:03:35.992+11:00",
       "id" : "4"
+    },
+    {
+      "request" : {
+        "path" : "https:\/\/api.stackexchange.com",
+        "method" : "GET"
+      },
+      "response" : {
+        "headers" : {
+          "Access-Control-Allow-Origin" : "*",
+          "Access-Control-Allow-Credentials" : "false",
+          "Access-Control-Allow-Methods" : "GET, POST",
+          "Content-Encoding" : "gzip",
+          "Cache-Control" : "private",
+          "Content-Type" : "application\/json; charset=utf-8",
+          "Date" : "Thu, 01 Nov 2018 23:03:35 GMT",
+          "X-Content-Type-Options" : "nosniff",
+          "Content-Length" : "1176"
+        },
+        "status" : 200,
+        "body" : {
+          "has_more" : false,
+          "items" : [
+            {
+              "body" : "<p>I want to declare a function which I can only use for a single specific enum case.<\/p>\n\n<p>For example I have CustomTextFieldTypes enum. This has the following cases and functions.<\/p>\n\n<pre><code>enum CustomTextFieldTypes {\n\n    case CardType\n    case CardNumber\n    case CardExpiryDate\n    case CardName\n    case CCVNumber\n\n    func inputCardNumber(cardNumber: String!, cardNumberTextField: XCUIElement?) {        \n       cardNumberTextField?.typeText(cardNumber)\n    }\n\n    func inputCardCCVNumber(cardCCVNumber: String!, cardCCVNumberTextField: XCUIElement?) {        \n       cardCCVNumberTextField?.typeText(cardCCVNumber)\n    }\n}\n<\/code><\/pre>\n\n<p>Now I want to call the <code>inputCardNumber(...)<\/code> function only for the     <code>CustomTextFieldTypes.CardNumber<\/code> case. I can do the following...<\/p>\n\n<pre><code>CustomTextFieldTypes.CardNumber.inputCardNumber(...) \n<\/code><\/pre>\n\n<p>But at the same time I can do this... <\/p>\n\n<pre><code>CustomTextFieldTypes.CardExpiryDate.inputCardNumber(...) or    \nCustomTextFieldTypes.CardNumber.inputCardNumber(...) \n<\/code><\/pre>\n\n<p>I only want to call the <code>inputCardNumber(...)<\/code> function for the <code>CardNumber<\/code> case. Not from another case the enum itself. How do I achieve this?<\/p>\n\n<p>Thanks in advance for any help<\/p>\n\n<p>EDIT- Here's some background on what I'm doing. I was writing a UI test which would input text into text fields. I wanted to keep the input code away from my test file and I started \"<strong>Experimenting<\/strong>\" with enums and enum functions. I was wondering if I could have a function explicitly available for an enum case. Judging from the comments I cannot do this (I checked online but didn't get far). It's not a bad architecture or anything, I was just splitting up test code..<\/p>\n\n<p>Thanks for everyone for replying.<\/p>\n",
+              "answer_count" : 2,
+              "last_edit_date" : 1541113104,
+              "owner" : {
+                "accept_rate" : 17,
+                "user_type" : "registered",
+                "link" : "https:\/\/stackoverflow.com\/users\/4615581\/harmeet07",
+                "user_id" : 4615581,
+                "display_name" : "harmeet07",
+                "reputation" : 151,
+                "profile_image" : "https:\/\/www.gravatar.com\/avatar\/1dd0a43e99a668b4fc387043b636b51a?s=128&d=identicon&r=PG&f=1"
+              },
+              "link" : "https:\/\/stackoverflow.com\/questions\/39044657\/swift-enum-function-for-only-a-single-case-of-the-enum",
+              "tags" : [
+                "ios",
+                "swift",
+                "function",
+                "enums"
+              ],
+              "view_count" : 7551,
+              "creation_date" : 1471627435,
+              "is_answered" : true,
+              "title" : "Swift enum function for only a single case of the enum?",
+              "last_activity_date" : 1541113104,
+              "question_id" : 39044657,
+              "score" : 8
+            }
+          ],
+          "quota_max" : 300,
+          "quota_remaining" : 278
+        }
+      },
+      "timeStamp" : "2018-11-02T10:03:35.992+11:00",
+      "id" : "5"
     }
   ],
   "consumer" : {

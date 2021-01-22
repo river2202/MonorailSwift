@@ -105,9 +105,45 @@ class ReaderTests: XCTestCase {
                 XCTAssertNotNil (reader.getResponseObject(for: request).1)
         }
         
-        mockLog.logs.filter { (log) -> Bool in
+        let id4 = mockLog.logs.filter { (log) -> Bool in
             log.contains("Found best match id: 4")
         }
         
+        XCTAssertEqual(id4.count, 3)
+    }
+    
+    func testReaderMatchRoot() {
+        let mockLog = MockOutput()
+        let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderBySequenceTests.json", hostBundle: hostBundle)!, output: mockLog)
+        
+        (0...5).forEach { _ in
+                let request = URLRequest(url: URL(string: "https://api.stackexchange.com/")!)
+                XCTAssertNotNil (reader.getResponseObject(for: request).1)
+        }
+        
+        let id4 = mockLog.logs.filter { (log) -> Bool in
+            log.contains("Found best match id: 5")
+        }
+        
+        XCTAssertEqual(id4.count, 6)
+        
+        (0...5).forEach { _ in
+                let request = URLRequest(url: URL(string: "https://api.stackexchange.com")!)
+                XCTAssertNotNil (reader.getResponseObject(for: request).1)
+        }
+        
+        let id5 = mockLog.logs.filter { (log) -> Bool in
+            log.contains("Found best match id: 5")
+        }
+        
+        XCTAssertEqual(id5.count, 12)
+    }
+    
+    func testReaderMatchScheme() {
+        let mockLog = MockOutput()
+        let reader = APIServiceReader.init(file: StubManager.load("MonorailTest/ReaderBySequenceTests.json", hostBundle: hostBundle)!, output: mockLog)
+        
+        let request = URLRequest(url: URL(string: "wss://api.stackexchange.com")!)
+        XCTAssertNil (reader.getResponseObject(for: request).1)
     }
 }

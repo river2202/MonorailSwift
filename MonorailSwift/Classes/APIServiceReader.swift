@@ -138,8 +138,10 @@ open class APIServiceReader {
         output?.log("Searching response in: \(fileName)")
         
         let matchedInteractions = interactions.filter({ (readDelegate?.matchReqest(request, $0) ?? false) || $0.matchReqest(request) })
+        
         let bestMatch = matchedInteractions.filter({ !$0.consumed }).first ?? matchedInteractions.last
         bestMatch?.consumed = true
+        
         
         if let bestMatch = bestMatch {
             output?.log("Found best match id: \(bestMatch.id ?? "nil"), mode=\(mode), mocked=\(bestMatch.mocked.description)")
