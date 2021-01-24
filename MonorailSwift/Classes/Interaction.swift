@@ -218,7 +218,7 @@ open class Interaction {
         matchReqest(urlRequest.httpMethod, path: urlRequest.url?.path, scheme: urlRequest.url?.scheme)
     }
     
-    func matchReqest(_ method: String?, path: String?, scheme: String? = nil) -> Bool {
+    public func matchReqest(_ method: String?, path: String?, scheme: String? = nil) -> Bool {
         guard let requestPath = path, let path = self.path else {
             return false
         }
@@ -234,11 +234,11 @@ open class Interaction {
         return  path == requestPath
     }
     
-    private func isRoot(_ path: String?) -> Bool {
+    open func isRoot(_ path: String?) -> Bool {
         return path == "" || path == "/" || path == nil
     }
     
-    private var urlPath: String? {
+    open var urlPath: String? {
         if path == nil || path == "" {
             return "/"
         }
