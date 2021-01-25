@@ -12,7 +12,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MonorailSwiftTools'
-  s.version          = '1.5.0'
+  s.version          = '1.5.4'
   s.summary          = 'MonorailSwiftTools is a test tool to log/write/replay network interactions.'
 
   s.description      = <<-DESC

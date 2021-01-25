@@ -307,4 +307,47 @@ class LoggerTests: XCTestCase {
             XCTAssertEqual(APIServiceLogger.getLog(id: id, timeElapsed: timeElapsed), expected, message)
         }
     }
+    
+    func testLeanLog() {
+        let mockLogger = MockOutput()
+        Monorail.enableLogger(output: mockLogger, logHeader: ["Authorization"])
+        enableReader()
+        
+        waitUntil(message: "Download apple.com home page", timeout: 3) { done in
+            let url = URL(string: "https://apple.com/index.html")!
+            var request = URLRequest(url: url)
+                       request.addValue("12345678901", forHTTPHeaderField: "header1")
+                       request.addValue("12345678902", forHTTPHeaderField: "Authorization")
+                       request.addValue("12345678903", forHTTPHeaderField: "x-key")
+                       request.addValue("12345678904", forHTTPHeaderField: "token")
+            
+            let dataTask = URLSession.shared.dataTask(with: request) { (data, _, _) in
+                XCTAssertNotNil(data, "No data was downloaded.")
+                XCTAssertEqual(mockLogger.logs.count, 2)
+                XCTAssertTrue(mockLogger.logs.first?.contains("SequenceId: 1") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("GET https://apple.com/index.html") ?? false)
+                XCTAssertTrue(mockLogger.logs.first?.contains("Authorization : ****") ?? false)
+                XCTAssertFalse(mockLogger.logs.first?.contains("x-key : 12345678903") ?? true)
+                XCTAssertFalse(mockLogger.logs.first?.contains("token : 12345678904") ?? true)
+                XCTAssertTrue(mockLogger.logs.first?.contains("Headers:") ?? false)
+                
+                print("\(mockLogger.logs.first!)")
+                
+                XCTAssertTrue(mockLogger.logs.last?.contains("Status: 200") ?? false)
+                XCTAssertTrue(mockLogger.logs.last?.contains("SequenceId: 1") ?? false)
+                XCTAssertTrue(mockLogger.logs.last?.contains("TimeElapsed: 1") ?? false)
+                XCTAssertTrue(mockLogger.logs.last?.contains("\"name\" : \"Apple.come\"") ?? false)
+                XCTAssertFalse(mockLogger.logs.last?.contains("Date : Tue, 23 Apr 2019 03:11:11 GMT") ?? true)
+                XCTAssertFalse(mockLogger.logs.last?.contains("mocked : true") ?? true)
+                XCTAssertFalse(mockLogger.logs.last?.contains("X-Content-Type-Options") ?? true)
+                XCTAssertFalse(mockLogger.logs.last?.contains("Headers:") ?? true)
+                
+
+                print("\(mockLogger.logs.last!)")
+                
+                done()
+            }
+            dataTask.resume()
+        }
+    }
 }

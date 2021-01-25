@@ -5,11 +5,13 @@ public final class APIServiceLogger {
     var maxPrintoutDataCount = 1024
     private let secretKeys: [String]
     private let secretMask: MaskFunction
+    private let logHeader: [String]?
 
-    init(output: MonorailDebugOutput, secretKeys: [String], secretMask: @escaping MaskFunction) {
+    init(output: MonorailDebugOutput, secretKeys: [String], secretMask: @escaping MaskFunction, logHeader: [String]?) {
         self.output = output
         self.secretKeys = secretKeys
         self.secretMask = secretMask
+        self.logHeader = logHeader
     }
     
     private let divider = "---------------------\n"
@@ -98,12 +100,15 @@ public final class APIServiceLogger {
     }
     
     private func getHeadersString(_ headers: [String: Any]) -> String {
-        var logString = "Headers: [\n"
-        for (key, value) in headers {
-            logString += "  \(key) : \(value)\n"
+        var headerString = ""
+        
+        headers.forEach { key, value in
+            if self.logHeader?.contains(key) ?? true {
+                headerString += "  \(key) : \(value)\n"
+            }
         }
-        logString += "]\n"
-        return logString
+        
+        return headerString.isEmpty ? "" : "Headers: [\n" + headerString + "]\n"
     }
 }
 

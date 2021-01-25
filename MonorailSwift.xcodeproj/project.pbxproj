@@ -30,7 +30,6 @@
 		91840B3021B158330016B7B4 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2D21B158330016B7B4 /* AppConfiguration.swift */; };
 		91840B3121B158330016B7B4 /* UITestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B2E21B158330016B7B4 /* UITestBase.swift */; };
 		91840B3521B15DDF0016B7B4 /* Springboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91840B3421B15DDF0016B7B4 /* Springboard.swift */; };
-		9185F3F72261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 9185F3F62261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9185F3F9226CB1ED0080D5A9 /* TinyNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131937E2158ADD900958083 /* TinyNetworking.swift */; };
 		9185F3FA226CB2360080D5A9 /* StackOverflowResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5788C2183CCB900FA1411 /* StackOverflowResponse.swift */; };
 		9185F3FB226CB24D0080D5A9 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91165E7B2156680D00546246 /* Question.swift */; };
@@ -531,7 +530,6 @@
 			files = (
 				91CF88FC216E9694003A351C /* MonorailSwiftSDK.h in Headers */,
 				9197940E23B1622300B3E36A /* NSDate+TimeMachine.h in Headers */,
-				9185F3F72261CC7D0080D5A9 /* MonorailSwift-Bridging-Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

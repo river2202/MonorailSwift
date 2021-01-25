@@ -72,8 +72,8 @@ open class Monorail {
         URLInterceptor.enable(interceptor: self)
     }
     
-    public static func enableLogger(output: MonorailDebugOutput = Monorail.shared, filter: MonorailInteractionFilter? = nil, resetSequence: Bool = true, secretKeys: [String] = secretsKeys, secretMask: @escaping MaskFunction = defaultMaskFunction) {
-        Monorail.shared.logger = APIServiceLogger(output: output, secretKeys: secretKeys, secretMask: secretMask)
+    public static func enableLogger(output: MonorailDebugOutput = Monorail.shared, filter: MonorailInteractionFilter? = nil, resetSequence: Bool = true, secretKeys: [String] = secretsKeys, secretMask: @escaping MaskFunction = defaultMaskFunction, logHeader: [String]? = nil) {
+        Monorail.shared.logger = APIServiceLogger(output: output, secretKeys: secretKeys, secretMask: secretMask, logHeader: logHeader)
         Monorail.shared.loggerFilter = filter
         if resetSequence {
             Monorail.shared.resetSequenceId()
