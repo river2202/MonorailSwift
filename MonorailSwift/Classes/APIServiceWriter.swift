@@ -113,7 +113,15 @@ open class APIServiceWriter: APIServiceReader {
         save(to: monorailDocumentDirectory.appendingPathComponent("\(fileName).json"))
     }
     
+    let serialQueue = DispatchQueue(label: "monorailswift")
+    
     open func save(to filePath: URL? = nil) {
+        self.serialQueue.sync {
+            _save(to: filePath)
+        }
+    }
+    
+    func _save(to filePath: URL?) {
         guard let logFilePath = filePath ?? logFilePath else {
             return
         }
