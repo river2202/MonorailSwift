@@ -29,5 +29,5 @@ Works out of box with iOS build in api and most of 3rd SDK to print the network 
 
   s.source_files = 'MonorailSwift/Helper/**/*', 'MonorailSwiftTools/MonorailSwiftTools.h'
   
-  s.dependency 'MonorailSwift', '~> 1.5'
+  s.dependency 'MonorailSwift', '~> 1.5.4'
 end
