@@ -5,7 +5,7 @@ class WriterTests: XCTestCase {
     
     func testWriter() {
         enableReader()
-        guard let writerTestFile = Monorail.writeLog(to: "writerTestFile") else {
+        guard let writerTestFile = Monorail.writeLog(to: "writerTestFile0") else {
             return XCTFail("Create file failed!")
         }
         
@@ -48,7 +48,7 @@ class WriterTests: XCTestCase {
         let oldKeys = Monorail.secretsKeys
         Monorail.secretsKeys.append("x-key")
         
-        guard let writerTestFile = Monorail.writeLog(to: "writerTestFile") else {
+        guard let writerTestFile = Monorail.writeLog(to: "writerTestFile1") else {
             return XCTFail("Create file failed!")
         }
         
@@ -91,7 +91,7 @@ class WriterTests: XCTestCase {
         }
         let maskSecrets = MaskSecrets()
         
-        guard let writerTestFile = Monorail.writeLog(to: "writerTestFile", delegate: maskSecrets) else {
+        guard let writerTestFile = Monorail.writeLog(to: "writerTestFile2", delegate: maskSecrets) else {
             return XCTFail("Create file failed!")
         }
         
@@ -125,7 +125,7 @@ class WriterTests: XCTestCase {
         enableReader()
         let secretKeys = ["Authorization", "x-key", "token"]
         let mask = "********"
-        guard let writerTestFile = Monorail.writeLog(to: "writerTestFile", secretKeys: secretKeys, secretMask: {_, _ in mask}) else {
+        guard let writerTestFile = Monorail.writeLog(to: "writerTestFile3", secretKeys: secretKeys, secretMask: {_, _ in mask}) else {
             return XCTFail("Create file failed!")
         }
         

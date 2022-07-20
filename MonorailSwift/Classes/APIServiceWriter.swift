@@ -45,7 +45,7 @@ open class APIServiceWriter: APIServiceReader {
         
         interaction.maskSecrets(secretKeys: secretKeys, mask: secretMask)
         delegate?.beforeWriteToFile(interaction, writer: self)
-        interactions.append(interaction)
+        _append(interaction);
         save()
     }
     
@@ -58,7 +58,7 @@ open class APIServiceWriter: APIServiceReader {
         
         interaction.maskSecrets(secretKeys: secretKeys, mask: secretMask)
         delegate?.beforeWriteToFile(interaction, writer: self)
-        interactions.append(interaction)
+        _append(interaction)
         save()
     }
     
@@ -98,12 +98,15 @@ open class APIServiceWriter: APIServiceReader {
     }
     
     func reset() {
-        startTime = nil
-        logFilePath = nil
-        interactions.removeAll()
-        notifications.removeAll()
-        consumerVariables.removeAll()
-        providerVariables.removeAll()
+        self.serialQueue.sync {
+            print("reset \(fileName)")
+            self.startTime = nil
+            self.logFilePath = nil
+            self.interactions.removeAll()
+            self.notifications.removeAll()
+            self.consumerVariables.removeAll()
+            self.providerVariables.removeAll()
+        }
     }
     
     open func saveToDocumentDirectory(fileName: String) {
@@ -113,11 +116,18 @@ open class APIServiceWriter: APIServiceReader {
         save(to: monorailDocumentDirectory.appendingPathComponent("\(fileName).json"))
     }
     
-    let serialQueue = DispatchQueue(label: "monorailswift")
+    let serialQueue = DispatchQueue(label: "monorailswift", qos: .default)
     
     open func save(to filePath: URL? = nil) {
         self.serialQueue.sync {
-            _save(to: filePath)
+            self._save(to: filePath)
+        }
+    }
+    
+    func _append(_ interaction: Interaction) {
+        self.serialQueue.sync {
+            print("_append \(fileName)")
+            self.interactions.append(interaction)
         }
     }
     
