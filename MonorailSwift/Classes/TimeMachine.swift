@@ -1,5 +1,6 @@
 
 import Foundation
+import MonorailSwiftObjC
 
 public final class TimeMachine {
     public static let shared = TimeMachine()
